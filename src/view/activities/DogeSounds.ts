@@ -3,13 +3,13 @@ import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import Layout from "../Layout";
 
-export default class DogeSound implements View {
+export default class DogeSounds implements View {
 
     private container: DomNode;
 
     constructor() {
-        Layout.current.title = msg("DOGESOUND_TITLE");
-        Layout.current.content.append(this.container = el(".dogesound-view",
+        Layout.current.title = msg("DOGESOUNDS_TITLE");
+        Layout.current.content.append(this.container = el(".dogesounds-view",
         ));
     }
 

@@ -177,5 +177,57 @@ body {
   font-family: BankGothic;
   background-color: #000000;
   color: #FFFFFF;
+  line-height: 1.5em;
+}
+.popup-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 20px 0;
+}
+.connect-wallet-popup {
+  position: relative;
+  width: 320px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #ffffff;
+  background-color: #000000;
+}
+.connect-wallet-popup > .talker {
+  position: absolute;
+  left: 20px;
+  top: -50px;
+  width: 60px;
+}
+.connect-wallet-popup > p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.connect-wallet-popup > .button {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  font-family: DungGeunMo;
+}
+.connect-wallet-popup > .button > img {
+  margin-right: 10px;
+}
+.connect-wallet-popup > .connect-kaikas-button {
+  background-color: #6f6558;
+}
+.connect-wallet-popup > .connect-klip-button {
+  background-color: #fee500;
+  color: #000000;
+}
+.connect-wallet-popup > .cancel-button {
+  border: 1px solid #ffffff;
 }
 

@@ -10,7 +10,7 @@ export default class Dialogue extends Popup {
         confirmTitle: string,
         confirm: () => void,
     ) {
-        super(".dialogue-background");
+        super(".popup-background");
         this.append(
             this.content = el(`.dialogue${tag}`,
                 el("p", message),

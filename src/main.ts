@@ -2,8 +2,9 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
+import ConnectWalletPopup from "./ui/ConnectWalletPopup";
 import Activities from "./view/Activities";
-import DogeSound from "./view/activities/DogeSound";
+import DogeSounds from "./view/activities/DogeSounds";
 import Home from "./view/Home";
 import Layout from "./view/Layout";
 import Mates from "./view/Mates";
@@ -19,8 +20,8 @@ import MyMates from "./view/mates/MyMates";
 
     SkyRouter.route("**", Layout);
     SkyRouter.route("", Home);
-    SkyRouter.route("activity", Activities);
-    SkyRouter.route("activity/dogesound", DogeSound);
+    SkyRouter.route("activities", Activities);
+    SkyRouter.route("dogesounds", DogeSounds);
     SkyRouter.route("mates", Mates);
     SkyRouter.route("mates/gallary", Gallary);
     SkyRouter.route("mates/buy", BuyMates);
@@ -31,5 +32,7 @@ import MyMates from "./view/mates/MyMates";
         SkyRouter.go(sessionStorage.__spa_path);
         sessionStorage.removeItem("__spa_path");
     }
+
+    new ConnectWalletPopup();
 
 })();

@@ -5,5 +5,9 @@ MATES_TITLE,메이트
 GALLARY_TITLE,Gallary
 BUY_MATES_TITLE,메이트 구매하기
 MY_MATES_TITLE,내 메이트
-DOGESOUND_TITLE,도지사운드
+DOGESOUNDS_TITLE,도지사운드
 MATE_DETAIL_TITLE,메이트 #{id}
+CONNECT_WALLET_POPUP_DESCRIPTION,도지사운드클럽은 클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다.
+CONNECT_KAIKAS_BUTTON,카이카스로 연결
+CONNECT_KLIP_BUTTON,카카오톡 클립으로 연결
+CANCEL_CONNECT_BUTTON,연결하지 않고 둘러보기
