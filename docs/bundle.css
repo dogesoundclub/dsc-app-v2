@@ -587,4 +587,49 @@ a {
 .home-view > section p a {
   color: #BFC500;
 }
+.buymates-view {
+  max-width: 750px;
+  padding: 135px 15px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .buymates-view {
+    padding: 90px 15px;
+  }
+}
+.buymates-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.buymates-view > .opensea-logo {
+  display: block;
+  margin: 50px auto;
+  max-width: 100%;
+}
+.buymates-view > p {
+  margin: 50px 0;
+}
+.buymates-view > p.warning {
+  border: 1px solid #BFC500;
+  color: #BFC500;
+  padding: 20px;
+  word-break: break-all;
+}
+.buymates-view > a {
+  display: block;
+  margin: auto;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 320px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
 

@@ -10,6 +10,11 @@ export default class BuyMates implements View {
     constructor() {
         Layout.current.title = msg("BUY_MATES_TITLE");
         Layout.current.content.append(this.container = el(".buymates-view",
+            el("h1", msg("BUY_MATES_TITLE")),
+            el("img.opensea-logo", { src: "/images/logo/opensea.png" }),
+            el("p", msg("BUY_MATES_DESCRIPTION")),
+            el("a", msg("BUY_MATES_BUTTON"), { href: "https://opensea.io/collection/dogesoundclub-mates" }),
+            el("p.warning", msg("BUY_MATES_WARNING")),
         ));
     }
 

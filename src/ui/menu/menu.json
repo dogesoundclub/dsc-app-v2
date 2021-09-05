@@ -5,30 +5,30 @@
             "name": "MENU_HOME"
         },
         {
+            "uri": "mates",
+            "name": "MENU_MATES",
+            "children": [
+                {
+                    "uri": "mates/gallary",
+                    "name": "MENU_GALLARY"
+                },
+                {
+                    "uri": "mates/buy",
+                    "name": "MENU_BUY_MATES"
+                },
+                {
+                    "uri": "mates/mymates",
+                    "name": "MENU_MY_MATES"
+                }
+            ]
+        },
+        {
             "uri": "activities",
             "name": "MENU_ACTIVITIES",
             "children": [
                 {
                     "uri": "dogesounds",
                     "name": "MENU_DOGESOUNDS"
-                }
-            ]
-        },
-        {
-            "uri": "mates",
-            "name": "MENU_MATES",
-            "children": [
-                {
-                    "uri": "gallary",
-                    "name": "MENU_GALLARY"
-                },
-                {
-                    "uri": "buy",
-                    "name": "MENU_BUY_MATES"
-                },
-                {
-                    "uri": "mymates",
-                    "name": "MENU_MY_MATES"
                 }
             ]
         }

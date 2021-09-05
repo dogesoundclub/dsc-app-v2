@@ -21,13 +21,13 @@ import Terms from "./view/Terms";
 
     SkyRouter.route("**", Layout);
     SkyRouter.route("", Home);
-    SkyRouter.route("activities", Activities);
-    SkyRouter.route("dogesounds", DogeSounds);
     SkyRouter.route("mates", Mates);
     SkyRouter.route("mates/gallary", Gallary);
     SkyRouter.route("mates/buy", BuyMates);
     SkyRouter.route("mates/mymates", MyMates);
     SkyRouter.route("mates/{id}", MateDetail, ["mates/gallary", "mates/buy", "mates/mymates"]);
+    SkyRouter.route("activities", Activities);
+    SkyRouter.route("dogesounds", DogeSounds);
     SkyRouter.route("terms", Terms);
 
     if (sessionStorage.__spa_path) {
@@ -36,6 +36,6 @@ import Terms from "./view/Terms";
     }
 
     if ((window as any).caver === undefined) {
-        new ConnectWalletPopup();
+        //new ConnectWalletPopup();
     }
 })();
