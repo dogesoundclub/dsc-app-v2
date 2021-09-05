@@ -1,5 +1,11 @@
 .layout {
     >header {
+        >.pc-menu {
+            @media @phone {
+                display: none;
+            }
+        }
+
         >.menu-button {
             display : none;
             position: fixed;

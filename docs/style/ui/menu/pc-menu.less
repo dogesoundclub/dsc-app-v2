@@ -1,0 +1,52 @@
+.pc-menu {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    z-index : 3;
+    width   : 100%;
+
+    >ul {
+        display        : flex;
+        justify-content: center;
+
+        >li {
+            >a {
+                display   : block;
+                padding   : 20px 0;
+                width     : 200px;
+                text-align: center;
+                color     : #06BC00;
+                font-size : 20px;
+            }
+
+            >ul {
+                display         : none;
+                background-color: #000000;
+                border          : 1px solid #A1A1A1;
+                padding         : 10px 0;
+
+                >li {
+                    >a {
+                        display   : block;
+                        text-align: center;
+                        padding   : 10px;
+                        color     : #BFC500;
+                    }
+                }
+            }
+
+            &:hover {
+                >ul {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    >.language-select {
+        position: absolute;
+        top     : 20px;
+        right   : 50px;
+        z-index : 2;
+    }
+}

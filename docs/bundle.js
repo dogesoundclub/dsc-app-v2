@@ -554,6 +554,17 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 
 /***/ }),
 
+/***/ "./src/ui/menu/PCMenu.ts":
+/*!*******************************!*\
+  !*** ./src/ui/menu/PCMenu.ts ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst skynode_1 = __webpack_require__(/*! @hanul/skynode */ \"./node_modules/@hanul/skynode/lib/index.js\");\r\nconst LanguageSelect_1 = __importDefault(__webpack_require__(/*! ./LanguageSelect */ \"./src/ui/menu/LanguageSelect.ts\"));\r\nconst menu_json_1 = __importDefault(__webpack_require__(/*! ./menu.json */ \"./src/ui/menu/menu.json\"));\r\nconst MenuTreeBuilder_1 = __importDefault(__webpack_require__(/*! ./MenuTreeBuilder */ \"./src/ui/menu/MenuTreeBuilder.ts\"));\r\nclass PCMenu extends skynode_1.DomNode {\r\n    constructor() {\r\n        super(\".pc-menu\");\r\n        this.append(MenuTreeBuilder_1.default.build(menu_json_1.default.menu), new LanguageSelect_1.default());\r\n    }\r\n}\r\nexports[\"default\"] = PCMenu;\r\n\n\n//# sourceURL=webpack:///./src/ui/menu/PCMenu.ts?");
+
+/***/ }),
+
 /***/ "./src/view/Activities.ts":
 /*!********************************!*\
   !*** ./src/view/Activities.ts ***!
@@ -583,7 +594,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst skynode_1 = __webpack_require__(/*! @hanul/skynode */ \"./node_modules/@hanul/skynode/lib/index.js\");\r\nconst MobileMenu_1 = __importDefault(__webpack_require__(/*! ../ui/menu/MobileMenu */ \"./src/ui/menu/MobileMenu.ts\"));\r\nclass Layout {\r\n    constructor() {\r\n        Layout.current = this;\r\n        skynode_1.BodyNode.append(this.container = (0, skynode_1.el)(\".layout\", (0, skynode_1.el)(\"header\", (0, skynode_1.el)(\"a.menu-button\", (0, skynode_1.el)(\"img\", {\r\n            src: \"/images/ui/menu-button.png\",\r\n            srcset: \"/images/ui/menu-button@2x.png 2x\",\r\n        }), {\r\n            click: (event, button) => {\r\n                const rect = button.rect;\r\n                new MobileMenu_1.default({ left: rect.right - 180, top: rect.bottom }).appendTo(skynode_1.BodyNode);\r\n            },\r\n        })), (0, skynode_1.el)(\"main\", this.content = (0, skynode_1.el)(\".content\"))));\r\n    }\r\n    set title(title) {\r\n        document.title = `Doge Sound Club - ${title}`;\r\n    }\r\n    changeParams(params, uri) { }\r\n    close() {\r\n        this.container.delete();\r\n    }\r\n}\r\nexports[\"default\"] = Layout;\r\n\n\n//# sourceURL=webpack:///./src/view/Layout.ts?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst skynode_1 = __webpack_require__(/*! @hanul/skynode */ \"./node_modules/@hanul/skynode/lib/index.js\");\r\nconst MobileMenu_1 = __importDefault(__webpack_require__(/*! ../ui/menu/MobileMenu */ \"./src/ui/menu/MobileMenu.ts\"));\r\nconst PCMenu_1 = __importDefault(__webpack_require__(/*! ../ui/menu/PCMenu */ \"./src/ui/menu/PCMenu.ts\"));\r\nclass Layout {\r\n    constructor() {\r\n        Layout.current = this;\r\n        skynode_1.BodyNode.append(this.container = (0, skynode_1.el)(\".layout\", (0, skynode_1.el)(\"header\", (0, skynode_1.el)(\"a.menu-button\", (0, skynode_1.el)(\"img\", {\r\n            src: \"/images/ui/menu-button.png\",\r\n            srcset: \"/images/ui/menu-button@2x.png 2x\",\r\n        }), {\r\n            click: (event, button) => {\r\n                const rect = button.rect;\r\n                new MobileMenu_1.default({ left: rect.right - 180, top: rect.bottom }).appendTo(skynode_1.BodyNode);\r\n            },\r\n        }), new PCMenu_1.default()), (0, skynode_1.el)(\"main\", this.content = (0, skynode_1.el)(\".content\"))));\r\n    }\r\n    set title(title) {\r\n        document.title = `Doge Sound Club - ${title}`;\r\n    }\r\n    changeParams(params, uri) { }\r\n    close() {\r\n        this.container.delete();\r\n    }\r\n}\r\nexports[\"default\"] = Layout;\r\n\n\n//# sourceURL=webpack:///./src/view/Layout.ts?");
 
 /***/ }),
 
