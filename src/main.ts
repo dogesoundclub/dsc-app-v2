@@ -35,6 +35,7 @@ import Terms from "./view/Terms";
         sessionStorage.removeItem("__spa_path");
     }
 
-    //new ConnectWalletPopup();
-
+    if ((window as any).caver === undefined) {
+        new ConnectWalletPopup();
+    }
 })();
