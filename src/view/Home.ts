@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter, View, ViewParams } from "skyrouter";
+import SloganContract from "../contracts/SloganContract";
 import Layout from "./Layout";
 
 export default class Home implements View {
@@ -101,17 +102,22 @@ export default class Home implements View {
                 ),
             ),
         ));
-        this.loadWinner();
         this.loadDogeSound();
     }
 
-    private async loadWinner() {
-        this.winner.appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(1))} `);
-        this.winner.append(el("a", "0x7c8E0D8E520e2BF9647572a1998afa7D1631f16e"));
-    }
-
     private async loadDogeSound() {
-        this.dogesound.appendText(`${msg("HOME_WINNER_DESCRIPTION").replace(/{round}/, String(1))} \nㅡ`);
+        try {
+            const round = (await SloganContract.getRound()).toNumber() - 1;
+            const elected = (await SloganContract.getElected(round)).toNumber();
+            const dogesound = await SloganContract.getCandidate(round, elected);
+            const winner = await SloganContract.getCandidateRegister(round, elected);
+
+            this.winner.appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(round + 1))} `);
+            this.winner.append(el("a", winner, { href: `https://opensea.io/${winner}` }));
+            this.dogesound.appendText(`${msg("HOME_WINNER_DESCRIPTION").replace(/{round}/, String(round + 1))} \nㅡ ${dogesound}`);
+        } catch (e) {
+            this.dogesound.appendText(msg("HOME_WINNER_ERROR"));
+        }
     }
 
     public changeParams(params: ViewParams, uri: string): void { }

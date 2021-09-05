@@ -24,6 +24,7 @@ HOME_DESCRIPTION,도지사운드클럽은 NFT를 이용한 거버넌스로 운�
 HOME_WINNER_TITLE,경) 제 {round}회 개소리 우승자 (축 :
 HOME_WINNER_DESCRIPTION,제 {round} 회 최고의 도지사운드를 발표합니다.
 HOME_WINNER_WARNING,* 주의 : 위는 탈중앙화된 방식으로 DSC 홀더들에게 최다 득표를 받은 문구가 자동으로 표시된 것입니다. DSC 개발팀의 뜻과 무관할 수 있습니다.
+HOME_WINNER_ERROR,클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다.
 HOME_SENTENCE_1_TITLE,도지사운드클럽 특징
 HOME_SENTENCE_1,- 우리는 개소리에 진심인 자들입니다. : 2주마다 스마트 컨트랙트를 이용해 최고의 도지사운드(개소리)를 선정합니다.\n\n- 우리는 암호화폐를 좋아합니다 : 특히 새로운 도전들에 대한 이야기를 좋아합니다.\n\n- 우리는 음악를 좋아합니다 : 음악은 개소리와 함께 자본에 대한 집착을 환기하는 수단이 됩니다. dsc 개발팀은 DJ SET과 로우파이 비디오를 업로드합니다.
 HOME_SENTENCE_2_TITLE,NFT - DOGESOUNDCLUB MATES,HOME_SENTENCE_2_TITLE
@@ -36,7 +37,7 @@ HOME_SENTENCE_2_LINK_3,OPENSEA로 이동
 HOME_SENTENCE_2_3,"(클레이 토큰이 없다면, dogesoundclub@gmail.com 로 연락하세요.)"
 HOME_SENTENCE_3_TITLE,사명
 HOME_SENTENCE_3,- DSC의 사명은 NFT에 기반한 거버넌스를 통해 사회에 선한 영향력을 결집해내는데에 있습니다.
-HOME_ROADMAP_TITLE,ROADMAP ACTIVATIONS
+HOME_ROADMAP_TITLE,Roadmap Activations
 HOME_ROADMAP_30,액티비티 '도지사운드 경연'을 활성화합니다.
 HOME_ROADMAP_DOGESOUND_LINK,도지사운드 경연이 뭔가요?
 HOME_ROADMAP_50,"액티비티 '메이트의 이름', '지울 수 없는 일기장'을 활성화합니다."
@@ -44,7 +45,7 @@ HOME_ROADMAP_70,액티비티 '팔로우 미'를 활성화합니다. 로우파이
 HOME_ROADMAP_100,도지사운드클럽 메이트 V2를 런칭합니다. 기존 메이트 홀더들에게 유리한 결제 방식으로 런칭됩니다.
 HOME_SENTENCE_4_TITLE,Team
 HOME_SENTENCE_4,- ARVITOR (Manager) : 그림을 조합하는 프로그램을 만들었습니다. 슈퍼 컬렉터가 되고 싶습니다.\n- HANUL (Dev) : 블록체인 프로그래밍 종결자.\n- YONG JIN (Artist) : 메이트와 일러스트를 그려 주었습니다.
-HOME_CONTACT_TITLE,CONTACT
+HOME_CONTACT_TITLE,Contact
 HOME_CONTACT_KAKAOTALK,카카오톡
 HOME_CONTACT_KAKAOTALK_PASSWORD,참여코드 : 10000
 HOME_CONTACT_DISCORD,디스코드

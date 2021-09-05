@@ -4,7 +4,6 @@ export default class Home implements View {
     private winner;
     private dogesound;
     constructor();
-    private loadWinner;
     private loadDogeSound;
     changeParams(params: ViewParams, uri: string): void;
     close(): void;
