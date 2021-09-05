@@ -10,6 +10,7 @@ export default class MyMates implements View {
     constructor() {
         Layout.current.title = msg("MY_MATES_TITLE");
         Layout.current.content.append(this.container = el(".mymates-view",
+            el("h1", msg("MY_MATES_TITLE")),
         ));
     }
 

@@ -1,15 +1,15 @@
 key,ko,en
-BAPP_TITLE,도지사운드클럽
-CONFIRM_BUTTON,확인
-HOME_TITLE,NFT 수집가들의 사교 모임
-ACTIVITIES_TITLE,Activities
-MATES_TITLE,메이트
-GALLARY_TITLE,Gallary
-BUY_MATES_TITLE,메이트 구매하기
-MY_MATES_TITLE,내 메이트
-DOGESOUNDS_TITLE,도지사운드
-MATE_DETAIL_TITLE,메이트 #{id}
-TERMS_TITLE,Terms & Conditions of DSC Mates
+BAPP_TITLE,도지사운드클럽,DogeSoundClub
+CONFIRM_BUTTON,확인,CONFIRM
+HOME_TITLE,NFT 수집가들의 사교 모임,Social gathering of NFT collectors
+ACTIVITIES_TITLE,Activities,Activities
+MATES_TITLE,메이트,MATE
+GALLARY_TITLE,Gallary,Gallery
+BUY_MATES_TITLE,메이트 구매하기,Buy MATE
+MY_MATES_TITLE,내 메이트,My MATE
+DOGESOUNDS_TITLE,도지사운드,DOGESOUND
+MATE_DETAIL_TITLE,메이트 #{id},MATE
+TERMS_TITLE,Terms & Conditions of DSC Mates,Terms & Conditions of DSC Mates
 CONNECT_WALLET_POPUP_DESCRIPTION,도지사운드클럽은 클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다.
 CONNECT_KAIKAS_BUTTON,카이카스 설치
 CONNECT_KLIP_BUTTON,카카오톡 클립으로 연결
@@ -69,3 +69,59 @@ MATES_SECTION_3,"컨트랙트를 통해 누구나 10,000개의 토큰을 만들�
 ACTIVITIES_SECTION_1,DSC는 DSC 정체성에 적합한 클럽 활동들을 제공합니다. 발행한 NFT를 활용한 기존에 없는 신선한 시도들을 하고 있습니다. 현재 도지사운드 경연이 제공되고 있습니다.
 ACTIVITIES_SECTION_2_TITLE,DOGESOUND COMPETITION (Only mate holders can join)
 ACTIVITIES_SECTION_2,Dogesound competiion은 클레이튼 체인 위에서 작동되는 개소리 경연입니다. 20개 이상의 메이트를 사용하면 개소리 후보를 제출할 수 있습니다. 최다 득표를 받은 도지사운드는 웹페이지 메인에 자동으로 게시됩니다. 사용한 메이트는 다음 회에 다시 사용할 수 있습니다. 도지사운드 후보 제출 또는 투표는 메이트 소유권에 일체 영향을 주지 않습니다. (개소리 예시 : 비트코인은 인류 최대의 뻘짓입니다. 또는 DSC가 좋아할만한 아무 문구)
+GALLARY_ID_INPUT,ID로 검색
+GALLARY_RESET_FILTER_BUTTON,필터 초기화
+MY_MATES_WALLET_ADDRESS,지갑 주소
+MATE_DETAIL_OPENSEA_BUTTON,오픈씨에서 확인하기
+MATE_DETAIL_MESSAGES_TITLE,{name}에게 남겨진 메시지들
+MATE_DETAIL_NAME_FORM_TITLE,메이트 이름 짓기
+MATE_DETAIL_NAME_FORM_DESCRIPTION,"메이트에게 이름을 지어주세요. 아직 메이트의 이름이 없다면, 가스비만을 지불하여 이름을 지어줄 수 있습니다. 하지만 변경을 하려면, 100 믹스를 지불해야 합니다. 또한 메이트의 이름은 결코 삭제할 수 없습니다. 다른 메이트와 똑같은 이름을 사용할 수 없습니다. 그리고 메이트 이름은 갤러리에 표시됩니다."
+MATE_DETAIL_NAME_FORM_INPUT_1,메이트의 이름을
+MATE_DETAIL_NAME_FORM_INPUT_2,로 짓겠습니다.
+MATE_DETAIL_NAME_FORM_TERMS,"나는 메이트 이름을 변경하려면, 100 믹스를 지불해야 하고, 메이트의 이름은 결코 삭제할 수 없다는 사실을 잘 이해하고 있으며 동의합니다. 나는 제출된 이름과 같이 제출된 정보(제출 당시 메이트 소유주의 지갑 주소 등) 공개에 따른 모든 책임을 온전히 홀로 지는 것에 동의합니다. 나는 클레이튼 블록체인에 접속하기 위해 내가 선택한 이 도구와 관련하여 어떤 책임도 타인에게 물을 수 없다는 것에 대해 동의합니다."
+MATE_DETAIL_NAME_FORM_SUBMIT,제출하기
+MATE_DETAIL_MESSAGE_FORM_TITLE,지울 수 없는 메시지,MATE_DETAIL_MESSAGE_FORM_TITLE
+
+MATE_DETAIL_MESSAGE_FORM_DESCRIPTION,"당신이 보유한 메이트에게 메시지를 남길 수 있습니다. 하루에 한 번 짧은 일기 또는 메모를 남길 수 있습니다. 조심하세요! 한번 제출된 일기는 클레이튼 블록체인에 기록되며, 개발팀도 지울 수 없습니다. 당신의 흑역사를 대대손손 남기지 않으려면 정신을 바짝 차려야 할 것입니다. 일기는 타인이 열람할 수 있습니다."
+MATE_DETAIL_MESSAGE_FORM_INPUT_1,다음 메시지를
+MATE_DETAIL_MESSAGE_FORM_INPUT_2,메이트에게 남깁니다.
+MATE_DETAIL_MESSAGE_FORM_TERMS,"나는 제출된 일기가 변경 또는 삭제가 불가능하다는 블록체인의 속성을 잘 이해하고 있습니다. 나는 제출된 메시지와 같이 제출된 정보(제출 당시 메이트 이름, 제출 당시 메이트 소유주의 지갑 주소) 공개에 따른 모든 책임을 온전히 홀로 지는 것에 동의합니다. 나는 클레이튼 블록체인에 접속하기 위해 내가 선택한 이 도구와 관련하여 어떤 책임도 타인에게 물을 수 없다는 것에 대해 동의합니다."
+MATE_DETAIL_MESSAGE_FORM_SUBMIT,제출하기
+MATE_DETAIL_ON_CHAIN_TITLE,FULLY ON-CHAIN
+MATE_DETAIL_ON_CHAIN_SUBTITLE,nft 이미지의 완전한 온체인 저장에 성공하다. ㅡ 국내 최초
+MATE_DETAIL_ON_CHAIN_DESCRIPTION,"메이트 V1을 만들 때, 메이트를 발행한 컨트랙트에 메이트 이미지의 암호화 해시를 저장함으로써, 메이트의 원본 컨트랙트가 무엇인지 명확히 구분할 수 있었습니다. 하지만 이미지 데이터가 모두 소실된 최악의 경우, 체인에 저장된 해시만으로는 이미지를 복구할 수 없습니다. 다시 말해 이미지 데이터가 완전히 체인에 저장되지 않았었고, 이는 메이트의 장기적인 생존에 문제가 될 수 있습니다. 하지만 컨트랙트에 해시가 아닌 이미지 자체와 메이트 특성 정보를 완전히 온체인에 저장하면 메이트의 장기적 생존을 더욱 공고히 하고 클레이튼 클라이언트만 있으면 누구나 완전히 액세스할 수 있습니다. 오늘(21년 8월 21일) 우리는 그 일을 완료했으며, 이제 메이트가 완전히 온체인 상태임을 발표하게 되어 기쁩니다 ! 심영재 개발자님 감사드립니다 !"
+MATE_DETAIL_ON_CHAIN_DEMO_TITLE,데모
+MATE_DETAIL_ON_CHAIN_DEMO_DESCRIPTION,아래 불러온 이미지와 특성은 클레이튼 체인에 기록된 것입니다.
+DOGESOUNDS_RULE_TITLE,도지사운드 경연 규칙,DOGESOUNDS_RULE_TITLE
+
+DOGESOUNDS_RULE_1,"20개 이상의 메이트를 사용하면 개소리 후보를 제출할 수 있습니다.(경연 상태가 후보 접수 중일 경우. 도지사운드 후보 예시 : 비트코인은 인류 최대의 뻘짓입니다. , DSC는 쓰레기를 수집합니다.) 최다 득표를 받은 도지사운드는 웹페이지 메인에 자동으로 게시됩니다. 후보 제출 또는 투표에 사용한 메이트는 해당 투표에서 다시 사용할 수 없습니다."
+DOGESOUNDS_RULE_WARNING,도지사운드 후보 제출 또는 투표 활동은 메이트 소유권에 일체 영향을 주지 않습니다.
+DOGESOUNDS_RULE_2,"경연은 365일 항시 가동됩니다. 경연은 총 3가지 단계(후보 접수 중, 투표 중, 휴식)로 구성되며, 일정한 시간 간격으로 상태가 전환되며 진행됩니다. 후보 접수는 1일(약 86,400 블록), 투표는 1일(약 86,400 블록), 휴식은 12일(약 1,036,800 블록)으로 2주를 주기로 한 사이클을 돌게 됩니다."
+DOGESOUNDS_WINNERS_TITLE,도지사운드 역대 우승작,DOGESOUNDS_WINNERS_TITLE
+
+DOGESOUNDS_STATUS_TITLE,도지사운드 경연 현황판
+DOGESOUNDS_HOLIDAY_PERIOD,쉬는 중
+DOGESOUNDS_REGISTER_CANDIDATE_PERIOD,도지사운드 후보 접수 중
+DOGESOUNDS_VOTE_PERIOD,투표 중
+DOGESOUNDS_HOLIDAY_DESCRIPTION,제 {round}회 경연 투표가 종료되었습니다.
+DOGESOUNDS_HOLIDAY_DESCRIPTION_2,- 채택된 도지사운드는 웹사이트 메인에 게시되었습니다.
+DOGESOUNDS_REGISTER_CANDIDATE_DESCRIPTION,제 {round}회 경연 후보를 접수 중입니다.
+DOGESOUNDS_VOTE_DESCRIPTION,제 {round}회 경연 투표가 진행 중 입니다.
+DOGESOUNDS_TIMER,다음 단계까지 {block} 블록 남음.
+DOGESOUNDS_VOTE_COUNT,득표 수
+DOGESOUNDS_CANDIDATES_TITLE,진행중인 투표 도지사운드 후보들
+DOGESOUNDS_WALLET_ADDRESS,지갑 주소
+DOGESOUNDS_OWNED_MATES_COUNT,보유 중인 메이트 수 : {count}개
+DOGESOUNDS_REGISTABLE_MATES_COUNT,사용할 수 있는 메이트 수 : {count}개 (>= {candidateCount}개일 경우 사용 가능)
+DOGESOUNDS_VOTABLE_MATES_COUNT,활용 가능 메이트 수 : {count}개
+DOGESOUNDS_VOTE_WARNING,* 안심하세요! 투표 참여는 당신의 소유권에 전혀 영향을 주지 않습니다.
+DOGESOUNDS_CANDIDATE_INPUT,도지사운드 후보 입력
+DOGESOUNDS_SELECTED_MATES_COUNT,선택된 메이트 개수 : {count}개
+DOGESOUNDS_MAX_SELECT_BUTTON,최대로 선택하기 (한번에 최대 50개까지 선택 가능)
+DOGESOUNDS_DESELECT_BUTTON,전체 선택 해제
+DOGESOUNDS_REGISTER_SUBMIT,제출하기
+DOGESOUNDS_VOTE_SUBMIT,투표하기
+TERMS_SECTION_1_TITLE,이용약관
+TERMS_SECTION_1,"DSC MATES은 클레이튼 네트워크에서 실행되는 디지털 아트워크(NFT) 모음입니다. 이 웹사이트는 참가자들이 디지털 수집품을 교환/이용할 수 있는 인터페이스일 뿐입니다. 사용자는 자신의 개인 클레이튼 지갑의 안전과 관리에 대해 전적으로 책임이 있으며 승인 전에 이 웹사이트에서 생성된 모든 거래 및 계약을 검증합니다. 또한 DSC MATES 스마트 계약은 클레이튼 네트워크에서 실행되기 때문에 트랜잭션을 취소 또는 복원할 수 없습니다.\n\n이 웹사이트 및 연결된 서비스는 어떠한 종류의 보증 없이 ""있는 그대로"" 및 ""사용 가능한 상태로"" 제공됩니다. 이 웹사이트를 사용함으로써 귀하는 dsc mates 디지털 수집품과 관련된 모든 거래에 대해 단독 책임을 지게 됩니다."
+TERMS_SECTION_2_TITLE,소유권 및 저작권
+TERMS_SECTION_2,"첫째, (소유권) 당신은 NFT를 소유하고 있습니다. 각 DSC MATE는 클레이튼 블록체인의 NFT입니다. NFT를 구매하면 기본 DSC MATE, Art를 완전히 소유하게 됩니다. NFT의 소유권은 전적으로 스마트 계약과 클레이튼 네트워크에 의해 중재됩니다. 어떤 시점에서도 DSC MATE의 소유권을 압류, 동결 또는 수정할 수 없습니다.\n\n둘째, (저작권) DOGESOUND MATES는 MIT 라이센스로 배포되었습니다. 따라서, DSLAB 이 외의 제 3자가 MATES 아트를 개인 또는 상업적으로 활용할 수 있습니다."

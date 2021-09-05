@@ -10,6 +10,7 @@ export default class MateDetail implements View {
     constructor(params: ViewParams) {
         Layout.current.title = msg("MATE_DETAIL_TITLE").replace(/{id}/, params.id);
         Layout.current.content.append(this.container = el(".matedetail-view",
+            el("h1", msg("MATE_DETAIL_TITLE").replace(/{id}/, params.id)),
         ));
     }
 

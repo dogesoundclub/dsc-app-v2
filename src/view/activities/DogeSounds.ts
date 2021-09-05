@@ -10,6 +10,7 @@ export default class DogeSounds implements View {
     constructor() {
         Layout.current.title = msg("DOGESOUNDS_TITLE");
         Layout.current.content.append(this.container = el(".dogesounds-view",
+            el("h1", msg("DOGESOUNDS_TITLE")),
         ));
     }
 

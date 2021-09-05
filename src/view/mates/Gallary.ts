@@ -10,6 +10,7 @@ export default class Gallary implements View {
     constructor() {
         Layout.current.title = msg("GALLARY_TITLE");
         Layout.current.content.append(this.container = el(".gallary-view",
+            el("h1", msg("GALLARY_TITLE")),
         ));
     }
 
