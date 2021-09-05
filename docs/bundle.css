@@ -230,4 +230,59 @@ body {
 .connect-wallet-popup > .cancel-button {
   border: 1px solid #ffffff;
 }
+.mobile-menu {
+  position: fixed;
+  width: 170px;
+  background-color: #000000;
+  border: 1px solid #A1A1A1;
+}
+.mobile-menu > ul {
+  padding: 10px;
+}
+.mobile-menu > ul > li > a {
+  display: block;
+  padding: 5px;
+  color: #06BC00;
+  font-size: 18px;
+}
+.mobile-menu > ul > li > ul {
+  margin-left: 10px;
+}
+.mobile-menu > ul > li > ul > li > a {
+  display: block;
+  padding: 5px;
+  color: #BFC500;
+}
+.mobile-menu > .language-select {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #A1A1A1;
+}
+.language-select {
+  color: #BFC500;
+  font-family: DungGeunMo;
+}
+.language-select > select {
+  color: #BFC500;
+  font-family: DungGeunMo;
+  background-color: #000000;
+  border: none;
+}
+.layout > header > .menu-button {
+  display: none;
+  position: fixed;
+  right: 10px;
+  top: 12px;
+  z-index: 2;
+  padding: 10px;
+}
+.layout > header > .menu-button img {
+  display: block;
+}
+@media only screen and (max-width: 719px) {
+  .layout > header > .menu-button {
+    display: block;
+  }
+}
 

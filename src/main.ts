@@ -33,6 +33,6 @@ import MyMates from "./view/mates/MyMates";
         sessionStorage.removeItem("__spa_path");
     }
 
-    new ConnectWalletPopup();
+    //new ConnectWalletPopup();
 
 })();

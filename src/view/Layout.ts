@@ -1,5 +1,6 @@
 import { BodyNode, DomNode, el } from "@hanul/skynode";
 import { View, ViewParams } from "skyrouter";
+import MobileMenu from "../ui/menu/MobileMenu";
 
 export default class Layout implements View {
 
@@ -10,6 +11,18 @@ export default class Layout implements View {
     constructor() {
         Layout.current = this;
         BodyNode.append(this.container = el(".layout",
+            el("header",
+                el("a.menu-button", el("img", {
+                    src: "/images/ui/menu-button.png",
+                    srcset: "/images/ui/menu-button@2x.png 2x",
+                }), {
+                    click: (event, button) => {
+                        const rect = button.rect;
+                        new MobileMenu({ left: rect.right - 180, top: rect.bottom }).appendTo(BodyNode);
+                    },
+                }),
+                //new PCMenu(),
+            ),
             el("main",
                 this.content = el(".content"),
             ),
