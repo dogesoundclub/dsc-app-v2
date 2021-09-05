@@ -589,12 +589,12 @@ a {
 }
 .mates-view {
   max-width: 750px;
-  padding: 135px 15px;
+  padding: 135px 20px;
   margin: auto;
 }
 @media only screen and (max-width: 719px) {
   .mates-view {
-    padding: 90px 15px;
+    padding: 90px 20px;
   }
 }
 .mates-view > h1 {
@@ -604,6 +604,7 @@ a {
   text-shadow: 3px 3px 3px #656565;
   margin-bottom: 30px;
   text-align: center;
+  text-transform: uppercase;
 }
 .mates-view > section {
   margin-top: 60px;
@@ -611,7 +612,7 @@ a {
 .mates-view > section > h2 {
   font-size: 26px;
   color: #BFC500;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   line-height: 1.5em;
 }
 @media only screen and (max-width: 719px) {
@@ -636,12 +637,12 @@ a {
 }
 .buymates-view {
   max-width: 750px;
-  padding: 135px 15px;
+  padding: 135px 20px;
   margin: auto;
 }
 @media only screen and (max-width: 719px) {
   .buymates-view {
-    padding: 90px 15px;
+    padding: 90px 20px;
   }
 }
 .buymates-view > h1 {
@@ -651,6 +652,7 @@ a {
   text-shadow: 3px 3px 3px #656565;
   margin-bottom: 30px;
   text-align: center;
+  text-transform: uppercase;
 }
 .buymates-view > .opensea-logo {
   display: block;
@@ -685,5 +687,46 @@ a {
   padding: 12px 0;
   font-family: DungGeunMo;
   font-weight: bold;
+}
+.activities-view {
+  max-width: 750px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .activities-view {
+    padding: 90px 20px;
+  }
+}
+.activities-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.activities-view > section {
+  margin-top: 60px;
+}
+.activities-view > section > h2 {
+  font-size: 26px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 719px) {
+  .activities-view > section > h2 {
+    font-size: 20px;
+  }
+}
+.activities-view > section a {
+  color: #BFC500;
+  word-break: break-all;
+}
+.activities-view > section p {
+  word-break: break-all;
+  line-height: 2em;
 }
 
