@@ -86,25 +86,7 @@ export default class Gallary implements View {
             }
         }
 
-        let index = 0;
-        const mateData: number[][] = [];
-        SkyUtil.repeat(window.innerWidth < 800 ? Math.ceil(mates.length / 5) : Math.ceil(mates.length / 8), () => {
-            const ids: number[] = [];
-            SkyUtil.repeat(window.innerWidth < 800 ? 5 : 8, () => {
-                ids.push(mates[index]);
-                index += 1;
-                if (index === mates.length) {
-                    return false;
-                }
-            });
-            mateData.push(ids);
-            if (index === mates.length) {
-                return false;
-            }
-        });
-
-        this.mateList.init(mateData);
-        this.mateList.calculateSize();
+        this.mateList.draw(mates);
     }
 
     private windowResizeHandler = () => {

@@ -623,7 +623,7 @@ a {
   color: #BFC500;
 }
 .mates-view {
-  max-width: 750px;
+  max-width: 780px;
   padding: 135px 20px;
   margin: auto;
 }
@@ -731,7 +731,7 @@ a {
   }
 }
 .buymates-view {
-  max-width: 750px;
+  max-width: 780px;
   padding: 135px 20px;
   margin: auto;
 }
@@ -784,7 +784,7 @@ a {
   font-weight: bold;
 }
 .mymates-view {
-  max-width: 750px;
+  max-width: 780px;
   padding: 135px 20px;
   margin: auto;
 }
@@ -802,8 +802,11 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
+.mymates-view > .wallet a {
+  color: #BFC500;
+}
 .activities-view {
-  max-width: 750px;
+  max-width: 780px;
   padding: 135px 20px;
   margin: auto;
 }
@@ -844,7 +847,7 @@ a {
   line-height: 2em;
 }
 .dogesounds-view {
-  max-width: 750px;
+  max-width: 780px;
   padding: 135px 20px;
   margin: auto;
 }
@@ -863,7 +866,7 @@ a {
   text-transform: uppercase;
 }
 .terms-view {
-  max-width: 750px;
+  max-width: 780px;
   padding: 135px 20px;
   margin: auto;
 }
