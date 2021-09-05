@@ -1,0 +1,247 @@
+.home-view {
+    >.logo {
+        position: fixed;
+        left    : 30px;
+        top     : 0;
+        z-index : 1;
+
+        @media @phone {
+            left : 0px;
+            width: 120px;
+        }
+    }
+
+    >header {
+        height             : 1100px;
+        background-image   : url(/images/club.png);
+        background-repeat  : no-repeat;
+        background-position: center top;
+        background-size    : contain;
+        position           : relative;
+
+        @media @phone {
+            height : auto;
+            padding: 0 30px;
+        }
+
+        >.intro {
+            padding-top: 300px;
+            font-family: DungGeunMo;
+            color      : #BFC500;
+            text-shadow: 3px 3px 3px #656565;
+            text-align : center;
+            font-size  : 36px;
+            line-height: 1.5em;
+
+            @media @phone {
+                padding-top: 200px;
+                font-size  : 22px;
+                text-align : left;
+            }
+        }
+
+        >.description {
+            margin-top : 9px;
+            font-size  : 22px;
+            font-family: DungGeunMo;
+            text-align : center;
+            line-height: 2em;
+
+            @media @phone {
+                font-size : 16px;
+                text-align: left;
+            }
+        }
+
+        >.winner {
+            max-width   : 850px;
+            margin      : auto;
+            margin-top  : 300px;
+            border      : 8px solid;
+            border-image: url("/images/view/home/winner.png") 8 fill / 8px round;
+            color       : #000000;
+            font-family : DungGeunMo;
+            text-align  : center;
+            font-size   : 20px;
+            padding     : 20px;
+
+            >a {
+                color          : #BFC500;
+                text-decoration: underline;
+            }
+
+            @media @phone {
+                margin-top: 40px;
+                padding   : 14px;
+                font-size : 14px;
+            }
+        }
+
+        >.dogesound {
+            position  : relative;
+            max-width : 850px;
+            margin    : auto;
+            margin-top: 15px;
+
+            @media @phone {
+                margin-top: 80px;
+            }
+
+            >.talker {
+                position: absolute;
+                left    : 0;
+                top     : 0;
+                width   : 150px;
+
+                @media @phone {
+                    left : 40px;
+                    top  : -65px;
+                    width: 75px;
+                }
+            }
+
+            >.text {
+                margin-left     : 170px;
+                height          : 150px;
+                padding         : 15px;
+                font-size       : 22px;
+                line-height     : 1.5em;
+                font-family     : DungGeunMo;
+                border          : 3px solid #4B6F67;
+                box-shadow      : 12px 12px 7.5px 0px rgba(75, 111, 103, 50);
+                background-color: #000000;
+
+                @media @phone {
+                    margin-left: 0;
+                    font-size  : 16px;
+                }
+            }
+
+            >.warning {
+                width      : 88%;
+                margin     : auto;
+                padding-top: 30px;
+                font-family: DungGeunMo;
+                color      : #BFC500;
+                font-size  : 15px;
+
+                @media @phone {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    >section {
+        width  : 750px;
+        margin : auto;
+        padding: 70px 0;
+
+        @media @phone {
+            width  : auto;
+            padding: 40px 20px;
+        }
+
+        >.mates,
+        >.team {
+            text-align   : center;
+            margin-bottom: 30px;
+
+            >img {
+                width: 100px;
+
+                @media @phone {
+                    width: 50px;
+                }
+            }
+        }
+
+        >.video {
+            margin-top: 75px;
+            width     : 100%;
+        }
+
+        >.roadmap {
+            width     : 90%;
+            margin    : auto;
+            margin-top: 75px;
+
+            @media @phone {
+                width: auto;
+            }
+
+            >h3 {
+                color      : #00DCFF;
+                text-shadow: 3px 3px 3px #656565;
+                font-size  : 30px;
+                font-family: DungGeunMo;
+            }
+
+            >p {
+                background-color: #121013;
+                height          : 90px;
+                padding         : 15px;
+
+                @media @phone {
+                    height: 140px;
+                }
+            }
+
+            &:nth-child(odd) {
+                >h3 {
+                    text-align: right;
+                }
+            }
+
+            &.percent30 {
+                >p {
+                    border    : 3px solid #4B6F67;
+                    box-shadow: 10px 10px 7.5px 0px rgba(75, 111, 103, 50);
+                }
+            }
+
+            &.percent50 {
+                >p {
+                    border    : 3px solid #756946;
+                    box-shadow: 10px 10px 7.5px 0px rgba(117, 105, 70, 50);
+                }
+            }
+
+            &.percent70 {
+                >p {
+                    border    : 3px solid #4F5258;
+                    box-shadow: 10px 10px 7.5px 0px rgba(79, 82, 88, 50);
+                }
+            }
+
+            &.percent100 {
+                >p {
+                    border    : 3px solid #707070;
+                    box-shadow: 10px 10px 7.5px 0px rgba(0, 220, 255, 50);
+                }
+            }
+        }
+
+        >h2 {
+            font-size    : 30px;
+            font-family  : DungGeunMo;
+            color        : #FF00F6;
+            text-shadow  : 3px 3px 3px #656565;
+            margin-bottom: 36px;
+            text-align   : center;
+
+            @media @phone {
+                font-size: 24px;
+            }
+        }
+
+        p {
+            word-break : break-all;
+            line-height: 2em;
+
+            a {
+                color: #BFC500;
+            }
+        }
+    }
+}

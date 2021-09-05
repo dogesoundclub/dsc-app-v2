@@ -12,6 +12,7 @@ import BuyMates from "./view/mates/BuyMates";
 import Gallary from "./view/mates/Gallary";
 import MateDetail from "./view/mates/MateDetail";
 import MyMates from "./view/mates/MyMates";
+import Terms from "./view/Terms";
 
 (async () => {
 
@@ -27,6 +28,7 @@ import MyMates from "./view/mates/MyMates";
     SkyRouter.route("mates/buy", BuyMates);
     SkyRouter.route("mates/mymates", MyMates);
     SkyRouter.route("mates/{id}", MateDetail, ["mates/gallary", "mates/buy", "mates/mymates"]);
+    SkyRouter.route("terms", Terms);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);

@@ -1,5 +1,5 @@
 import { BodyNode, DomNode, el } from "@hanul/skynode";
-import { View, ViewParams } from "skyrouter";
+import { SkyRouter, View, ViewParams } from "skyrouter";
 import MobileMenu from "../ui/menu/MobileMenu";
 import PCMenu from "../ui/menu/PCMenu";
 
@@ -26,6 +26,10 @@ export default class Layout implements View {
             ),
             el("main",
                 this.content = el(".content"),
+            ),
+            el("footer",
+                el("span", "© 2021 DSLAB"),
+                el("a", "TERMS & CONDITIONS", { click: () => SkyRouter.go("/terms") }),
             ),
         ));
     }
