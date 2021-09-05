@@ -1,0 +1,53 @@
+.mates-view {
+    max-width: 750px;
+    padding  : 135px 15px;
+    margin   : auto;
+
+    @media @phone {
+        padding: 90px 15px;
+    }
+
+    >h1 {
+        font-size    : 30px;
+        font-family  : DungGeunMo;
+        color        : #FF00F6;
+        text-shadow  : 3px 3px 3px #656565;
+        margin-bottom: 30px;
+        text-align   : center;
+    }
+
+    >section {
+        margin-top: 60px;
+
+        >h2 {
+            font-size    : 26px;
+            color        : #BFC500;
+            margin-bottom: 30px;
+            line-height  : 1.5em;
+
+            @media @phone {
+                font-size: 20px;
+            }
+        }
+
+        a {
+            color     : #BFC500;
+            word-break: break-all;
+        }
+
+        p {
+            word-break : break-all;
+            line-height: 2em;
+        }
+
+        >.all {
+            >img {
+                display      : block;
+                width        : 100%;
+                max-width    : 600px;
+                margin       : auto;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
