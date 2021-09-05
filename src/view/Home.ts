@@ -55,7 +55,6 @@ export default class Home implements View {
                     "\n",
                     msg("HOME_SECTION_2_2"), "\n",
                     el("a", `▶ ${msg("HOME_SECTION_2_LINK_3")}`, { href: "https://opensea.io/collection/dogesoundclub-mates" }), "\n",
-                    msg("HOME_SECTION_2_3"),
                 ),
             ),
             el("section",
