@@ -40,8 +40,18 @@ export default class Home implements View {
                 el("h2", msg("HOME_SECTION_2_TITLE")),
                 el("p",
                     msg("HOME_SECTION_2_1"), "\n",
-                    el("a", `▶ ${msg("HOME_SECTION_2_LINK_1")}`, { click: () => SkyRouter.go("/mates") }), "\n",
-                    el("a", `▶ ${msg("HOME_SECTION_2_LINK_2")}`, { click: () => SkyRouter.go("/activities") }), "\n",
+                    el("a", `▶ ${msg("HOME_SECTION_2_LINK_1")}`, {
+                        click: () => {
+                            SkyRouter.go("/mates");
+                            window.scrollTo(0, 0);
+                        },
+                    }), "\n",
+                    el("a", `▶ ${msg("HOME_SECTION_2_LINK_2")}`, {
+                        click: () => {
+                            SkyRouter.go("/activities");
+                            window.scrollTo(0, 0);
+                        },
+                    }), "\n",
                     "\n",
                     msg("HOME_SECTION_2_2"), "\n",
                     el("a", `▶ ${msg("HOME_SECTION_2_LINK_3")}`, { href: "https://opensea.io/collection/dogesoundclub-mates" }), "\n",
@@ -64,7 +74,12 @@ export default class Home implements View {
                     el("h3", "30 %"),
                     el("p",
                         msg("HOME_ROADMAP_30"), "\n",
-                        el("a", `▶ ${msg("HOME_ROADMAP_DOGESOUND_LINK")}`, { click: () => SkyRouter.go("/activities") }),
+                        el("a", `▶ ${msg("HOME_ROADMAP_DOGESOUND_LINK")}`, {
+                            click: () => {
+                                SkyRouter.go("/activities");
+                                window.scrollTo(0, 0);
+                            },
+                        }),
                     ),
                 ),
                 el(".roadmap.percent50",

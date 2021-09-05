@@ -18,7 +18,10 @@ class MenuTreeBuilder {
                 el(`a${location.pathname === `/${menuItem.uri}` ? ".on" : ""}`,
                     msg(menuItem.name),
                     {
-                        click: () => SkyRouter.go(`/${menuItem.uri}`),
+                        click: () => {
+                            SkyRouter.go(`/${menuItem.uri}`);
+                            window.scrollTo(0, 0);
+                        },
                     },
                 ),
             );

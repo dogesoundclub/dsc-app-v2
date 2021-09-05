@@ -1,1 +1,1 @@
-{"version":3,"file":"OwnedMateList.d.ts","sourceRoot":"","sources":["../../../src/component/mate/OwnedMateList.ts"],"names":[],"mappings":""}
+{"version":3,"file":"OwnedMateList.d.ts","sourceRoot":"","sources":["../../../src/component/mate/OwnedMateList.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,gBAAgB,CAAC;AACnD,OAAO,QAAQ,MAAM,YAAY,CAAC;AAGlC,MAAM,CAAC,OAAO,OAAO,QAAS,SAAQ,iBAAiB,CAAC,QAAQ,EAAE,CAAC;;CASlE"}

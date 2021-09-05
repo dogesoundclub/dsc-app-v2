@@ -1,0 +1,39 @@
+.mate-list {
+    >.mate-line {
+        display        : flex;
+        justify-content: center;
+
+        >.mate-item {
+            position         : relative;
+            width            : 90px;
+            height           : 90px;
+            background-size  : contain;
+            background-repeat: no-repeat;
+            font-size        : 20px;
+            line-height      : 1em;
+
+            >.id {
+                position   : absolute;
+                left       : 3px;
+                bottom     : 0;
+                font-family: DungGeunMo;
+            }
+
+            >.name {
+                position   : absolute;
+                top        : 0;
+                width      : 100%;
+                text-align : center;
+                font-family: DungGeunMo;
+                color      : #FF00F6;
+                text-shadow: 3px 3px 3px #656565;
+            }
+
+            @media only screen and (max-width: 799px) {
+                width    : 64px;
+                height   : 64px;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -29,7 +29,12 @@ export default class Layout implements View {
             ),
             el("footer",
                 el("span", "© 2021 DSLAB"),
-                el("a", "TERMS & CONDITIONS", { click: () => SkyRouter.go("/terms") }),
+                el("a", "TERMS & CONDITIONS", {
+                    click: () => {
+                        SkyRouter.go("/terms");
+                        window.scrollTo(0, 0);
+                    },
+                }),
             ),
         ));
     }

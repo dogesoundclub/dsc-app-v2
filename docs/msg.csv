@@ -10,32 +10,33 @@ MY_MATES_TITLE,내 메이트,My MATE
 DOGESOUNDS_TITLE,도지사운드,DOGESOUND
 MATE_DETAIL_TITLE,메이트 #{id},MATE
 TERMS_TITLE,Terms & Conditions of DSC Mates,Terms & Conditions of DSC Mates
-CONNECT_WALLET_POPUP_DESCRIPTION,도지사운드클럽은 클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다.
-CONNECT_KAIKAS_BUTTON,카이카스 설치
-CONNECT_KLIP_BUTTON,카카오톡 클립으로 연결
-CONNECT_KLIP_NEEDS_MOBILE,클립은 모바일 환경에서 실행이 가능합니다. PC에서는 카이카스를 설치해주시기 바랍니다.
-CANCEL_CONNECT_BUTTON,연결하지 않고 둘러보기
-MENU_HOME,Home
-MENU_ACTIVITIES,Activities
-MENU_DOGESOUNDS,Doge Sounds
-MENU_MATES,Mates
-MENU_GALLARY,Gallary
-MENU_BUY_MATES,메이트 구매
-MENU_MY_MATES,내 메이트
-HOME_INTRO,도지사운드클럽에 오신 것을 환영합니다!
-HOME_DESCRIPTION,도지사운드클럽은 NFT를 이용한 거버넌스로 운영되는 NFT 수집가들의 사교 모임입니다.\nMATES를 이용해서 클럽에 가입하고 투표할 수 있습니다.
-HOME_WINNER_TITLE,경) 제 {round}회 개소리 우승자 (축 :
-HOME_WINNER_DESCRIPTION,제 {round} 회 최고의 도지사운드를 발표합니다.
-HOME_WINNER_WARNING,* 주의 : 위는 탈중앙화된 방식으로 DSC 홀더들에게 최다 득표를 받은 문구가 자동으로 표시된 것입니다. DSC 개발팀의 뜻과 무관할 수 있습니다.
-HOME_WINNER_ERROR,클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다.
-HOME_SECTION_1_TITLE,도지사운드클럽 특징
-HOME_SECTION_1,- 우리는 개소리에 진심인 자들입니다. : 2주마다 스마트 컨트랙트를 이용해 최고의 도지사운드(개소리)를 선정합니다.\n\n- 우리는 암호화폐를 좋아합니다 : 특히 새로운 도전들에 대한 이야기를 좋아합니다.\n\n- 우리는 음악를 좋아합니다 : 음악은 개소리와 함께 자본에 대한 집착을 환기하는 수단이 됩니다. dsc 개발팀은 DJ SET과 로우파이 비디오를 업로드합니다.
+CONNECT_WALLET_POPUP_DESCRIPTION,도지사운드클럽은 클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다.,Doge Sound Club requires a connection with the Klaytn blockchain. Please connect via Kaikas or KakaoTalk clip.
+CONNECT_KAIKAS_BUTTON,카이카스 설치,Install KaiKas
+CONNECT_KLIP_BUTTON,카카오톡 클립으로 연결,Connect to KakaoTalk Klip (Wallet Name)
+CONNECT_KLIP_NEEDS_MOBILE,클립은 모바일 환경에서 실행이 가능합니다. PC에서는 카이카스를 설치해주시기 바랍니다.,Klips can be run in a mobile environment. Please install Kaikas on your PC.
+CANCEL_CONNECT_BUTTON,연결하지 않고 둘러보기,Browse without connecting
+MENU_HOME,Home,Home
+MENU_ACTIVITIES,Activities,Activities
+MENU_DOGESOUNDS,Doge Sounds,Doge Sounds
+MENU_MATES,Mates,Mates
+MENU_GALLARY,Gallary,Gallary
+MENU_BUY_MATES,메이트 구매,Buy MATE
+MENU_MY_MATES,내 메이트,My MATE
+HOME_INTRO,도지사운드클럽에 오신 것을 환영합니다!,Welcome to Doge Sound Club!
+HOME_DESCRIPTION,도지사운드클럽은 NFT를 이용한 거버넌스로 운영되는 NFT 수집가들의 사교 모임입니다.\nMATES를 이용해서 클럽에 가입하고 투표할 수 있습니다.,Doge Sound Club is a social gathering of NFT collectors operated by NFT governance.\nYou can use MATES to join the club and vote.
+HOME_WINNER_TITLE,경) 제 {round}회 개소리 우승자 (축 :,{round}th Doge Sound Winner :
+HOME_WINNER_DESCRIPTION,제 {round} 회 최고의 도지사운드를 발표합니다.,Announcing the {round}th best Doge Sound.
+HOME_WINNER_WARNING,* 주의 : 위는 탈중앙화된 방식으로 DSC 홀더들에게 최다 득표를 받은 문구가 자동으로 표시된 것입니다. DSC 개발팀의 뜻과 무관할 수 있습니다.,"* Note: The text that received the most votes from DSC holders is automatically displayed. The voting is in a decentralized way. Thus, It may be irrelevant to the will of the DSC development team."
+HOME_WINNER_ERROR,클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다.,A connection with the Klaytn blockchain is required. Please connect via Kaikas or KakaoTalk clip.
+HOME_SECTION_1_TITLE,도지사운드클럽 특징,Doge Sound Club Features
+HOME_SECTION_1,- 우리는 개소리에 진심인 자들입니다. : 2주마다 스마트 컨트랙트를 이용해 최고의 도지사운드(개소리)를 선정합니다.\n\n- 우리는 암호화폐를 좋아합니다 : 특히 새로운 도전들에 대한 이야기를 좋아합니다.\n\n- 우리는 음악를 좋아합니다 : 음악은 개소리와 함께 자본에 대한 집착을 환기하는 수단이 됩니다. dsc 개발팀은 DJ SET과 로우파이 비디오를 업로드합니다.,"- We are serious about Kak talk : Every two weeks, we use a smart contract to select the Kak talk.\n\n- We love cryptocurrencies: We especially like to talk about new challenges.\n\n- We love music. Likes: Music is a means of having us refreshed from our obsession with capital along with Kak talks. DSC dev team uploads DJ SET and lofi videos."
 HOME_SECTION_2_TITLE,NFT - DOGESOUNDCLUB MATES,HOME_SECTION_2_TITLE
+,NFT - DOGESOUNDCLUB MATES
 
-HOME_SECTION_2_1,"- DSC MATES는 컴퓨터 프로그램으로 생성된 10,000개의 24*24 픽셀 아트 캐릭터입니다. NFT(암호화폐의 한 규격)로 발행되어 이들에 대한 소유권을 쉽게 거래할 수 있습니다."
-HOME_SECTION_2_LINK_1,NFT에 대한 자세한 내용보러 가기
-HOME_SECTION_2_LINK_2,이걸로 무엇을 할 수 있나요?
-HOME_SECTION_2_2,- 메이트는 오픈씨(세계 최대 NFT 거래소)에서 구입할 수 있습니다.
+HOME_SECTION_2_1,"- DSC MATES는 컴퓨터 프로그램으로 생성된 10,000개의 24*24 픽셀 아트 캐릭터입니다. NFT(암호화폐의 한 규격)로 발행되어 이들에 대한 소유권을 쉽게 거래할 수 있습니다.","- DSC MATES are 10,000 computer program generated 24*24 pixel art characters. They are issued as NFTs, making it easy to trade ownership of them."
+HOME_SECTION_2_LINK_1,NFT에 대한 자세한 내용보러 가기,Go to see more about NFT
+HOME_SECTION_2_LINK_2,이걸로 무엇을 할 수 있나요?,What can you do with this?
+HOME_SECTION_2_2,- 메이트는 오픈씨(세계 최대 NFT 거래소)에서 구입할 수 있습니다.,- Mates can be purchased at OpenC (the world's largest NFT exchange).
 HOME_SECTION_2_LINK_3,OPENSEA로 이동
 HOME_SECTION_2_3,"(클레이 토큰이 없다면, dogesoundclub@gmail.com 로 연락하세요.)"
 HOME_SECTION_3_TITLE,사명
@@ -74,6 +75,9 @@ GALLARY_RESET_FILTER_BUTTON,필터 초기화
 MY_MATES_WALLET_ADDRESS,지갑 주소
 MATE_DETAIL_OPENSEA_BUTTON,오픈씨에서 확인하기
 MATE_DETAIL_MESSAGES_TITLE,{name}에게 남겨진 메시지들
+MATE_TRANSFER_BUTTON,메이트 전송하기
+MATE_TRANSFER_CONFIRM_MESSAGE,"메이트를 전송받을 지갑 주소를 입력해주시기 바랍니다. 잘못 입력하는 경우 메이트를 되찾을 수 없으니, 반드시 지갑 주소를 여러번 확인하시기 바랍니다."
+MATE_TRANSFER_CONFIRM_BUTTON,전송하기
 MATE_DETAIL_NAME_FORM_TITLE,메이트 이름 짓기
 MATE_DETAIL_NAME_FORM_DESCRIPTION,"메이트에게 이름을 지어주세요. 아직 메이트의 이름이 없다면, 가스비만을 지불하여 이름을 지어줄 수 있습니다. 하지만 변경을 하려면, 100 믹스를 지불해야 합니다. 또한 메이트의 이름은 결코 삭제할 수 없습니다. 다른 메이트와 똑같은 이름을 사용할 수 없습니다. 그리고 메이트 이름은 갤러리에 표시됩니다."
 MATE_DETAIL_NAME_FORM_INPUT_1,메이트의 이름을

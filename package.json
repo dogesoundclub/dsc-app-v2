@@ -4,7 +4,7 @@
     "webpack-prod": "webpack --mode production --config webpack.config.prod.js"
   },
   "dependencies": {
-    "@hanul/skynode": "^0.0.10",
+    "@hanul/skynode": "^0.0.14",
     "@hanul/waiter": "^0.0.1",
     "@types/superagent": "^4.1.12",
     "@walletconnect/web3-provider": "^1.4.1",

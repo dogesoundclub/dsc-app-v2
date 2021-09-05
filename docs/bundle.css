@@ -196,6 +196,41 @@ a {
   overflow-y: scroll;
   padding: 20px 0;
 }
+.mate-list > .mate-line {
+  display: flex;
+  justify-content: center;
+}
+.mate-list > .mate-line > .mate-item {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  line-height: 1em;
+}
+.mate-list > .mate-line > .mate-item > .id {
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+  font-family: DungGeunMo;
+}
+.mate-list > .mate-line > .mate-item > .name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+}
+@media only screen and (max-width: 799px) {
+  .mate-list > .mate-line > .mate-item {
+    width: 64px;
+    height: 64px;
+    font-size: 14px;
+  }
+}
 .connect-wallet-popup {
   position: relative;
   width: 320px;
@@ -635,6 +670,66 @@ a {
   margin: auto;
   margin-bottom: 30px;
 }
+.gallary-view {
+  max-width: 1010px;
+  padding: 135px 20px;
+  margin: auto;
+}
+.gallary-view:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@media only screen and (max-width: 719px) {
+  .gallary-view {
+    padding: 90px 20px;
+  }
+}
+.gallary-view > .filter {
+  float: left;
+  width: 200px;
+  margin-bottom: 40px;
+}
+.gallary-view > .filter > h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.gallary-view > .filter > input,
+.gallary-view > .filter > select {
+  display: block;
+  width: 100%;
+  height: 36px;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  font-size: 16px;
+  font-family: BankGothic;
+}
+.gallary-view > .filter > .reset-button {
+  margin-top: 15px;
+  display: block;
+  font-size: 22px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 18px 0;
+  text-align: center;
+}
+.gallary-view > .mate-list {
+  float: right;
+}
+@media only screen and (max-width: 1023px) {
+  .gallary-view > .filter,
+  .gallary-view > .mate-list {
+    width: 100%;
+    float: none;
+  }
+}
 .buymates-view {
   max-width: 750px;
   padding: 135px 20px;
@@ -688,6 +783,25 @@ a {
   font-family: DungGeunMo;
   font-weight: bold;
 }
+.mymates-view {
+  max-width: 750px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .mymates-view {
+    padding: 90px 20px;
+  }
+}
+.mymates-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
 .activities-view {
   max-width: 750px;
   padding: 135px 20px;
@@ -728,6 +842,25 @@ a {
 .activities-view > section p {
   word-break: break-all;
   line-height: 2em;
+}
+.dogesounds-view {
+  max-width: 750px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .dogesounds-view {
+    padding: 90px 20px;
+  }
+}
+.dogesounds-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
 }
 .terms-view {
   max-width: 750px;
