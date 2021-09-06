@@ -1122,6 +1122,43 @@ a {
   color: #DF3737;
   text-decoration: underline;
 }
+.dogesounds-view > section > .period-triangle {
+  position: relative;
+  height: 500px;
+}
+.dogesounds-view > section > .period-triangle > img {
+  position: absolute;
+  left: 50%;
+  margin-left: -112.5px;
+  top: 105px;
+}
+.dogesounds-view > section > .period-triangle > span {
+  position: absolute;
+  font-family: DungGeunMo;
+  font-size: 20px;
+  width: 300px;
+  text-align: center;
+}
+.dogesounds-view > section > .period-triangle > span.holiday {
+  left: 50%;
+  margin-left: calc(-150px + 150px);
+  top: 315px;
+  transform: rotate(-60deg);
+}
+.dogesounds-view > section > .period-triangle > span.register {
+  left: 50%;
+  margin-left: calc(-150px - 150px);
+  top: 315px;
+  transform: rotate(60deg);
+}
+.dogesounds-view > section > .period-triangle > span.vote {
+  left: 50%;
+  margin-left: -150px;
+  top: 60px;
+}
+.dogesounds-view > section > .period-triangle > span.on {
+  color: #BFC500;
+}
 .terms-view {
   max-width: 780px;
   padding: 135px 20px;

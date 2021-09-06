@@ -3,14 +3,14 @@ import Config from "../Config";
 import Wallet from "../klaytn/Wallet";
 import Contract from "./Contract";
 
-class SloganContract extends Contract {
+class DogeSoundContestContractV2 extends Contract {
 
     public readonly HOLIDAY_PERIOD = 0;
     public readonly REGISTER_CANDIDATE_PERIOD = 1;
     public readonly VOTE_PERIOD = 2;
 
     constructor() {
-        super(Config.contracts.Slogan, require("./SloganContractABI.json"));
+        super(Config.contracts.DogeSoundContestV2, require("./DogeSoundContestV2ABI.json"));
     }
 
     public async getRound(): Promise<BigNumber> {
@@ -53,16 +53,20 @@ class SloganContract extends Contract {
         return BigNumber.from(await this.contract.methods.votes(round, candidate).call());
     }
 
-    public async registerCandidate(slogan: string, count: number): Promise<void> {
-        const register = await Wallet.loadAddress();
-        const contract = await this.loadWalletContract();
-        await contract?.methods.registerCandidate(slogan, count).send({ from: register, gas: 1500000 });
+    public async getMateVoted(round: number, mates: string, candidate: number): Promise<boolean> {
+        return await this.contract.methods.mateVoted(round, mates, candidate).call();
     }
 
-    public async vote(candidate: number, count: number): Promise<void> {
+    public async registerCandidate(dogeSound: string, mates: string, count: number): Promise<void> {
+        const register = await Wallet.loadAddress();
+        const contract = await this.loadWalletContract();
+        await contract?.methods.registerCandidate(dogeSound, mates, count).send({ from: register, gas: 1500000 });
+    }
+
+    public async vote(candidate: number, mates: string, count: number): Promise<void> {
         const voter = await Wallet.loadAddress();
         const contract = await this.loadWalletContract();
-        await contract?.methods.vote(candidate, count).send({ from: voter, gas: 1500000 });
+        await contract?.methods.vote(candidate, mates, count).send({ from: voter, gas: 1500000 });
     }
 
     public async getElected(round: number): Promise<BigNumber> {
@@ -70,4 +74,4 @@ class SloganContract extends Contract {
     }
 }
 
-export default new SloganContract();
+export default new DogeSoundContestContractV2();

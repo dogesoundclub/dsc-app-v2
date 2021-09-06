@@ -1,7 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter, View, ViewParams } from "skyrouter";
-import SloganContract from "../contracts/SloganContract";
+import DogeSoundContestContract from "../contracts/DogeSoundContestContract";
 import Layout from "./Layout";
 
 export default class Home implements View {
@@ -121,10 +121,10 @@ export default class Home implements View {
 
     private async loadDogeSound() {
         try {
-            const round = (await SloganContract.getRound()).toNumber() - 1;
-            const elected = (await SloganContract.getElected(round)).toNumber();
-            const dogesound = await SloganContract.getCandidate(round, elected);
-            const winner = await SloganContract.getCandidateRegister(round, elected);
+            const round = (await DogeSoundContestContract.getRound()).toNumber() - 1;
+            const elected = (await DogeSoundContestContract.getElected(round)).toNumber();
+            const dogesound = await DogeSoundContestContract.getCandidate(round, elected);
+            const winner = await DogeSoundContestContract.getCandidateRegister(round, elected);
 
             this.winner.appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(round + 1))} `);
             this.winner.append(el("a", winner, { href: `https://opensea.io/${winner}` }));

@@ -3,11 +3,12 @@ declare const _default: {
     authorization: string;
     contracts: {
         Mate: string;
-        Slogan: string;
+        DogeSoundContest: string;
         Name: string;
         Message: string;
         Image: string;
         Attributes: string;
+        DogeSoundContestV2: string;
     };
 };
 export default _default;

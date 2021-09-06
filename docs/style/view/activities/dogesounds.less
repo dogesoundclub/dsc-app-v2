@@ -45,5 +45,49 @@
             color          : #DF3737;
             text-decoration: underline;
         }
+
+        >.period-triangle {
+            position: relative;
+            height  : 500px;
+
+            >img {
+                position   : absolute;
+                left       : 50%;
+                margin-left: -112.5px;
+                top        : 105px;
+            }
+
+            >span {
+                position   : absolute;
+                font-family: DungGeunMo;
+                font-size  : 20px;
+                width      : 300px;
+                text-align : center;
+
+                &.holiday {
+                    left       : 50%;
+                    margin-left: calc(-150px + 150px);
+                    top        : 315px;
+                    transform  : rotate(-60deg);
+                }
+
+                &.register {
+                    left       : 50%;
+                    margin-left: calc(-150px - 150px);
+                    top        : 315px;
+                    transform  : rotate(60deg);
+                }
+
+                &.vote {
+                    left       : 50%;
+                    margin-left: -150px;
+                    top        : 60px;
+                }
+
+                &.on {
+                    color: #BFC500;
+                }
+            }
+        }
     }
 }

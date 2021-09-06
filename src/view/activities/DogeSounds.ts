@@ -2,11 +2,15 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import RankList from "../../component/dogesounds/RankList";
+import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
 import Layout from "../Layout";
 
 export default class DogeSounds implements View {
 
     private container: DomNode;
+    private periodTriangle: DomNode;
+
+    private remainsInterval: any | undefined;
 
     constructor() {
         Layout.current.title = msg("DOGESOUNDS_TITLE");
@@ -28,13 +32,56 @@ export default class DogeSounds implements View {
             ),
             el("section",
                 el("h2", msg("DOGESOUNDS_STATUS_TITLE")),
+                this.periodTriangle = el(".period-triangle"),
             ),
         ));
+        this.load();
+    }
+
+    private async load() {
+
+        const currentRound = (await DogeSoundContestV2Contract.getRound()).toNumber();
+        const period = (await DogeSoundContestV2Contract.getPeriod()).toNumber();
+        let remains = (await DogeSoundContestV2Contract.getRemains()).toNumber();
+
+        if (period === DogeSoundContestV2Contract.HOLIDAY_PERIOD) {
+            this.periodTriangle.append(el("img", {
+                src: "/images/components/dogesounds/period-holiday.png",
+                srcset: "/images/components/dogesounds/period-holiday@2x.png 2x",
+            }));
+        } else if (period === DogeSoundContestV2Contract.REGISTER_CANDIDATE_PERIOD) {
+            this.periodTriangle.append(el("img", {
+                src: "/images/components/dogesounds/period-register.png",
+                srcset: "/images/components/dogesounds/period-register@2x.png 2x",
+            }));
+        } else if (period === DogeSoundContestV2Contract.VOTE_PERIOD) {
+            this.periodTriangle.append(el("img", {
+                src: "/images/components/dogesounds/period-vote.png",
+                srcset: "/images/components/dogesounds/period-vote@2x.png 2x",
+            }));
+        }
+
+        this.periodTriangle.append(
+            el(`span.holiday${period === DogeSoundContestV2Contract.HOLIDAY_PERIOD ? ".on" : ""}`, msg("DOGESOUNDS_HOLIDAY_PERIOD")),
+            el(`span.register${period === DogeSoundContestV2Contract.REGISTER_CANDIDATE_PERIOD ? ".on" : ""}`, msg("DOGESOUNDS_REGISTER_CANDIDATE_PERIOD")),
+            el(`span.vote${period === DogeSoundContestV2Contract.VOTE_PERIOD ? ".on" : ""}`, msg("DOGESOUNDS_VOTE_PERIOD")),
+        );
+
+        this.remainsInterval = setInterval(() => {
+            if (remains <= 1) {
+                location.reload();
+            } else {
+                remains -= 1;
+            }
+        }, 1000);
     }
 
     public changeParams(params: ViewParams, uri: string): void { }
 
     public close(): void {
+        if (this.remainsInterval !== undefined) {
+            clearInterval(this.remainsInterval);
+        }
         this.container.delete();
     }
 }

@@ -1,7 +1,8 @@
 import { DomNode, el } from "@hanul/skynode";
 import SkyUtil from "skyutil";
-import SloganContract from "../../contracts/SloganContract";
-import Rank from "./Rank";
+import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
+import RankV1 from "./RankV1";
+import RankV2 from "./RankV2";
 
 export default class RankList extends DomNode {
 
@@ -26,9 +27,14 @@ export default class RankList extends DomNode {
     }
 
     private async loadMessages() {
-        const round = (await SloganContract.getRound()).toNumber();
-        SkyUtil.repeat(round, (index) => {
-            this.rankList.append(new Rank(round - index - 1));
+        const currentRound = (await DogeSoundContestV2Contract.getRound()).toNumber();
+        SkyUtil.repeat(currentRound > 100 ? 100 : currentRound, (index) => {
+            const round = currentRound - index - 1;
+            if (round < 2) { // V1
+                this.rankList.append(new RankV1(round));
+            } else { // V2
+                this.rankList.append(new RankV2(round));
+            }
         });
     }
 }
