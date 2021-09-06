@@ -1,6 +1,7 @@
 import { DomNode } from "@hanul/skynode";
+import CandidateList from "./CandidateList";
 export default class Candidate extends DomNode {
     private radio;
-    constructor(votable: boolean, dogeSound: string, votes: number, checked: boolean);
+    constructor(list: CandidateList, index: number, votable: boolean, dogeSound: string, votes: number, checked: boolean);
 }
 //# sourceMappingURL=Candidate.d.ts.map

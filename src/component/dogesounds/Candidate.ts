@@ -1,12 +1,13 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
+import CandidateList from "./CandidateList";
 
 export default class Candidate extends DomNode {
 
     private radio: DomNode<HTMLInputElement> | undefined;
 
     constructor(
-        votable: boolean, dogeSound: string, votes: number, checked: boolean,
+        list: CandidateList, index: number, votable: boolean, dogeSound: string, votes: number, checked: boolean,
     ) {
         super("li.candidate");
         if (votable === true) {
@@ -14,11 +15,12 @@ export default class Candidate extends DomNode {
                 name: "dogesounds-candidate-radio",
                 type: "radio",
                 change: () => {
-
+                    list.selected = index;
                 },
             }).appendTo(this);
             if (checked === true) {
                 this.radio.domElement.checked = true;
+                list.selected = index;
             }
         }
         this.append(
@@ -26,6 +28,7 @@ export default class Candidate extends DomNode {
                 click: () => {
                     if (this.radio !== undefined && this.radio.domElement.checked !== true) {
                         this.radio.domElement.checked = true;
+                        list.selected = index;
                     }
                 },
             }),

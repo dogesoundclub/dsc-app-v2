@@ -43,7 +43,7 @@ export default class CandidateList extends DomNode {
         });
 
         for (const [index, candidate] of candidates.entries()) {
-            this.append(new Candidate(this.votable === true, candidate.dogeSound, candidate.votes, index === 0));
+            this.append(new Candidate(this, candidate.index, this.votable === true, candidate.dogeSound, candidate.votes, index === 0));
         }
     }
 }

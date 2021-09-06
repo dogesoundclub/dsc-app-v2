@@ -41,7 +41,7 @@ export default class Gallary implements View {
                         },
                     },
                     el("option", key, { value: "" }),
-                    el("option", "None", { value: "None" }),
+                    key === "Face" ? undefined : el("option", "None", { value: "None" }),
                     ...values.map((value) => el("option", value, { value })),
                 )),
                 el("a.reset-button", msg("GALLARY_RESET_FILTER_BUTTON"), {

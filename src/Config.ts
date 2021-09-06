@@ -19,9 +19,9 @@ export default {
         Image: "",
         Attributes: "",
         DogeSoundContestV2: "0x676289E02e8c0264417e4bEc9413d6007a686Be3",
-*/
+        */
+
         // Mainnet
-        
         Mate: "0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae",
         DogeSoundContest: "0x90B1a227A69b3A907167fFE7956dc965117CBF20",
         Name: "0x12C591fCd89B83704541B1Eac6b4aA18063A6954",
@@ -29,6 +29,5 @@ export default {
         Image: "0x059308948cf1F550E15869f9C3E02dCEb8814F0A",
         Attributes: "0xB16cA0035f398EA513c063a2F61C7631413bCD7d",
         DogeSoundContestV2: "0x43f3b52C1cb0801efA4EFa6a6b1908746E2a3210",
-        
     },
 };

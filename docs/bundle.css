@@ -321,6 +321,7 @@ a {
   padding: 7.5px;
   border: 2px solid #ffffff;
   text-align: center;
+  cursor: pointer;
 }
 .candidate-list > li > .votes {
   margin-top: 7.5px;
