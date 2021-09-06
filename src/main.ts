@@ -2,6 +2,7 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
+import DogeSoundContestV2Contract from "./contracts/DogeSoundContestV2Contract";
 import ConnectWalletPopup from "./ui/ConnectWalletPopup";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
@@ -38,4 +39,6 @@ import Terms from "./view/Terms";
     if ((window as any).caver === undefined) {
         //new ConnectWalletPopup();
     }
+
+    console.log((await DogeSoundContestV2Contract.getCheckpoint()).toString());
 })();

@@ -3,6 +3,7 @@ export default class DogeSounds implements View {
     private container;
     private periodTriangle;
     private status;
+    private form;
     private remainsInterval;
     constructor();
     private load;

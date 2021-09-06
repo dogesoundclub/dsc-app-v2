@@ -97,7 +97,7 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "slogan",
+				"name": "dogeSound",
 				"type": "string"
 			},
 			{

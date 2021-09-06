@@ -1,1 +1,1 @@
-{"version":3,"file":"CandidateList.d.ts","sourceRoot":"","sources":["../../../src/component/dogesounds/CandidateList.ts"],"names":[],"mappings":""}
+{"version":3,"file":"CandidateList.d.ts","sourceRoot":"","sources":["../../../src/component/dogesounds/CandidateList.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,gBAAgB,CAAC;AAEzC,MAAM,CAAC,OAAO,OAAO,aAAc,SAAQ,OAAO;gBAElC,KAAK,EAAE,MAAM,EAAE,OAAO,CAAC,EAAE,OAAO;CAG/C"}

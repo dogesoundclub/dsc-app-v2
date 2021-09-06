@@ -2,6 +2,8 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import RankList from "../../component/dogesounds/RankList";
+import RegisterCandidateForm from "../../component/dogesounds/RegisterCandidateForm";
+import VoteForm from "../../component/dogesounds/VoteForm";
 import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
 import Layout from "../Layout";
 
@@ -10,6 +12,7 @@ export default class DogeSounds implements View {
     private container: DomNode;
     private periodTriangle: DomNode;
     private status: DomNode;
+    private form: DomNode | undefined;
 
     private remainsInterval: any | undefined;
 
@@ -45,6 +48,8 @@ export default class DogeSounds implements View {
         const period = (await DogeSoundContestV2Contract.getPeriod()).toNumber();
         let remains = (await DogeSoundContestV2Contract.getRemains()).toNumber();
 
+        this.form?.delete();
+
         if (period === DogeSoundContestV2Contract.HOLIDAY_PERIOD) {
             this.periodTriangle.append(el("img", {
                 src: "/images/components/dogesounds/period-holiday.png",
@@ -54,6 +59,9 @@ export default class DogeSounds implements View {
                 el("p", msg("DOGESOUNDS_HOLIDAY_DESCRIPTION").replace(/{round}/, String(currentRound))),
                 el("p", msg("DOGESOUNDS_HOLIDAY_DESCRIPTION_2")),
             );
+            this.form = el("a.nft-mint-button", msg("DOGESOUNDS_WINNER_NFT_MINT_BUTTON"), {
+                
+            });
         }
 
         else if (period === DogeSoundContestV2Contract.REGISTER_CANDIDATE_PERIOD) {
@@ -62,6 +70,7 @@ export default class DogeSounds implements View {
                 srcset: "/images/components/dogesounds/period-register@2x.png 2x",
             }));
             this.status.append(el("p", msg("DOGESOUNDS_REGISTER_CANDIDATE_DESCRIPTION").replace(/{round}/, String(currentRound + 1))));
+            this.form = new RegisterCandidateForm(currentRound).appendTo(this.container);
         }
 
         else if (period === DogeSoundContestV2Contract.VOTE_PERIOD) {
@@ -70,6 +79,7 @@ export default class DogeSounds implements View {
                 srcset: "/images/components/dogesounds/period-vote@2x.png 2x",
             }));
             this.status.append(el("p", msg("DOGESOUNDS_VOTE_DESCRIPTION").replace(/{round}/, String(currentRound + 1))));
+            this.form = new VoteForm(currentRound).appendTo(this.container);
         }
 
         this.periodTriangle.append(

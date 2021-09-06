@@ -1,5 +1,6 @@
 import { ScrollableDomNode } from "@hanul/skynode";
 export default class MateList extends ScrollableDomNode<number[]> {
+    selectedMaidIds: number[];
     constructor(selectable?: boolean);
     draw(mates: number[]): void;
 }

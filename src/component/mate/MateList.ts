@@ -4,6 +4,8 @@ import MateLine from "./MateLine";
 
 export default class MateList extends ScrollableDomNode<number[]> {
 
+    public selectedMaidIds: number[] = [];
+
     constructor(selectable: boolean = false) {
         super(
             (() => {
@@ -12,7 +14,7 @@ export default class MateList extends ScrollableDomNode<number[]> {
                 return dom;
             })(),
             { childTag: "div", baseChildHeight: window.innerWidth < 800 ? 64 : 90 },
-            (ids) => new MateLine(ids, selectable),
+            (ids) => new MateLine(this, ids, selectable),
         );
     }
 

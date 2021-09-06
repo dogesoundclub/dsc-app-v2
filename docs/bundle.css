@@ -224,6 +224,13 @@ a {
   color: #FF00F6;
   text-shadow: 3px 3px 3px #656565;
 }
+.mate-list > .mate-line > .mate-item > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+}
 @media only screen and (max-width: 799px) {
   .mate-list > .mate-line > .mate-item {
     width: 64px;
@@ -292,6 +299,68 @@ a {
 }
 .dogesounds-rank-list table tbody td {
   padding: 3px 0;
+}
+.register-candidate-form > .wallet,
+.register-candidate-form > .owned-mates,
+.register-candidate-form > .registable-mates,
+.register-candidate-form > .info,
+.register-candidate-form > .selected-mates {
+  font-family: DungGeunMo;
+}
+.register-candidate-form > .selected-mates {
+  margin-top: 30px;
+}
+.register-candidate-form a {
+  color: #BFC500;
+}
+.register-candidate-form > .mate-list {
+  margin-top: 30px;
+  height: 300px;
+}
+.register-candidate-form > .submit-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 320px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.vote-form > .wallet,
+.vote-form > .owned-mates,
+.vote-form > .votable-mates,
+.vote-form > .info,
+.vote-form > .selected-mates {
+  font-family: DungGeunMo;
+}
+.vote-form > .selected-mates {
+  margin-top: 30px;
+}
+.vote-form a {
+  color: #BFC500;
+}
+.vote-form > .mate-list {
+  margin-top: 30px;
+  height: 300px;
+}
+.vote-form > .submit-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 320px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
 }
 .connect-wallet-popup {
   position: relative;
@@ -1164,6 +1233,10 @@ a {
   color: #BFC500;
   font-size: 30px;
   line-height: 1.2em;
+}
+.dogesounds-view > .register-candidate-form,
+.dogesounds-view > .vote-form {
+  margin-top: 45px;
 }
 .terms-view {
   max-width: 780px;

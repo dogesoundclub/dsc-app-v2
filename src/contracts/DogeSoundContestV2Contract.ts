@@ -13,6 +13,10 @@ class DogeSoundContestContractV2 extends Contract {
         super(Config.contracts.DogeSoundContestV2, require("./DogeSoundContestV2ABI.json"));
     }
 
+    public async getCheckpoint(): Promise<BigNumber> {
+        return BigNumber.from(await this.contract.methods.checkpoint().call());
+    }
+
     public async getRound(): Promise<BigNumber> {
         return BigNumber.from(await this.contract.methods.round().call());
     }
