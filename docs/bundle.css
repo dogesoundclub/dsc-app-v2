@@ -1159,6 +1159,12 @@ a {
 .dogesounds-view > section > .period-triangle > span.on {
   color: #BFC500;
 }
+.dogesounds-view > .status > p {
+  font-family: DungGeunMo;
+  color: #BFC500;
+  font-size: 30px;
+  line-height: 1.2em;
+}
 .terms-view {
   max-width: 780px;
   padding: 135px 20px;
