@@ -262,6 +262,37 @@ a {
 .mate-message-list table tbody td {
   padding: 3px 0;
 }
+.dogesounds-rank-list {
+  max-height: 375px;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 719px) {
+  .dogesounds-rank-list {
+    overflow-x: scroll;
+  }
+}
+.dogesounds-rank-list table {
+  width: 100%;
+}
+@media only screen and (max-width: 719px) {
+  .dogesounds-rank-list table {
+    width: 640px;
+  }
+}
+.dogesounds-rank-list table thead {
+  color: #BFC500;
+}
+.dogesounds-rank-list table thead th {
+  text-align: left;
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+.dogesounds-rank-list table tbody {
+  font-family: DungGeunMo;
+}
+.dogesounds-rank-list table tbody td {
+  padding: 3px 0;
+}
 .connect-wallet-popup {
   position: relative;
   width: 320px;
@@ -1064,9 +1095,32 @@ a {
   font-family: DungGeunMo;
   color: #FF00F6;
   text-shadow: 3px 3px 3px #656565;
-  margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
+}
+.dogesounds-view > .top-image {
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+}
+.dogesounds-view > section {
+  margin-top: 60px;
+}
+.dogesounds-view > section > h2 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.dogesounds-view > section p a {
+  color: #BFC500;
+}
+.dogesounds-view > section .warning {
+  margin: 20px 0;
+  color: #DF3737;
+  text-decoration: underline;
 }
 .terms-view {
   max-width: 780px;
