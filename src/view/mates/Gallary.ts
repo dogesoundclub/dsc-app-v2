@@ -86,7 +86,7 @@ export default class Gallary implements View {
             }
         }
 
-        this.mateList.draw(mates);
+        this.mateList.load(mates);
     }
 
     private windowResizeHandler = () => {

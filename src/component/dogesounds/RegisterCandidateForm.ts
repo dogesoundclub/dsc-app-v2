@@ -11,6 +11,7 @@ export default class RegisterCandidateForm extends DomNode {
     private wallet: DomNode;
     private ownedMates: DomNode;
     private registableMates: DomNode;
+    private candidateInput: DomNode<HTMLInputElement>;
     private selectedMates: DomNode;
     private mateList: MateList;
 
@@ -18,27 +19,37 @@ export default class RegisterCandidateForm extends DomNode {
         super(".register-candidate-form");
         this.append(
 
+            new CandidateList(round),
+
             this.wallet = el(".wallet"),
             this.ownedMates = el(".owned-mates"),
             this.registableMates = el(".registable-mates"),
             el(".info", msg("DOGESOUNDS_VOTE_WARNING")),
 
-            this.selectedMates = el(".selected-mates"),
-            el("", el("a", `▶ ${msg("DOGESOUNDS_MAX_SELECT_BUTTON")}`, {
+            this.candidateInput = el("input.candidate-input", {
+                placeholder: msg("DOGESOUNDS_CANDIDATE_INPUT"),
+            }),
 
+            this.selectedMates = el(".selected-mates", msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(0))),
+            el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_MAX_SELECT_BUTTON")}`, {
+                click: () => this.mateList.maxSelect(),
             })),
-            el("", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
-
+            el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
+                click: () => this.mateList.deselect(),
             })),
             this.mateList = new MateList(true),
             el("a.submit-button", msg("DOGESOUNDS_REGISTER_SUBMIT"), {
-
+                click: async () => {
+                    const candidateMateCount = (await DogeSoundContestV2Contract.getCandidateMateCount()).toNumber();
+                    if (this.mateList.selectedMateIds.length >= candidateMateCount) {
+                        await DogeSoundContestV2Contract.registerCandidate(this.candidateInput.domElement.value, MateContract.address, this.mateList.selectedMateIds);
+                        setTimeout(() => location.reload(), 1000);
+                    }
+                },
             }),
-
-            new CandidateList(round),
         );
         this.mateList.on("selectMate", () => {
-            console.log(this.mateList.selectedMaidIds);
+            this.selectedMates.empty().appendText(msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(this.mateList.selectedMateIds.length)));
         });
         this.loadMates();
     }
@@ -63,17 +74,22 @@ export default class RegisterCandidateForm extends DomNode {
             this.registableMates.appendText(`- ${msg("DOGESOUNDS_REGISTABLE_MATES_COUNT").replace(/{count}/, String(mateBalance - votedMateCount)).replace(/{candidateCount}/, String(candidateMateCount))}`);
 
             const mates: number[] = [];
+            const votedMates: number[] = [];
+
             const promises: Promise<void>[] = [];
             for (let i = 0; i < mateBalance; i += 1) {
                 const promise = async (index: number) => {
-                    const mateId = await MateContract.tokenOfOwnerByIndex(walletAddress, index);
-                    mates.push(mateId.toNumber());
+                    const mateId = (await MateContract.tokenOfOwnerByIndex(walletAddress, index)).toNumber();
+                    mates.push(mateId);
+                    if (await DogeSoundContestV2Contract.getMateVoted(this.round, MateContract.address, mateId) === true) {
+                        votedMates.push(mateId);
+                    }
                 };
                 promises.push(promise(i));
             }
             await Promise.all(promises);
 
-            this.mateList.draw(mates);
+            this.mateList.load(mates, votedMates);
         }
     }
 }

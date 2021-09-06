@@ -57,20 +57,20 @@ class DogeSoundContestContractV2 extends Contract {
         return BigNumber.from(await this.contract.methods.votes(round, candidate).call());
     }
 
-    public async getMateVoted(round: number, mates: string, candidate: number): Promise<boolean> {
-        return await this.contract.methods.mateVoted(round, mates, candidate).call();
+    public async getMateVoted(round: number, mates: string, mateId: number): Promise<boolean> {
+        return await this.contract.methods.mateVoted(round, mates, mateId).call();
     }
 
-    public async registerCandidate(dogeSound: string, mates: string, count: number): Promise<void> {
+    public async registerCandidate(dogeSound: string, mates: string, mateIds: number[]): Promise<void> {
         const register = await Wallet.loadAddress();
         const contract = await this.loadWalletContract();
-        await contract?.methods.registerCandidate(dogeSound, mates, count).send({ from: register, gas: 1500000 });
+        await contract?.methods.registerCandidate(dogeSound, mates, mateIds).send({ from: register, gas: 1500000 });
     }
 
-    public async vote(candidate: number, mates: string, count: number): Promise<void> {
+    public async vote(candidate: number, mates: string, mateIds: number[]): Promise<void> {
         const voter = await Wallet.loadAddress();
         const contract = await this.loadWalletContract();
-        await contract?.methods.vote(candidate, mates, count).send({ from: voter, gas: 1500000 });
+        await contract?.methods.vote(candidate, mates, mateIds).send({ from: voter, gas: 1500000 });
     }
 
     public async getElected(round: number): Promise<BigNumber> {

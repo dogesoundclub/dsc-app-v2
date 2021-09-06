@@ -1,6 +1,7 @@
 import { DomNode } from "@hanul/skynode";
 export default class VoteForm extends DomNode {
     private round;
+    private candidateList;
     private wallet;
     private ownedMates;
     private votableMates;

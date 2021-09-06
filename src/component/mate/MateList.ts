@@ -4,7 +4,10 @@ import MateLine from "./MateLine";
 
 export default class MateList extends ScrollableDomNode<number[]> {
 
-    public selectedMaidIds: number[] = [];
+    public selectedMateIds: number[] = [];
+    public votedMates: number[] = [];
+
+    private drawingMates: number[] = [];
 
     constructor(selectable: boolean = false) {
         super(
@@ -18,7 +21,9 @@ export default class MateList extends ScrollableDomNode<number[]> {
         );
     }
 
-    public draw(mates: number[]) {
+    public load(mates: number[], votedMates: number[] = []) {
+        this.drawingMates = mates;
+        this.votedMates = votedMates;
 
         let index = 0;
         const mateData: number[][] = [];
@@ -38,6 +43,27 @@ export default class MateList extends ScrollableDomNode<number[]> {
         });
 
         this.init(mateData);
-        this.calculateSize();
+    }
+
+    public maxSelect() {
+        this.selectedMateIds = [];
+        let count = 0;
+        for (const mateId of this.drawingMates) {
+            if (this.votedMates.includes(mateId) !== true) {
+                this.selectedMateIds.push(mateId);
+                count += 1;
+                if (count === 50) {
+                    break;
+                }
+            }
+        }
+        this.load(this.drawingMates, this.votedMates);
+        this.fireEvent("selectMate");
+    }
+
+    public deselect() {
+        this.selectedMateIds = [];
+        this.load(this.drawingMates, this.votedMates);
+        this.fireEvent("selectMate");
     }
 }

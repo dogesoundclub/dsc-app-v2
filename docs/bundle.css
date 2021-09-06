@@ -238,6 +238,9 @@ a {
     font-size: 14px;
   }
 }
+.mate-list > .mate-line > .mate-item.off {
+  opacity: 0.5;
+}
 .mate-message-list {
   max-height: 375px;
   overflow-y: scroll;
@@ -300,6 +303,31 @@ a {
 .dogesounds-rank-list table tbody td {
   padding: 3px 0;
 }
+.candidate-list {
+  margin-top: 45px;
+}
+.candidate-list > li {
+  position: relative;
+  margin-bottom: 20px;
+}
+.candidate-list > li > input {
+  position: absolute;
+  left: -30px;
+  top: 12px;
+  transform: scale(2);
+}
+.candidate-list > li > .doge-sound {
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  border: 2px solid #ffffff;
+  text-align: center;
+}
+.candidate-list > li > .votes {
+  margin-top: 7.5px;
+  display: block;
+  text-align: center;
+  font-family: DungGeunMo;
+}
 .register-candidate-form > .wallet,
 .register-candidate-form > .owned-mates,
 .register-candidate-form > .registable-mates,
@@ -307,10 +335,23 @@ a {
 .register-candidate-form > .selected-mates {
   font-family: DungGeunMo;
 }
+.register-candidate-form > .wallet,
 .register-candidate-form > .selected-mates {
   margin-top: 30px;
 }
-.register-candidate-form a {
+.register-candidate-form > input {
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  border: 2px solid #ffffff;
+  text-align: center;
+  font-size: 15px;
+}
+.register-candidate-form > .button-container > a {
   color: #BFC500;
 }
 .register-candidate-form > .mate-list {
@@ -338,10 +379,11 @@ a {
 .vote-form > .selected-mates {
   font-family: DungGeunMo;
 }
+.vote-form > .wallet,
 .vote-form > .selected-mates {
   margin-top: 30px;
 }
-.vote-form a {
+.vote-form > .button-container > a {
   color: #BFC500;
 }
 .vote-form > .mate-list {

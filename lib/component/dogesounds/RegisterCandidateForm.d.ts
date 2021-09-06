@@ -4,6 +4,7 @@ export default class RegisterCandidateForm extends DomNode {
     private wallet;
     private ownedMates;
     private registableMates;
+    private candidateInput;
     private selectedMates;
     private mateList;
     constructor(round: number);

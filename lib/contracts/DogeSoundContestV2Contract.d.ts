@@ -16,9 +16,9 @@ declare class DogeSoundContestContractV2 extends Contract {
     getCandidate(round: number, index: number): Promise<string>;
     getCandidateRegister(round: number, index: number): Promise<string>;
     getVotes(round: number, candidate: number): Promise<BigNumber>;
-    getMateVoted(round: number, mates: string, candidate: number): Promise<boolean>;
-    registerCandidate(dogeSound: string, mates: string, count: number): Promise<void>;
-    vote(candidate: number, mates: string, count: number): Promise<void>;
+    getMateVoted(round: number, mates: string, mateId: number): Promise<boolean>;
+    registerCandidate(dogeSound: string, mates: string, mateIds: number[]): Promise<void>;
+    vote(candidate: number, mates: string, mateIds: number[]): Promise<void>;
     getElected(round: number): Promise<BigNumber>;
 }
 declare const _default: DogeSoundContestContractV2;

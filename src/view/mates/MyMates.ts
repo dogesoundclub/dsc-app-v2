@@ -49,7 +49,7 @@ export default class MyMates implements View {
             }
             await Promise.all(promises);
 
-            this.mateList.draw(mates);
+            this.mateList.load(mates);
         }
     }
 
