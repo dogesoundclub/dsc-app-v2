@@ -39,6 +39,4 @@ import Terms from "./view/Terms";
     if ((window as any).caver === undefined) {
         //new ConnectWalletPopup();
     }
-
-    console.log((await DogeSoundContestV2Contract.getCheckpoint()).toString());
 })();
