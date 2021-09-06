@@ -4680,6 +4680,11 @@ skyutil@^0.0.1:
   resolved "https://registry.yarnpkg.com/skyutil/-/skyutil-0.0.1.tgz#fdd8255b2eeac3ee06e3643427e34db0ee42ab8b"
   integrity sha512-rcbUtbwiuOJs9rvZHzVUgV1UBhOa7KxnPEmQapfhzSwUAFM2THLNZuoF/8XMFEuznRqPMeYeABo8TFiFrgBL+w==
 
+skyutil@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/skyutil/-/skyutil-0.0.12.tgz#2c7047e0a5d06497f6b440992560200995209ae7"
+  integrity sha512-EhxaQa9V2z7loWP+o1QKiP30g9izLJAqLLOX/wFXdTySygILvDdZTtTV/RS1xltHVnlcoHy7iGNTrZrsTqKGLg==
+
 skyutil@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/skyutil/-/skyutil-0.0.4.tgz#f40448e0721143b4d2b513b2fdd35b73010890ac"
@@ -4689,11 +4694,6 @@ skyutil@^0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/skyutil/-/skyutil-0.0.7.tgz#db408d6d8d02623e83ddd57598822812b51c93db"
   integrity sha512-5ZWmnrP2+UguDpfjjr01g2pPxs7Wm8olCFfURTCc6TubTvn3tX5GA3KRA8u2DCPxUsFgtXfaMgsKEMhZ6KRHRA==
-
-skyutil@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/skyutil/-/skyutil-0.0.8.tgz#4b66beddabbf45820d30788cbae4eb02a2948dc7"
-  integrity sha512-Otgd9Wrc4OAdbRE9+crgR8OXFH7WvBWr8mvAwyYGURLPXJShx9T/75kpl1NPK8AHkQBIkWat8pMYZBIP4tRmLg==
 
 source-list-map@^2.0.0:
   version "2.0.1"

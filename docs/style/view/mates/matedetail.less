@@ -23,7 +23,8 @@
         width  : 252px;
     }
 
-    >.opensea-button {
+    >.opensea-button,
+    >.transfer-button {
         display         : block;
         margin          : auto;
         margin-top      : 30px;
@@ -36,5 +37,92 @@
         padding         : 12px 0;
         font-family     : DungGeunMo;
         font-weight     : bold;
+    }
+
+    >.transfer-button {
+        margin-top: 60px;
+    }
+
+    >section {
+        margin-top: 60px;
+
+        >h2 {
+            margin-bottom: 26px;
+            font-size    : 26px;
+            color        : #BFC500;
+        }
+
+        >h3 {
+            margin-bottom: 22px;
+            font-size    : 22px;
+            font-style   : italic;
+        }
+
+        >input {
+            display         : block;
+            color           : #ffffff;
+            background-color: transparent;
+            font-family     : DungGeunMo;
+            padding         : 7.5px;
+            border          : 2px solid #ffffff;
+            text-align      : center;
+            font-size       : 15px;
+            width           : 280px;
+            height          : 45px;
+            margin          : auto;
+            margin-top      : 30px;
+
+            &.message {
+                width     : 100%;
+                text-align: left;
+            }
+        }
+
+        >.terms {
+            display   : block;
+            margin-top: 40px;
+            .float-wrapper();
+
+            >input {
+                float : left;
+                width : 22px;
+                height: 22px;
+            }
+
+            >p {
+                float: right;
+                width: calc(100% - 40px);
+            }
+        }
+
+        >.submit-button {
+            display         : block;
+            margin          : auto;
+            margin-top      : 30px;
+            font-size       : 20px;
+            color           : #000000;
+            background-color: #FBFF72;
+            box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+            text-align      : center;
+            width           : 252px;
+            padding         : 12px 0;
+            font-family     : DungGeunMo;
+            font-weight     : bold;
+        }
+
+        &.on-chain {
+            >img {
+                display        : block;
+                margin         : auto;
+                width          : 225px;
+                image-rendering: pixelated;
+            }
+
+            >p {
+                margin-top : 28px;
+                font-family: DungGeunMo;
+                text-align : center;
+            }
+        }
     }
 }

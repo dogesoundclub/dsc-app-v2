@@ -1,5 +1,6 @@
 import { BigNumber, BigNumberish } from "ethers";
 import Config from "../Config";
+import Wallet from "../klaytn/Wallet";
 import Contract from "./Contract";
 
 class MateContract extends Contract {
@@ -18,6 +19,12 @@ class MateContract extends Contract {
 
     public async tokenOfOwnerByIndex(owner: string, index: number): Promise<BigNumber> {
         return BigNumber.from(await this.contract.methods.tokenOfOwnerByIndex(owner, index).call());
+    }
+
+    public async transfer(to: string, mateId: BigNumberish) {
+        const register = await Wallet.loadAddress();
+        const contract = await this.loadWalletContract();
+        await contract?.methods.transferFrom(register, to, mateId).send({ from: register, gas: 1500000 });
     }
 }
 

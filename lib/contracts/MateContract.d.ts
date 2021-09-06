@@ -5,6 +5,7 @@ declare class MateContract extends Contract {
     ownerOf(mateId: BigNumberish): Promise<string>;
     balanceOf(owner: string): Promise<BigNumber>;
     tokenOfOwnerByIndex(owner: string, index: number): Promise<BigNumber>;
+    transfer(to: string, mateId: BigNumberish): Promise<void>;
 }
 declare const _default: MateContract;
 export default _default;

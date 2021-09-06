@@ -231,6 +231,37 @@ a {
     font-size: 14px;
   }
 }
+.mate-message-list {
+  max-height: 375px;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 719px) {
+  .mate-message-list {
+    overflow-x: scroll;
+  }
+}
+.mate-message-list table {
+  width: 100%;
+}
+@media only screen and (max-width: 719px) {
+  .mate-message-list table {
+    width: 640px;
+  }
+}
+.mate-message-list table thead {
+  color: #BFC500;
+}
+.mate-message-list table thead th {
+  text-align: left;
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+.mate-message-list table tbody {
+  font-family: DungGeunMo;
+}
+.mate-message-list table tbody td {
+  padding: 3px 0;
+}
 .connect-wallet-popup {
   position: relative;
   width: 320px;
@@ -268,6 +299,59 @@ a {
 }
 .connect-wallet-popup > .cancel-button {
   border: 1px solid #ffffff;
+}
+.dialogue {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #ffffff;
+  background-color: #000000;
+}
+.dialogue:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.dialogue > p {
+  margin-bottom: 20px;
+}
+.dialogue > .cancel-button {
+  float: left;
+  border: 2px solid #ffffff;
+  font-size: 20px;
+  padding: 12px 20px;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.dialogue > .confirm-button {
+  float: right;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  padding: 12px 20px;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.alert > .cancel-button {
+  display: none;
+}
+.prompt > main {
+  margin-bottom: 20px;
+}
+.prompt > main > input {
+  display: block;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  border: 2px solid #ffffff;
+  text-align: center;
+  font-size: 15px;
+  width: 100%;
 }
 .pc-menu {
   position: absolute;
@@ -829,7 +913,8 @@ a {
   margin: auto;
   width: 252px;
 }
-.matedetail-view > .opensea-button {
+.matedetail-view > .opensea-button,
+.matedetail-view > .transfer-button {
   display: block;
   margin: auto;
   margin-top: 30px;
@@ -842,6 +927,86 @@ a {
   padding: 12px 0;
   font-family: DungGeunMo;
   font-weight: bold;
+}
+.matedetail-view > .transfer-button {
+  margin-top: 60px;
+}
+.matedetail-view > section {
+  margin-top: 60px;
+}
+.matedetail-view > section > h2 {
+  margin-bottom: 26px;
+  font-size: 26px;
+  color: #BFC500;
+}
+.matedetail-view > section > h3 {
+  margin-bottom: 22px;
+  font-size: 22px;
+  font-style: italic;
+}
+.matedetail-view > section > input {
+  display: block;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  border: 2px solid #ffffff;
+  text-align: center;
+  font-size: 15px;
+  width: 280px;
+  height: 45px;
+  margin: auto;
+  margin-top: 30px;
+}
+.matedetail-view > section > input.message {
+  width: 100%;
+  text-align: left;
+}
+.matedetail-view > section > .terms {
+  display: block;
+  margin-top: 40px;
+}
+.matedetail-view > section > .terms:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.matedetail-view > section > .terms > input {
+  float: left;
+  width: 22px;
+  height: 22px;
+}
+.matedetail-view > section > .terms > p {
+  float: right;
+  width: calc(100% - 40px);
+}
+.matedetail-view > section > .submit-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 252px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.matedetail-view > section.on-chain > img {
+  display: block;
+  margin: auto;
+  width: 225px;
+  image-rendering: pixelated;
+}
+.matedetail-view > section.on-chain > p {
+  margin-top: 28px;
+  font-family: DungGeunMo;
+  text-align: center;
 }
 .activities-view {
   max-width: 780px;

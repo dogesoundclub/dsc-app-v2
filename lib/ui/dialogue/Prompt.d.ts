@@ -1,5 +1,6 @@
 import Dialogue from "./Dialogue";
 export default class Prompt extends Dialogue {
-    constructor(message: string, confirmTitle: string, confirm: () => void);
+    private input;
+    constructor(message: string, confirmTitle: string, confirm: (value: string) => void);
 }
 //# sourceMappingURL=Prompt.d.ts.map

@@ -1,8 +1,10 @@
 import { DomNode, el, Popup } from "@hanul/skynode";
+import msg from "msg.js";
 
 export default class Dialogue extends Popup {
 
     public content: DomNode;
+    protected main: DomNode;
 
     constructor(
         tag: string,
@@ -14,7 +16,8 @@ export default class Dialogue extends Popup {
         this.append(
             this.content = el(`.dialogue${tag}`,
                 el("p", message),
-                el("a.cancel-button", "Cancel", {
+                this.main = el("main"),
+                el("a.cancel-button", msg("CANCEL_BUTTON"), {
                     click: () => this.delete(),
                 }),
                 el("a.confirm-button", confirmTitle, {
