@@ -29,6 +29,8 @@ export default class DogeSounds implements View {
                 el("p", msg("DOGESOUNDS_RULE_1")),
                 el("p.warning", `* ${msg("DOGESOUNDS_RULE_WARNING")}`),
                 el("p", msg("DOGESOUNDS_RULE_2")),
+                el("p", msg("DOGESOUNDS_RULE_3")),
+                el("a.opensea-link", msg("DOGESOUNDS_OPENSEA_LINK"), { href: "https://opensea.io/collection/dsc-dogesound-winners" }),
             ),
             el("section",
                 el("h2", msg("DOGESOUNDS_WINNERS_TITLE")),
@@ -60,7 +62,7 @@ export default class DogeSounds implements View {
                 el("p", msg("DOGESOUNDS_HOLIDAY_DESCRIPTION_2")),
             );
             this.form = el("a.nft-mint-button", msg("DOGESOUNDS_WINNER_NFT_MINT_BUTTON"), {
-                
+
             });
         }
 

@@ -1,13 +1,14 @@
 import { DomNode } from "@hanul/skynode";
-declare class MenuTreeBuilder {
-    build(menus: {
+interface Menu {
+    uri: string;
+    name: string;
+    children?: {
         uri: string;
         name: string;
-        children?: {
-            uri: string;
-            name: string;
-        }[];
-    }[]): DomNode<HTMLElement>;
+    }[];
+}
+declare class MenuTreeBuilder {
+    build(menus: Menu[], parent?: Menu): DomNode<HTMLElement>;
 }
 declare const _default: MenuTreeBuilder;
 export default _default;

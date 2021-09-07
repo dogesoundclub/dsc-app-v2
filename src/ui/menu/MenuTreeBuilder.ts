@@ -2,17 +2,29 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 
-class MenuTreeBuilder {
-
-    public build(menus: {
+interface Menu {
+    uri: string;
+    name: string;
+    children?: {
         uri: string;
         name: string;
-        children?: {
-            uri: string;
-            name: string;
-        }[];
-    }[]) {
-        const lis: DomNode[] = [];
+    }[];
+}
+
+class MenuTreeBuilder {
+
+    public build(menus: Menu[], parent?: Menu) {
+        const lis: DomNode[] = parent === undefined ? [] : [el("li.parent",
+            el(`a${location.pathname === `/${parent.uri}` ? ".on" : ""}`,
+                msg(parent.name),
+                {
+                    click: () => {
+                        SkyRouter.go(`/${parent.uri}`);
+                        window.scrollTo(0, 0);
+                    },
+                },
+            ),
+        )];
         for (const menuItem of menus) {
             const li = el("li",
                 el(`a${location.pathname === `/${menuItem.uri}` ? ".on" : ""}`,
@@ -26,7 +38,7 @@ class MenuTreeBuilder {
                 ),
             );
             if (menuItem.children !== undefined) {
-                li.append(this.build(menuItem.children));
+                li.append(this.build(menuItem.children, menuItem));
             }
             lis.push(li);
         }
