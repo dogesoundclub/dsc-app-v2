@@ -3,6 +3,7 @@ import msg from "msg.js";
 import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
 import MateContract from "../../contracts/MateContract";
 import Wallet from "../../klaytn/Wallet";
+import Alert from "../../ui/dialogue/Alert";
 import MateList from "../mate/MateList";
 import CandidateList from "./CandidateList";
 
@@ -39,6 +40,8 @@ export default class VoteForm extends DomNode {
                     if (this.mateList.selectedMateIds.length > 0) {
                         await DogeSoundContestV2Contract.vote(this.candidateList.selected, MateContract.address, this.mateList.selectedMateIds);
                         setTimeout(() => location.reload(), 1000);
+                    } else {
+                        new Alert(msg("DOGESOUNDS_NO_MATE_SELECTED_ERROR"), msg("CONFIRM_BUTTON"));
                     }
                 },
             }),

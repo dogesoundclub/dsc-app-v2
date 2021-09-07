@@ -3,6 +3,7 @@ import msg from "msg.js";
 import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
 import MateContract from "../../contracts/MateContract";
 import Wallet from "../../klaytn/Wallet";
+import Alert from "../../ui/dialogue/Alert";
 import MateList from "../mate/MateList";
 import CandidateList from "./CandidateList";
 
@@ -44,6 +45,8 @@ export default class RegisterCandidateForm extends DomNode {
                     if (this.mateList.selectedMateIds.length >= candidateMateCount) {
                         await DogeSoundContestV2Contract.registerCandidate(this.candidateInput.domElement.value, MateContract.address, this.mateList.selectedMateIds);
                         setTimeout(() => location.reload(), 1000);
+                    } else {
+                        new Alert(msg("DOGESOUNDS_NEED_MORE_MATES_ERROR").replace(/{candidateCount}/, String(candidateMateCount)), msg("CONFIRM_BUTTON"));
                     }
                 },
             }),
