@@ -2,8 +2,7 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
-import DogeSoundContestV2Contract from "./contracts/DogeSoundContestV2Contract";
-import ConnectWalletPopup from "./ui/ConnectWalletPopup";
+import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
 import Home from "./view/Home";
@@ -36,7 +35,11 @@ import Terms from "./view/Terms";
         sessionStorage.removeItem("__spa_path");
     }
 
-    if ((window as any).caver === undefined) {
+    if ((window as any).caver !== undefined) {
+        if (await Wallet.connected() !== true) {
+            await Wallet.connect();
+        }
+    } else {
         //new ConnectWalletPopup();
     }
 })();

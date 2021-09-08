@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
+import MintForm from "../../component/dogesounds/MintForm";
 import RankList from "../../component/dogesounds/RankList";
 import RegisterCandidateForm from "../../component/dogesounds/RegisterCandidateForm";
 import VoteForm from "../../component/dogesounds/VoteForm";
@@ -61,9 +62,7 @@ export default class DogeSounds implements View {
                 el("p", msg("DOGESOUNDS_HOLIDAY_DESCRIPTION").replace(/{round}/, String(currentRound))),
                 el("p", msg("DOGESOUNDS_HOLIDAY_DESCRIPTION_2")),
             );
-            this.form = el("a.nft-mint-button", msg("DOGESOUNDS_WINNER_NFT_MINT_BUTTON"), {
-
-            });
+            this.form = new MintForm(currentRound - 1).appendTo(this.container);
         }
 
         else if (period === DogeSoundContestV2Contract.REGISTER_CANDIDATE_PERIOD) {

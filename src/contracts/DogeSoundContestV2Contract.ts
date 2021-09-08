@@ -76,6 +76,12 @@ class DogeSoundContestContractV2 extends Contract {
     public async getElected(round: number): Promise<BigNumber> {
         return BigNumber.from(await this.contract.methods.elected(round).call());
     }
+
+    public async mintWinnerNFT(round: number): Promise<void> {
+        const minter = await Wallet.loadAddress();
+        const contract = await this.loadWalletContract();
+        await contract?.methods.mintWinnerNFT(round).send({ from: minter, gas: 1500000 });
+    }
 }
 
 export default new DogeSoundContestContractV2();

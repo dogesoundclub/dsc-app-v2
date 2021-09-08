@@ -20,6 +20,7 @@ declare class DogeSoundContestContractV2 extends Contract {
     registerCandidate(dogeSound: string, mates: string, mateIds: number[]): Promise<void>;
     vote(candidate: number, mates: string, mateIds: number[]): Promise<void>;
     getElected(round: number): Promise<BigNumber>;
+    mintWinnerNFT(round: number): Promise<void>;
 }
 declare const _default: DogeSoundContestContractV2;
 export default _default;
