@@ -1,6 +1,5 @@
 declare const _default: {
     chainId: number;
-    authorization: string;
     contracts: {
         Mate: string;
         DogeSoundContest: string;

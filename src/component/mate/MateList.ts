@@ -19,6 +19,11 @@ export default class MateList extends ScrollableDomNode<number[]> {
             { childTag: "div", baseChildHeight: window.innerWidth < 800 ? 64 : 90 },
             (ids) => new MateLine(this, ids, selectable),
         );
+        if (window.innerWidth >= 800) {
+            this.style({
+                width: 740
+            });
+        }
     }
 
     public load(mates: number[], votedMates: number[] = []) {
