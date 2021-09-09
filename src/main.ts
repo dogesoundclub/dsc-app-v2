@@ -36,9 +36,9 @@ import Terms from "./view/Terms";
     }
 
     if ((window as any).caver !== undefined) {
-        if (await Wallet.connected() !== true) {
-            await Wallet.connect();
-        }
+        //if (await Wallet.connected() !== true) {
+        //    await Wallet.connect();
+        //}
     } else {
         //new ConnectWalletPopup();
     }

@@ -2,6 +2,7 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter, View, ViewParams } from "skyrouter";
 import DogeSoundContestContract from "../contracts/DogeSoundContestContract";
+import Wallet from "../klaytn/Wallet";
 import Layout from "./Layout";
 
 export default class Home implements View {
@@ -120,6 +121,9 @@ export default class Home implements View {
     }
 
     private async loadDogeSound() {
+        if (await Wallet.connected() !== true) {
+            await Wallet.connect();
+        }
         try {
             const round = (await DogeSoundContestContract.getRound()).toNumber() - 1;
             const elected = (await DogeSoundContestContract.getElected(round)).toNumber();
