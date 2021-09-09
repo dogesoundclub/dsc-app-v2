@@ -1,6 +1,6 @@
 class Klaytn {
 
-    public caver = new (window as any).Caver(new (window as any).Caver.providers.WebsocketProvider("wss://klaytn-node.dogesound.club:9090"));
+    public caver = new (window as any).Caver(new (window as any).Caver.providers.WebsocketProvider("wss://klaytn-node.dogesound.club:9091"));
 
     public createContract(address: string, abi: any) {
         return this.caver === undefined ?
