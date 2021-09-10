@@ -1,5 +1,5 @@
 declare class Klaytn {
-    caver: any;
+    private caver;
     createContract(address: string, abi: any): any;
 }
 declare const _default: Klaytn;
