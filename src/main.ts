@@ -2,8 +2,6 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
-import Klaytn from "./klaytn/Klaytn";
-import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
 import Home from "./view/Home";
@@ -14,6 +12,7 @@ import Gallary from "./view/mates/Gallary";
 import MateDetail from "./view/mates/MateDetail";
 import MyMates from "./view/mates/MyMates";
 import Terms from "./view/Terms";
+import NodeSyncTest from "./view/test/NodeSyncTest";
 
 (async () => {
 
@@ -30,6 +29,9 @@ import Terms from "./view/Terms";
     SkyRouter.route("activities", Activities);
     SkyRouter.route("dogesounds", DogeSounds);
     SkyRouter.route("terms", Terms);
+
+    // test
+    SkyRouter.route("test/node-sync", NodeSyncTest);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);
