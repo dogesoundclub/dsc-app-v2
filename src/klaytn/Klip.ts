@@ -35,7 +35,7 @@ class Klip {
         const res = await klipSDK.prepare.executeContract({
             bappName: msg("BAPP_TITLE"),
             to: address,
-            from: this.address,
+            //from: this.address,
             abi: JSON.stringify(abi),
             params: JSON.stringify(params),
             value: utils.parseEther((value === undefined ? 0 : value).toString()),
