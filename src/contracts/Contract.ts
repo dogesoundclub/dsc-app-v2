@@ -8,15 +8,15 @@ import ConnectWalletPopup from "../ui/ConnectWalletPopup";
 
 export default abstract class Contract extends EventContainer {
 
-    protected walletContract: any | undefined;
-    protected contract: any;
+    private walletContract: any | undefined;
+    private contract: any;
 
     constructor(public address: string, private abi: any) {
         super();
         this.contract = Klaytn.createContract(address, abi);
     }
 
-    protected findMethodABI(name: string) {
+    private findMethodABI(name: string) {
         return this.abi.filter((abi: any) => abi.name === name && abi.type === "function")[0];
     }
 
