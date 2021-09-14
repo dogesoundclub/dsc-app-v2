@@ -4667,10 +4667,10 @@ simple-get@^2.7.0:
     once "^1.3.1"
     simple-concat "^1.0.0"
 
-skyrouter@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/skyrouter/-/skyrouter-0.0.6.tgz#aeaf669164d63b993bba81f8c6f08900bd08119f"
-  integrity sha512-YLT5GDklE6sDgr3qlXcZuABUL5jcW06aG5q/eLNIH1puh83cciHGGNBwBrC2RtxXHqA6RQpdrzgvtR+w3Y2+jQ==
+skyrouter@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/skyrouter/-/skyrouter-0.0.7.tgz#cb882222b1e1a52625404caf3c8afafcb0d405c9"
+  integrity sha512-H3uspp9uxsRJuvb8no+GnOnZ7R5IB7T1ezU1xhoxo86kWmXkk5sZL4gCOaFde6VuVZm+NZis0a5wed3s5R8PvA==
   dependencies:
     eventcontainer "^0.0.4"
     skyutil "^0.0.4"

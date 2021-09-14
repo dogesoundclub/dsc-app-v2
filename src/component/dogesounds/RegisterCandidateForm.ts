@@ -1,5 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
+import { SkyRouter } from "skyrouter";
 import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
 import MateContract from "../../contracts/MateContract";
 import Wallet from "../../klaytn/Wallet";
@@ -44,7 +45,7 @@ export default class RegisterCandidateForm extends DomNode {
                     const candidateMateCount = (await DogeSoundContestV2Contract.getCandidateMateCount()).toNumber();
                     if (this.mateList.selectedMateIds.length >= candidateMateCount) {
                         await DogeSoundContestV2Contract.registerCandidate(this.candidateInput.domElement.value, MateContract.address, this.mateList.selectedMateIds);
-                        setTimeout(() => location.reload(), 1000);
+                        setTimeout(() => SkyRouter.refresh(), 2000);
                     } else {
                         new Alert(msg("DOGESOUNDS_NEED_MORE_MATES_ERROR").replace(/{candidateCount}/, String(candidateMateCount)), msg("CONFIRM_BUTTON"));
                     }

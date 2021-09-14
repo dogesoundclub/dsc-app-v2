@@ -1,6 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import { View, ViewParams } from "skyrouter";
+import { SkyRouter, View, ViewParams } from "skyrouter";
 import MateMessageList from "../../component/matemessage/MateMessageList";
 import AttributesContract from "../../contracts/AttributesContract";
 import ImageContract from "../../contracts/ImageContract";
@@ -55,7 +55,7 @@ export default class MateDetail implements View {
                                 new Alert(msg("MATE_NAME_EXISTS_ERROR"), msg("CONFIRM_BUTTON"));
                             } else {
                                 await NameContract.set(this.id, name);
-                                setTimeout(() => location.reload(), 1000);
+                                setTimeout(() => SkyRouter.refresh(), 2000);
                             }
                         }
                     },
@@ -78,7 +78,7 @@ export default class MateDetail implements View {
                                 new Alert(msg("MATE_DETAIL_MESSAGE_NOT_READY_ERROR"), msg("CONFIRM_BUTTON"));
                             } else {
                                 await MessageContract.set(this.id, this.messageInput.domElement.value);
-                                setTimeout(() => location.reload(), 1000);
+                                setTimeout(() => SkyRouter.refresh(), 2000);
                             }
                         }
                     },

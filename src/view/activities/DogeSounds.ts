@@ -1,6 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import { View, ViewParams } from "skyrouter";
+import { SkyRouter, View, ViewParams } from "skyrouter";
 import MintForm from "../../component/dogesounds/MintForm";
 import RankList from "../../component/dogesounds/RankList";
 import RegisterCandidateForm from "../../component/dogesounds/RegisterCandidateForm";
@@ -93,7 +93,8 @@ export default class DogeSounds implements View {
 
         this.remainsInterval = setInterval(() => {
             if (remains <= 1) {
-                location.reload();
+                setTimeout(() => SkyRouter.refresh(), 2000);
+                clearInterval(this.remainsInterval);
             } else {
                 remains -= 1;
                 timer.empty().appendText(msg("DOGESOUNDS_TIMER").replace(/{block}/, String(remains)));
