@@ -3,8 +3,9 @@ export default class MateList extends ScrollableDomNode<number[]> {
     selectedMateIds: number[];
     votedMates: number[];
     private drawingMates;
+    private mateNames;
     constructor(selectable?: boolean);
-    load(mates: number[], votedMates?: number[]): void;
+    load(mates: number[], votedMates?: number[]): Promise<void>;
     maxSelect(): void;
     deselect(): void;
 }

@@ -1,7 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import { SkyRouter } from "skyrouter";
 import SkyUtil from "skyutil";
-import superagent from "superagent";
 import MateList from "./MateList";
 
 export default class MateItem extends DomNode {
@@ -9,7 +8,7 @@ export default class MateItem extends DomNode {
     private nameDisplay: DomNode | undefined;
     private checkbox: DomNode<HTMLInputElement> | undefined;
 
-    constructor(list: MateList, private id: number, selectable: boolean) {
+    constructor(list: MateList, private id: number, name: string | undefined, selectable: boolean) {
         super(`a.mate-item${list.votedMates.includes(id) === true ? ".off" : ""}`);
         this.style({
             backgroundImage: `url(https://storage.googleapis.com/dsc-mate/336/dscMate-${id}.png)`,
@@ -37,8 +36,7 @@ export default class MateItem extends DomNode {
                 this.checkbox.domElement.checked = list.selectedMateIds.includes(id);
             }
         } else {
-            this.nameDisplay = el("span.name").appendTo(this);
-            this.loadName();
+            this.nameDisplay = el("span.name", name).appendTo(this);
         }
 
         this.onDom("click", () => {
@@ -59,17 +57,5 @@ export default class MateItem extends DomNode {
                 window.scrollTo(0, 0);
             }
         });
-    }
-
-    private async loadName() {
-        let result = await superagent.get(`https://api.dogesound.club/mate/cached/${this.id}`);
-        let tokenInfo = result.body;
-        if (tokenInfo.cached !== true) {
-            result = await superagent.get(`https://api.dogesound.club/mate/${this.id}`);
-            tokenInfo = result.body;
-        }
-        if (tokenInfo.real_name !== undefined) {
-            this.nameDisplay?.appendText(tokenInfo.real_name);
-        }
     }
 }

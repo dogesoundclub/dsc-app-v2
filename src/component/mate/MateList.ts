@@ -1,5 +1,6 @@
 import { ScrollableDomNode } from "@hanul/skynode";
 import SkyUtil from "skyutil";
+import superagent from "superagent";
 import MateLine from "./MateLine";
 
 export default class MateList extends ScrollableDomNode<number[]> {
@@ -8,6 +9,7 @@ export default class MateList extends ScrollableDomNode<number[]> {
     public votedMates: number[] = [];
 
     private drawingMates: number[] = [];
+    private mateNames: { [id: number]: string } = {};
 
     constructor(selectable: boolean = false) {
         super(
@@ -17,7 +19,7 @@ export default class MateList extends ScrollableDomNode<number[]> {
                 return dom;
             })(),
             { childTag: "div", baseChildHeight: window.innerWidth < 800 ? 64 : 90 },
-            (ids) => new MateLine(this, ids, selectable),
+            (ids) => new MateLine(this, ids, this.mateNames, selectable),
         );
         if (window.innerWidth >= 800) {
             this.style({
@@ -26,9 +28,13 @@ export default class MateList extends ScrollableDomNode<number[]> {
         }
     }
 
-    public load(mates: number[], votedMates: number[] = []) {
+    public async load(mates: number[], votedMates: number[] = []) {
+
         this.drawingMates = mates;
         this.votedMates = votedMates;
+
+        const result = await superagent.get("https://api.dogesound.club/mate/names");
+        this.mateNames = result.body;
 
         let index = 0;
         const mateData: number[][] = [];
