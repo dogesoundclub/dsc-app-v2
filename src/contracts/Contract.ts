@@ -48,6 +48,7 @@ export default abstract class Contract extends EventContainer {
             await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params);
         } else {
             new ConnectWalletPopup();
+            return new Promise(() => { });
         }
     }
 }
