@@ -9,51 +9,51 @@ class AttributesContract extends Contract {
     }
 
     public async level(mateId: BigNumberish): Promise<number> {
-        return await this.contract.methods.level(mateId).call();
+        return await this.runMethod("level", mateId);
     }
 
     public async face(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.face(mateId).call();
+        return await this.runMethod("face", mateId);
     }
 
     public async faceDetailA(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.faceDetailA(mateId).call();
+        return await this.runMethod("faceDetailA", mateId);
     }
 
     public async faceDetailB(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.faceDetailB(mateId).call();
+        return await this.runMethod("faceDetailB", mateId);
     }
 
     public async neck(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.neck(mateId).call();
+        return await this.runMethod("neck", mateId);
     }
 
     public async mouth(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.mouth(mateId).call();
+        return await this.runMethod("mouth", mateId);
     }
 
     public async eyes(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.eyes(mateId).call();
+        return await this.runMethod("eyes", mateId);
     }
 
     public async forehead(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.forehead(mateId).call();
+        return await this.runMethod("forehead", mateId);
     }
 
     public async headwear(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.headwear(mateId).call();
+        return await this.runMethod("headwear", mateId);
     }
 
     public async headwearDetail(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.headwearDetail(mateId).call();
+        return await this.runMethod("headwearDetail", mateId);
     }
 
     public async ears(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.ears(mateId).call();
+        return await this.runMethod("ears", mateId);
     }
 
     public async items(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.items(mateId).call();
+        return await this.runMethod("items", mateId);
     }
 }
 

@@ -2,6 +2,7 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
+import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
 import Home from "./view/Home";
@@ -38,11 +39,7 @@ import NodeSyncTest from "./view/test/NodeSyncTest";
         sessionStorage.removeItem("__spa_path");
     }
 
-    if ((window as any).caver !== undefined) {
-        //if (await Wallet.connected() !== true) {
-        //    await Wallet.connect();
-        //}
-    } else {
-        //new ConnectWalletPopup();
+    if (await Wallet.connected() !== true) {
+        await Wallet.connect();
     }
 })();

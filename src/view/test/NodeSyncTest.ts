@@ -1,6 +1,6 @@
 import { BodyNode, DomNode, el } from "@hanul/skynode";
 import { View, ViewParams } from "skyrouter";
-import Wallet from "../../klaytn/Wallet";
+import ExtWallet from "../../klaytn/ExtWallet";
 
 export default class NodeSyncTest implements View {
 
@@ -14,7 +14,7 @@ export default class NodeSyncTest implements View {
         const caver = new (window as any).Caver(new (window as any).Caver.providers.WebsocketProvider("wss://klaytn-node.dogesound.club:9091"));
         setInterval(async () => {
             const block = await caver.klay.getBlockNumber();
-            console.log(block, block - await Wallet.loadBlockNumber());
+            console.log(block, block - await ExtWallet.loadBlockNumber());
         }, 1000);
     }
 

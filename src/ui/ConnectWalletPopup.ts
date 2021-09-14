@@ -22,7 +22,7 @@ export default class ConnectWalletPopup extends Popup {
                     msg("CONNECT_KLIP_BUTTON"),
                     {
                         click: async () => {
-                            await Klip.auth();
+                            await Klip.connect();
                             this.delete();
                         },
                     },

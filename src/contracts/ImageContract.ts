@@ -9,7 +9,7 @@ class ImageContract extends Contract {
     }
 
     public async image(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.image(mateId).call();
+        return await this.runMethod("image", mateId);
     }
 }
 

@@ -1,6 +1,5 @@
 import { BigNumber } from "ethers";
 import Config from "../Config";
-import Wallet from "../klaytn/Wallet";
 import Contract from "./Contract";
 
 class DogeSoundContestContractV2 extends Contract {
@@ -14,73 +13,67 @@ class DogeSoundContestContractV2 extends Contract {
     }
 
     public async getCheckpoint(): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.checkpoint().call());
+        return BigNumber.from(await this.runMethod("checkpoint"));
     }
 
     public async getRound(): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.round().call());
+        return BigNumber.from(await this.runMethod("round"));
     }
 
     public async getRoundBlock(round: number): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.roundBlock(round).call());
+        return BigNumber.from(await this.runMethod("roundBlock", round));
     }
 
     public async getPeriod(): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.period().call());
+        return BigNumber.from(await this.runMethod("period"));
     }
 
     public async getRemains(): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.remains().call());
+        return BigNumber.from(await this.runMethod("remains"));
     }
 
     public async getCandidateMateCount(): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.candidateMateCount().call());
+        return BigNumber.from(await this.runMethod("candidateMateCount"));
     }
 
     public async getUserVotes(round: number, user: string): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.userVotes(round, user).call());
+        return BigNumber.from(await this.runMethod("userVotes", round, user));
     }
 
     public async getCandidateCount(round: number): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.candidateCount(round).call());
+        return BigNumber.from(await this.runMethod("candidateCount", round));
     }
 
     public async getCandidate(round: number, index: number): Promise<string> {
-        return await this.contract.methods.candidate(round, index).call();
+        return await this.runMethod("candidate", round, index);
     }
 
     public async getCandidateRegister(round: number, index: number): Promise<string> {
-        return await this.contract.methods.candidateRegister(round, index).call();
+        return await this.runMethod("candidateRegister", round, index);
     }
 
     public async getVotes(round: number, candidate: number): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.votes(round, candidate).call());
+        return BigNumber.from(await this.runMethod("votes", round, candidate));
     }
 
     public async getMateVoted(round: number, mates: string, mateId: number): Promise<boolean> {
-        return await this.contract.methods.mateVoted(round, mates, mateId).call();
+        return await this.runMethod("mateVoted", round, mates, mateId);
     }
 
     public async registerCandidate(dogeSound: string, mates: string, mateIds: number[]): Promise<void> {
-        const register = await Wallet.loadAddress();
-        const contract = await this.loadWalletContract();
-        await contract?.methods.registerCandidate(dogeSound, mates, mateIds).send({ from: register, gas: 1500000 });
+        await this.runWalletMethod("registerCandidate", dogeSound, mates, mateIds);
     }
 
     public async vote(candidate: number, mates: string, mateIds: number[]): Promise<void> {
-        const voter = await Wallet.loadAddress();
-        const contract = await this.loadWalletContract();
-        await contract?.methods.vote(candidate, mates, mateIds).send({ from: voter, gas: 1500000 });
+        await this.runWalletMethod("vote", candidate, mates, mateIds);
     }
 
     public async getElected(round: number): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.elected(round).call());
+        return BigNumber.from(await this.runMethod("elected", round));
     }
 
     public async mintWinnerNFT(round: number): Promise<void> {
-        const minter = await Wallet.loadAddress();
-        const contract = await this.loadWalletContract();
-        await contract?.methods.mintWinnerNFT(round).send({ from: minter, gas: 1500000 });
+        await this.runWalletMethod("mintWinnerNFT", round);
     }
 }
 

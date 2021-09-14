@@ -1,7 +1,10 @@
+import { BigNumberish } from "@ethersproject/bignumber";
 declare class Klip {
     address: undefined | string;
     private request;
-    auth(): Promise<void>;
+    get connected(): boolean;
+    connect(): Promise<void>;
+    runContractMethod(address: string, abi: any, params: any, value?: BigNumberish): Promise<void>;
 }
 declare const _default: Klip;
 export default _default;

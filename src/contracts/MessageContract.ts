@@ -1,6 +1,5 @@
 import { BigNumber, BigNumberish } from "ethers";
 import Config from "../Config";
-import Wallet from "../klaytn/Wallet";
 import Contract from "./Contract";
 
 export interface MessageRecord {
@@ -17,17 +16,15 @@ class MessageContract extends Contract {
     }
 
     public async set(mateId: BigNumberish, message: string): Promise<void> {
-        const register = await Wallet.loadAddress();
-        const contract = await this.loadWalletContract();
-        await contract?.methods.set(mateId, message).send({ from: register, gas: 1500000 });
+        await this.runWalletMethod("set", mateId, message);
     }
 
     public async recordCount(mateId: BigNumberish): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.recordCount(mateId).call());
+        return BigNumber.from(await this.runMethod("recordCount", mateId));
     }
 
     public async record(mateId: BigNumberish, index: BigNumberish): Promise<MessageRecord> {
-        const result = await this.contract.methods.record(mateId, index).call();
+        const result = await this.runMethod("record", mateId, index);
         return {
             owner: result[0],
             name: result[1],
@@ -37,11 +34,11 @@ class MessageContract extends Contract {
     }
 
     public async remainBlocks(mateId: BigNumberish): Promise<BigNumber> {
-        return BigNumber.from(await this.contract.methods.remainBlocks(mateId).call());
+        return BigNumber.from(await this.runMethod("remainBlocks", mateId));
     }
 
     public async lastMessage(mateId: BigNumberish): Promise<string> {
-        return await this.contract.methods.lastMessage(mateId).call();
+        return await this.runMethod("lastMessage", mateId);
     }
 }
 

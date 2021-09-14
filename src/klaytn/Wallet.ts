@@ -1,9 +1,9 @@
 import EventContainer from "eventcontainer";
+import ConnectWalletPopup from "../ui/ConnectWalletPopup";
+import ExtWallet from "./ExtWallet";
+import Klip from "./Klip";
 
 class Wallet extends EventContainer {
-
-    private klaytn: any | undefined = (window as any).klaytn;
-    private caver: any | undefined = (window as any).caver;
 
     constructor() {
         super();
@@ -17,15 +17,11 @@ class Wallet extends EventContainer {
     }
 
     public async loadAddress(): Promise<string | undefined> {
-        return this.caver === undefined ? undefined : (await this.caver.klay.getAccounts())[0];
-    }
-
-    public async loadChainId() {
-        return this.caver === undefined ? -1 : await this.caver.klay.getChainId();
-    }
-
-    public async loadBlockNumber() {
-        return this.caver === undefined ? -1 : await this.caver.klay.getBlockNumber();
+        if (ExtWallet.installed === true) {
+            return await ExtWallet.loadAddress();
+        } else {
+            return Klip.address;
+        }
     }
 
     public async connected() {
@@ -33,12 +29,11 @@ class Wallet extends EventContainer {
     }
 
     public async connect() {
-        await this.klaytn?.enable();
-        this.checkConnected();
-    }
-
-    public createContract(address: string, abi: any) {
-        return this.caver === undefined ? undefined : new this.caver.klay.Contract(abi, address);
+        if (ExtWallet.installed === true) {
+            return await ExtWallet.connect();
+        } else {
+            return new ConnectWalletPopup();
+        }
     }
 }
 

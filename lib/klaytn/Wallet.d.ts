@@ -1,15 +1,11 @@
 import EventContainer from "eventcontainer";
+import ConnectWalletPopup from "../ui/ConnectWalletPopup";
 declare class Wallet extends EventContainer {
-    private klaytn;
-    private caver;
     constructor();
     private checkConnected;
     loadAddress(): Promise<string | undefined>;
-    loadChainId(): Promise<any>;
-    loadBlockNumber(): Promise<any>;
     connected(): Promise<boolean>;
-    connect(): Promise<void>;
-    createContract(address: string, abi: any): any;
+    connect(): Promise<void | ConnectWalletPopup>;
 }
 declare const _default: Wallet;
 export default _default;

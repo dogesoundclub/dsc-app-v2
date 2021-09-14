@@ -5,6 +5,9 @@ export default abstract class Contract extends EventContainer {
     protected walletContract: any | undefined;
     protected contract: any;
     constructor(address: string, abi: any);
-    loadWalletContract(): Promise<any>;
+    protected findMethodABI(name: string): any;
+    loadExtWalletContract(): Promise<any>;
+    protected runMethod(methodName: string, ...params: any[]): Promise<any>;
+    protected runWalletMethod(methodName: string, ...params: any[]): Promise<void>;
 }
 //# sourceMappingURL=Contract.d.ts.map

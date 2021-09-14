@@ -1,3 +1,5 @@
+import { BigNumberish } from "@ethersproject/bignumber";
+import { utils } from "ethers";
 import msg from "msg.js";
 import Alert from "../ui/dialogue/Alert";
 
@@ -20,9 +22,25 @@ class Klip {
         });
     }
 
-    public async auth() {
+    public get connected() {
+        return this.address !== undefined;
+    }
+
+    public async connect() {
         const res = await klipSDK.prepare.auth({ bappName: msg("BAPP_TITLE") });
         this.address = (await this.request(res)).klaytn_address;
+    }
+
+    public async runContractMethod(address: string, abi: any, params: any, value?: BigNumberish) {
+        const res = await klipSDK.prepare.executeContract({
+            bappName: msg("BAPP_TITLE"),
+            to: address,
+            from: this.address,
+            abi: JSON.stringify(abi),
+            params: JSON.stringify(params),
+            value: utils.parseEther((value === undefined ? 0 : value).toString()),
+        });
+        await this.request(res);
     }
 }
 
