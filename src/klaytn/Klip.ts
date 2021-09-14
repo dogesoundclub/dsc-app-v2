@@ -32,14 +32,6 @@ class Klip {
     }
 
     public async runContractMethod(address: string, abi: any, params: any, value?: BigNumberish) {
-        const res = await klipSDK.prepare.executeContract({
-            bappName: msg("BAPP_TITLE"),
-            to: address,
-            //from: this.address,
-            abi: JSON.stringify(abi),
-            params: JSON.stringify(params),
-            value: utils.parseEther((value === undefined ? 0 : value).toString()),
-        });
         alert(JSON.stringify({
             bappName: msg("BAPP_TITLE"),
             to: address,
@@ -48,6 +40,14 @@ class Klip {
             params: JSON.stringify(params),
             value: utils.parseEther((value === undefined ? 0 : value).toString()),
         }));
+        const res = await klipSDK.prepare.executeContract({
+            bappName: msg("BAPP_TITLE"),
+            to: address,
+            //from: this.address,
+            abi: JSON.stringify(abi),
+            params: JSON.stringify(params),
+            value: utils.parseEther((value === undefined ? 0 : value).toString()),
+        });
         await this.request(res);
     }
 }
