@@ -1,7 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import { SkyRouter } from "skyrouter";
 import SkyUtil from "skyutil";
-import NameContract from "../../contracts/NameContract";
+import superagent from "superagent";
 import MateList from "./MateList";
 
 export default class MateItem extends DomNode {
@@ -62,6 +62,14 @@ export default class MateItem extends DomNode {
     }
 
     private async loadName() {
-        this.nameDisplay?.appendText(await NameContract.getName(this.id));
+        let result = await superagent.get(`https://api.dogesound.club/mate/cached/${this.id}`);
+        let tokenInfo = result.body;
+        if (tokenInfo.cached !== true) {
+            result = await superagent.get(`https://api.dogesound.club/mate/${this.id}`);
+            tokenInfo = result.body;
+        }
+        if (tokenInfo.real_name !== undefined) {
+            this.nameDisplay?.appendText(tokenInfo.real_name);
+        }
     }
 }
