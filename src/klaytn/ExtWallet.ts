@@ -1,3 +1,4 @@
+import { BigNumber } from "@ethersproject/bignumber";
 import EventContainer from "eventcontainer";
 
 class ExtWallet extends EventContainer {
@@ -30,6 +31,10 @@ class ExtWallet extends EventContainer {
 
     public async loadBlockNumber() {
         return this.caver === undefined ? -1 : await this.caver.klay.getBlockNumber();
+    }
+
+    public async loadBalance() {
+        return BigNumber.from(this.caver === undefined ? -1 : await this.caver.klay.getBalance(await this.loadAddress()));
     }
 
     public async connected() {

@@ -1,3 +1,4 @@
+import { BigNumber } from "@ethersproject/bignumber";
 import EventContainer from "eventcontainer";
 import Config from "../Config";
 import ExtWallet from "../klaytn/ExtWallet";
@@ -46,6 +47,19 @@ export default abstract class Contract extends EventContainer {
             await contract?.methods[methodName](...params).send({ from, gas: 1500000 });
         } else if (Klip.connected === true) {
             await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params);
+        } else {
+            new ConnectWalletPopup();
+            return new Promise(() => { });
+        }
+    }
+
+    protected async runWalletMethodWithValue(value: BigNumber, methodName: string, ...params: any[]) {
+        if (ExtWallet.installed === true) {
+            const from = await Wallet.loadAddress();
+            const contract = await this.loadExtWalletContract();
+            await contract?.methods[methodName](...params).send({ from, gas: 1500000, value });
+        } else if (Klip.connected === true) {
+            await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params, value.toString());
         } else {
             new ConnectWalletPopup();
             return new Promise(() => { });
