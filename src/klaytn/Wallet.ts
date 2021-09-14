@@ -8,6 +8,9 @@ class Wallet extends EventContainer {
     constructor() {
         super();
         this.checkConnected();
+
+        ExtWallet.toss("connect", this);
+        Klip.toss("connect", this);
     }
 
     private async checkConnected() {
@@ -32,7 +35,7 @@ class Wallet extends EventContainer {
         if (ExtWallet.installed === true) {
             return await ExtWallet.connect();
         } else {
-            return new ConnectWalletPopup();
+            return new Promise<void>((resolve) => new ConnectWalletPopup(resolve));
         }
     }
 }

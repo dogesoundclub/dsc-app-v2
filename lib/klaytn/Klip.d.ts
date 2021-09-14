@@ -1,5 +1,6 @@
 import { BigNumberish } from "@ethersproject/bignumber";
-declare class Klip {
+import EventContainer from "eventcontainer";
+declare class Klip extends EventContainer {
     address: undefined | string;
     private request;
     get connected(): boolean;

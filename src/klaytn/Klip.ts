@@ -2,10 +2,11 @@ import { BigNumberish } from "@ethersproject/bignumber";
 import { utils } from "ethers";
 import msg from "msg.js";
 import Alert from "../ui/dialogue/Alert";
+import EventContainer from "eventcontainer";
 
 const klipSDK = require("klip-sdk");
 
-class Klip {
+class Klip extends EventContainer {
 
     public address: undefined | string;
 
@@ -29,6 +30,7 @@ class Klip {
     public async connect() {
         const res = await klipSDK.prepare.auth({ bappName: msg("BAPP_TITLE") });
         this.address = (await this.request(res)).klaytn_address;
+        this.fireEvent("connect");
     }
 
     public async runContractMethod(address: string, abi: any, params: any, value?: BigNumberish) {

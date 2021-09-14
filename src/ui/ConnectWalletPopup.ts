@@ -6,7 +6,7 @@ export default class ConnectWalletPopup extends Popup {
 
     public content: DomNode;
 
-    constructor() {
+    constructor(callback: () => void) {
         super(".popup-background");
         this.append(
             this.content = el(".connect-wallet-popup",
@@ -23,6 +23,7 @@ export default class ConnectWalletPopup extends Popup {
                     {
                         click: async () => {
                             await Klip.connect();
+                            callback();
                             this.delete();
                         },
                     },

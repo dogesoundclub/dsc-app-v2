@@ -1,3 +1,4 @@
+import { BigNumber } from "@ethersproject/bignumber";
 import EventContainer from "eventcontainer";
 declare class ExtWallet extends EventContainer {
     private klaytn;
@@ -8,6 +9,7 @@ declare class ExtWallet extends EventContainer {
     loadAddress(): Promise<string | undefined>;
     loadChainId(): Promise<any>;
     loadBlockNumber(): Promise<any>;
+    loadBalance(): Promise<BigNumber>;
     connected(): Promise<boolean>;
     connect(): Promise<void>;
     createContract(address: string, abi: any): any;

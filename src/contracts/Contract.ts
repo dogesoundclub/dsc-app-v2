@@ -48,8 +48,7 @@ export default abstract class Contract extends EventContainer {
         } else if (Klip.connected === true) {
             await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params);
         } else {
-            new ConnectWalletPopup();
-            return new Promise(() => { });
+            return new Promise<void>((resolve) => new ConnectWalletPopup(resolve));
         }
     }
 
@@ -61,8 +60,7 @@ export default abstract class Contract extends EventContainer {
         } else if (Klip.connected === true) {
             await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params, value.toString());
         } else {
-            new ConnectWalletPopup();
-            return new Promise(() => { });
+            return new Promise<void>((resolve) => new ConnectWalletPopup(resolve));
         }
     }
 }
