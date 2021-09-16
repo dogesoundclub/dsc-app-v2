@@ -7,8 +7,8 @@
             "uri": "mates",
             "name": "MENU_MATES",
             "children": [{
-                    "uri": "mates/gallary",
-                    "name": "MENU_GALLARY"
+                    "uri": "mates/gallery",
+                    "name": "MENU_GALLERY"
                 }, {
                     "uri": "mates/rarity",
                     "name": "MENU_RARITY"

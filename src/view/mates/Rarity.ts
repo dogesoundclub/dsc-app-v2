@@ -19,11 +19,11 @@ export default class Rarity implements View {
 
     constructor() {
         Layout.current.title = msg("RARITY_TITLE");
-        Layout.current.content.append(this.container = el(".gallary-view",
+        Layout.current.content.append(this.container = el(".gallery-view",
             el(".filter",
                 el("h2", msg("RARITY_TITLE")),
                 el("input", {
-                    placeholder: msg("GALLARY_ID_INPUT"),
+                    placeholder: msg("GALLERY_ID_INPUT"),
                     change: (event, input) => {
                         const id = parseInt((input.domElement as HTMLInputElement).value, 10);
                         this.byId = isNaN(id) === true ? undefined : id;
@@ -52,7 +52,7 @@ export default class Rarity implements View {
                         }),
                     );
                 }),
-                el("a.reset-button", msg("GALLARY_RESET_FILTER_BUTTON"), {
+                el("a.reset-button", msg("GALLERY_RESET_FILTER_BUTTON"), {
                     click: () => {
                         this.filter = {};
                         this.byId = undefined;

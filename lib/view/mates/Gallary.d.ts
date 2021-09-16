@@ -1,5 +1,5 @@
 import { View, ViewParams } from "skyrouter";
-export default class Gallary implements View {
+export default class Gallery implements View {
     private container;
     private mateList;
     private filter;
