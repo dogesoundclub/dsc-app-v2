@@ -19,7 +19,7 @@ export default class Rarity implements View {
 
     constructor() {
         Layout.current.title = msg("RARITY_TITLE");
-        Layout.current.content.append(this.container = el(".gallery-view",
+        Layout.current.content.append(this.container = el(".rarity-view",
             el(".filter",
                 el("h2", msg("RARITY_TITLE")),
                 el("input", {

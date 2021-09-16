@@ -908,12 +908,12 @@ a {
   margin: auto;
   margin-bottom: 30px;
 }
-.gallary-view {
+.gallery-view {
   max-width: 1010px;
   padding: 135px 20px;
   margin: auto;
 }
-.gallary-view:after {
+.gallery-view:after {
   content: " ";
   display: block;
   font-size: 0;
@@ -922,21 +922,21 @@ a {
   visibility: hidden;
 }
 @media only screen and (max-width: 719px) {
-  .gallary-view {
+  .gallery-view {
     padding: 90px 20px;
   }
 }
-.gallary-view > .filter {
+.gallery-view > .filter {
   float: left;
   width: 200px;
   margin-bottom: 40px;
 }
-.gallary-view > .filter > h2 {
+.gallery-view > .filter > h2 {
   font-size: 36px;
   margin-bottom: 10px;
 }
-.gallary-view > .filter > input,
-.gallary-view > .filter > select {
+.gallery-view > .filter > input,
+.gallery-view > .filter > select {
   display: block;
   width: 100%;
   height: 36px;
@@ -946,7 +946,7 @@ a {
   font-size: 16px;
   font-family: BankGothic;
 }
-.gallary-view > .filter > .reset-button {
+.gallery-view > .filter > .reset-button {
   margin-top: 15px;
   display: block;
   font-size: 22px;
@@ -958,12 +958,12 @@ a {
   padding: 18px 0;
   text-align: center;
 }
-.gallary-view > .mate-list {
+.gallery-view > .mate-list {
   float: right;
 }
 @media only screen and (max-width: 1023px) {
-  .gallary-view > .filter,
-  .gallary-view > .mate-list {
+  .gallery-view > .filter,
+  .gallery-view > .mate-list {
     width: 100%;
     float: none;
   }
@@ -1090,6 +1090,9 @@ a {
   .mymates-view {
     padding: 90px 20px;
   }
+}
+.mymates-view > .loading {
+  margin: auto;
 }
 .mymates-view > h1 {
   font-size: 30px;
