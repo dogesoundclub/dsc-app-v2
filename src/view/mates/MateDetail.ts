@@ -2,6 +2,7 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter, View, ViewParams } from "skyrouter";
 import superagent from "superagent";
+import Loading from "../../component/loading/Loading";
 import MateMessageList from "../../component/matemessage/MateMessageList";
 import AttributesContract from "../../contracts/AttributesContract";
 import ImageContract from "../../contracts/ImageContract";
@@ -102,10 +103,13 @@ export default class MateDetail implements View {
     }
 
     private async loadName() {
+
+        this.nameDisplay.append(new Loading());
+
         await superagent.get(`https://api.dogesound.club/mate/${this.id}`);
 
-        this.nameDisplay.appendText(msg("MATE_DETAIL_TITLE").replace(/{id}/, String(this.id)));
         let name = await NameContract.getName(this.id);
+        this.nameDisplay.empty().appendText(msg("MATE_DETAIL_TITLE").replace(/{id}/, String(this.id)));
         if (name !== "") {
             this.nameDisplay.appendText(` - ${name}`);
         } else {

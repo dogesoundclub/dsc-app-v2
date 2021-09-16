@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
+import Loading from "../../component/loading/Loading";
 import MateList from "../../component/mate/MateList";
 import MateContract from "../../contracts/MateContract";
 import Wallet from "../../klaytn/Wallet";
@@ -11,12 +12,14 @@ export default class MyMates implements View {
     private container: DomNode;
     private wallet: DomNode;
     private mateList: MateList;
+    private loading: Loading | undefined;
 
     constructor() {
         Layout.current.title = msg("MY_MATES_TITLE");
         Layout.current.content.append(this.container = el(".mymates-view",
             el("h1", msg("MY_MATES_TITLE")),
             this.wallet = el(".wallet"),
+            this.loading = new Loading(),
             this.mateList = new MateList(),
         ));
         this.windowResizeHandler();
@@ -51,6 +54,8 @@ export default class MyMates implements View {
 
             this.mateList.load(mates);
         }
+        this.loading?.delete();
+        this.loading = undefined;
     }
 
     private windowResizeHandler = () => {

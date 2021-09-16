@@ -3,6 +3,7 @@ export default class MyMates implements View {
     private container;
     private wallet;
     private mateList;
+    private loading;
     constructor();
     private load;
     private windowResizeHandler;
