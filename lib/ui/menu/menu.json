@@ -1,36 +1,35 @@
 {
-    "menu": [
-        {
+    "menu": [{
             "uri": "",
             "name": "MENU_HOME"
         },
         {
             "uri": "mates",
             "name": "MENU_MATES",
-            "children": [
-                {
+            "children": [{
                     "uri": "mates/gallary",
                     "name": "MENU_GALLARY"
-                },
-                {
-                    "uri": "mates/buy",
-                    "name": "MENU_BUY_MATES"
+                }, {
+                    "uri": "mates/rarity",
+                    "name": "MENU_RARITY"
                 },
                 {
                     "uri": "mates/mymates",
                     "name": "MENU_MY_MATES"
+                },
+                {
+                    "uri": "mates/buy",
+                    "name": "MENU_BUY_MATES"
                 }
             ]
         },
         {
             "uri": "activities",
             "name": "MENU_ACTIVITIES",
-            "children": [
-                {
+            "children": [{
                     "uri": "dogesounds",
                     "name": "MENU_DOGESOUNDS"
-                }
-            ]
+                }]
         }
     ]
 }

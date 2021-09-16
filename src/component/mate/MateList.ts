@@ -11,7 +11,7 @@ export default class MateList extends ScrollableDomNode<number[]> {
     private drawingMates: number[] = [];
     private mateNames: { [id: number]: string } = {};
 
-    constructor(selectable: boolean = false) {
+    constructor(selectable: boolean, rarity: boolean) {
         super(
             (() => {
                 const dom = document.createElement("div");
@@ -19,7 +19,7 @@ export default class MateList extends ScrollableDomNode<number[]> {
                 return dom;
             })(),
             { childTag: "div", baseChildHeight: window.innerWidth < 800 ? 64 : 90 },
-            (ids) => new MateLine(this, ids, this.mateNames, selectable),
+            (ids) => new MateLine(this, ids, this.mateNames, selectable, rarity),
         );
         if (window.innerWidth >= 800) {
             this.style({

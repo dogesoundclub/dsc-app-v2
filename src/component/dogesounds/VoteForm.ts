@@ -35,7 +35,7 @@ export default class VoteForm extends DomNode {
             el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
                 click: () => this.mateList.deselect(),
             })),
-            this.mateList = new MateList(true),
+            this.mateList = new MateList(true, false),
             el("a.submit-button", msg("DOGESOUNDS_VOTE_SUBMIT"), {
                 click: async () => {
                     if (this.mateList.selectedMateIds.length > 0) {

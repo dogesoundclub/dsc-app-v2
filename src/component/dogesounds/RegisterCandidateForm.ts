@@ -39,7 +39,7 @@ export default class RegisterCandidateForm extends DomNode {
             el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
                 click: () => this.mateList.deselect(),
             })),
-            this.mateList = new MateList(true),
+            this.mateList = new MateList(true, false),
             el("a.submit-button", msg("DOGESOUNDS_REGISTER_SUBMIT"), {
                 click: async () => {
                     const candidateMateCount = (await DogeSoundContestV2Contract.getCandidateMateCount()).toNumber();

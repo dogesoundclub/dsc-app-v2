@@ -1,0 +1,59 @@
+.rarity-view {
+    max-width: 1010px;
+    padding  : 135px 20px;
+    margin   : auto;
+    .float-wrapper();
+
+    @media @phone {
+        padding: 90px 20px;
+    }
+
+    >.filter {
+        float        : left;
+        width        : 200px;
+        margin-bottom: 40px;
+
+        >h2 {
+            font-size    : 36px;
+            margin-bottom: 10px;
+        }
+
+        >input,
+        >select {
+            display         : block;
+            width           : 100%;
+            height          : 36px;
+            color           : #ffffff;
+            background-color: #000000;
+            border          : none;
+            font-size       : 16px;
+            font-family     : BankGothic;
+        }
+
+        >.reset-button {
+            margin-top      : 15px;
+            display         : block;
+            font-size       : 22px;
+            color           : #000000;
+            background-color: #FBFF72;
+            box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+            text-transform  : uppercase;
+            font-weight     : bold;
+            padding         : 18px 0;
+            text-align      : center;
+        }
+    }
+
+    >.mate-list {
+        float: right;
+    }
+
+    @media only screen and (max-width: 1023px) {
+
+        >.filter,
+        >.mate-list {
+            width: 100%;
+            float: none;
+        }
+    }
+}

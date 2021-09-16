@@ -1,7 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
-import SkyUtil from "skyutil";
 import MateList from "../../component/mate/MateList";
 import Layout from "../Layout";
 import MateParts from "./MateParts.json";
@@ -52,7 +51,7 @@ export default class Gallary implements View {
                     },
                 }),
             ),
-            this.mateList = new MateList(),
+            this.mateList = new MateList(false, false),
         ));
         this.windowResizeHandler();
         this.loadMates();

@@ -20,7 +20,7 @@ export default class MyMates implements View {
             el("h1", msg("MY_MATES_TITLE")),
             this.wallet = el(".wallet"),
             this.loading = new Loading(),
-            this.mateList = new MateList(),
+            this.mateList = new MateList(false, false),
         ));
         this.windowResizeHandler();
         this.load();

@@ -6,14 +6,14 @@ export default class MateLine extends ScrollItemDomNode<number[]> {
 
     public get nodeData() { return this.ids; }
 
-    constructor(list: MateList, private ids: number[], private names: { [id: number]: string }, selectable: boolean) {
+    constructor(list: MateList, private ids: number[], names: { [id: number]: string }, selectable: boolean, rarity: boolean) {
         super((() => {
             const dom = document.createElement("div");
             dom.className = "mate-line"
             return dom;
         })());
         for (const id of ids) {
-            this.append(new MateItem(list, id, names[id], selectable));
+            this.append(new MateItem(list, id, names[id], selectable, rarity));
         }
     }
 }
