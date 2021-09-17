@@ -25,16 +25,13 @@ import NodeSyncTest from "./view/test/NodeSyncTest";
     SkyRouter.route("", Home);
     SkyRouter.route("mates", Mates);
     SkyRouter.route("mates/gallery", Gallery);
-    SkyRouter.route("mates/rarity", Rarity);
+    //SkyRouter.route("mates/rarity", Rarity);
     SkyRouter.route("mates/buy", BuyMates);
     SkyRouter.route("mates/mymates", MyMates);
     SkyRouter.route("mates/{id}", MateDetail, ["mates/gallery", "mates/rarity", "mates/buy", "mates/mymates"]);
     SkyRouter.route("activities", Activities);
     SkyRouter.route("dogesounds", DogeSounds);
     SkyRouter.route("terms", Terms);
-
-    // test
-    SkyRouter.route("test/node-sync", NodeSyncTest);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);
