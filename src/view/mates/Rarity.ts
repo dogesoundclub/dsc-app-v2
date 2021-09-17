@@ -1,13 +1,12 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
-import SkyUtil from "skyutil";
+import CommonUtil from "../../CommonUtil";
 import MateList from "../../component/mate/MateList";
+import rarity from "../../rarity.json";
 import Layout from "../Layout";
 import MateParts from "./MateParts.json";
 import Mates from "./Mates.json";
-import rarity from "../../rarity.json";
-import CommonUtil from "../../CommonUtil";
 
 export default class Rarity implements View {
 
