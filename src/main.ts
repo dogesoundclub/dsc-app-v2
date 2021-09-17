@@ -9,12 +9,12 @@ import Home from "./view/Home";
 import Layout from "./view/Layout";
 import Mates from "./view/Mates";
 import BuyMates from "./view/mates/BuyMates";
+import FollowMe from "./view/mates/FollowMe";
 import Gallery from "./view/mates/Gallery";
 import MateDetail from "./view/mates/MateDetail";
 import MyMates from "./view/mates/MyMates";
-import Rarity from "./view/mates/Rarity";
+//import Rarity from "./view/mates/Rarity";
 import Terms from "./view/Terms";
-import NodeSyncTest from "./view/test/NodeSyncTest";
 
 (async () => {
 
@@ -26,9 +26,16 @@ import NodeSyncTest from "./view/test/NodeSyncTest";
     SkyRouter.route("mates", Mates);
     SkyRouter.route("mates/gallery", Gallery);
     //SkyRouter.route("mates/rarity", Rarity);
+    SkyRouter.route("mates/followme", FollowMe);
     SkyRouter.route("mates/buy", BuyMates);
     SkyRouter.route("mates/mymates", MyMates);
-    SkyRouter.route("mates/{id}", MateDetail, ["mates/gallery", "mates/rarity", "mates/buy", "mates/mymates"]);
+    SkyRouter.route("mates/{id}", MateDetail, [
+        "mates/gallery",
+        "mates/rarity",
+        "mates/followme",
+        "mates/buy",
+        "mates/mymates",
+    ]);
     SkyRouter.route("activities", Activities);
     SkyRouter.route("dogesounds", DogeSounds);
     SkyRouter.route("terms", Terms);

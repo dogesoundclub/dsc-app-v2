@@ -57,6 +57,17 @@
             font-style   : italic;
         }
 
+        >.sns {
+            margin-top : 20px;
+            font-family: DungGeunMo;
+            display    : flex;
+            align-items: center;
+
+            >label {
+                width: 120px;
+            }
+        }
+
         >input {
             display         : block;
             color           : #ffffff;
@@ -89,9 +100,72 @@
             }
 
             >p {
-                float: right;
-                width: calc(100% - 40px);
+                float    : right;
+                width    : calc(100% - 40px);
+                font-size: 14px;
+                color    : #cccccc;
             }
+        }
+
+        >.sns-form {
+            margin-top : 40px;
+            font-family: DungGeunMo;
+            display    : flex;
+            align-items: center;
+
+            @media @phone {
+                display: block;
+            }
+
+            >label {
+                float: left;
+                width: 120px;
+            }
+
+            >.input-container {
+                float    : left;
+                flex-grow: 1;
+
+                >input {
+                    width           : 200px;
+                    color           : #ffffff;
+                    background-color: transparent;
+                    font-family     : DungGeunMo;
+                    padding         : 7.5px;
+                    border          : 2px solid #ffffff;
+                    font-size       : 15px;
+                    height          : 45px;
+                }
+
+                @media @phone {
+                    margin-bottom: 15px;
+                }
+            }
+
+            >.submit-button {
+                clear           : both;
+                display         : block;
+                font-size       : 16px;
+                color           : #000000;
+                background-color: #FBFF72;
+                box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+                text-align      : center;
+                width           : 170px;
+                padding         : 10px 0;
+                font-family     : DungGeunMo;
+                font-weight     : bold;
+
+                @media @phone {
+                    margin: auto;
+                }
+            }
+        }
+
+        >.sns-terms {
+            display   : block;
+            margin-top: 40px;
+            font-size : 14px;
+            color     : #cccccc;
         }
 
         >.submit-button {

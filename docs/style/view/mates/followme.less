@@ -1,0 +1,76 @@
+.follow-me-view {
+    max-width: 780px;
+    padding  : 135px 20px;
+    margin   : auto;
+
+    @media @phone {
+        padding: 90px 20px;
+    }
+
+    >h1 {
+        font-size     : 30px;
+        font-family   : DungGeunMo;
+        color         : #FF00F6;
+        text-shadow   : 3px 3px 3px #656565;
+        margin-bottom : 30px;
+        text-align    : center;
+        text-transform: uppercase;
+    }
+
+    >p {
+        margin-top : 60px;
+        word-break : break-all;
+        line-height: 2em;
+    }
+
+    >table {
+        margin-top: 60px;
+        width     : 100%;
+
+        th {
+            color         : #BFC500;
+            padding-bottom: 15px;
+            font-size     : 18px;
+        }
+
+        td {
+            text-align    : center;
+            vertical-align: middle;
+        }
+
+        .mate-item {
+            position         : relative;
+            width            : 90px;
+            margin           : auto;
+            height           : 90px;
+            background-size  : contain;
+            background-repeat: no-repeat;
+            font-size        : 20px;
+            line-height      : 1em;
+
+            >.id {
+                position   : absolute;
+                left       : 3px;
+                bottom     : 0;
+                font-family: DungGeunMo;
+            }
+
+            >.name {
+                position   : absolute;
+                top        : 0;
+                left       : 0;
+                width      : 100%;
+                text-align : center;
+                font-family: DungGeunMo;
+                color      : #FF00F6;
+                text-shadow: 3px 3px 3px #656565;
+            }
+
+            @media only screen and (max-width: 799px) {
+                width    : 64px;
+                height   : 64px;
+                font-size: 14px;
+            }
+        }
+    }
+}

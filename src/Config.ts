@@ -17,6 +17,9 @@ export default {
         Image: "",
         Attributes: "",
         DogeSoundContestV2: "0x676289E02e8c0264417e4bEc9413d6007a686Be3",
+        FollowMe: "",
+        Vote: "",
+        MateInfo: "",
         */
 
         // Mainnet
@@ -27,5 +30,8 @@ export default {
         Image: "0x059308948cf1F550E15869f9C3E02dCEb8814F0A",
         Attributes: "0xB16cA0035f398EA513c063a2F61C7631413bCD7d",
         DogeSoundContestV2: "0x43f3b52C1cb0801efA4EFa6a6b1908746E2a3210",
+        FollowMe: "0x68d0EC90b70407089a419EE99C32a44c0f5Da775",
+        Vote: "0xec27538d92a4cD75ff09A922B5E970aF60808B54",
+        MateInfo: "0x986130a92d8e805bb371e98dfa5d79f9db1eeaa2",
     },
 };

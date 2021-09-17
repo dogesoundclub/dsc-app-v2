@@ -11,6 +11,10 @@
                     "name": "MENU_GALLERY"
                 },
                 {
+                    "uri": "mates/followme",
+                    "name": "MENU_FOLLOW_ME"
+                },
+                {
                     "uri": "mates/mymates",
                     "name": "MENU_MY_MATES"
                 },

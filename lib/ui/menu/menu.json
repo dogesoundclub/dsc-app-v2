@@ -9,9 +9,10 @@
             "children": [{
                     "uri": "mates/gallery",
                     "name": "MENU_GALLERY"
-                }, {
-                    "uri": "mates/rarity",
-                    "name": "MENU_RARITY"
+                },
+                {
+                    "uri": "mates/followme",
+                    "name": "MENU_FOLLOW_ME"
                 },
                 {
                     "uri": "mates/mymates",

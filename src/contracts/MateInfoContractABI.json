@@ -1,0 +1,45 @@
+[{
+        "constant": true,
+        "inputs": [{
+                "name": "start",
+                "type": "uint256"
+            },
+            {
+                "name": "end",
+                "type": "uint256"
+            }
+        ],
+        "name": "names",
+        "outputs": [{
+            "name": "",
+            "type": "string[]"
+        }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [{
+                "name": "start",
+                "type": "uint256"
+            },
+            {
+                "name": "end",
+                "type": "uint256"
+            },
+            {
+                "name": "index",
+                "type": "uint256"
+            }
+        ],
+        "name": "links",
+        "outputs": [{
+            "name": "",
+            "type": "string[]"
+        }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    }
+]

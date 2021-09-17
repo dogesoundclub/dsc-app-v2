@@ -1028,6 +1028,76 @@ a {
     float: none;
   }
 }
+.follow-me-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .follow-me-view {
+    padding: 90px 20px;
+  }
+}
+.follow-me-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.follow-me-view > p {
+  margin-top: 60px;
+  word-break: break-all;
+  line-height: 2em;
+}
+.follow-me-view > table {
+  margin-top: 60px;
+  width: 100%;
+}
+.follow-me-view > table th {
+  color: #BFC500;
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+.follow-me-view > table td {
+  text-align: center;
+  vertical-align: middle;
+}
+.follow-me-view > table .mate-item {
+  position: relative;
+  width: 90px;
+  margin: auto;
+  height: 90px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  line-height: 1em;
+}
+.follow-me-view > table .mate-item > .id {
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+  font-family: DungGeunMo;
+}
+.follow-me-view > table .mate-item > .name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+}
+@media only screen and (max-width: 799px) {
+  .follow-me-view > table .mate-item {
+    width: 64px;
+    height: 64px;
+    font-size: 14px;
+  }
+}
 .buymates-view {
   max-width: 780px;
   padding: 135px 20px;
@@ -1157,6 +1227,15 @@ a {
   font-size: 22px;
   font-style: italic;
 }
+.matedetail-view > section > .sns {
+  margin-top: 20px;
+  font-family: DungGeunMo;
+  display: flex;
+  align-items: center;
+}
+.matedetail-view > section > .sns > label {
+  width: 120px;
+}
 .matedetail-view > section > input {
   display: block;
   color: #ffffff;
@@ -1195,6 +1274,66 @@ a {
 .matedetail-view > section > .terms > p {
   float: right;
   width: calc(100% - 40px);
+  font-size: 14px;
+  color: #cccccc;
+}
+.matedetail-view > section > .sns-form {
+  margin-top: 40px;
+  font-family: DungGeunMo;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 719px) {
+  .matedetail-view > section > .sns-form {
+    display: block;
+  }
+}
+.matedetail-view > section > .sns-form > label {
+  float: left;
+  width: 120px;
+}
+.matedetail-view > section > .sns-form > .input-container {
+  float: left;
+  flex-grow: 1;
+}
+.matedetail-view > section > .sns-form > .input-container > input {
+  width: 200px;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  border: 2px solid #ffffff;
+  font-size: 15px;
+  height: 45px;
+}
+@media only screen and (max-width: 719px) {
+  .matedetail-view > section > .sns-form > .input-container {
+    margin-bottom: 15px;
+  }
+}
+.matedetail-view > section > .sns-form > .submit-button {
+  clear: both;
+  display: block;
+  font-size: 16px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 170px;
+  padding: 10px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+@media only screen and (max-width: 719px) {
+  .matedetail-view > section > .sns-form > .submit-button {
+    margin: auto;
+  }
+}
+.matedetail-view > section > .sns-terms {
+  display: block;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #cccccc;
 }
 .matedetail-view > section > .submit-button {
   display: block;

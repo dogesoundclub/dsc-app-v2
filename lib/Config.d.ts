@@ -8,6 +8,9 @@ declare const _default: {
         Image: string;
         Attributes: string;
         DogeSoundContestV2: string;
+        FollowMe: string;
+        Vote: string;
+        MateInfo: string;
     };
 };
 export default _default;
