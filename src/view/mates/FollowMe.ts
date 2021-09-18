@@ -1,10 +1,9 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import { View, ViewParams } from "skyrouter";
-import Loading from "../../component/loading/Loading";
-import MateInfoContract from "../../contracts/MateInfoContract";
-import Layout from "../Layout";
+import { SkyRouter, View, ViewParams } from "skyrouter";
 import superagent from "superagent";
+import Loading from "../../component/loading/Loading";
+import Layout from "../Layout";
 
 export default class FollowMe implements View {
 
@@ -31,23 +30,36 @@ export default class FollowMe implements View {
 
     private async load() {
 
-        const result = await superagent.get("https://api.dogesound.club/mate/names");
-        const mateNames: { [id: number]: string } = result.body;
+        const getNamesResult = await superagent.get("https://api.dogesound.club/mate/names");
+        const mateNames: { [id: number]: string } = getNamesResult.body;
 
-        const links = await MateInfoContract.links();
-        for (const [id, link] of links.entries()) {
-            if (link.twitter !== "" || link.instagram !== "") {
+        const getLinksResult = await superagent.get("https://api.dogesound.club/mate/links");
+        const links: {
+            [id: number]: {
+                twitter?: string,
+                instagram?: string,
+            },
+        } = getLinksResult.body;
+
+        for (const [id, link] of Object.entries(links)) {
+            if (link.twitter !== undefined || link.instagram !== undefined) {
                 this.list.append(
                     el("tr",
                         el("td",
-                            el(".mate-item",
+                            el("a.mate-item",
                                 { style: { backgroundImage: `url(https://storage.googleapis.com/dsc-mate/336/dscMate-${id}.png)` } },
                                 el("span.id", `#${id}`),
-                                el("span.name", mateNames[id]),
+                                el("span.name", mateNames[id as any]),
+                                {
+                                    click: () => {
+                                        SkyRouter.go(`/mates/${id}`);
+                                        window.scrollTo(0, 0);
+                                    },
+                                },
                             ),
                         ),
-                        el("td", link.twitter === "" ? "" : el("a", `@${link.twitter}`, { href: `https://twitter.com/${link.twitter}`, target: "_blank" })),
-                        el("td", link.instagram === "" ? "" : el("a", `@${link.instagram}`, { href: `https://instagram.com/${link.instagram}`, target: "_blank" })),
+                        el("td", link.twitter === undefined ? "" : el("a", `@${link.twitter}`, { href: `https://twitter.com/${link.twitter}`, target: "_blank" })),
+                        el("td", link.instagram === undefined ? "" : el("a", `@${link.instagram}`, { href: `https://instagram.com/${link.instagram}`, target: "_blank" })),
                     ),
                 );
             }

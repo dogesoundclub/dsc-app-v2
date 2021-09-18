@@ -10,7 +10,6 @@ declare const _default: {
         DogeSoundContestV2: string;
         FollowMe: string;
         Vote: string;
-        MateInfo: string;
     };
 };
 export default _default;
