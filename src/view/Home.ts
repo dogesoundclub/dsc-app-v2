@@ -1,8 +1,8 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter, View, ViewParams } from "skyrouter";
+import superagent from "superagent";
 import Loading from "../component/loading/Loading";
-import DogeSoundContestV2Contract from "../contracts/DogeSoundContestV2Contract";
 import Layout from "./Layout";
 
 export default class Home implements View {
@@ -125,14 +125,12 @@ export default class Home implements View {
             this.winner.append(new Loading());
             this.dogesound.append(new Loading());
 
-            const round = (await DogeSoundContestV2Contract.getRound()).toNumber() - 1;
-            const elected = (await DogeSoundContestV2Contract.getElected(round)).toNumber();
-            const dogesound = await DogeSoundContestV2Contract.getCandidate(round, elected);
-            const winner = await DogeSoundContestV2Contract.getCandidateRegister(round, elected);
+            const result = await superagent.get("https://api.dogesound.club/dogesoundwinner");
+            const winnerInfo = result.body;
 
-            this.winner.empty().appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(round + 1))} `);
-            this.winner.append(el("a", winner, { href: `https://opensea.io/${winner}` }));
-            this.dogesound.empty().appendText(`${msg("HOME_WINNER_DESCRIPTION").replace(/{round}/, String(round + 1))} \nㅡ ${dogesound}`);
+            this.winner.empty().appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(winnerInfo.round + 1))} `);
+            this.winner.append(el("a", winnerInfo.winner, { href: `https://opensea.io/${winnerInfo.winner}` }));
+            this.dogesound.empty().appendText(`${msg("HOME_WINNER_DESCRIPTION").replace(/{round}/, String(winnerInfo.round + 1))} \nㅡ ${winnerInfo.dogesound}`);
         } catch (e) {
             this.dogesound.appendText(msg("HOME_WINNER_ERROR"));
             console.log(e);
