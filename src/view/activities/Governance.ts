@@ -2,6 +2,7 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import Layout from "../Layout";
+import ViewUtil from "../ViewUtil";
 
 export default class Governance implements View {
 
@@ -10,6 +11,14 @@ export default class Governance implements View {
     constructor() {
         Layout.current.title = msg("GOVERNANCE_TITLE");
         Layout.current.content.append(this.container = el(".governance-view",
+            el("h1", msg("GOVERNANCE_TITLE")),
+            el("p", msg("GOVERNANCE_DESCRIPTION")),
+            el("section",
+                el("h2", msg("GOVERNANCE_PROPOSALS")),
+                el("a.propose-button", msg("GOVERNANCE_PROPOSE_BUTTON"), {
+                    click: () => ViewUtil.go("/governance/propose"),
+                }),
+            ),
         ));
     }
 

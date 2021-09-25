@@ -4,6 +4,7 @@ import { SkyRouter, View, ViewParams } from "skyrouter";
 import superagent from "superagent";
 import Loading from "../../component/loading/Loading";
 import Layout from "../Layout";
+import ViewUtil from "../ViewUtil";
 
 export default class FollowMe implements View {
 
@@ -50,12 +51,7 @@ export default class FollowMe implements View {
                                 { style: { backgroundImage: `url(https://storage.googleapis.com/dsc-mate/336/dscMate-${id}.png)` } },
                                 el("span.id", `#${id}`),
                                 el("span.name", mateNames[id as any]),
-                                {
-                                    click: () => {
-                                        SkyRouter.go(`/mates/${id}`);
-                                        window.scrollTo(0, 0);
-                                    },
-                                },
+                                { click: () => ViewUtil.go(`/mates/${id}`) },
                             ),
                         ),
                         el("td", link.twitter === undefined ? "" : el("a", `@${link.twitter}`, { href: `https://twitter.com/${link.twitter}`, target: "_blank" })),

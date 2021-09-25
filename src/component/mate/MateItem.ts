@@ -4,6 +4,7 @@ import SkyUtil from "skyutil";
 import MateList from "./MateList";
 import rarity from "../../rarity.json";
 import CommonUtil from "../../CommonUtil";
+import ViewUtil from "../../view/ViewUtil";
 
 export default class MateItem extends DomNode {
 
@@ -60,8 +61,7 @@ export default class MateItem extends DomNode {
                     list.fireEvent("selectMate");
                 }
             } else {
-                SkyRouter.go(`/mates/${id}`);
-                window.scrollTo(0, 0);
+                ViewUtil.go(`/mates/${id}`);
             }
         });
     }

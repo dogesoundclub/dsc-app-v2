@@ -4,6 +4,7 @@ import { SkyRouter, View, ViewParams } from "skyrouter";
 import superagent from "superagent";
 import Loading from "../component/loading/Loading";
 import Layout from "./Layout";
+import ViewUtil from "./ViewUtil";
 
 export default class Home implements View {
 
@@ -42,16 +43,10 @@ export default class Home implements View {
                 el("p",
                     msg("HOME_SECTION_2_1"), "\n",
                     el("a", `▶ ${msg("HOME_SECTION_2_LINK_1")}`, {
-                        click: () => {
-                            SkyRouter.go("/mates");
-                            window.scrollTo(0, 0);
-                        },
+                        click: () => ViewUtil.go("/mates"),
                     }), "\n",
                     el("a", `▶ ${msg("HOME_SECTION_2_LINK_2")}`, {
-                        click: () => {
-                            SkyRouter.go("/activities");
-                            window.scrollTo(0, 0);
-                        },
+                        click: () => ViewUtil.go("/activities"),
                     }), "\n",
                     "\n",
                     msg("HOME_SECTION_2_2"), "\n",
@@ -75,10 +70,7 @@ export default class Home implements View {
                     el("p",
                         msg("HOME_ROADMAP_30"), "\n",
                         el("a", `▶ ${msg("HOME_ROADMAP_DOGESOUND_LINK")}`, {
-                            click: () => {
-                                SkyRouter.go("/activities");
-                                window.scrollTo(0, 0);
-                            },
+                            click: () => ViewUtil.go("/activities"),
                         }),
                     ),
                 ),

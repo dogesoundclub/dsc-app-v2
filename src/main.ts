@@ -5,6 +5,9 @@ import BrowserInfo from "./BrowserInfo";
 import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
+import Governance from "./view/activities/Governance";
+import Detail from "./view/activities/governance/Detail";
+import Propose from "./view/activities/governance/Propose";
 import Home from "./view/Home";
 import Layout from "./view/Layout";
 import Mates from "./view/Mates";
@@ -38,6 +41,9 @@ import Terms from "./view/Terms";
     ]);
     SkyRouter.route("activities", Activities);
     SkyRouter.route("dogesounds", DogeSounds);
+    SkyRouter.route("governance", Governance);
+    SkyRouter.route("governance/propose", Propose);
+    SkyRouter.route("governance/{id}", Detail, ["governance/propose"]);
     SkyRouter.route("terms", Terms);
 
     if (sessionStorage.__spa_path) {

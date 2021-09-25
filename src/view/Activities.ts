@@ -2,6 +2,7 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter, View, ViewParams } from "skyrouter";
 import Layout from "./Layout";
+import ViewUtil from "./ViewUtil";
 
 export default class Activities implements View {
 
@@ -16,10 +17,7 @@ export default class Activities implements View {
             ),
             el("section",
                 el("h2", el("a", msg("ACTIVITIES_SECTION_2_TITLE"), {
-                    click: () => {
-                        SkyRouter.go("/dogesounds");
-                        window.scrollTo(0, 0);
-                    },
+                    click: () => ViewUtil.go("/dogesounds"),
                 })),
                 el("p", msg("ACTIVITIES_SECTION_2")),
             ),

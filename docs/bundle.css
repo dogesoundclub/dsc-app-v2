@@ -1506,6 +1506,101 @@ a {
 .dogesounds-view > .vote-form {
   margin-top: 45px;
 }
+.governance-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .governance-view {
+    padding: 90px 20px;
+  }
+}
+.governance-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.governance-view > p {
+  line-height: 2em;
+}
+.governance-view > section {
+  margin-top: 50px;
+}
+.governance-view > section:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.governance-view > section > h2 {
+  float: left;
+  font-size: 26px;
+  color: #BFC500;
+}
+.governance-view > section > .propose-button {
+  float: right;
+  font-size: 16px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  padding: 10px 20px;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.governance-propose-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .governance-propose-view {
+    padding: 90px 20px;
+  }
+}
+.governance-propose-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.governance-propose-view > .back-button {
+  font-size: 26px;
+  color: #BFC500;
+}
+.governance-detail-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .governance-detail-view {
+    padding: 90px 20px;
+  }
+}
+.governance-detail-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.governance-detail-view > .back-button {
+  font-size: 26px;
+  color: #BFC500;
+}
 .terms-view {
   max-width: 780px;
   padding: 135px 20px;

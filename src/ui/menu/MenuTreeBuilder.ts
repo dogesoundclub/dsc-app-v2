@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
+import ViewUtil from "../../view/ViewUtil";
 
 interface Menu {
     uri: string;
@@ -17,24 +18,14 @@ class MenuTreeBuilder {
         const lis: DomNode[] = parent === undefined ? [] : [el("li.parent",
             el(`a${location.pathname === `/${parent.uri}` ? ".on" : ""}`,
                 msg(parent.name),
-                {
-                    click: () => {
-                        SkyRouter.go(`/${parent.uri}`);
-                        window.scrollTo(0, 0);
-                    },
-                },
+                { click: () => ViewUtil.go(`/${parent.uri}`) },
             ),
         )];
         for (const menuItem of menus) {
             const li = el("li",
                 el(`a${location.pathname === `/${menuItem.uri}` ? ".on" : ""}`,
                     msg(menuItem.name),
-                    {
-                        click: () => {
-                            SkyRouter.go(`/${menuItem.uri}`);
-                            window.scrollTo(0, 0);
-                        },
-                    },
+                    { click: () => ViewUtil.go(`/${menuItem.uri}`) },
                 ),
             );
             if (menuItem.children !== undefined) {
