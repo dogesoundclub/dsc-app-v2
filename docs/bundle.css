@@ -1578,6 +1578,98 @@ a {
   font-size: 26px;
   color: #BFC500;
 }
+.governance-propose-view > .form {
+  border: 2px solid #ffffff;
+  padding: 20px;
+}
+.governance-propose-view > .form > h2 {
+  color: #26A55C;
+  font-family: DungGeunMo;
+  text-align: center;
+  font-size: 20px;
+}
+.governance-propose-view > .form > label {
+  display: block;
+  margin-top: 30px;
+  color: #FBFF72;
+  font-family: DungGeunMo;
+  font-size: 20px;
+}
+.governance-propose-view > .form > label > p {
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 16px;
+}
+.governance-propose-view > .form > label > a {
+  font-size: 16px;
+  text-decoration: underline;
+}
+.governance-propose-view > .form > label > input,
+.governance-propose-view > .form > label > textarea {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  border: 2px solid #ffffff;
+  font-size: 15px;
+}
+.governance-propose-view > .form > label > textarea {
+  height: 100px;
+}
+.governance-propose-view > .form > label > textarea.content {
+  height: 400px;
+}
+.governance-propose-view > .form > .proposer {
+  margin-top: 30px;
+  color: #FBFF72;
+  font-family: DungGeunMo;
+  font-size: 20px;
+}
+.governance-propose-view > .form > .proposer > span {
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 16px;
+}
+.governance-propose-view > .terms {
+  display: block;
+  margin-top: 40px;
+}
+.governance-propose-view > .terms:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.governance-propose-view > .terms > input {
+  float: left;
+  width: 22px;
+  height: 22px;
+}
+.governance-propose-view > .terms > p {
+  float: right;
+  width: calc(100% - 40px);
+  font-size: 14px;
+  color: #cccccc;
+}
+.governance-propose-view > .submit-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 252px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
 .governance-detail-view {
   max-width: 780px;
   padding: 135px 20px;
