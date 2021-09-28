@@ -2339,6 +2339,7 @@ a {
   color: #FBFF72;
   font-family: DungGeunMo;
   font-size: 20px;
+  word-break: break-all;
 }
 .governance-propose-view > .form > .proposer > span {
   margin-top: 10px;
@@ -2426,6 +2427,7 @@ a {
   border: 2px solid #ffffff;
   padding: 20px;
   font-family: DungGeunMo;
+  word-break: break-all;
 }
 .governance-detail-view > .content > h1 {
   font-size: 20px;
