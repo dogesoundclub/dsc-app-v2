@@ -111,6 +111,7 @@ export default class Home implements View {
                 el("p",
                     `- ${msg("HOME_CONTACT_KAKAOTALK")} : `, el("a", "https://open.kakao.com/o/gFJzBJ5c", { href: "https://open.kakao.com/o/gFJzBJ5c", target: "_blank" }), `(${msg("HOME_CONTACT_KAKAOTALK_PASSWORD")}) \n`,
                     `- ${msg("HOME_CONTACT_DISCORD")} : `, el("a", "https://discord.gg/RYxgb7dhMY", { href: "https://discord.gg/RYxgb7dhMY", target: "_blank" }), "\n",
+                    `- ${msg("HOME_CONTACT_TELEGRAM")} : `, el("a", "https://t.me/dogesoundclub", { href: "https://t.me/dogesoundclub", target: "_blank" }), "\n",
                     `- ${msg("HOME_CONTACT_TWITTER")} : `, el("a", "https://twitter.com/dogesoundclub", { href: "https://twitter.com/dogesoundclub", target: "_blank" }), "\n",
                     `- ${msg("HOME_CONTACT_INSTAGRAM")} : @dogesoundclub\n`,
                     `- ${msg("HOME_CONTACT_MEDIUM")} : `, el("a", "https://medium.com/dogesoundclub", { href: "https://medium.com/dogesoundclub", target: "_blank" }), "\n",
