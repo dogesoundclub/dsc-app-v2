@@ -36,7 +36,7 @@ export default class MyMates implements View {
 
             this.wallet.appendText(`- ${msg("MY_MATES_WALLET_ADDRESS")} : `);
             this.wallet.append(el("a", walletAddress,
-                { href: `https://opensea.io/${walletAddress}` }
+                { href: `https://opensea.io/${walletAddress}`, target: "_blank" },
             ));
 
             const balance = (await MateContract.balanceOf(walletAddress)).toNumber();

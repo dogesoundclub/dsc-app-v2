@@ -31,7 +31,7 @@ export default class DogeSounds implements View {
                 el("p.warning", `* ${msg("DOGESOUNDS_RULE_WARNING")}`),
                 el("p", msg("DOGESOUNDS_RULE_2")),
                 el("p", msg("DOGESOUNDS_RULE_3")),
-                el("a.opensea-link", msg("DOGESOUNDS_OPENSEA_LINK"), { href: "https://opensea.io/collection/dsc-dogesound-winners" }),
+                el("a.opensea-link", msg("DOGESOUNDS_OPENSEA_LINK"), { href: "https://opensea.io/collection/dsc-dogesound-winners", target: "_blank" }),
             ),
             el("section",
                 el("h2", msg("DOGESOUNDS_WINNERS_TITLE")),

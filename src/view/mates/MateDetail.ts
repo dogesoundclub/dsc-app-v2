@@ -31,7 +31,7 @@ export default class MateDetail implements View {
 
             this.nameDisplay = el("h1"),
             el("img.mate-image", { src: `https://storage.googleapis.com/dsc-mate/336/dscMate-${this.id}.png` }),
-            el("a.opensea-button", msg("MATE_DETAIL_OPENSEA_BUTTON"), { href: `https://opensea.io/assets/klaytn/0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae/${this.id}` }),
+            el("a.opensea-button", msg("MATE_DETAIL_OPENSEA_BUTTON"), { href: `https://opensea.io/assets/klaytn/0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae/${this.id}`, target: "_blank" }),
             this.snsDisplay = el("section"),
             el("section",
                 this.messagesTitle = el("h2"),

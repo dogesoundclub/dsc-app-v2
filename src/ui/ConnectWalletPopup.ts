@@ -15,7 +15,7 @@ export default class ConnectWalletPopup extends Popup {
                 el("a.button.connect-kaikas-button",
                     el("img", { src: "/images/logo/kaikas.svg" }),
                     msg("CONNECT_KAIKAS_BUTTON"),
-                    { href: "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi" },
+                    { href: "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi", target: "_blank" },
                 ),
                 el("a.button.connect-klip-button",
                     el("img", { src: "/images/logo/klip.svg" }),

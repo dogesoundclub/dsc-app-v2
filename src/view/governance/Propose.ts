@@ -137,7 +137,7 @@ export default class Propose implements View {
 
             this.wallet.appendText(`- ${msg("DOGESOUNDS_WALLET_ADDRESS")} : `);
             this.wallet.append(el("a", walletAddress,
-                { href: `https://opensea.io/${walletAddress}` }
+                { href: `https://opensea.io/${walletAddress}`, target: "_blank" },
             ));
 
             const mateBalance = (await MateContract.balanceOf(walletAddress)).toNumber();

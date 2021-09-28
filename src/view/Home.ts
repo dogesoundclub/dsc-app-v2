@@ -50,7 +50,7 @@ export default class Home implements View {
                     }), "\n",
                     "\n",
                     msg("HOME_SECTION_2_2"), "\n",
-                    el("a", `▶ ${msg("HOME_SECTION_2_LINK_3")}`, { href: "https://opensea.io/collection/dogesoundclub-mates" }), "\n",
+                    el("a", `▶ ${msg("HOME_SECTION_2_LINK_3")}`, { href: "https://opensea.io/collection/dogesoundclub-mates", target: "_blank" }), "\n",
                 ),
             ),
             el("section",
@@ -109,13 +109,13 @@ export default class Home implements View {
             el("section",
                 el("h2", msg("HOME_CONTACT_TITLE")),
                 el("p",
-                    `- ${msg("HOME_CONTACT_KAKAOTALK")} : `, el("a", "https://open.kakao.com/o/gFJzBJ5c", { href: "https://open.kakao.com/o/gFJzBJ5c" }), `(${msg("HOME_CONTACT_KAKAOTALK_PASSWORD")}) \n`,
-                    `- ${msg("HOME_CONTACT_DISCORD")} : `, el("a", "https://discord.gg/RYxgb7dhMY", { href: "https://discord.gg/RYxgb7dhMY" }), "\n",
-                    `- ${msg("HOME_CONTACT_TWITTER")} : `, el("a", "https://twitter.com/dogesoundclub", { href: "https://twitter.com/dogesoundclub" }), "\n",
+                    `- ${msg("HOME_CONTACT_KAKAOTALK")} : `, el("a", "https://open.kakao.com/o/gFJzBJ5c", { href: "https://open.kakao.com/o/gFJzBJ5c", target: "_blank" }), `(${msg("HOME_CONTACT_KAKAOTALK_PASSWORD")}) \n`,
+                    `- ${msg("HOME_CONTACT_DISCORD")} : `, el("a", "https://discord.gg/RYxgb7dhMY", { href: "https://discord.gg/RYxgb7dhMY", target: "_blank" }), "\n",
+                    `- ${msg("HOME_CONTACT_TWITTER")} : `, el("a", "https://twitter.com/dogesoundclub", { href: "https://twitter.com/dogesoundclub", target: "_blank" }), "\n",
                     `- ${msg("HOME_CONTACT_INSTAGRAM")} : @dogesoundclub\n`,
-                    `- ${msg("HOME_CONTACT_MEDIUM")} : `, el("a", "https://medium.com/dogesoundclub", { href: "https://medium.com/dogesoundclub" }), "\n",
-                    `- ${msg("HOME_CONTACT_GITHUB")} : `, el("a", "https://github.com/dogesoundclub", { href: "https://github.com/dogesoundclub" }), "\n",
-                    `- ${msg("HOME_CONTACT_YOUTUBE")} : `, el("a", "https://www.youtube.com/channel/UCnt1jjJpL-YdHNcooykdY4w", { href: "https://www.youtube.com/channel/UCnt1jjJpL-YdHNcooykdY4w" }), "\n",
+                    `- ${msg("HOME_CONTACT_MEDIUM")} : `, el("a", "https://medium.com/dogesoundclub", { href: "https://medium.com/dogesoundclub", target: "_blank" }), "\n",
+                    `- ${msg("HOME_CONTACT_GITHUB")} : `, el("a", "https://github.com/dogesoundclub", { href: "https://github.com/dogesoundclub", target: "_blank" }), "\n",
+                    `- ${msg("HOME_CONTACT_YOUTUBE")} : `, el("a", "https://www.youtube.com/channel/UCnt1jjJpL-YdHNcooykdY4w", { href: "https://www.youtube.com/channel/UCnt1jjJpL-YdHNcooykdY4w", target: "_blank" }), "\n",
                     `- ${msg("HOME_CONTACT_EMAIL")} : dogesoundclub @gmail.com`,
                 ),
             ),
@@ -133,7 +133,7 @@ export default class Home implements View {
 
             if (this.container.deleted !== true) {
                 this.winner.empty().appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(winnerInfo.round + 1))} `);
-                this.winner.append(el("a", winnerInfo.winner, { href: `https://opensea.io/${winnerInfo.winner}` }));
+                this.winner.append(el("a", winnerInfo.winner, { href: `https://opensea.io/${winnerInfo.winner}`, target: "_blank" }));
                 this.dogesound.empty().appendText(`${msg("HOME_WINNER_DESCRIPTION").replace(/{round}/, String(winnerInfo.round + 1))} \nㅡ ${winnerInfo.dogesound}`);
             }
         } catch (e) {
