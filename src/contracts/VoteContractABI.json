@@ -30,6 +30,10 @@
                 "type": "uint256"
             },
             {
+                "name": "proposeMates",
+                "type": "address"
+            },
+            {
                 "name": "votePeriod",
                 "type": "uint256"
             },
@@ -149,6 +153,18 @@
         "type": "function"
     },
     {
+        "constant": false,
+        "inputs": [{
+            "name": "proposalId",
+            "type": "uint256"
+        }],
+        "name": "getBackMates",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "constant": true,
         "inputs": [{
             "name": "",
@@ -186,7 +202,7 @@
                 "type": "uint256"
             },
             {
-                "name": "mates",
+                "name": "_mates",
                 "type": "address"
             },
             {
@@ -304,6 +320,21 @@
     },
     {
         "constant": true,
+        "inputs": [{
+            "name": "proposalId",
+            "type": "uint256"
+        }],
+        "name": "matesBacked",
+        "outputs": [{
+            "name": "",
+            "type": "bool"
+        }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
         "inputs": [],
         "name": "maxProposePeriod",
         "outputs": [{
@@ -333,6 +364,42 @@
         "outputs": [{
             "name": "",
             "type": "uint8"
+        }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "proposalCount",
+        "outputs": [{
+            "name": "",
+            "type": "uint256"
+        }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [{
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "name": "",
+                "type": "address"
+            },
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "proposeMates",
+        "outputs": [{
+            "name": "",
+            "type": "uint256"
         }],
         "payable": false,
         "stateMutability": "view",

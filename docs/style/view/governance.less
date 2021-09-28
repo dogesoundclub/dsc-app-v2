@@ -1,0 +1,46 @@
+.governance-view {
+    max-width: 780px;
+    padding  : 135px 20px;
+    margin   : auto;
+
+    @media @phone {
+        padding: 90px 20px;
+    }
+
+    >h1 {
+        font-size     : 30px;
+        font-family   : DungGeunMo;
+        color         : #FF00F6;
+        text-shadow   : 3px 3px 3px #656565;
+        margin-bottom : 30px;
+        text-align    : center;
+        text-transform: uppercase;
+    }
+
+    >p {
+        line-height: 2em;
+    }
+
+    >section {
+        margin-top: 50px;
+        .float-wrapper();
+
+        >h2 {
+            float    : left;
+            font-size: 26px;
+            color    : #BFC500;
+        }
+
+        >.propose-button {
+            float           : right;
+            font-size       : 16px;
+            color           : #000000;
+            background-color: #FBFF72;
+            box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+            text-align      : center;
+            padding         : 10px 20px;
+            font-family     : DungGeunMo;
+            font-weight     : bold;
+        }
+    }
+}

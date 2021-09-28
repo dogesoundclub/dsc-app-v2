@@ -1,0 +1,44 @@
+.proposal-list {
+    margin-top: 45px;
+
+    >.proposal {
+        margin-bottom: 15px;
+        >h4 {
+            font-family: DungGeunMo;
+            padding    : 7.5px;
+            border     : 2px solid #ffffff;
+            text-align : center;
+            cursor     : pointer;
+        }
+
+        >.result {
+            font-family: DungGeunMo;
+            text-align : center;
+            padding    : 7.5px;
+
+            &.voting {
+                color: #00DCFF;
+            }
+
+            &.canceled {
+                color: #F14141;
+            }
+
+            &.same {
+                color: #8F96AC;
+            }
+
+            &.for {
+                color: #26A55C;
+            }
+
+            &.against {
+                color: #F14141;
+            }
+
+            &.executed {
+                color: #26A55C;
+            }
+        }
+    }
+}

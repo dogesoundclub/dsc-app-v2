@@ -1,0 +1,183 @@
+.governance-detail-view {
+    max-width: 780px;
+    padding  : 135px 20px;
+    margin   : auto;
+
+    @media @phone {
+        padding: 90px 20px;
+    }
+
+    >h1 {
+        font-size     : 30px;
+        font-family   : DungGeunMo;
+        color         : #FF00F6;
+        text-shadow   : 3px 3px 3px #656565;
+        margin-bottom : 30px;
+        text-align    : center;
+        text-transform: uppercase;
+    }
+
+    >.back-button {
+        font-size: 26px;
+        color    : #BFC500;
+    }
+
+    >.content {
+        margin-top : 30px;
+        border     : 2px solid #ffffff;
+        padding    : 20px;
+        font-family: DungGeunMo;
+
+        >h1 {
+            font-size: 20px;
+            .float-wrapper();
+
+            >span {
+                float: left;
+            }
+
+            >.result {
+                float: right;
+
+                &.voting {
+                    color: #00DCFF;
+                }
+
+                &.canceled {
+                    color: #F14141;
+                }
+
+                &.same {
+                    color: #8F96AC;
+                }
+
+                &.for {
+                    color: #26A55C;
+                }
+
+                &.against {
+                    color: #F14141;
+                }
+
+                &.executed {
+                    color: #26A55C;
+                }
+            }
+        }
+
+        >.timer {
+            margin-top: 10px;
+            color     : #AEB0B7;
+        }
+
+        >.vote-counts {
+            margin-top: 30px;
+            display   : flex;
+            font-size : 20px;
+
+            >.for-votes {
+                width  : 50%;
+                display: flex;
+
+                >.title {
+                    width: 100px;
+                    color: #27AE60;
+                }
+            }
+
+            >.against-votes {
+                display: flex;
+                width  : 50%;
+
+                >.title {
+                    width: 84px;
+                    color: #FF4343;
+                }
+            }
+        }
+
+        >h2 {
+            margin-top: 30px;
+            color     : #FBFF72;
+            font-size : 20px;
+        }
+
+        >p,
+        >.content {
+            margin-top: 10px;
+            color     : #ffffff;
+            font-size : 16px;
+        }
+    }
+
+    >.wallet,
+    >.owned-mates,
+    >.votable-mates,
+    >.selected-mates {
+        font-family: DungGeunMo;
+    }
+
+    >.wallet,
+    >.selected-mates {
+        margin-top: 30px;
+    }
+
+    >.button-container>a {
+        color: #BFC500;
+    }
+
+    >.mate-list {
+        margin-top: 30px;
+        height    : 300px;
+    }
+
+    >.select {
+        margin-top     : 30px;
+        display        : flex;
+        font-size      : 20px;
+        justify-content: center;
+
+        >.for {
+            display: flex;
+            width  : 160px;
+
+            >.title {
+                width: 100px;
+                color: #27AE60;
+            }
+
+            >input {
+                transform: scale(2);
+            }
+        }
+
+        >.against {
+            display: flex;
+            width  : 160px;
+
+            >.title {
+                width: 100px;
+                color: #FF4343;
+            }
+
+            >input {
+                transform: scale(2);
+            }
+        }
+    }
+
+    >.vote-button {
+        display         : block;
+        margin          : auto;
+        margin-top      : 30px;
+        font-size       : 20px;
+        color           : #000000;
+        background-color: #FBFF72;
+        box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+        text-align      : center;
+        width           : 320px;
+        padding         : 12px 0;
+        font-family     : DungGeunMo;
+        font-weight     : bold;
+    }
+}

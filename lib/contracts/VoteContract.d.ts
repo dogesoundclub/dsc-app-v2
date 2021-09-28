@@ -1,13 +1,14 @@
 import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
 import Contract from "./Contract";
-interface Proposal {
+export interface ProposalInfo {
     proposer: string;
     title: string;
     summary: string;
     content: string;
     note: string;
-    blockNumber: BigNumber;
-    votePeriod: BigNumber;
+    blockNumber: number;
+    proposeMates: string;
+    votePeriod: number;
     canceled: boolean;
     executed: boolean;
 }
@@ -18,14 +19,18 @@ declare class VoteContract extends Contract {
     readonly RESULT_FOR = 3;
     readonly RESULT_AGAINST = 4;
     constructor();
+    getProposeMateCount(): Promise<BigNumber>;
     propose(title: string, summary: string, content: string, note: string, votePeriod: BigNumberish, mates: string, mateIds: BigNumberish[]): Promise<void>;
-    getMateVoted(round: number, mates: string, mateId: number): Promise<boolean>;
-    getProposal(proposalId: BigNumberish): Promise<Proposal>;
+    getProposalCount(): Promise<number>;
+    getMateVoted(proposalId: BigNumberish, mates: string, mateId: number): Promise<boolean>;
+    getProposal(proposalId: BigNumberish): Promise<ProposalInfo>;
     voteFor(proposalId: BigNumberish, mates: string, mateIds: BigNumberish[]): Promise<void>;
     voteAgainst(proposalId: BigNumberish, mates: string, mateIds: BigNumberish[]): Promise<void>;
     cancel(proposalId: BigNumberish): Promise<void>;
     execute(proposalId: BigNumberish): Promise<void>;
     getResult(proposalId: BigNumberish): Promise<number>;
+    getForVotes(proposalId: BigNumberish): Promise<number>;
+    getAgainstVotes(proposalId: BigNumberish): Promise<number>;
 }
 declare const _default: VoteContract;
 export default _default;

@@ -30,6 +30,6 @@ export default {
         Attributes: "0xB16cA0035f398EA513c063a2F61C7631413bCD7d",
         DogeSoundContestV2: "0x43f3b52C1cb0801efA4EFa6a6b1908746E2a3210",
         FollowMe: "0x68d0EC90b70407089a419EE99C32a44c0f5Da775",
-        Vote: "0xec27538d92a4cD75ff09A922B5E970aF60808B54",
+        Vote: "0x7f87e061068B04b62a2e119Cef3b44c2d1a177CD",
     },
 };

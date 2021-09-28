@@ -56,14 +56,14 @@ export default class MateList extends ScrollableDomNode<number[]> {
         this.init(mateData);
     }
 
-    public maxSelect() {
+    public maxSelect(maxCount = 50) {
         this.selectedMateIds = [];
         let count = 0;
         for (const mateId of this.drawingMates) {
             if (this.votedMates.includes(mateId) !== true) {
                 this.selectedMateIds.push(mateId);
                 count += 1;
-                if (count === 50) {
+                if (count === maxCount) {
                     break;
                 }
             }

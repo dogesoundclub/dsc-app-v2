@@ -31,6 +31,10 @@
                     "uri": "dogesounds",
                     "name": "MENU_DOGESOUNDS"
                 }]
+        },
+        {
+            "uri": "governance",
+            "name": "MENU_GOVERNANCE"
         }
     ]
 }

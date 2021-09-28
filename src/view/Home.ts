@@ -97,6 +97,16 @@ export default class Home implements View {
                 el("p", msg("HOME_SECTION_4")),
             ),
             el("section",
+                el("h2", msg("HOME_PARTNET_TITLE")),
+                el("ul.partners",
+                    el("li", el("a", el("img", { src: "/images/logo/clone.png", srcset: "/images/logo/clone@2x.png 2x" }), { href: "https://clonesneverdie.com/", target: "_blank" })),
+                    el("li", el("a", el("img", { src: "/images/logo/kate.png", srcset: "/images/logo/kate@2x.png 2x" }), { href: "https://www.casesbykate.xyz/", target: "_blank" })),
+                    el("li", el("a", el("img", { src: "/images/logo/asianft.png", srcset: "/images/logo/asianft@2x.png 2x" }), { href: "https://discord.gg/HTm6hZGGxN", target: "_blank" })),
+                    el("li", el("a", el("img", { src: "/images/logo/nftz.png", srcset: "/images/logo/nftz@2x.png 2x" }), { href: "https://nftz.co.in/", target: "_blank" })),
+                    el("li", el("a", el("img", { src: "/images/logo/apunk.png", srcset: "/images/logo/apunk@2x.png 2x" }), { href: "https://animals-punks.com/", target: "_blank" })),
+                ),
+            ),
+            el("section",
                 el("h2", msg("HOME_CONTACT_TITLE")),
                 el("p",
                     `- ${msg("HOME_CONTACT_KAKAOTALK")} : `, el("a", "https://open.kakao.com/o/gFJzBJ5c", { href: "https://open.kakao.com/o/gFJzBJ5c" }), `(${msg("HOME_CONTACT_KAKAOTALK_PASSWORD")}) \n`,
@@ -121,9 +131,11 @@ export default class Home implements View {
             const result = await superagent.get("https://api.dogesound.club/dogesoundwinner");
             const winnerInfo = result.body;
 
-            this.winner.empty().appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(winnerInfo.round + 1))} `);
-            this.winner.append(el("a", winnerInfo.winner, { href: `https://opensea.io/${winnerInfo.winner}` }));
-            this.dogesound.empty().appendText(`${msg("HOME_WINNER_DESCRIPTION").replace(/{round}/, String(winnerInfo.round + 1))} \nㅡ ${winnerInfo.dogesound}`);
+            if (this.container.deleted !== true) {
+                this.winner.empty().appendText(`${msg("HOME_WINNER_TITLE").replace(/{round}/, String(winnerInfo.round + 1))} `);
+                this.winner.append(el("a", winnerInfo.winner, { href: `https://opensea.io/${winnerInfo.winner}` }));
+                this.dogesound.empty().appendText(`${msg("HOME_WINNER_DESCRIPTION").replace(/{round}/, String(winnerInfo.round + 1))} \nㅡ ${winnerInfo.dogesound}`);
+            }
         } catch (e) {
             this.dogesound.appendText(msg("HOME_WINNER_ERROR"));
             console.log(e);

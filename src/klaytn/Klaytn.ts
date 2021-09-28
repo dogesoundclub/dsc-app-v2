@@ -8,6 +8,12 @@ class Klaytn {
             new (window as any).caver.klay.Contract(abi, address) :
             this.caver.contract.create(abi, address);
     }
+
+    public async loadBlockNumber() {
+        return this.caver === undefined ?
+            await (window as any).caver.klay.getBlockNumber() :
+            await this.caver.klay.getBlockNumber();
+    }
 }
 
 export default new Klaytn();

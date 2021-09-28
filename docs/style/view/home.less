@@ -161,6 +161,20 @@
             width     : 100%;
         }
 
+        >.partners {
+            display    : flex;
+            align-items: center;
+            overflow-x : scroll;
+
+            >li {
+                margin-right: 10px;
+
+                >a>img {
+                    border-radius: 10px;
+                }
+            }
+        }
+
         >.roadmap {
             width     : 90%;
             margin    : auto;
@@ -223,12 +237,13 @@
         }
 
         >h2 {
-            font-size    : 30px;
-            font-family  : DungGeunMo;
-            color        : #FF00F6;
-            text-shadow  : 3px 3px 3px #656565;
-            margin-bottom: 36px;
-            text-align   : center;
+            font-size     : 30px;
+            font-family   : DungGeunMo;
+            color         : #FF00F6;
+            text-shadow   : 3px 3px 3px #656565;
+            margin-bottom : 36px;
+            text-align    : center;
+            text-transform: uppercase;
 
             @media @phone {
                 font-size: 24px;

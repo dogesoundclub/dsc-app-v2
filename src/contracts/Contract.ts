@@ -52,6 +52,18 @@ export default abstract class Contract extends EventContainer {
         }
     }
 
+    protected async runWalletMethodWithLargeGas(methodName: string, ...params: any[]) {
+        if (ExtWallet.installed === true) {
+            const from = await Wallet.loadAddress();
+            const contract = await this.loadExtWalletContract();
+            await contract?.methods[methodName](...params).send({ from, gas: 20000000 });
+        } else if (Klip.connected === true) {
+            await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params);
+        } else {
+            return new Promise<void>((resolve) => new ConnectWalletPopup(resolve));
+        }
+    }
+
     protected async runWalletMethodWithValue(value: BigNumber, methodName: string, ...params: any[]) {
         if (ExtWallet.installed === true) {
             const from = await Wallet.loadAddress();

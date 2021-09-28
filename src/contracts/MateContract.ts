@@ -24,6 +24,14 @@ class MateContract extends Contract {
     public async transfer(to: string, mateId: BigNumberish) {
         await this.runWalletMethod("transferFrom", await Wallet.loadAddress(), to, mateId);
     }
+
+    public async isApprovedForAll(owner: string, operator: string): Promise<boolean> {
+        return await this.runMethod("isApprovedForAll", owner, operator);
+    }
+
+    public async setApprovalForAll(operator: string, approved: boolean) {
+        await this.runWalletMethod("setApprovalForAll", operator, approved);
+    }
 }
 
 export default new MateContract();

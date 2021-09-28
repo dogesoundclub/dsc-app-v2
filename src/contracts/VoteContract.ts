@@ -2,14 +2,15 @@ import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
 import Config from "../Config";
 import Contract from "./Contract";
 
-interface Proposal {
+export interface ProposalInfo {
     proposer: string,
     title: string,
     summary: string,
     content: string,
     note: string,
-    blockNumber: BigNumber,
-    votePeriod: BigNumber,
+    blockNumber: number,
+    proposeMates: string,
+    votePeriod: number,
     canceled: boolean,
     executed: boolean,
 }
@@ -26,6 +27,10 @@ class VoteContract extends Contract {
         super(Config.contracts.Vote, require("./VoteContractABI.json"));
     }
 
+    public async getProposeMateCount(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("proposeMateCount"));
+    }
+
     public async propose(
 
         title: string,
@@ -38,7 +43,7 @@ class VoteContract extends Contract {
         mateIds: BigNumberish[],
 
     ): Promise<void> {
-        await this.runWalletMethod("propose",
+        await this.runWalletMethodWithLargeGas("propose",
 
             title,
             summary,
@@ -51,11 +56,15 @@ class VoteContract extends Contract {
         );
     }
 
-    public async getMateVoted(round: number, mates: string, mateId: number): Promise<boolean> {
-        return await this.runMethod("mateVoted", round, mates, mateId);
+    public async getProposalCount(): Promise<number> {
+        return await this.runMethod("proposalCount");
     }
 
-    public async getProposal(proposalId: BigNumberish): Promise<Proposal> {
+    public async getMateVoted(proposalId: BigNumberish, mates: string, mateId: number): Promise<boolean> {
+        return await this.runMethod("mateVoted", proposalId, mates, mateId);
+    }
+
+    public async getProposal(proposalId: BigNumberish): Promise<ProposalInfo> {
         const result = await this.runMethod("proposals", proposalId);
         return {
             proposer: result[0],
@@ -63,10 +72,11 @@ class VoteContract extends Contract {
             summary: result[2],
             content: result[3],
             note: result[4],
-            blockNumber: result[5],
-            votePeriod: result[6],
-            canceled: result[7],
-            executed: result[8],
+            blockNumber: parseInt(result[5], 10),
+            proposeMates: result[6],
+            votePeriod: parseInt(result[7], 10),
+            canceled: result[8],
+            executed: result[9],
         };
     }
 
@@ -87,7 +97,15 @@ class VoteContract extends Contract {
     }
 
     public async getResult(proposalId: BigNumberish): Promise<number> {
-        return await this.runMethod("result", proposalId);
+        return parseInt(await this.runMethod("result", proposalId), 10);
+    }
+
+    public async getForVotes(proposalId: BigNumberish): Promise<number> {
+        return parseInt(await this.runMethod("forVotes", proposalId), 10);
+    }
+
+    public async getAgainstVotes(proposalId: BigNumberish): Promise<number> {
+        return parseInt(await this.runMethod("againstVotes", proposalId), 10);
     }
 }
 

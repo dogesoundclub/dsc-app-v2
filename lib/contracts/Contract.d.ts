@@ -10,6 +10,7 @@ export default abstract class Contract extends EventContainer {
     loadExtWalletContract(): Promise<any>;
     protected runMethod(methodName: string, ...params: any[]): Promise<any>;
     protected runWalletMethod(methodName: string, ...params: any[]): Promise<void>;
+    protected runWalletMethodWithLargeGas(methodName: string, ...params: any[]): Promise<void>;
     protected runWalletMethodWithValue(value: BigNumber, methodName: string, ...params: any[]): Promise<void>;
 }
 //# sourceMappingURL=Contract.d.ts.map
