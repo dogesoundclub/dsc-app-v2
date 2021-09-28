@@ -55,11 +55,11 @@ export default class Detail implements View {
             })),
             this.mateList = new MateList(true, false),
             el(".select",
-                el("label.for", el("span.title", "For"), forRadio = el("input", {
+                el("label.for", el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_FOR")), forRadio = el("input", {
                     name: "governance-radio",
                     type: "radio",
                 })),
-                el("label.against", el("span.title", "Against"), againstRadio = el("input", {
+                el("label.against", el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_AGAINST")), againstRadio = el("input", {
                     name: "governance-radio",
                     type: "radio",
                 })),
@@ -128,11 +128,11 @@ export default class Detail implements View {
 
         const voteCounts = el(".vote-counts").appendTo(this.content);
         voteCounts.append(el(".for-votes",
-            el("span.title", "For"),
+            el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_FOR")),
             el("span.count", String(await VoteContract.getForVotes(id))),
         ));
         voteCounts.append(el(".against-votes",
-            el("span.title", "Against"),
+            el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_AGAINST")),
             el("span.count", String(await VoteContract.getAgainstVotes(id))),
         ));
 
