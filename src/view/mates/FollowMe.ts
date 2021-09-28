@@ -1,6 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import { SkyRouter, View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skyrouter";
 import superagent from "superagent";
 import Loading from "../../component/loading/Loading";
 import Layout from "../Layout";
@@ -42,8 +42,13 @@ export default class FollowMe implements View {
             },
         } = getLinksResult.body;
 
+        const exists: { [key: string]: boolean } = {};
+
         for (const [id, link] of Object.entries(links)) {
-            if (link.twitter !== undefined || link.instagram !== undefined) {
+            if (
+                (link.twitter !== undefined || link.instagram !== undefined) &&
+                exists["" + link.twitter + link.instagram] !== true
+            ) {
                 this.list.append(
                     el("tr",
                         el("td",
@@ -58,6 +63,7 @@ export default class FollowMe implements View {
                         el("td", link.instagram === undefined ? "" : el("a", `@${link.instagram}`, { href: `https://instagram.com/${link.instagram}`, target: "_blank" })),
                     ),
                 );
+                exists["" + link.twitter + link.instagram] = true;
             }
         }
 
