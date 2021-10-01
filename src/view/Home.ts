@@ -99,7 +99,7 @@ export default class Home implements View {
             el("section",
                 el("h2", msg("HOME_PARTNET_TITLE")),
                 el("ul.partners",
-                    el("li", el("a", el("img", { src: "/images/logo/groundx.png", srcset: "/images/logo/groundx@2x.png 2x" }), { href: "https://www.groundx.xyz/", target: "_blank" })),
+                    //el("li", el("a", el("img", { src: "/images/logo/groundx.png", srcset: "/images/logo/groundx@2x.png 2x" }), { href: "https://www.groundx.xyz/", target: "_blank" })),
                     el("li", el("a", el("img", { src: "/images/logo/ozys.png", srcset: "/images/logo/ozys@2x.png 2x" }), { href: "https://klayswap.com/", target: "_blank" })),
                     el("li", el("a", el("img", { src: "/images/logo/codestates.png", srcset: "/images/logo/codestates@2x.png 2x" }), { href: "https://www.codestates.com/", target: "_blank" })),
                     el("li", el("a", el("img", { src: "/images/logo/clone.png", srcset: "/images/logo/clone@2x.png 2x" }), { href: "https://clonesneverdie.com/", target: "_blank" })),
