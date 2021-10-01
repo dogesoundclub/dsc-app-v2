@@ -99,6 +99,9 @@ export default class Home implements View {
             el("section",
                 el("h2", msg("HOME_PARTNET_TITLE")),
                 el("ul.partners",
+                    el("li", el("a", el("img", { src: "/images/logo/groundx.png", srcset: "/images/logo/groundx@2x.png 2x" }), { href: "https://www.groundx.xyz/", target: "_blank" })),
+                    el("li", el("a", el("img", { src: "/images/logo/ozys.png", srcset: "/images/logo/ozys@2x.png 2x" }), { href: "https://klayswap.com/", target: "_blank" })),
+                    el("li", el("a", el("img", { src: "/images/logo/codestates.png", srcset: "/images/logo/codestates@2x.png 2x" }), { href: "https://www.codestates.com/", target: "_blank" })),
                     el("li", el("a", el("img", { src: "/images/logo/clone.png", srcset: "/images/logo/clone@2x.png 2x" }), { href: "https://clonesneverdie.com/", target: "_blank" })),
                     el("li", el("a", el("img", { src: "/images/logo/kate.png", srcset: "/images/logo/kate@2x.png 2x" }), { href: "https://www.casesbykate.xyz/", target: "_blank" })),
                     el("li", el("a", el("img", { src: "/images/logo/asianft.png", srcset: "/images/logo/asianft@2x.png 2x" }), { href: "https://discord.gg/HTm6hZGGxN", target: "_blank" })),
@@ -119,6 +122,18 @@ export default class Home implements View {
                     `- ${msg("HOME_CONTACT_YOUTUBE")} : `, el("a", "https://www.youtube.com/channel/UCnt1jjJpL-YdHNcooykdY4w", { href: "https://www.youtube.com/channel/UCnt1jjJpL-YdHNcooykdY4w", target: "_blank" }), "\n",
                     `- ${msg("HOME_CONTACT_EMAIL")} : dogesoundclub @gmail.com`,
                 ),
+            ),
+            el("section.tweet-container",
+                el("a.twitter-timeline", {
+                    "data-theme": "dark",
+                    "data-height": "600",
+                    href: "https://twitter.com/dogesoundclub?ref_src=twsrc%5Etfw",
+                }),
+                el("script", {
+                    async: "async",
+                    src: "https://platform.twitter.com/widgets.js",
+                    charset: "utf-8"
+                }),
             ),
         ));
         this.loadDogeSound();
