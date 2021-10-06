@@ -6,6 +6,7 @@ declare class DogeSoundContestContractV2 extends Contract {
     readonly VOTE_PERIOD = 2;
     constructor();
     getCheckpoint(): Promise<BigNumber>;
+    getHolidayInterval(): Promise<BigNumber>;
     getRound(): Promise<BigNumber>;
     getRoundBlock(round: number): Promise<BigNumber>;
     getPeriod(): Promise<BigNumber>;

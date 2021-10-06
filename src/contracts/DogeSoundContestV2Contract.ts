@@ -16,6 +16,10 @@ class DogeSoundContestContractV2 extends Contract {
         return BigNumber.from(await this.runMethod("checkpoint"));
     }
 
+    public async getHolidayInterval(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("holidayInterval"));
+    }
+
     public async getRound(): Promise<BigNumber> {
         return BigNumber.from(await this.runMethod("round"));
     }

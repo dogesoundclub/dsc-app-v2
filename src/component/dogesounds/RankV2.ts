@@ -17,14 +17,12 @@ export default class RankV2 extends DomNode {
             dogesound = await DogeSoundContestV2Contract.getCandidate(this.round, elected);
         } catch (e) {/* ignore. */ }
 
-        const block = (await DogeSoundContestV2Contract.getRoundBlock(this.round)).toNumber();
         const votes = (await DogeSoundContestV2Contract.getVotes(this.round, elected)).toNumber();
 
         this.append(
             el("td", String(this.round + 1)),
-            el("td", block === -1 ? "" : String(block)),
-            el("td", block === -1 ? "" : String(votes)),
-            el("td", block === -1 ? "" : dogesound),
+            el("td", String(votes)),
+            el("td", dogesound),
         );
     }
 }
