@@ -19,6 +19,8 @@ declare class VoteContract extends Contract {
     readonly RESULT_FOR = 3;
     readonly RESULT_AGAINST = 4;
     constructor();
+    getMinProposePeriod(): Promise<BigNumber>;
+    getMaxProposePeriod(): Promise<BigNumber>;
     getProposeMateCount(): Promise<BigNumber>;
     propose(title: string, summary: string, content: string, note: string, votePeriod: BigNumberish, mates: string, mateIds: BigNumberish[]): Promise<void>;
     getProposalCount(): Promise<number>;

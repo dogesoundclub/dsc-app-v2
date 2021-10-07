@@ -27,6 +27,14 @@ class VoteContract extends Contract {
         super(Config.contracts.Vote, require("./VoteContractABI.json"));
     }
 
+    public async getMinProposePeriod(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("minProposePeriod"));
+    }
+
+    public async getMaxProposePeriod(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("maxProposePeriod"));
+    }
+
     public async getProposeMateCount(): Promise<BigNumber> {
         return BigNumber.from(await this.runMethod("proposeMateCount"));
     }

@@ -205,7 +205,6 @@ export default class Detail implements View {
                     el("a.get-back-mates-button", msg("GOVERNANCE_GET_BACK_MATES_BUTTON"), {
                         click: async () => {
                             if (this.proposalId !== undefined) {
-                                console.log(this.proposalId);
                                 await VoteContract.getBackMates(this.proposalId);
                                 setTimeout(() => SkyRouter.refresh(), 2000);
                             }

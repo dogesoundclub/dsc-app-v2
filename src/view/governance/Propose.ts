@@ -83,8 +83,17 @@ export default class Propose implements View {
                         new Confirm(msg("GOVERNANCE_PROPOSE_SUBMIT_CONFIRM"), msg("CONFIRM_BUTTON"), async () => {
                             const owner = await Wallet.loadAddress();
                             if (owner !== undefined) {
+
+                                const minProposePeriod = (await VoteContract.getMinProposePeriod()).toNumber();
+                                const maxProposePeriod = (await VoteContract.getMaxProposePeriod()).toNumber();
                                 const proposeMateCount = (await VoteContract.getProposeMateCount()).toNumber();
-                                if (this.mateList.selectedMateIds.length !== proposeMateCount) {
+                                const period = parseInt(periodInput.domElement.value, 10);
+
+                                if (period < minProposePeriod) {
+                                    new Alert(msg("GOVERNANCE_PROPOSAL_MIN_PERIOD_ERROR").replace(/{block}/, String(minProposePeriod)), msg("CONFIRM_BUTTON"));
+                                } else if (period > maxProposePeriod) {
+                                    new Alert(msg("GOVERNANCE_PROPOSAL_MAX_PERIOD_ERROR").replace(/{block}/, String(maxProposePeriod)), msg("CONFIRM_BUTTON"));
+                                } else if (this.mateList.selectedMateIds.length !== proposeMateCount) {
                                     new Alert(msg("GOVERNANCE_PROPOSAL_NEED_MORE_MATES_ERROR").replace(/{proposeMateCount}/, String(proposeMateCount)), msg("CONFIRM_BUTTON"));
                                 } else {
                                     if (await MateContract.isApprovedForAll(owner, VoteContract.address) !== true) {

@@ -155,6 +155,8 @@ GOVERNANCE_PROPOSAL_VOTE_AGAINST,반대,Disagree
 GOVERNANCE_PROPOSAL_VOTE_BUTTON,투표하기,Vote
 GOVERNANCE_PROPOSAL_FORM_TITLE,제안 생성툴,Suggestion Create Tool
 GOVERNANCE_PROPOSAL_NEED_MORE_MATES_ERROR,제안에는 {proposeMateCount}개의 메이트가 필요합니다.,The necessary number of MATEs to suggest : {proposeMateCount}
+GOVERNANCE_PROPOSAL_MIN_PERIOD_ERROR,투표 최소 기한은 {block} 블록입니다.
+GOVERNANCE_PROPOSAL_MAX_PERIOD_ERROR,투표 최대 기한은 {block} 블록입니다.
 GOVERNANCE_GET_BACK_MATES_BUTTON,제안에 사용된 NFT 되찾기
 DOGESOUNDS_RULE_TITLE,도지사운드 경연 규칙,DOGESOUNDS_RULE_TITLE
 ,Doge Sound Contest Rule
