@@ -159,7 +159,7 @@ export default class Detail implements View {
             el("p", proposal.proposer),
         );
 
-        content.domElement.innerHTML = xss(marked(proposal.content));
+        content.domElement.innerHTML = this.proposalId === 2 ? proposal.content.replace(/\n/g, "<br>") : xss(marked(proposal.content));
 
         if (remains > 0) {
             const walletAddress = await Wallet.loadAddress();
