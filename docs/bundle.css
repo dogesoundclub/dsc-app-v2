@@ -2500,52 +2500,66 @@ a {
   color: #ffffff;
   font-size: 16px;
 }
-.governance-detail-view > .wallet,
-.governance-detail-view > .owned-mates,
-.governance-detail-view > .votable-mates,
-.governance-detail-view > .selected-mates {
+.governance-detail-view > .vote-form > .wallet,
+.governance-detail-view > .vote-form > .owned-mates,
+.governance-detail-view > .vote-form > .votable-mates,
+.governance-detail-view > .vote-form > .selected-mates {
   font-family: DungGeunMo;
 }
-.governance-detail-view > .wallet,
-.governance-detail-view > .selected-mates {
+.governance-detail-view > .vote-form > .wallet,
+.governance-detail-view > .vote-form > .selected-mates {
   margin-top: 30px;
 }
-.governance-detail-view > .button-container > a {
+.governance-detail-view > .vote-form > .button-container > a {
   color: #BFC500;
 }
-.governance-detail-view > .mate-list {
+.governance-detail-view > .vote-form > .mate-list {
   margin-top: 30px;
   height: 300px;
 }
-.governance-detail-view > .select {
+.governance-detail-view > .vote-form > .select {
   margin-top: 30px;
   display: flex;
   font-size: 20px;
   justify-content: center;
 }
-.governance-detail-view > .select > .for {
+.governance-detail-view > .vote-form > .select > .for {
   display: flex;
   width: 160px;
 }
-.governance-detail-view > .select > .for > .title {
+.governance-detail-view > .vote-form > .select > .for > .title {
   width: 100px;
   color: #27AE60;
 }
-.governance-detail-view > .select > .for > input {
+.governance-detail-view > .vote-form > .select > .for > input {
   transform: scale(2);
 }
-.governance-detail-view > .select > .against {
+.governance-detail-view > .vote-form > .select > .against {
   display: flex;
   width: 160px;
 }
-.governance-detail-view > .select > .against > .title {
+.governance-detail-view > .vote-form > .select > .against > .title {
   width: 100px;
   color: #FF4343;
 }
-.governance-detail-view > .select > .against > input {
+.governance-detail-view > .vote-form > .select > .against > input {
   transform: scale(2);
 }
-.governance-detail-view > .vote-button {
+.governance-detail-view > .vote-form > .vote-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 320px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.governance-detail-view > .get-back-mates-button {
   display: block;
   margin: auto;
   margin-top: 30px;

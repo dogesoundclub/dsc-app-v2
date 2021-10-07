@@ -111,63 +111,81 @@
         }
     }
 
-    >.wallet,
-    >.owned-mates,
-    >.votable-mates,
-    >.selected-mates {
-        font-family: DungGeunMo;
-    }
+    >.vote-form {
 
-    >.wallet,
-    >.selected-mates {
-        margin-top: 30px;
-    }
+        >.wallet,
+        >.owned-mates,
+        >.votable-mates,
+        >.selected-mates {
+            font-family: DungGeunMo;
+        }
 
-    >.button-container>a {
-        color: #BFC500;
-    }
+        >.wallet,
+        >.selected-mates {
+            margin-top: 30px;
+        }
 
-    >.mate-list {
-        margin-top: 30px;
-        height    : 300px;
-    }
+        >.button-container>a {
+            color: #BFC500;
+        }
 
-    >.select {
-        margin-top     : 30px;
-        display        : flex;
-        font-size      : 20px;
-        justify-content: center;
+        >.mate-list {
+            margin-top: 30px;
+            height    : 300px;
+        }
 
-        >.for {
-            display: flex;
-            width  : 160px;
+        >.select {
+            margin-top     : 30px;
+            display        : flex;
+            font-size      : 20px;
+            justify-content: center;
 
-            >.title {
-                width: 100px;
-                color: #27AE60;
+            >.for {
+                display: flex;
+                width  : 160px;
+
+                >.title {
+                    width: 100px;
+                    color: #27AE60;
+                }
+
+                >input {
+                    transform: scale(2);
+                }
             }
 
-            >input {
-                transform: scale(2);
+            >.against {
+                display: flex;
+                width  : 160px;
+
+                >.title {
+                    width: 100px;
+                    color: #FF4343;
+                }
+
+                >input {
+                    transform: scale(2);
+                }
             }
         }
 
-        >.against {
-            display: flex;
-            width  : 160px;
-
-            >.title {
-                width: 100px;
-                color: #FF4343;
-            }
-
-            >input {
-                transform: scale(2);
-            }
+        >.vote-button {
+            display         : block;
+            margin          : auto;
+            margin-top      : 30px;
+            font-size       : 20px;
+            color           : #000000;
+            background-color: #FBFF72;
+            box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+            text-align      : center;
+            width           : 320px;
+            padding         : 12px 0;
+            font-family     : DungGeunMo;
+            font-weight     : bold;
         }
     }
 
-    >.vote-button {
+    >.get-back-mates-button {
         display         : block;
         margin          : auto;
         margin-top      : 30px;

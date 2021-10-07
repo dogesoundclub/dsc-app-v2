@@ -3,6 +3,7 @@ export default class Detail implements View {
     private proposalId;
     private container;
     private content;
+    private voteForm;
     private loading;
     private timerInterval;
     private wallet;

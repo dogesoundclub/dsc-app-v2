@@ -55,15 +55,15 @@ HOME_ROADMAP_70,액티비티 '팔로우 미'를 활성화합니다. 로우파이
 HOME_ROADMAP_100,도지사운드클럽 메이트 V2를 런칭합니다. 기존 메이트 홀더들에게 유리한 결제 방식으로 런칭됩니다.,Doge Sound Club Mate V2 is launched. It is launched as a payment method favorable to existing mate holders.
 HOME_SECTION_4_TITLE,Team,TEAM
 HOME_SECTION_4,- ARVITOR (Manager) : 그림을 조합하는 프로그램을 만들었습니다. 슈퍼 컬렉터가 되고 싶습니다.\n- HANUL (Dev) : 블록체인 프로그래밍 종결자.\n- YONG JIN (Artist) : 메이트와 일러스트를 그려 주었습니다.,- ARVITOR (Manager): I made a program to assemble pictures. I want to become a super collector.\n- HANUL (Dev): The virtuoso of blockchain programming.\n- YONG JIN (Artist): I drew illustrations and MATES.
-HOME_PARTNET_TITLE,Partnership
+HOME_PARTNET_TITLE,Partnership,PARTNERSHIP
 HOME_CONTACT_TITLE,Contact,CONTACT
 HOME_CONTACT_KAKAOTALK,카카오톡,KAKAOTALK
 HOME_CONTACT_KAKAOTALK_PASSWORD,참여코드 : 10000,PASSWORD : 10000
 HOME_CONTACT_DISCORD,디스코드,DISCORD
-HOME_CONTACT_TELEGRAM,텔레그램
+HOME_CONTACT_TELEGRAM,텔레그램,TELEGRAM
 HOME_CONTACT_TWITTER,트위터,TWITTER
 HOME_CONTACT_INSTAGRAM,인스타그램,INSTAGRAM
-HOME_CONTACT_MEDIUM,미디엄
+HOME_CONTACT_MEDIUM,미디엄,MEDIUM
 HOME_CONTACT_GITHUB,깃허브,GITHUB
 HOME_CONTACT_YOUTUBE,유튜브,YOUTUBE
 HOME_CONTACT_EMAIL,이메일,EMAIL
@@ -127,34 +127,35 @@ GOVERNANCE_PROPOSALS,제안들,Suggestions
 GOVERNANCE_PROPOSE_BUTTON,제안 생성,Suggest
 GOVERNANCE_PROPOSAL_VOTING,투표 중,Voting
 GOVERNANCE_PROPOSAL_RESULT_FOR,제안 결과 : 지향,Result : Executed
-GOVERNANCE_PROPOSAL_CANCELED,취소 됨,Result : Canceld
-GOVERNANCE_PROPOSAL_RESULT_SAME,제안 결과 : 동점
+GOVERNANCE_PROPOSAL_CANCELED,취소 됨,Result : Canceled
+GOVERNANCE_PROPOSAL_RESULT_SAME,제안 결과 : 동점,Result : Neutral
 GOVERNANCE_PROPOSAL_RESULT_AGAINST,제안 결과 : 지양,Result : Rejected
 GOVERNANCE_PROPOSAL_EXECUTED,적용 완료,Applied
 GOVERNANCE_PROPOSAL_BACK_BUTTON,뒤로 가기,Back
 GOVERNANCE_PROPOSAL_REMAIN_BLOCKS,투표 종료까지 {block} 블록 남음,By end of voting {block} block left
 GOVERNANCE_PROPOSAL_FOR,찬성,Agree
 GOVERNANCE_PROPOSAL_AGAINST,반대,Oppose
-GOVERNANCE_PROPOSAL_TITLE,제목
-GOVERNANCE_PROPOSAL_TITLE_PLACEHOLDER,제안 제목을 입력하세요.
-GOVERNANCE_PROPOSAL_PERIOD,투표 기간
-GOVERNANCE_PROPOSAL_PERIOD_PLACEHOLDER,투표 기간을 블록 단위로 입력해주세요.
+GOVERNANCE_PROPOSAL_TITLE,제목,Title
+GOVERNANCE_PROPOSAL_TITLE_PLACEHOLDER,제안 제목을 입력하세요.,Enter the title of the suggestion.
+GOVERNANCE_PROPOSAL_PERIOD,투표 기간,Voting Period
+GOVERNANCE_PROPOSAL_PERIOD_PLACEHOLDER,투표 기간을 블록 단위로 입력해주세요.,Enter the voting period. (Unit : Block)
 GOVERNANCE_PROPOSAL_SUMMARY,요약,Summary
-GOVERNANCE_PROPOSAL_SUMMARY_PLACEHOLDER,제안의 핵심적인 부분만 적어주세요.
+GOVERNANCE_PROPOSAL_SUMMARY_PLACEHOLDER,제안의 핵심적인 부분만 적어주세요.,Enter the summary of your suggestion.
 GOVERNANCE_PROPOSAL_CONTENT,본문,Description
-GOVERNANCE_PROPOSAL_CONTENT_DESCRIOPTION,본문은 마크다운 문법을 사용하실 수 있습니다.
-GOVERNANCE_PROPOSAL_CONTENT_MARKDOWN_BUTTON,마크다운 문법 보기
-GOVERNANCE_PROPOSAL_CONTENT_PLACEHOLDER,제안을 설명해주세요.
+GOVERNANCE_PROPOSAL_CONTENT_DESCRIOPTION,본문은 마크다운 문법을 사용하실 수 있습니다.,You can use markdown on the description.
+GOVERNANCE_PROPOSAL_CONTENT_MARKDOWN_BUTTON,마크다운 문법 보기,See how to use markdown
+GOVERNANCE_PROPOSAL_CONTENT_PLACEHOLDER,제안을 설명해주세요.,Explain your suggestion in detail.
 GOVERNANCE_PROPOSAL_NOTE,비고,Note
 GOVERNANCE_PROPOSAL_PROPOSER,제안자,Proposer
-GOVERNANCE_PROPOSAL_TERM,"제출된 제안을 취소할 수 있지만, 수정할 수 없음에 동의합니다. 제안이 진행되는 기간동안 메이트가 거버넌스 계약 주소에 보관되는 것에 동의합니다. 이 인터페이스는 거버넌스를 위해 본인이 선택한 편리한 도구일뿐이며, 서명에 따른 모든 트랜잭션에 대한 결과에 대한 책임은 서명한 지갑 소유주에게 있음에 동의합니다."
-GOVERNANCE_PROPOSE_SUBMIT_BUTTON,등록하기
-GOVERNANCE_PROPOSE_SUBMIT_CONFIRM,"제안을 등록하시겠습니까? 등록에 사용되는 메이트는 투표 종료시까지 사용할 수 없으며, 제안 후에는 내용을 수정할 수 없사오니 다시 한 번 확인해주시기 바랍니다."
-GOVERNANCE_PROPOSAL_VOTE_FOR,찬성
-GOVERNANCE_PROPOSAL_VOTE_AGAINST,반대
+GOVERNANCE_PROPOSAL_TERM,"제출된 제안을 취소할 수 있지만, 수정할 수 없음에 동의합니다. 제안이 진행되는 기간동안 메이트가 거버넌스 계약 주소에 보관되는 것에 동의합니다. 이 인터페이스는 거버넌스를 위해 본인이 선택한 편리한 도구일뿐이며, 서명에 따른 모든 트랜잭션에 대한 결과에 대한 책임은 서명한 지갑 소유주에게 있음에 동의합니다.","You agree that you may cancel a submitted proposal, but not amend it. I agree that the mates will be kept at the address of the governance agreement for the duration of the proposal. You agree that this interface is merely a convenient tool of your choice for governance, and that the signatory wallet owner is responsible for the consequences of any transaction under the signature."
+GOVERNANCE_PROPOSE_SUBMIT_BUTTON,등록하기,Create
+GOVERNANCE_PROPOSE_SUBMIT_CONFIRM,"제안을 등록하시겠습니까? 등록에 사용되는 메이트는 투표 종료시까지 사용할 수 없으며, 제안 후에는 내용을 수정할 수 없사오니 다시 한 번 확인해주시기 바랍니다.","Would you like to register an offer? The mate used for registration cannot be used until the end of the voting period, and the contents cannot be modified after the proposal, so please check it again."
+GOVERNANCE_PROPOSAL_VOTE_FOR,찬성,Agree
+GOVERNANCE_PROPOSAL_VOTE_AGAINST,반대,Disagree
 GOVERNANCE_PROPOSAL_VOTE_BUTTON,투표하기,Vote
 GOVERNANCE_PROPOSAL_FORM_TITLE,제안 생성툴,Suggestion Create Tool
-GOVERNANCE_PROPOSAL_NEED_MORE_MATES_ERROR,제안에는 {proposeMateCount}개의 메이트가 필요합니다.
+GOVERNANCE_PROPOSAL_NEED_MORE_MATES_ERROR,제안에는 {proposeMateCount}개의 메이트가 필요합니다.,The necessary number of MATEs to suggest : {proposeMateCount}
+GOVERNANCE_GET_BACK_MATES_BUTTON,제안에 사용된 NFT 되찾기
 DOGESOUNDS_RULE_TITLE,도지사운드 경연 규칙,DOGESOUNDS_RULE_TITLE
 ,Doge Sound Contest Rule
 DOGESOUNDS_RULE_1,"5개 이상의 메이트를 사용하면 개소리 후보를 제출할 수 있습니다.(경연 상태가 후보 접수 중일 경우. 도지사운드 후보 예시 : 비트코인은 인류 최대의 뻘짓입니다. , DSC는 쓰레기를 수집합니다.) 최다 득표를 받은 도지사운드는 웹페이지 메인에 자동으로 게시됩니다. 후보 제출 또는 투표에 사용한 메이트는 해당 투표에서 다시 사용할 수 없습니다.Dogesound competiion은 클레이튼 체인 위에서 작동되는 개소리 경연입니다. 5개 이상의 메이트를 사용하면 개소리 후보를 제출할 수 있습니다. 최다 득표를 받은 도지사운드는 웹페이지 메인에 자동으로 게시됩니다. 사용한 메이트는 다음 회에 다시 사용할 수 있습니다. 도지사운드 후보 제출 또는 투표는 메이트 소유권에 일체 영향을 주지 않습니다. (개소리 예시 : 비트코인은 인류 최대의 뻘짓입니다. 또는 DSC가 좋아할만한 아무 문구)","The Dogesound competiion is a Best Doge Sound(Kak talk) contest that runs on top of the Klayton chain. If you have 5 or more MATEs, you can submit a Kaktalk candidates. Doge Sound that received the most votes is automatically posted on the main web page. A used mate can be used again next time. Submitting or voting for a DogeSound candidate will not affect mate ownership in any way. (Example of Dogesound : Bitcoin is humanity's biggest mistake, or any phrase that DSC holders might like)"
@@ -194,4 +195,4 @@ DOGESOUNDS_NEED_MORE_MATES_ERROR,{candidateCount}개 이상의 메이트가 필�
 TERMS_SECTION_1_TITLE,이용약관,TERMS AND CONDITIONS
 TERMS_SECTION_1,"DSC MATES은 클레이튼 네트워크에서 실행되는 디지털 아트워크(NFT) 모음입니다. 이 웹사이트는 참가자들이 디지털 수집품을 교환/이용할 수 있는 인터페이스일 뿐입니다. 사용자는 자신의 개인 클레이튼 지갑의 안전과 관리에 대해 전적으로 책임이 있으며 승인 전에 이 웹사이트에서 생성된 모든 거래 및 계약을 검증합니다. 또한 DSC MATES 스마트 계약은 클레이튼 네트워크에서 실행되기 때문에 트랜잭션을 취소 또는 복원할 수 없습니다.\n\n이 웹사이트 및 연결된 서비스는 어떠한 종류의 보증 없이 ""있는 그대로"" 및 ""사용 가능한 상태로"" 제공됩니다. 이 웹사이트를 사용함으로써 귀하는 dsc mates 디지털 수집품과 관련된 모든 거래에 대해 단독 책임을 지게 됩니다.","DSC MATES is a collection of digital artwork (NFT) running on the Klaytn network. This website is merely an interface through which participants can exchange/use digital collectibles. Users are solely responsible for the safety and management of their personal Klaytn wallet and verify all transactions and contracts created on this website prior to approval. In addition, because the DSC MATES smart contract runs on the Klaytn network, transactions cannot be canceled or restored.\n\nThis website and linked services are provided ""as is"" and ""as available"" without warranty of any kind. . By using this website, you are solely responsible for all transactions related to the dsc mates digital collectibles."
 TERMS_SECTION_2_TITLE,소유권 및 저작권,Ownership
-TERMS_SECTION_2,"첫째, (소유권) 당신은 NFT를 소유하고 있습니다. 각 DSC MATE는 클레이튼 블록체인의 NFT입니다. NFT를 구매하면 기본 DSC MATE, Art를 완전히 소유하게 됩니다. NFT의 소유권은 전적으로 스마트 계약과 클레이튼 네트워크에 의해 중재됩니다. 어떤 시점에서도 DSC MATE의 소유권을 압류, 동결 또는 수정할 수 없습니다.","First, (ownership) you own the NFT. Each DSC MATE is an NFT on the Klaytn blockchain. When you purchase NFT, you fully own the base DSC MATE, Art. Ownership of the NFT is entirely mediated by smart contracts and the Klaytn Network. Ownership of DSC MATE may not be seized, frozen or modified at any time."
+TERMS_SECTION_2,"첫째, (소유권) 당신은 NFT를 소유하고 있습니다. 각 MATE는 클레이튼 블록체인의 NFT입니다. NFT를 구매하면 기본 MATE, ART를 완전히 소유하게 됩니다. NFT의 소유권은 전적으로 스마트 계약과 클레이튼 네트워크에 의해 중재됩니다. 어떤 시점에서도 MATE의 소유권을 압류, 동결 또는 수정할 수 없습니다. MATE는 DSC 브랜드의 일부입니다. DSC 브랜드의 소유권을 포함하지 않습니다","First, (ownership) you own the NFT. Each MATE is an NFT on the Klaytn blockchain. When you purchase NFT, you fully own the basic MATE, ART. Ownership of NFTs is entirely mediated by smart contracts and the Klaytn Network. You cannot seize, freeze or modify ownership of MATE. MATE is part of the DSC brand. Does not include ownership of the DSC brand."

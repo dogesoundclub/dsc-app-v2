@@ -96,6 +96,14 @@ class VoteContract extends Contract {
         await this.runWalletMethod("execute", proposalId);
     }
 
+    public async getBackMates(proposalId: BigNumberish): Promise<void> {
+        await this.runWalletMethodWithLargeGas("getBackMates", proposalId);
+    }
+
+    public async matesBacked(proposalId: BigNumberish): Promise<boolean> {
+        return await this.runMethod("matesBacked", proposalId);
+    }
+
     public async getResult(proposalId: BigNumberish): Promise<number> {
         return parseInt(await this.runMethod("result", proposalId), 10);
     }

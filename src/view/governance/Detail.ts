@@ -18,6 +18,7 @@ export default class Detail implements View {
 
     private container: DomNode;
     private content: DomNode;
+    private voteForm: DomNode;
     private loading: Loading | undefined;
     private timerInterval: any | undefined;
 
@@ -43,41 +44,43 @@ export default class Detail implements View {
                 this.loading = new Loading(),
             ),
 
-            this.wallet = el(".wallet"),
-            this.ownedMates = el(".owned-mates"),
-            this.votableMates = el(".votable-mates"),
-            this.selectedMates = el(".selected-mates", msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(0))),
-            el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_MAX_SELECT_BUTTON")}`, {
-                click: () => this.mateList.maxSelect(),
-            })),
-            el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
-                click: () => this.mateList.deselect(),
-            })),
-            this.mateList = new MateList(true, false),
-            el(".select",
-                el("label.for", el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_FOR")), forRadio = el("input", {
-                    name: "governance-radio",
-                    type: "radio",
+            this.voteForm = el(".vote-form",
+                this.wallet = el(".wallet"),
+                this.ownedMates = el(".owned-mates"),
+                this.votableMates = el(".votable-mates"),
+                this.selectedMates = el(".selected-mates", msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(0))),
+                el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_MAX_SELECT_BUTTON")}`, {
+                    click: () => this.mateList.maxSelect(),
                 })),
-                el("label.against", el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_AGAINST")), againstRadio = el("input", {
-                    name: "governance-radio",
-                    type: "radio",
+                el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
+                    click: () => this.mateList.deselect(),
                 })),
+                this.mateList = new MateList(true, false),
+                el(".select",
+                    el("label.for", el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_FOR")), forRadio = el("input", {
+                        name: "governance-radio",
+                        type: "radio",
+                    })),
+                    el("label.against", el("span.title", msg("GOVERNANCE_PROPOSAL_VOTE_AGAINST")), againstRadio = el("input", {
+                        name: "governance-radio",
+                        type: "radio",
+                    })),
+                ),
+                el("a.vote-button", msg("GOVERNANCE_PROPOSAL_VOTE_BUTTON"), {
+                    click: async () => {
+                        if (this.proposalId !== undefined) {
+                            if (forRadio.domElement.checked === true) {
+                                await VoteContract.voteFor(this.proposalId, MateContract.address, this.mateList.selectedMateIds);
+                                setTimeout(() => SkyRouter.refresh(), 2000);
+                            }
+                            if (againstRadio.domElement.checked === true) {
+                                await VoteContract.voteAgainst(this.proposalId, MateContract.address, this.mateList.selectedMateIds);
+                                setTimeout(() => SkyRouter.refresh(), 2000);
+                            }
+                        }
+                    },
+                }),
             ),
-            el("a.vote-button", msg("GOVERNANCE_PROPOSAL_VOTE_BUTTON"), {
-                click: async () => {
-                    if (this.proposalId !== undefined) {
-                        if (forRadio.domElement.checked === true) {
-                            await VoteContract.voteFor(this.proposalId, MateContract.address, this.mateList.selectedMateIds);
-                            setTimeout(() => SkyRouter.refresh(), 2000);
-                        }
-                        if (againstRadio.domElement.checked === true) {
-                            await VoteContract.voteAgainst(this.proposalId, MateContract.address, this.mateList.selectedMateIds);
-                            setTimeout(() => SkyRouter.refresh(), 2000);
-                        }
-                    }
-                },
-            }),
         ));
 
         this.load(params.id);
@@ -111,20 +114,28 @@ export default class Detail implements View {
         }
 
         const currentBlock = await Klaytn.loadBlockNumber();
+        let remains = proposal.votePeriod - (currentBlock - proposal.blockNumber);
+        if (remains < 0) {
+            remains = 0;
+        }
+
         const timer = el(".timer", msg("GOVERNANCE_PROPOSAL_REMAIN_BLOCKS").replace(/{block}/, String(proposal.votePeriod - (currentBlock - proposal.blockNumber)))).appendTo(this.content);
+        timer.empty().appendText(msg("GOVERNANCE_PROPOSAL_REMAIN_BLOCKS").replace(/{block}/, String(remains)));
 
-        this.timerInterval = setInterval(async () => {
+        if (remains > 0) {
+            this.timerInterval = setInterval(async () => {
 
-            const currentBlock = await Klaytn.loadBlockNumber();
-            const remains = proposal.votePeriod - (currentBlock - proposal.blockNumber);
+                const currentBlock = await Klaytn.loadBlockNumber();
+                const remains = proposal.votePeriod - (currentBlock - proposal.blockNumber);
 
-            if (remains <= 1) {
-                setTimeout(() => SkyRouter.refresh(), 2000);
-                clearInterval(this.timerInterval);
-            } else {
-                timer.empty().appendText(msg("GOVERNANCE_PROPOSAL_REMAIN_BLOCKS").replace(/{block}/, String(remains)));
-            }
-        }, 1000);
+                if (remains <= 1) {
+                    setTimeout(() => SkyRouter.refresh(), 2000);
+                    clearInterval(this.timerInterval);
+                } else {
+                    timer.empty().appendText(msg("GOVERNANCE_PROPOSAL_REMAIN_BLOCKS").replace(/{block}/, String(remains)));
+                }
+            }, 1000);
+        }
 
         const voteCounts = el(".vote-counts").appendTo(this.content);
         voteCounts.append(el(".for-votes",
@@ -150,36 +161,58 @@ export default class Detail implements View {
 
         content.domElement.innerHTML = xss(marked(proposal.content));
 
-        const walletAddress = await Wallet.loadAddress();
-        if (walletAddress !== undefined) {
+        if (remains > 0) {
+            const walletAddress = await Wallet.loadAddress();
+            if (walletAddress !== undefined) {
 
-            this.wallet.appendText(`- ${msg("DOGESOUNDS_WALLET_ADDRESS")} : `);
-            this.wallet.append(el("a", walletAddress,
-                { href: `https://opensea.io/${walletAddress}`, target: "_blank" },
-            ));
+                this.wallet.appendText(`- ${msg("DOGESOUNDS_WALLET_ADDRESS")} : `);
+                this.wallet.append(el("a", walletAddress,
+                    { href: `https://opensea.io/${walletAddress}`, target: "_blank" },
+                ));
 
-            const mateBalance = (await MateContract.balanceOf(walletAddress)).toNumber();
+                const mateBalance = (await MateContract.balanceOf(walletAddress)).toNumber();
 
-            this.ownedMates.appendText(`- ${msg("DOGESOUNDS_OWNED_MATES_COUNT").replace(/{count}/, String(mateBalance))}`);
+                this.ownedMates.appendText(`- ${msg("DOGESOUNDS_OWNED_MATES_COUNT").replace(/{count}/, String(mateBalance))}`);
 
-            const mates: number[] = [];
-            const votedMates: number[] = [];
+                const mates: number[] = [];
+                const votedMates: number[] = [];
 
-            const promises: Promise<void>[] = [];
-            for (let i = 0; i < mateBalance; i += 1) {
-                const promise = async (index: number) => {
-                    const mateId = (await MateContract.tokenOfOwnerByIndex(walletAddress, index)).toNumber();
-                    mates.push(mateId);
-                    if (await VoteContract.getMateVoted(id, MateContract.address, mateId) === true) {
-                        votedMates.push(mateId);
-                    }
-                };
-                promises.push(promise(i));
+                const promises: Promise<void>[] = [];
+                for (let i = 0; i < mateBalance; i += 1) {
+                    const promise = async (index: number) => {
+                        const mateId = (await MateContract.tokenOfOwnerByIndex(walletAddress, index)).toNumber();
+                        mates.push(mateId);
+                        if (await VoteContract.getMateVoted(id, MateContract.address, mateId) === true) {
+                            votedMates.push(mateId);
+                        }
+                    };
+                    promises.push(promise(i));
+                }
+                await Promise.all(promises);
+
+                this.votableMates.appendText(`- ${msg("DOGESOUNDS_VOTABLE_MATES_COUNT").replace(/{count}/, String(mateBalance - votedMates.length))}`);
+                this.mateList.load(mates, votedMates);
+
+            } else {
+                this.voteForm.style({ display: "none" });
             }
-            await Promise.all(promises);
+        } else {
+            this.voteForm.style({ display: "none" });
 
-            this.votableMates.appendText(`- ${msg("DOGESOUNDS_VOTABLE_MATES_COUNT").replace(/{count}/, String(mateBalance - votedMates.length))}`);
-            this.mateList.load(mates, votedMates);
+            const walletAddress = await Wallet.loadAddress();
+            if (walletAddress !== undefined && await VoteContract.matesBacked(this.proposalId) !== true) {
+                this.container.append(
+                    el("a.get-back-mates-button", msg("GOVERNANCE_GET_BACK_MATES_BUTTON"), {
+                        click: async () => {
+                            if (this.proposalId !== undefined) {
+                                console.log(this.proposalId);
+                                await VoteContract.getBackMates(this.proposalId);
+                                setTimeout(() => SkyRouter.refresh(), 2000);
+                            }
+                        },
+                    }),
+                );
+            }
         }
 
         this.loading?.delete();

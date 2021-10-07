@@ -28,6 +28,8 @@ declare class VoteContract extends Contract {
     voteAgainst(proposalId: BigNumberish, mates: string, mateIds: BigNumberish[]): Promise<void>;
     cancel(proposalId: BigNumberish): Promise<void>;
     execute(proposalId: BigNumberish): Promise<void>;
+    getBackMates(proposalId: BigNumberish): Promise<void>;
+    matesBacked(proposalId: BigNumberish): Promise<boolean>;
     getResult(proposalId: BigNumberish): Promise<number>;
     getForVotes(proposalId: BigNumberish): Promise<number>;
     getAgainstVotes(proposalId: BigNumberish): Promise<number>;
