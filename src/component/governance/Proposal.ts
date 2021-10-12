@@ -8,7 +8,7 @@ export default class Proposal extends DomNode {
     constructor(private proposalId: number, private proposal: ProposalInfo) {
         super("li.proposal");
         this.append(
-            el("h4", proposal.title, {
+            el("h4", `DIP-${this.proposalId}: ${proposal.title}`, {
                 click: () => ViewUtil.go(`/governance/${proposalId}`),
             }),
         );

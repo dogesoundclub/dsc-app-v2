@@ -10,6 +10,7 @@ export default class Gallery implements View {
 
     private container: DomNode;
     private mateList: MateList;
+    private selects: DomNode<HTMLSelectElement>[] = [];
 
     private filter: { [key: string]: string } = {};
     private byId: undefined | number;
@@ -27,25 +28,32 @@ export default class Gallery implements View {
                         this.loadMates();
                     },
                 }),
-                ...Object.entries(MateParts).map(([key, values]) => el("select",
-                    {
-                        placeholder: key,
-                        change: (event, select) => {
-                            const value = (select.domElement as HTMLSelectElement).value;
-                            Object.assign(this.filter, { [key]: value });
-                            if (value === "") {
-                                delete this.filter[key];
-                            }
-                            this.loadMates();
+                ...Object.entries(MateParts).map(([key, values]) => {
+                    const select = el("select",
+                        {
+                            placeholder: key,
+                            change: (event, select) => {
+                                const value = (select.domElement as HTMLSelectElement).value;
+                                Object.assign(this.filter, { [key]: value });
+                                if (value === "") {
+                                    delete this.filter[key];
+                                }
+                                this.loadMates();
+                            },
                         },
-                    },
-                    el("option", key, { value: "" }),
-                    key === "Face" ? undefined : el("option", "None", { value: "None" }),
-                    ...values.map((value) => el("option", value, { value })),
-                )),
+                        el("option", key, { value: "" }),
+                        key === "Face" ? undefined : el("option", "None", { value: "None" }),
+                        ...values.map((value) => el("option", value, { value })),
+                    );
+                    this.selects.push(select as DomNode<HTMLSelectElement>);
+                    return select;
+                }),
                 el("a.reset-button", msg("GALLERY_RESET_FILTER_BUTTON"), {
                     click: () => {
                         this.filter = {};
+                        for (const select of this.selects) {
+                            select.domElement.value = "";
+                        }
                         this.byId = undefined;
                         this.loadMates();
                     },

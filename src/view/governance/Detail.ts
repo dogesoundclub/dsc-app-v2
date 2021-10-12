@@ -94,7 +94,7 @@ export default class Detail implements View {
 
         const proposal = await VoteContract.getProposal(id);
 
-        const title = el("h1", el("span", proposal.title)).appendTo(this.content);
+        const title = el("h1", el("span", `DIP-${this.proposalId}: ${proposal.title}`)).appendTo(this.content);
 
         if (proposal.executed === true) {
             title.append(el(".result.executed", `- ${msg("GOVERNANCE_PROPOSAL_EXECUTED")} -`));
