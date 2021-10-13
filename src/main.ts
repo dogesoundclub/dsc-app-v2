@@ -2,8 +2,6 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
-import MateContract from "./contracts/MateContract";
-import VoteContract from "./contracts/VoteContract";
 import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
@@ -18,6 +16,11 @@ import FollowMe from "./view/mates/FollowMe";
 import Gallery from "./view/mates/Gallery";
 import MateDetail from "./view/mates/MateDetail";
 import MyMates from "./view/mates/MyMates";
+import Mix from "./view/Mix";
+import Booth from "./view/mix/Booth";
+import BuyMix from "./view/mix/BuyMix";
+import NFTMining from "./view/mix/NFTMining";
+import Turntables from "./view/mix/Turntables";
 //import Rarity from "./view/mates/Rarity";
 import Terms from "./view/Terms";
 
@@ -47,6 +50,12 @@ import Terms from "./view/Terms";
     SkyRouter.route("governance/propose", Propose);
     SkyRouter.route("governance/{id}", Detail, ["governance/propose"]);
     SkyRouter.route("terms", Terms);
+    
+    SkyRouter.route("mix", Mix);
+    SkyRouter.route("mix/buy", BuyMix);
+    SkyRouter.route("mix/mining", NFTMining);
+    SkyRouter.route("mix/turntables", Turntables);
+    SkyRouter.route("mix/booth", Booth);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);

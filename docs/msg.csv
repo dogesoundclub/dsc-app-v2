@@ -29,6 +29,15 @@ MENU_RARITY,Rarity,Rarity
 MENU_FOLLOW_ME,Follow Me,Follow Me
 MENU_BUY_MATES,메이트 구매,Buy MATE
 MENU_MY_MATES,내 메이트,My MATE
+MENU_OGS,OGs
+MENU_MINT_OGS,OG 민팅
+MENU_BUY_OGS,OG 구매
+MENU_MY_OGS,내 OGs
+MENU_MIX,Mix
+MENU_BUY_MIX,Mix 구매
+MENU_NFT_MINING,NFT 채굴
+MENU_TURNTABLES,턴테이블
+MENU_BOOTH,부스
 HOME_INTRO,도지사운드클럽에 오신 것을 환영합니다!,Welcome to Doge Sound Club!
 HOME_DESCRIPTION,도지사운드클럽은 NFT를 이용한 거버넌스로 운영되는 NFT 수집가들의 사교 모임입니다.\nMATES를 이용해서 클럽에 가입하고 투표할 수 있습니다.,Doge Sound Club is a social gathering of NFT collectors operated by NFT governance.\nYou can use MATES to join the club and vote.
 HOME_WINNER_TITLE,경) 제 {round}회 개소리 우승자 (축 :,{round}th Doge Sound Winner :
@@ -82,6 +91,8 @@ MATES_SECTION_3,"컨트랙트를 통해 누구나 10,000개의 토큰을 만들�
 ACTIVITIES_SECTION_1,DSC는 DSC 정체성에 적합한 클럽 활동들을 제공합니다. 발행한 NFT를 활용한 기존에 없는 신선한 시도들을 하고 있습니다.,DSC offers club activities that fit the DSC identity. We are making fresh attempts that have not been made before.
 ACTIVITIES_SECTION_2_TITLE,DOGESOUND COMPETITION (Only mate holders can join),DOGESOUND COMPETITION
 ACTIVITIES_SECTION_2,Dogesound competiion은 클레이튼 체인 위에서 작동되는 개소리 경연입니다. 5개 이상의 메이트를 사용하면 개소리 후보를 제출할 수 있습니다. 최다 득표를 받은 도지사운드는 웹페이지 메인에 자동으로 게시됩니다. 사용한 메이트는 다음 회에 다시 사용할 수 있습니다. 도지사운드 후보 제출 또는 투표는 메이트 소유권에 일체 영향을 주지 않습니다. (개소리 예시 : 비트코인은 인류 최대의 뻘짓입니다. 또는 DSC가 좋아할만한 아무 문구),"The Dogesound competiion is a Best Doge Sound(Kak talk) contest that runs on top of the Klayton chain. If you have 5 or more MATEs, you can submit a Kaktalk candidates. Doge Sound that received the most votes is automatically posted on the main web page. A used mate can be used again next time. Submitting or voting for a DogeSound candidate will not affect mate ownership in any way. (Example of Dogesound : Bitcoin is humanity's biggest mistake, or any phrase that DSC holders might like)"
+ACTIVITIES_SECTION_3_TITLE,GOVERNANCE
+ACTIVITIES_SECTION_3,"메이트는 도지사운드클럽 거버넌스의 의결권을 나타냅니다. 제안을 하거나, 등록된 제안에 찬반을 메이트를 가진 개수만큼 투표할 수 있습니다. "
 GALLERY_ID_INPUT,ID로 검색,Search by ID
 GALLERY_RESET_FILTER_BUTTON,필터 초기화,RESET FILTER SETTING
 MY_MATES_WALLET_ADDRESS,지갑 주소,WALLET ADDRESS
@@ -198,3 +209,8 @@ TERMS_SECTION_1_TITLE,이용약관,TERMS AND CONDITIONS
 TERMS_SECTION_1,"DSC MATES은 클레이튼 네트워크에서 실행되는 디지털 아트워크(NFT) 모음입니다. 이 웹사이트는 참가자들이 디지털 수집품을 교환/이용할 수 있는 인터페이스일 뿐입니다. 사용자는 자신의 개인 클레이튼 지갑의 안전과 관리에 대해 전적으로 책임이 있으며 승인 전에 이 웹사이트에서 생성된 모든 거래 및 계약을 검증합니다. 또한 DSC MATES 스마트 계약은 클레이튼 네트워크에서 실행되기 때문에 트랜잭션을 취소 또는 복원할 수 없습니다.\n\n이 웹사이트 및 연결된 서비스는 어떠한 종류의 보증 없이 ""있는 그대로"" 및 ""사용 가능한 상태로"" 제공됩니다. 이 웹사이트를 사용함으로써 귀하는 dsc mates 디지털 수집품과 관련된 모든 거래에 대해 단독 책임을 지게 됩니다.","DSC MATES is a collection of digital artwork (NFT) running on the Klaytn network. This website is merely an interface through which participants can exchange/use digital collectibles. Users are solely responsible for the safety and management of their personal Klaytn wallet and verify all transactions and contracts created on this website prior to approval. In addition, because the DSC MATES smart contract runs on the Klaytn network, transactions cannot be canceled or restored.\n\nThis website and linked services are provided ""as is"" and ""as available"" without warranty of any kind. . By using this website, you are solely responsible for all transactions related to the dsc mates digital collectibles."
 TERMS_SECTION_2_TITLE,소유권 및 저작권,Ownership
 TERMS_SECTION_2,"첫째, (소유권) 당신은 NFT를 소유하고 있습니다. 각 MATE는 클레이튼 블록체인의 NFT입니다. NFT를 구매하면 기본 MATE, ART를 완전히 소유하게 됩니다. NFT의 소유권은 전적으로 스마트 계약과 클레이튼 네트워크에 의해 중재됩니다. 어떤 시점에서도 MATE의 소유권을 압류, 동결 또는 수정할 수 없습니다. MATE는 DSC 브랜드의 일부입니다. DSC 브랜드의 소유권을 포함하지 않습니다","First, (ownership) you own the NFT. Each MATE is an NFT on the Klaytn blockchain. When you purchase NFT, you fully own the basic MATE, ART. Ownership of NFTs is entirely mediated by smart contracts and the Klaytn Network. You cannot seize, freeze or modify ownership of MATE. MATE is part of the DSC brand. Does not include ownership of the DSC brand."
+MIX_TITLE,Mix
+BUY_MIX_TITLE,Mix 구매
+NFT_MINING_TITLE,NFT 채굴
+TURNTABLES_TITLE,턴테이블
+BOOTH_TITLE,부스

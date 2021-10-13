@@ -168,6 +168,10 @@
     margin-bottom: 0;
 }
 
+.markdown-body ol {
+    list-style-type: decimal;
+}
+
 .markdown-body ol ol,
 .markdown-body ul ol {
     list-style-type: lower-roman;
@@ -1571,6 +1575,47 @@ a {
 .home-view > section p a {
   color: #BFC500;
 }
+.terms-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .terms-view {
+    padding: 90px 20px;
+  }
+}
+.terms-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.terms-view > section {
+  margin-top: 60px;
+}
+.terms-view > section > h2 {
+  font-size: 26px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 719px) {
+  .terms-view > section > h2 {
+    font-size: 20px;
+  }
+}
+.terms-view > section a {
+  color: #BFC500;
+  word-break: break-all;
+}
+.terms-view > section p {
+  word-break: break-all;
+  line-height: 2em;
+}
 .mates-view {
   max-width: 780px;
   padding: 135px 20px;
@@ -2573,17 +2618,17 @@ a {
   font-family: DungGeunMo;
   font-weight: bold;
 }
-.terms-view {
+.mix-view {
   max-width: 780px;
   padding: 135px 20px;
   margin: auto;
 }
 @media only screen and (max-width: 719px) {
-  .terms-view {
+  .mix-view {
     padding: 90px 20px;
   }
 }
-.terms-view > h1 {
+.mix-view > h1 {
   font-size: 30px;
   font-family: DungGeunMo;
   color: #FF00F6;
@@ -2592,26 +2637,80 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
-.terms-view > section {
-  margin-top: 60px;
-}
-.terms-view > section > h2 {
-  font-size: 26px;
-  color: #BFC500;
-  margin-bottom: 16px;
-  line-height: 1.5em;
+.buymix-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
 }
 @media only screen and (max-width: 719px) {
-  .terms-view > section > h2 {
-    font-size: 20px;
+  .buymix-view {
+    padding: 90px 20px;
   }
 }
-.terms-view > section a {
-  color: #BFC500;
-  word-break: break-all;
+.buymix-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
 }
-.terms-view > section p {
-  word-break: break-all;
-  line-height: 2em;
+.nftmining-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .nftmining-view {
+    padding: 90px 20px;
+  }
+}
+.nftmining-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.turntables-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .turntables-view {
+    padding: 90px 20px;
+  }
+}
+.turntables-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.booth-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .booth-view {
+    padding: 90px 20px;
+  }
+}
+.booth-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
 }
 

@@ -25,16 +25,34 @@
             ]
         },
         {
+            "uri": "mix",
+            "name": "MENU_MIX",
+            "children": [{
+                    "uri": "mix/buy",
+                    "name": "MENU_BUY_MIX"
+                }, {
+                    "uri": "mix/mining",
+                    "name": "MENU_NFT_MINING"
+                }, {
+                    "uri": "mix/turntables",
+                    "name": "MENU_TURNTABLES"
+                }, {
+                    "uri": "mix/booth",
+                    "name": "MENU_BOOTH"
+                }]
+        },
+        {
             "uri": "activities",
             "name": "MENU_ACTIVITIES",
             "children": [{
                     "uri": "dogesounds",
                     "name": "MENU_DOGESOUNDS"
-                }]
-        },
-        {
-            "uri": "governance",
-            "name": "MENU_GOVERNANCE"
+                },
+                {
+                    "uri": "governance",
+                    "name": "MENU_GOVERNANCE"
+                }
+            ]
         }
     ]
 }

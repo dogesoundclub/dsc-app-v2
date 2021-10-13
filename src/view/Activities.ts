@@ -21,6 +21,12 @@ export default class Activities implements View {
                 })),
                 el("p", msg("ACTIVITIES_SECTION_2")),
             ),
+            el("section",
+                el("h2", el("a", msg("ACTIVITIES_SECTION_3_TITLE"), {
+                    click: () => ViewUtil.go("/governance"),
+                })),
+                el("p", msg("ACTIVITIES_SECTION_3")),
+            ),
         ));
     }
 
