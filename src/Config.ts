@@ -1,5 +1,5 @@
 
-const TESTNET = true;
+const TESTNET = false;
 
 export default {
 
@@ -19,6 +19,7 @@ export default {
 
         Mix: "",
         MixEmitter: "",
+        DevFundPool: "",
         MatesPool: "",
         Booth: "",
     } : {
@@ -35,6 +36,7 @@ export default {
 
         Mix: "0xDd483a970a7A7FeF2B223C3510fAc852799a88BF",
         MixEmitter: "0x0281dDafc6718b2B60bda163550f2F5F59D92C09",
+        DevFundPool: "0x91471263590FB259bf6208ba414bf17B0126Bbb7",
         MatesPool: "0xbc9C42267037786f42831d4f36D629A3888c9b4a",
         Booth: "0x294C14FaEB61B5181C236FaEB51c6a8791b38A4b",
     },
