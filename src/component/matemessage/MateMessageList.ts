@@ -1,6 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import SkyUtil from "skyutil";
-import MessageContract from "../../contracts/MessageContract";
+import MessageContract from "../../contracts/nft/MessageContract";
 import MateMessage from "./MateMessage";
 
 export default class MateMessageList extends DomNode {

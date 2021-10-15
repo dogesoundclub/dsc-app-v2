@@ -1,6 +1,6 @@
 import { BigNumber, BigNumberish } from "ethers";
-import Config from "../Config";
-import Contract from "./Contract";
+import Config from "../../Config";
+import Contract from "../Contract";
 
 export interface NameRecord {
     owner: string,

@@ -11,6 +11,7 @@ export default class NFTMining implements View {
         Layout.current.title = msg("NFT_MINING_TITLE");
         Layout.current.content.append(this.container = el(".nftmining-view",
             el("h1", msg("NFT_MINING_TITLE")),
+            el("p", "Work in Progress"),
         ));
     }
 

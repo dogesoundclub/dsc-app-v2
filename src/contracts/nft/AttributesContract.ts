@@ -1,6 +1,6 @@
 import { BigNumberish } from "ethers";
-import Config from "../Config";
-import Contract from "./Contract";
+import Config from "../../Config";
+import Contract from "../Contract";
 
 class AttributesContract extends Contract {
 

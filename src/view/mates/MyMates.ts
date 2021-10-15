@@ -3,7 +3,7 @@ import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import Loading from "../../component/loading/Loading";
 import MateList from "../../component/mate/MateList";
-import MateContract from "../../contracts/MateContract";
+import MateContract from "../../contracts/nft/MateContract";
 import Wallet from "../../klaytn/Wallet";
 import Layout from "../Layout";
 

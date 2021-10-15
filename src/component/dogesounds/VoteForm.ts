@@ -2,7 +2,7 @@ import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
-import MateContract from "../../contracts/MateContract";
+import MateContract from "../../contracts/nft/MateContract";
 import Wallet from "../../klaytn/Wallet";
 import Alert from "../../ui/dialogue/Alert";
 import MateList from "../mate/MateList";

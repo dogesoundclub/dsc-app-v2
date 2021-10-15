@@ -1,0 +1,1 @@
+//# sourceMappingURL=KIP7StakingPool.d.ts.map

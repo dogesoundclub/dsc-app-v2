@@ -1,5 +1,5 @@
 import { ClosableFloatingDomNode, Position } from "@hanul/skynode";
-import LanguageSelect from "./LanguageSelect";
+import LanguageSelect from "../../component/user/LanguageSelect";
 import menu from "./menu.json";
 import MenuTreeBuilder from "./MenuTreeBuilder";
 

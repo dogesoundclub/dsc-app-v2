@@ -49,6 +49,22 @@ class ExtWallet extends EventContainer {
     public createContract(address: string, abi: any) {
         return this.caver === undefined ? undefined : new this.caver.klay.Contract(abi, address);
     }
+
+    public addToken(
+        address: string,
+        symbol: string,
+        decimals: number,
+        image: string,
+    ) {
+        this.klaytn?.sendAsync({
+            method: "wallet_watchAsset",
+            params: {
+                type: "ERC20",
+                options: { address, symbol, decimals, image },
+            },
+            id: Math.round(Math.random() * 100000),
+        });
+    }
 }
 
 export default new ExtWallet();

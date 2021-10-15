@@ -2474,6 +2474,14 @@ a {
   font-family: DungGeunMo;
   word-break: break-all;
 }
+.governance-detail-view > .content:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
 .governance-detail-view > .content > h1 {
   font-size: 20px;
 }
@@ -2544,6 +2552,11 @@ a {
   margin-top: 10px;
   color: #ffffff;
   font-size: 16px;
+}
+.governance-detail-view > .content > .cancel-button {
+  float: right;
+  font-family: DungGeunMo;
+  color: #FF4343;
 }
 .governance-detail-view > .vote-form > .wallet,
 .governance-detail-view > .vote-form > .owned-mates,

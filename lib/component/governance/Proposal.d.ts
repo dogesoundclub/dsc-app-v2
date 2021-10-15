@@ -1,5 +1,5 @@
 import { DomNode } from "@hanul/skynode";
-import { ProposalInfo } from "../../contracts/VoteContract";
+import { ProposalInfo } from "../../contracts/governance/VoteContract";
 export default class Proposal extends DomNode {
     private proposalId;
     private proposal;

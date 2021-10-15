@@ -1,6 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import VoteContract, { ProposalInfo } from "../../contracts/VoteContract";
+import VoteContract, { ProposalInfo } from "../../contracts/governance/VoteContract";
 import ViewUtil from "../../view/ViewUtil";
 
 export default class Proposal extends DomNode {

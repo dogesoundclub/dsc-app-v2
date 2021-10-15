@@ -1,6 +1,6 @@
 import { BigNumberish } from "@ethersproject/bignumber";
-import Config from "../Config";
-import Contract from "./Contract";
+import Config from "../../Config";
+import Contract from "../Contract";
 
 class FollowMeContract extends Contract {
 

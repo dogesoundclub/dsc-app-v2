@@ -1,5 +1,5 @@
 import { DomNode } from "@hanul/skynode";
-import VoteContract from "../../contracts/VoteContract";
+import VoteContract from "../../contracts/governance/VoteContract";
 import Loading from "../loading/Loading";
 import Proposal from "./Proposal";
 

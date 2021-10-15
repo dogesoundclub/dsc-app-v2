@@ -11,6 +11,7 @@ export default class Booth implements View {
         Layout.current.title = msg("BOOTH_TITLE");
         Layout.current.content.append(this.container = el(".booth-view",
             el("h1", msg("BOOTH_TITLE")),
+            el("p", "Work in Progress"),
         ));
     }
 

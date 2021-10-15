@@ -5,10 +5,11 @@ import { SkyRouter, View, ViewParams } from "skyrouter";
 import xss from "xss";
 import Loading from "../../component/loading/Loading";
 import MateList from "../../component/mate/MateList";
-import MateContract from "../../contracts/MateContract";
-import VoteContract from "../../contracts/VoteContract";
+import MateContract from "../../contracts/nft/MateContract";
+import VoteContract from "../../contracts/governance/VoteContract";
 import Klaytn from "../../klaytn/Klaytn";
 import Wallet from "../../klaytn/Wallet";
+import Confirm from "../../ui/dialogue/Confirm";
 import Layout from "../Layout";
 import ViewUtil from "../ViewUtil";
 
@@ -48,11 +49,11 @@ export default class Detail implements View {
                 this.wallet = el(".wallet"),
                 this.ownedMates = el(".owned-mates"),
                 this.votableMates = el(".votable-mates"),
-                this.selectedMates = el(".selected-mates", msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(0))),
-                el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_MAX_SELECT_BUTTON")}`, {
-                    click: () => this.mateList.maxSelect(),
+                this.selectedMates = el(".selected-mates", msg("GOVERNANCE_SELECTED_MATES_COUNT").replace(/{count}/, String(0))),
+                el(".button-container", el("a", `▶ ${msg("GOVERNANCE_MAX_SELECT_BUTTON")}`, {
+                    click: () => this.mateList.maxSelect(30),
                 })),
-                el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
+                el(".button-container", el("a", `▶ ${msg("GOVERNANCE_DESELECT_BUTTON")}`, {
                     click: () => this.mateList.deselect(),
                 })),
                 this.mateList = new MateList(true, false),
@@ -85,7 +86,7 @@ export default class Detail implements View {
 
         this.load(params.id);
         this.mateList.on("selectMate", () => {
-            this.selectedMates.empty().appendText(msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(this.mateList.selectedMateIds.length)));
+            this.selectedMates.empty().appendText(msg("GOVERNANCE_SELECTED_MATES_COUNT").replace(/{count}/, String(this.mateList.selectedMateIds.length)));
         });
     }
 
@@ -165,14 +166,29 @@ export default class Detail implements View {
             const walletAddress = await Wallet.loadAddress();
             if (walletAddress !== undefined) {
 
-                this.wallet.appendText(`- ${msg("DOGESOUNDS_WALLET_ADDRESS")} : `);
+                if (walletAddress === proposal.proposer) {
+                    this.content.append(
+                        el("a.cancel-button", msg("GOVERNANCE_CANCEL_PROPOSAL_BUTTON"), {
+                            click: async () => {
+                                new Confirm(msg("GOVERNANCE_CANCEL_PROPOSAL_WARNING"), msg("GOVERNANCE_CANCEL_PROPOSAL_BUTTON"), async () => {
+                                    if (this.proposalId !== undefined) {
+                                        await VoteContract.cancel(this.proposalId);
+                                        setTimeout(() => SkyRouter.refresh(), 2000);
+                                    }
+                                });
+                            },
+                        }),
+                    );
+                }
+
+                this.wallet.appendText(`- ${msg("GOVERNANCE_WALLET_ADDRESS")} : `);
                 this.wallet.append(el("a", walletAddress,
                     { href: `https://opensea.io/${walletAddress}`, target: "_blank" },
                 ));
 
                 const mateBalance = (await MateContract.balanceOf(walletAddress)).toNumber();
 
-                this.ownedMates.appendText(`- ${msg("DOGESOUNDS_OWNED_MATES_COUNT").replace(/{count}/, String(mateBalance))}`);
+                this.ownedMates.appendText(`- ${msg("GOVERNANCE_OWNED_MATES_COUNT").replace(/{count}/, String(mateBalance))}`);
 
                 const mates: number[] = [];
                 const votedMates: number[] = [];
@@ -190,7 +206,7 @@ export default class Detail implements View {
                 }
                 await Promise.all(promises);
 
-                this.votableMates.appendText(`- ${msg("DOGESOUNDS_VOTABLE_MATES_COUNT").replace(/{count}/, String(mateBalance - votedMates.length))}`);
+                this.votableMates.appendText(`- ${msg("GOVERNANCE_VOTABLE_MATES_COUNT").replace(/{count}/, String(mateBalance - votedMates.length))}`);
                 this.mateList.load(mates, votedMates);
 
             } else {
@@ -200,7 +216,7 @@ export default class Detail implements View {
             this.voteForm.style({ display: "none" });
 
             const walletAddress = await Wallet.loadAddress();
-            if (walletAddress !== undefined && await VoteContract.matesBacked(this.proposalId) !== true) {
+            if (walletAddress === proposal.proposer && await VoteContract.matesBacked(this.proposalId) !== true) {
                 this.container.append(
                     el("a.get-back-mates-button", msg("GOVERNANCE_GET_BACK_MATES_BUTTON"), {
                         click: async () => {

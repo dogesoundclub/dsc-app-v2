@@ -169,6 +169,16 @@ GOVERNANCE_PROPOSAL_NEED_MORE_MATES_ERROR,제안에는 {proposeMateCount}개의 
 GOVERNANCE_PROPOSAL_MIN_PERIOD_ERROR,투표 최소 기한은 {block} 블록입니다.
 GOVERNANCE_PROPOSAL_MAX_PERIOD_ERROR,투표 최대 기한은 {block} 블록입니다.
 GOVERNANCE_GET_BACK_MATES_BUTTON,제안에 사용된 NFT 되찾기
+GOVERNANCE_CANCEL_PROPOSAL_WARNING,제안을 취소하시겠습니까? 이미 투표가 진행중인 제안을 취소하면 당신의 신뢰도가 하락할 수 있습니다.
+GOVERNANCE_CANCEL_PROPOSAL_BUTTON,제안 취소
+GOVERNANCE_SELECTED_MATES_COUNT,선택된 메이트 개수 : {count}개,Number of selected MATEs: {count}
+GOVERNANCE_MAX_SELECT_BUTTON,최대로 선택하기,Maximum Selection (Up to 30 selections at a time)
+GOVERNANCE_MAX_SELECT_DESCRIPTION,"투표에 반영할 메이트는 한번에 최대 30개까지 선택이 가능하며, 투표 후 다시 남은 메이트들로 투표가 가능합니다."
+GOVERNANCE_DESELECT_BUTTON,전체 선택 해제,Deselect All
+GOVERNANCE_WALLET_ADDRESS,지갑 주소,Wallet Address
+GOVERNANCE_OWNED_MATES_COUNT,보유 중인 메이트 수 : {count}개,Number of MATEs in possession: {count}
+GOVERNANCE_REGISTABLE_MATES_COUNT,사용할 수 있는 메이트 수 : {count}개 (>= {candidateCount}개일 경우 사용 가능),Number of available MATEs: {count} (Available when >= {candidateCount})
+GOVERNANCE_VOTABLE_MATES_COUNT,활용 가능 메이트 수 : {count}개,Number of available MATEs: {count} (Available when >= {candidateCount})
 DOGESOUNDS_RULE_TITLE,도지사운드 경연 규칙,DOGESOUNDS_RULE_TITLE
 ,Doge Sound Contest Rule
 DOGESOUNDS_RULE_1,"5개 이상의 메이트를 사용하면 개소리 후보를 제출할 수 있습니다.(경연 상태가 후보 접수 중일 경우. 도지사운드 후보 예시 : 비트코인은 인류 최대의 뻘짓입니다. , DSC는 쓰레기를 수집합니다.) 최다 득표를 받은 도지사운드는 웹페이지 메인에 자동으로 게시됩니다. 후보 제출 또는 투표에 사용한 메이트는 해당 투표에서 다시 사용할 수 없습니다.Dogesound competiion은 클레이튼 체인 위에서 작동되는 개소리 경연입니다. 5개 이상의 메이트를 사용하면 개소리 후보를 제출할 수 있습니다. 최다 득표를 받은 도지사운드는 웹페이지 메인에 자동으로 게시됩니다. 사용한 메이트는 다음 회에 다시 사용할 수 있습니다. 도지사운드 후보 제출 또는 투표는 메이트 소유권에 일체 영향을 주지 않습니다. (개소리 예시 : 비트코인은 인류 최대의 뻘짓입니다. 또는 DSC가 좋아할만한 아무 문구)","The Dogesound competiion is a Best Doge Sound(Kak talk) contest that runs on top of the Klayton chain. If you have 5 or more MATEs, you can submit a Kaktalk candidates. Doge Sound that received the most votes is automatically posted on the main web page. A used mate can be used again next time. Submitting or voting for a DogeSound candidate will not affect mate ownership in any way. (Example of Dogesound : Bitcoin is humanity's biggest mistake, or any phrase that DSC holders might like)"
@@ -197,7 +207,7 @@ DOGESOUNDS_VOTE_WARNING,* 안심하세요! 투표 참여는 당신의 소유권�
 DOGESOUNDS_CANDIDATE_INPUT,도지사운드 후보 입력,Doge Sound Candidate Input
 DOGESOUNDS_SELECTED_MATES_COUNT,선택된 메이트 개수 : {count}개,Number of selected MATEs: {count}
 DOGESOUNDS_MAX_SELECT_BUTTON,최대로 선택하기,Maximum Selection (Up to 50 selections at a time)
-DOGESOUNDS_MAX_SELECT_DESCRIPTION,"투표에 반영할 메이트는 한번에 최대 50개까지 선택이 가능하며, 투표 후 다시 남은 메이트들로 투표가 가능합니다.","투표에 반영할 메이트는 한 번에 최대 50명까지 선택할 수 있으며, 투표 후 남은 메이트와 함께 투표할 수 있습니다."
+DOGESOUNDS_MAX_SELECT_DESCRIPTION,"투표에 반영할 메이트는 한번에 최대 50개까지 선택이 가능하며, 투표 후 다시 남은 메이트들로 투표가 가능합니다."
 DOGESOUNDS_DESELECT_BUTTON,전체 선택 해제,Deselect All
 DOGESOUNDS_REGISTER_SUBMIT,제출하기,SUBMIT
 DOGESOUNDS_VOTE_SUBMIT,투표하기,VOTE

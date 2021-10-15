@@ -13,6 +13,7 @@ declare class ExtWallet extends EventContainer {
     connected(): Promise<boolean>;
     connect(): Promise<void>;
     createContract(address: string, abi: any): any;
+    addToken(address: string, symbol: string, decimals: number, image: string): void;
 }
 declare const _default: ExtWallet;
 export default _default;

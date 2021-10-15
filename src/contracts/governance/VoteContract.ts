@@ -1,6 +1,6 @@
 import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
-import Config from "../Config";
-import Contract from "./Contract";
+import Config from "../../Config";
+import Contract from "../Contract";
 
 export interface ProposalInfo {
     proposer: string,

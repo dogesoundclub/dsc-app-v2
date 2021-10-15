@@ -11,6 +11,7 @@ export default class BuyMix implements View {
         Layout.current.title = msg("BUY_MIX_TITLE");
         Layout.current.content.append(this.container = el(".buymix-view",
             el("h1", msg("BUY_MIX_TITLE")),
+            el("p", "Work in Progress"),
         ));
     }
 

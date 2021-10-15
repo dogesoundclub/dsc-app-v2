@@ -11,6 +11,7 @@ export default class Mix implements View {
         Layout.current.title = msg("MIX_TITLE");
         Layout.current.content.append(this.container = el(".mix-view",
             el("h1", msg("MIX_TITLE")),
+            el("p", "Work in Progress"),
         ));
     }
 

@@ -1,7 +1,7 @@
 import { BigNumber, BigNumberish } from "ethers";
-import Config from "../Config";
-import Wallet from "../klaytn/Wallet";
-import Contract from "./Contract";
+import Config from "../../Config";
+import Wallet from "../../klaytn/Wallet";
+import Contract from "../Contract";
 
 class MateContract extends Contract {
 
