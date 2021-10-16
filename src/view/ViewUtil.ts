@@ -6,6 +6,10 @@ class ViewUtil {
         SkyRouter.go(uri);
         window.scrollTo(0, 0);
     }
+
+    public waitTransactionAndRefresh() {
+        setTimeout(() => SkyRouter.refresh(), 2000);
+    }
 }
 
 export default new ViewUtil();

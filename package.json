@@ -10,6 +10,7 @@
         "@types/superagent": "^4.1.12",
         "@walletconnect/web3-provider": "^1.4.1",
         "bowser": "^2.11.0",
+        "chart.js": "^3.5.1",
         "ethers": "^5.0.32",
         "klip-sdk": "^2.0.1",
         "less": "^4.1.1",

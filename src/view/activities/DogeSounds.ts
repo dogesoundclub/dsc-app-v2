@@ -1,12 +1,13 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import { SkyRouter, View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skyrouter";
 import MintForm from "../../component/dogesounds/MintForm";
 import RankList from "../../component/dogesounds/RankList";
 import RegisterCandidateForm from "../../component/dogesounds/RegisterCandidateForm";
 import VoteForm from "../../component/dogesounds/VoteForm";
 import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
 import Layout from "../Layout";
+import ViewUtil from "../ViewUtil";
 
 export default class DogeSounds implements View {
 
@@ -93,7 +94,7 @@ export default class DogeSounds implements View {
 
         this.remainsInterval = setInterval(() => {
             if (remains <= 1) {
-                setTimeout(() => SkyRouter.refresh(), 2000);
+                ViewUtil.waitTransactionAndRefresh();
                 clearInterval(this.remainsInterval);
             } else {
                 remains -= 1;

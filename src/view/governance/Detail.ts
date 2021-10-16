@@ -1,12 +1,12 @@
 import { DomNode, el } from "@hanul/skynode";
 import marked from "marked";
 import msg from "msg.js";
-import { SkyRouter, View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skyrouter";
 import xss from "xss";
 import Loading from "../../component/loading/Loading";
 import MateList from "../../component/mate/MateList";
-import MateContract from "../../contracts/nft/MateContract";
 import VoteContract from "../../contracts/governance/VoteContract";
+import MateContract from "../../contracts/nft/MateContract";
 import Klaytn from "../../klaytn/Klaytn";
 import Wallet from "../../klaytn/Wallet";
 import Confirm from "../../ui/dialogue/Confirm";
@@ -72,11 +72,11 @@ export default class Detail implements View {
                         if (this.proposalId !== undefined) {
                             if (forRadio.domElement.checked === true) {
                                 await VoteContract.voteFor(this.proposalId, MateContract.address, this.mateList.selectedMateIds);
-                                setTimeout(() => SkyRouter.refresh(), 2000);
+                                ViewUtil.waitTransactionAndRefresh();
                             }
                             if (againstRadio.domElement.checked === true) {
                                 await VoteContract.voteAgainst(this.proposalId, MateContract.address, this.mateList.selectedMateIds);
-                                setTimeout(() => SkyRouter.refresh(), 2000);
+                                ViewUtil.waitTransactionAndRefresh();
                             }
                         }
                     },
@@ -130,7 +130,7 @@ export default class Detail implements View {
                 const remains = proposal.votePeriod - (currentBlock - proposal.blockNumber);
 
                 if (remains <= 1) {
-                    setTimeout(() => SkyRouter.refresh(), 2000);
+                    ViewUtil.waitTransactionAndRefresh();
                     clearInterval(this.timerInterval);
                 } else {
                     timer.empty().appendText(msg("GOVERNANCE_PROPOSAL_REMAIN_BLOCKS").replace(/{block}/, String(remains)));
@@ -173,7 +173,7 @@ export default class Detail implements View {
                                 new Confirm(msg("GOVERNANCE_CANCEL_PROPOSAL_WARNING"), msg("GOVERNANCE_CANCEL_PROPOSAL_BUTTON"), async () => {
                                     if (this.proposalId !== undefined) {
                                         await VoteContract.cancel(this.proposalId);
-                                        setTimeout(() => SkyRouter.refresh(), 2000);
+                                        ViewUtil.waitTransactionAndRefresh();
                                     }
                                 });
                             },
@@ -222,7 +222,7 @@ export default class Detail implements View {
                         click: async () => {
                             if (this.proposalId !== undefined) {
                                 await VoteContract.getBackMates(this.proposalId);
-                                setTimeout(() => SkyRouter.refresh(), 2000);
+                                ViewUtil.waitTransactionAndRefresh();
                             }
                         },
                     }),

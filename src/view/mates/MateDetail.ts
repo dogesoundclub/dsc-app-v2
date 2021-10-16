@@ -1,6 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import { SkyRouter, View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skyrouter";
 import superagent from "superagent";
 import Loading from "../../component/loading/Loading";
 import MateMessageList from "../../component/matemessage/MateMessageList";
@@ -14,6 +14,7 @@ import Wallet from "../../klaytn/Wallet";
 import Alert from "../../ui/dialogue/Alert";
 import Prompt from "../../ui/dialogue/Prompt";
 import Layout from "../Layout";
+import ViewUtil from "../ViewUtil";
 
 export default class MateDetail implements View {
 
@@ -94,7 +95,7 @@ export default class MateDetail implements View {
                                     new Alert(msg("MATE_NAME_EXISTS_ERROR"), msg("CONFIRM_BUTTON"));
                                 } else {
                                     await NameContract.set(this.id, name);
-                                    setTimeout(() => SkyRouter.refresh(), 2000);
+                                    ViewUtil.waitTransactionAndRefresh();
                                 }
                             }
                         },
@@ -113,7 +114,7 @@ export default class MateDetail implements View {
                         el("a.submit-button", msg("MATE_DETAIL_SNS_FORM_TWITTER_SUBMIT"), {
                             click: async () => {
                                 await FollowMeContract.set(MateContract.address, this.id, 0, twitterInput.domElement.value);
-                                setTimeout(() => SkyRouter.refresh(), 2000);
+                                ViewUtil.waitTransactionAndRefresh();
                             },
                         }),
                     ),
@@ -125,7 +126,7 @@ export default class MateDetail implements View {
                         el("a.submit-button", msg("MATE_DETAIL_SNS_FORM_INSTAGRAM_SUBMIT"), {
                             click: async () => {
                                 await FollowMeContract.set(MateContract.address, this.id, 1, instagramInput.domElement.value);
-                                setTimeout(() => SkyRouter.refresh(), 2000);
+                                ViewUtil.waitTransactionAndRefresh();
                             },
                         }),
                     ),
@@ -150,7 +151,7 @@ export default class MateDetail implements View {
                                     new Alert(msg("MATE_DETAIL_MESSAGE_NOT_READY_ERROR"), msg("CONFIRM_BUTTON"));
                                 } else {
                                     await MessageContract.set(this.id, messageInput.domElement.value);
-                                    setTimeout(() => SkyRouter.refresh(), 2000);
+                                    ViewUtil.waitTransactionAndRefresh();
                                 }
                             }
                         },

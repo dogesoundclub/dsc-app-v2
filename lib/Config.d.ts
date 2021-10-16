@@ -12,6 +12,7 @@ declare const _default: {
         Vote: string;
         Mix: string;
         MixEmitter: string;
+        DevFundToken: string;
         DevFundPool: string;
         MatesPool: string;
         Booth: string;

@@ -19,6 +19,7 @@ import MyMates from "./view/mates/MyMates";
 import Mix from "./view/Mix";
 import Booth from "./view/mix/Booth";
 import BuyMix from "./view/mix/BuyMix";
+import DevFund from "./view/mix/DevFund";
 import NFTMining from "./view/mix/NFTMining";
 import Turntables from "./view/mix/Turntables";
 //import Rarity from "./view/mates/Rarity";
@@ -56,6 +57,7 @@ import Terms from "./view/Terms";
     SkyRouter.route("mix/mining", NFTMining);
     SkyRouter.route("mix/turntables", Turntables);
     SkyRouter.route("mix/booth", Booth);
+    SkyRouter.route("mix/devfund", DevFund);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);

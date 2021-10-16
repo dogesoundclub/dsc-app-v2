@@ -1,10 +1,10 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
-import { SkyRouter } from "skyrouter";
 import DogeSoundContestV2Contract from "../../contracts/DogeSoundContestV2Contract";
 import MateContract from "../../contracts/nft/MateContract";
 import Wallet from "../../klaytn/Wallet";
 import Alert from "../../ui/dialogue/Alert";
+import ViewUtil from "../../view/ViewUtil";
 import MateList from "../mate/MateList";
 import CandidateList from "./CandidateList";
 
@@ -40,7 +40,7 @@ export default class VoteForm extends DomNode {
                 click: async () => {
                     if (this.mateList.selectedMateIds.length > 0) {
                         await DogeSoundContestV2Contract.vote(this.candidateList.selected, MateContract.address, this.mateList.selectedMateIds);
-                        setTimeout(() => SkyRouter.refresh(), 2000);
+                        ViewUtil.waitTransactionAndRefresh();
                     } else {
                         new Alert(msg("DOGESOUNDS_NO_MATE_SELECTED_ERROR"), msg("CONFIRM_BUTTON"));
                     }
