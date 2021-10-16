@@ -1,6 +1,14 @@
+import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
 import Contract from "../Contract";
+export interface PoolInfo {
+    to: string;
+    allocPoint: BigNumber;
+    lastEmitBlock: BigNumber;
+}
 declare class MixEmitterContract extends Contract {
     constructor();
+    poolCount(): Promise<BigNumber>;
+    poolInfo(pid: BigNumberish): Promise<PoolInfo>;
 }
 declare const _default: MixEmitterContract;
 export default _default;

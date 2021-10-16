@@ -2650,6 +2650,52 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
+.mix-view > img {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.mix-view > p {
+  margin-bottom: 15px;
+}
+.mix-view > a {
+  color: #BFC500;
+  word-break: break-all;
+}
+.mix-view > section {
+  margin-top: 60px;
+}
+.mix-view > section > h2 {
+  font-size: 26px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 719px) {
+  .mix-view > section > h2 {
+    font-size: 20px;
+  }
+}
+.mix-view > section > h3 {
+  font-size: 20px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 719px) {
+  .mix-view > section > h3 {
+    font-size: 16px;
+  }
+}
+.mix-view > section a {
+  color: #BFC500;
+  word-break: break-all;
+}
+.mix-view > section p {
+  margin-bottom: 30px;
+  word-break: break-all;
+  line-height: 2em;
+}
 .buymix-view {
   max-width: 780px;
   padding: 135px 20px;

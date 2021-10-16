@@ -1,0 +1,26 @@
+{
+    "0x91471263590FB259bf6208ba414bf17B0126Bbb7": {
+        "name": "Dev Fund Pool",
+        "color": "#333333"
+    },
+    "0x4b1e4c30B12B8564686FF30F608a18Abfbd7adBc": {
+        "name": "Burn Pool",
+        "color": "#333333"
+    },
+    "0xbc9C42267037786f42831d4f36D629A3888c9b4a": {
+        "name": "Mates Pool",
+        "color": "#F6D613"
+    },
+    "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15": {
+        "name": "Dev Fund Pool",
+        "color": "#333333"
+    },
+    "0xC7995B29d95006f737861DC5288920FAF16e5Ff7": {
+        "name": "Burn Pool",
+        "color": "#333333"
+    },
+    "0x6f49D139359D0c7Bf44Df4520494A6ABB39434dD": {
+        "name": "Mates Pool",
+        "color": "#F6D613"
+    }
+}
