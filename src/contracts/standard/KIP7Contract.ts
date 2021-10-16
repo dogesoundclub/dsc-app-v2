@@ -34,4 +34,13 @@ export default abstract class KIP7Contract extends Contract {
     public async approve(spender: string, amount: BigNumberish) {
         await this.runWalletMethod("approve", spender, amount);
     }
+
+    public async getTransferEvents(to: string, startBlock: number, endBlock: number) {
+        const events = await this.contract.getPastEvents("Transfer", {
+            filter: { to },
+            fromBlock: startBlock,
+            toBlock: endBlock,
+        });
+        return events;
+    }
 }

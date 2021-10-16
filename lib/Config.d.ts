@@ -16,6 +16,7 @@ declare const _default: {
         DevFundPool: string;
         MatesPool: string;
         Booth: string;
+        BurnPool: string;
     };
 };
 export default _default;

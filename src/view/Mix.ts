@@ -4,8 +4,8 @@ import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import SkyUtil from "skyutil";
 import MixEmitterContract from "../contracts/mix/MixEmitterContract";
-import Layout from "./Layout";
 import pools from "../pools.json";
+import Layout from "./Layout";
 
 export default class Mix implements View {
 
@@ -82,6 +82,7 @@ export default class Mix implements View {
             data: chartData,
             options: {
                 responsive: true,
+                color: "#ffffff",
                 plugins: {
                     legend: {
                         position: "top",

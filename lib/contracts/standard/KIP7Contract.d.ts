@@ -9,5 +9,6 @@ export default abstract class KIP7Contract extends Contract {
     transfer(to: string, amount: BigNumberish): Promise<void>;
     transferFrom(from: string, to: string, amount: BigNumberish): Promise<void>;
     approve(spender: string, amount: BigNumberish): Promise<void>;
+    getTransferEvents(to: string, startBlock: number, endBlock: number): Promise<any>;
 }
 //# sourceMappingURL=KIP7Contract.d.ts.map

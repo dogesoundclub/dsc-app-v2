@@ -4,7 +4,7 @@ export default abstract class Contract extends EventContainer {
     address: string;
     private abi;
     private walletContract;
-    private contract;
+    protected contract: any;
     constructor(address: string, abi: any);
     private findMethodABI;
     loadExtWalletContract(): Promise<any>;

@@ -10,7 +10,7 @@ import ConnectWalletPopup from "../ui/ConnectWalletPopup";
 export default abstract class Contract extends EventContainer {
 
     private walletContract: any | undefined;
-    private contract: any;
+    protected contract: any;
 
     constructor(public address: string, private abi: any) {
         super();

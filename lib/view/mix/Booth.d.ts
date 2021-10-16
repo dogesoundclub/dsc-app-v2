@@ -1,7 +1,14 @@
 import { View, ViewParams } from "skyrouter";
 export default class Booth implements View {
     private container;
+    private aprDisplay;
+    private priceDisplay;
+    private stakeInput;
+    private balanceDisplay;
+    private unstakeInput;
+    private mixsetDisplay;
     constructor();
+    private load;
     changeParams(params: ViewParams, uri: string): void;
     close(): void;
 }

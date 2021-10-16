@@ -1,0 +1,1 @@
+{"version":3,"file":"BurnPoolContract.d.ts","sourceRoot":"","sources":["../../../src/contracts/mix/BurnPoolContract.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,0BAA0B,CAAC;AAErD,OAAO,QAAQ,MAAM,aAAa,CAAC;AAEnC,cAAM,gBAAiB,SAAQ,QAAQ;;IAMtB,SAAS,IAAI,OAAO,CAAC,SAAS,CAAC;IAI/B,IAAI;CAGpB;;AAED,wBAAsC"}

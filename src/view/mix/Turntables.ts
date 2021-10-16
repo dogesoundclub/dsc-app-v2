@@ -11,7 +11,7 @@ export default class Turntables implements View {
         Layout.current.title = msg("TURNTABLES_TITLE");
         Layout.current.content.append(this.container = el(".turntables-view",
             el("h1", msg("TURNTABLES_TITLE")),
-            el("p", "Work in Progress"),
+            el("p", "턴테이블 및 리스너는 추후 공개됩니다!"),
         ));
     }
 

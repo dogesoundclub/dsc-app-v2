@@ -2715,6 +2715,33 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
+.buymix-view > .klayswap-logo {
+  display: block;
+  margin: 50px auto;
+  max-width: 100%;
+}
+.buymix-view > p {
+  margin: 50px 0;
+  text-align: center;
+}
+@media only screen and (max-width: 719px) {
+  .buymix-view > p {
+    text-align: left;
+  }
+}
+.buymix-view > a {
+  display: block;
+  margin: auto;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 320px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
 .nftmining-view {
   max-width: 780px;
   padding: 135px 20px;
@@ -2753,6 +2780,9 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
+.turntables-view > p {
+  text-align: center;
+}
 .booth-view {
   max-width: 780px;
   padding: 135px 20px;
@@ -2771,6 +2801,83 @@ a {
   margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
+}
+.booth-view > section {
+  margin-top: 60px;
+}
+.booth-view > section > h2 {
+  font-size: 26px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 719px) {
+  .booth-view > section > h2 {
+    font-size: 20px;
+  }
+}
+.booth-view > section > .price,
+.booth-view > section > .apr {
+  margin-bottom: 25px;
+  font-family: DungGeunMo;
+  font-size: 24px;
+  text-align: center;
+}
+.booth-view > section > input {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  font-size: 30px;
+}
+.booth-view > section > .info {
+  font-family: DungGeunMo;
+}
+.booth-view > section > .info:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.booth-view > section > .info > .balance {
+  float: left;
+}
+.booth-view > section > .info > a {
+  float: right;
+  text-decoration: underline;
+}
+.booth-view > section > a {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 252px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.booth-view > section > .warning {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  border: 1px solid #BFC500;
+  color: #BFC500;
+  padding: 15px;
+  word-break: break-all;
+  text-align: left;
+  font-size: 14px;
 }
 .devfund-view {
   max-width: 780px;
@@ -2865,5 +2972,57 @@ a {
   word-break: break-all;
   text-align: left;
   font-size: 14px;
+}
+.burnpool-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .burnpool-view {
+    padding: 90px 20px;
+  }
+}
+.burnpool-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.burnpool-view > section {
+  margin-top: 60px;
+}
+.burnpool-view > section > h2 {
+  font-size: 26px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 719px) {
+  .burnpool-view > section > h2 {
+    font-size: 20px;
+  }
+}
+.burnpool-view > section > .balance {
+  font-family: DungGeunMo;
+  font-size: 30px;
+  text-align: center;
+}
+.burnpool-view > section > a {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 252px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
 }
 

@@ -22,7 +22,8 @@ export default {
         DevFundToken: "0xf3635EF377D690D034530ca78EdC9c1028188896",
         DevFundPool: "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15",
         MatesPool: "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15",
-        Booth: "0x98794c26D0Dd7FEd5e1Af2d4D1c27e7F6770e370",
+        Booth: "0xb45fC0Ff500cFb4deF3b5148B597884B797fF4Fd",
+        BurnPool: "0xC7995B29d95006f737861DC5288920FAF16e5Ff7",
     } : {
         // Mainnet
         Mate: "0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae",
@@ -40,6 +41,7 @@ export default {
         DevFundToken: "0x6a7b98B2c69AE29a14857E033D16A714A3206B89",
         DevFundPool: "0x91471263590FB259bf6208ba414bf17B0126Bbb7",
         MatesPool: "0xbc9C42267037786f42831d4f36D629A3888c9b4a",
-        Booth: "0x294C14FaEB61B5181C236FaEB51c6a8791b38A4b",
+        Booth: "0x8a654D485AaEed652500B5F18A7e4bb58Ac8ef9F",
+        BurnPool: "0x4b1e4c30B12B8564686FF30F608a18Abfbd7adBc",
     },
 };

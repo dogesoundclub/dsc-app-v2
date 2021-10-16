@@ -26,9 +26,9 @@ export default class DevFund implements View {
         Layout.current.content.append(this.container = el(".devfund-view",
             el("h1", "개발 펀드"),
             el("section",
-                el("h2", "Mix 수령하기"),
+                el("h2", "MIX 수령하기"),
                 el(".balance",
-                    el("span", "쌓인 Mix: "),
+                    el("span", "쌓인 MIX: "),
                     this.claimableDisplay = el("span", new Loading()),
                 ),
                 el("a", "수령하기", {
