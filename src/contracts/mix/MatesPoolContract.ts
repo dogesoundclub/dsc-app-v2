@@ -1,7 +1,7 @@
 import Config from "../../Config";
-import Contract from "../Contract";
+import KIP17DividendContract from "./KIP17DividendContract";
 
-class MatesPoolContract extends Contract {
+class MatesPoolContract extends KIP17DividendContract {
 
     constructor() {
         super(Config.contracts.MatesPool, require("./MatesPoolContractABI.json"));

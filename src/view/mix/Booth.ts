@@ -92,42 +92,45 @@ export default class Booth implements View {
                 }),
             ),
         ));
-        this.load();
+        this.loadInfo();
+        this.loadBalance();
     }
 
-    private async load() {
+    private async loadInfo() {
+
+        const totalMix = await MixContract.balanceOf(BoothContract.address);
+        const totalMixset = await BoothContract.getTotalSupply();
+
+        if (totalMixset.eq(0)) {
+            this.priceDisplay.empty().appendText("1");
+        } else {
+            this.priceDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(totalMix.mul(BigNumber.from("1000000000000000000")).div(totalMixset))));
+        }
+
+        if (totalMix.eq(0)) {
+            this.aprDisplay.empty().appendText("0");
+        } else {
+            const currentBlock = await Klaytn.loadBlockNumber();
+            const transferEvents = await MixContract.getTransferEvents(BoothContract.address, currentBlock - 86400, currentBlock);
+            let total24 = BigNumber.from(0);
+            for (const event of transferEvents) {
+                total24 = total24.add(event.returnValues[2]);
+            }
+            const stakeEvents = await BoothContract.getStakeEvents(currentBlock - 86400, currentBlock);
+            for (const event of stakeEvents) {
+                total24 = total24.sub(event.returnValues[1]);
+            }
+            const apr = total24.mul(36500).div(totalMix);
+            this.aprDisplay.empty().appendText(CommonUtil.numberWithCommas(apr.toString()));
+        }
+    }
+
+    private async loadBalance() {
         if (await Wallet.connected() !== true) {
             await Wallet.connect();
         }
         const walletAddress = await Wallet.loadAddress();
         if (walletAddress !== undefined) {
-
-            const totalMix = await MixContract.balanceOf(BoothContract.address);
-            const totalMixset = await BoothContract.getTotalSupply();
-
-            if (totalMixset.eq(0)) {
-                this.priceDisplay.empty().appendText("1");
-            } else {
-                this.priceDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(totalMix.mul(BigNumber.from("1000000000000000000")).div(totalMixset))));
-            }
-
-            if (totalMix.eq(0)) {
-                this.aprDisplay.empty().appendText("0");
-            } else {
-                const currentBlock = await Klaytn.loadBlockNumber();
-                const transferEvents = await MixContract.getTransferEvents(BoothContract.address, currentBlock - 86400, currentBlock);
-                let total24 = BigNumber.from(0);
-                for (const event of transferEvents) {
-                    total24 = total24.add(event.returnValues[2]);
-                }
-                const stakeEvents = await BoothContract.getStakeEvents(currentBlock - 86400, currentBlock);
-                for (const event of stakeEvents) {
-                    total24 = total24.sub(event.returnValues[1]);
-                }
-                const apr = total24.mul(36500).div(totalMix);
-                this.aprDisplay.empty().appendText(CommonUtil.numberWithCommas(apr.toString()));
-            }
-
             const balance = await MixContract.balanceOf(walletAddress);
             this.balanceDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(balance)));
 

@@ -8,7 +8,8 @@ export default class Booth implements View {
     private unstakeInput;
     private mixsetDisplay;
     constructor();
-    private load;
+    private loadInfo;
+    private loadBalance;
     changeParams(params: ViewParams, uri: string): void;
     close(): void;
 }
