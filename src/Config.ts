@@ -1,5 +1,5 @@
 
-const TESTNET = true;
+const TESTNET = false;
 
 export default {
 
