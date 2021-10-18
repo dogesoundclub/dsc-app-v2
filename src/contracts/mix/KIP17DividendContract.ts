@@ -17,7 +17,8 @@ export default abstract class KIP17DividendContract extends Contract {
         } else if (ids.length <= 500) {
             await this.runWalletMethodWithLargeGas("claim", ids);
         } else {
-            await this.runWalletMethodWithTooLargeGas("claim", ids);
+            await this.runWalletMethodWithLargeGas("claim", ids.slice(0, 500));
+            await this.runWalletMethodWithLargeGas("claim", ids.slice(500));
         }
     }
 }
