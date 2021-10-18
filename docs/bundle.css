@@ -2655,6 +2655,12 @@ a {
   margin: auto;
   margin-bottom: 20px;
 }
+.mix-view > .price {
+  margin-bottom: 25px;
+  font-family: DungGeunMo;
+  font-size: 24px;
+  text-align: center;
+}
 .mix-view > p {
   margin-bottom: 15px;
 }
@@ -2952,6 +2958,13 @@ a {
   margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
+}
+.booth-view > h2 {
+  font-size: 24px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+  text-align: center;
 }
 .booth-view > section {
   margin-top: 60px;

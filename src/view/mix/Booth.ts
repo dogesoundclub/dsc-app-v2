@@ -26,6 +26,7 @@ export default class Booth implements View {
         Layout.current.title = msg("BOOTH_TITLE");
         Layout.current.content.append(this.container = el(".booth-view",
             el("h1", msg("BOOTH_TITLE")),
+            el("h2", "무손실 단일 예치 시스템"),
             el("p", "MIX가 소각될 때 마다 소각량의 0.3%가 부스에 대한 지분에 따라 분배됩니다. MIX를 부스에 스테이킹하면 부스의 지분에 해당하는 MIXSET을 받게 됩니다. MIXSET은 지속적으로 복리 이자를 생성하며, 스테이킹 해제 시 원금 MIX와 수수료 이자를 함께 돌려받게 됩니다."),
             el("section",
                 el(".price",

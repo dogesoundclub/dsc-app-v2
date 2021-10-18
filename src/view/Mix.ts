@@ -1,8 +1,13 @@
 import { DomNode, el } from "@hanul/skynode";
 import { Chart, registerables } from "chart.js";
+import { utils } from "ethers";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import SkyUtil from "skyutil";
+import superagent from "superagent";
+import CommonUtil from "../CommonUtil";
+import Loading from "../component/loading/Loading";
+import KlayswapKlayMixContract from "../contracts/mix/KlayswapKlayMixContract";
 import MixEmitterContract from "../contracts/mix/MixEmitterContract";
 import pools from "../pools.json";
 import Layout from "./Layout";
@@ -10,6 +15,7 @@ import Layout from "./Layout";
 export default class Mix implements View {
 
     private container: DomNode;
+    private priceDisplay: DomNode;
     private poolContainer: DomNode<HTMLCanvasElement>;
 
     constructor() {
@@ -17,6 +23,11 @@ export default class Mix implements View {
         Layout.current.content.append(this.container = el(".mix-view",
             el("h1", msg("MIX_TITLE")),
             el("img", { src: "/images/logo/mix.png", height: "200" }),
+            el(".price",
+                el("span", "1 MIX = "),
+                this.priceDisplay = el("span", new Loading()),
+                el("span", "원"),
+            ),
             el("p", "MIX는 NFT 프로젝트들의 허브를 위한 토큰입니다. DSC 사이트의 전 범위에서 사용되며, Klayswap에서 유동성 공급 및 거래에 사용될 예정입니다. 또한 MIX를 활용한 기능을 추가하기로 약속한 파트너 프로젝트의 서비스에서도 사용될 예정입니다."),
             el("a", "MIX 백서 보기", { href: "https://medium.com/dogesoundclub/dsc-mix-nft-%ED%97%88%EB%B8%8C%EB%A5%BC-%EC%9C%84%ED%95%9C-%ED%86%A0%ED%81%B0-3299dd3a8d1d", target: "_blank" }),
             el("section",
@@ -48,7 +59,13 @@ export default class Mix implements View {
                 el("p", "개발 펀드는 개발 및 마케팅 등 MIX의 활용처를 늘리고 주어진 목표를 달성하는 책임을 이행할 수 있도록 합니다."),
             ),
         ));
+        this.loadPrice();
         this.loadPools();
+    }
+
+    private async loadPrice() {
+        const result = await superagent.get("https://api.dogesound.club/mix/price");
+        this.priceDisplay.empty().appendText(CommonUtil.numberWithCommas(result.text));
     }
 
     private async loadPools() {
