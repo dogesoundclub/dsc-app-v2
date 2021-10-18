@@ -59,7 +59,7 @@ export default class Booth implements View {
                     this.reward24Display = el("span", new Loading()),
                     el("span", " MIX"),
                 ),
-                el("p.warning", "* ARP은 지난 24시간의 기록을 365일로 늘려서 계산된 것입니다. 따라서 매일 변경될 수 있습니다."),
+                el("p.warning", "* APR은 지난 24시간의 기록을 365일로 늘려서 계산된 것입니다. 따라서 매일 변경될 수 있습니다."),
             ),
             el("section",
                 el("h2", "MIX 스테이킹"),
