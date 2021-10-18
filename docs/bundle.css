@@ -2969,6 +2969,14 @@ a {
 .booth-view > section {
   margin-top: 60px;
 }
+.booth-view > section:first-of-type {
+  margin-top: 20px;
+}
+.booth-view > section > img {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
 .booth-view > section > h2 {
   font-size: 26px;
   color: #BFC500;
@@ -2981,11 +2989,23 @@ a {
   }
 }
 .booth-view > section > .price,
-.booth-view > section > .apr {
-  margin-bottom: 25px;
+.booth-view > section > .apr,
+.booth-view > section > .total-balance,
+.booth-view > section > .burn-24,
+.booth-view > section > .reward-24 {
+  margin-bottom: 10px;
   font-family: DungGeunMo;
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
+}
+@media only screen and (max-width: 719px) {
+  .booth-view > section > .price,
+  .booth-view > section > .apr,
+  .booth-view > section > .total-balance,
+  .booth-view > section > .burn-24,
+  .booth-view > section > .reward-24 {
+    font-size: 20px;
+  }
 }
 .booth-view > section > input {
   margin-top: 30px;
@@ -3013,6 +3033,10 @@ a {
 }
 .booth-view > section > .info > .balance {
   float: left;
+  display: flex;
+}
+.booth-view > section > .info > .balance > img {
+  margin-right: 5px;
 }
 .booth-view > section > .info > a {
   float: right;

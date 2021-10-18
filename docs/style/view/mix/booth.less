@@ -28,6 +28,16 @@
     >section {
         margin-top: 60px;
 
+        &:first-of-type {
+            margin-top: 20px;
+        }
+
+        >img {
+            display      : block;
+            margin       : auto;
+            margin-bottom: 20px;
+        }
+
         >h2 {
             font-size    : 26px;
             color        : #BFC500;
@@ -40,11 +50,18 @@
         }
 
         >.price,
-        >.apr {
-            margin-bottom: 25px;
+        >.apr,
+        >.total-balance,
+        >.burn-24,
+        >.reward-24 {
+            margin-bottom: 10px;
             font-family  : DungGeunMo;
-            font-size    : 24px;
+            font-size    : 22px;
             text-align   : center;
+
+            @media @phone {
+                font-size: 20px;
+            }
         }
 
         >input {
@@ -66,7 +83,12 @@
             .float-wrapper();
 
             >.balance {
-                float: left;
+                float  : left;
+                display: flex;
+
+                >img {
+                    margin-right: 5px;
+                }
             }
 
             >a {

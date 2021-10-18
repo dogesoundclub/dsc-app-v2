@@ -17,6 +17,10 @@ export default class Booth implements View {
 
     private aprDisplay: DomNode;
     private priceDisplay: DomNode;
+    private totalBalanceDisplay: DomNode;
+    private burn24Display: DomNode;
+    private reward24Display: DomNode;
+
     private stakeInput: DomNode<HTMLInputElement>;
     private balanceDisplay: DomNode;
     private unstakeInput: DomNode<HTMLInputElement>;
@@ -29,6 +33,7 @@ export default class Booth implements View {
             el("h2", "무손실 단일 예치 시스템"),
             el("p", "MIX가 소각될 때 마다 소각량의 0.3%가 부스에 대한 지분에 따라 분배됩니다. MIX를 부스에 스테이킹하면 부스의 지분에 해당하는 MIXSET을 받게 됩니다. MIXSET은 지속적으로 복리 이자를 생성하며, 스테이킹 해제 시 원금 MIX와 수수료 이자를 함께 돌려받게 됩니다."),
             el("section",
+                el("img", { src: "/images/logo/mixset.png", height: "200" }),
                 el(".price",
                     el("span", "1 MIXSET = "),
                     this.priceDisplay = el("span", new Loading()),
@@ -39,6 +44,21 @@ export default class Booth implements View {
                     this.aprDisplay = el("span", new Loading()),
                     el("span", "%"),
                 ),
+                el(".total-balance",
+                    el("span", "예치된 총 MIX: "),
+                    this.totalBalanceDisplay = el("span", new Loading()),
+                    el("span", " MIX"),
+                ),
+                el(".burn-24",
+                    el("span", "지난 24시간 동안 소각된 MIX: "),
+                    this.burn24Display = el("span", new Loading()),
+                    el("span", " MIX"),
+                ),
+                el(".reward-24",
+                    el("span", "지난 24시간 동안 분배된 MIX: "),
+                    this.reward24Display = el("span", new Loading()),
+                    el("span", " MIX"),
+                ),
                 el("p.warning", "* ARP은 지난 24시간의 기록을 365일로 늘려서 계산된 것입니다. 따라서 매일 변경될 수 있습니다."),
             ),
             el("section",
@@ -46,6 +66,7 @@ export default class Booth implements View {
                 this.stakeInput = el("input"),
                 el(".info",
                     el(".balance",
+                        el("img", { src: "/images/logo/mix-24.png", height: "24" }),
                         el("span", "MIX: "),
                         this.balanceDisplay = el("span", new Loading()),
                     ),
@@ -72,6 +93,7 @@ export default class Booth implements View {
                 this.unstakeInput = el("input"),
                 el(".info",
                     el(".balance",
+                        el("img", { src: "/images/logo/mixset-24.png", height: "24" }),
                         el("span", "MIXSET: "),
                         this.mixsetDisplay = el("span", new Loading()),
                     ),
@@ -105,11 +127,14 @@ export default class Booth implements View {
         if (totalMixset.eq(0)) {
             this.priceDisplay.empty().appendText("1");
         } else {
-            this.priceDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(totalMix.mul(BigNumber.from("1000000000000000000")).div(totalMixset))));
+            this.priceDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(totalMix.mul(BigNumber.from("1000000000000000000")).div(totalMixset)), 5));
         }
 
         if (totalMix.eq(0)) {
             this.aprDisplay.empty().appendText("0");
+            this.totalBalanceDisplay.empty().appendText("0");
+            this.burn24Display.empty().appendText("0");
+            this.reward24Display.empty().appendText("0");
         } else {
             const currentBlock = await Klaytn.loadBlockNumber();
             const transferEvents = await MixContract.getTransferEvents(BoothContract.address, currentBlock - 86400, currentBlock);
@@ -122,7 +147,11 @@ export default class Booth implements View {
                 total24 = total24.sub(event.returnValues[1]);
             }
             const apr = total24.mul(36500).div(totalMix);
+
             this.aprDisplay.empty().appendText(CommonUtil.numberWithCommas(apr.toString()));
+            this.totalBalanceDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(totalMix)));
+            this.burn24Display.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(total24.mul(1000).div(3))));
+            this.reward24Display.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(total24)));
         }
     }
 
