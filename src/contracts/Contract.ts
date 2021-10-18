@@ -61,7 +61,7 @@ export default abstract class Contract extends EventContainer {
     }
 
     protected async runWalletMethodWithTooLargeGas(methodName: string, ...params: any[]) {
-        return this.runWalletMethodWithGas(methodName, 40000000, ...params);
+        return this.runWalletMethodWithGas(methodName, 60000000, ...params);
     }
 
     protected async runWalletMethodWithValue(value: BigNumber, methodName: string, ...params: any[]) {
