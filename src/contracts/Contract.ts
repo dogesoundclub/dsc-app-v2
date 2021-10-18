@@ -40,11 +40,11 @@ export default abstract class Contract extends EventContainer {
         return await this.contract.methods[methodName](...params).call();
     }
 
-    protected async runWalletMethod(methodName: string, ...params: any[]) {
+    private async runWalletMethodWithGas(methodName: string, gas: number, ...params: any[]) {
         if (ExtWallet.installed === true) {
             const from = await Wallet.loadAddress();
             const contract = await this.loadExtWalletContract();
-            await contract?.methods[methodName](...params).send({ from, gas: 1500000 });
+            await contract?.methods[methodName](...params).send({ from, gas });
         } else if (Klip.connected === true) {
             await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params);
         } else {
@@ -52,16 +52,16 @@ export default abstract class Contract extends EventContainer {
         }
     }
 
+    protected async runWalletMethod(methodName: string, ...params: any[]) {
+        return this.runWalletMethodWithGas(methodName, 1500000, ...params);
+    }
+
     protected async runWalletMethodWithLargeGas(methodName: string, ...params: any[]) {
-        if (ExtWallet.installed === true) {
-            const from = await Wallet.loadAddress();
-            const contract = await this.loadExtWalletContract();
-            await contract?.methods[methodName](...params).send({ from, gas: 20000000 });
-        } else if (Klip.connected === true) {
-            await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params);
-        } else {
-            return new Promise<void>((resolve) => new ConnectWalletPopup(resolve));
-        }
+        return this.runWalletMethodWithGas(methodName, 20000000, ...params);
+    }
+
+    protected async runWalletMethodWithTooLargeGas(methodName: string, ...params: any[]) {
+        return this.runWalletMethodWithGas(methodName, 40000000, ...params);
     }
 
     protected async runWalletMethodWithValue(value: BigNumber, methodName: string, ...params: any[]) {
