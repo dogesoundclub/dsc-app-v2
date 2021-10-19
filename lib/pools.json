@@ -11,6 +11,14 @@
         "name": "Mates Pool",
         "color": "#F6D613"
     },
+    "0x0c04A7D66F8b37fcAd79887529F79b3Fa4650B6F": {
+        "name": "Klay-MIX Pool",
+        "color": "#443b34"
+    },
+    "0x19ADFF82C252B58B4df766721830ADEA0fa64d45": {
+        "name": "KSP-MIX Pool",
+        "color": "#ff9632"
+    },
     "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15": {
         "name": "Dev Fund Pool",
         "color": "#333333"

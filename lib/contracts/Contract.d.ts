@@ -9,6 +9,7 @@ export default abstract class Contract extends EventContainer {
     private findMethodABI;
     loadExtWalletContract(): Promise<any>;
     protected runMethod(methodName: string, ...params: any[]): Promise<any>;
+    private runWalletMethodWithGas;
     protected runWalletMethod(methodName: string, ...params: any[]): Promise<void>;
     protected runWalletMethodWithLargeGas(methodName: string, ...params: any[]): Promise<void>;
     protected runWalletMethodWithValue(value: BigNumber, methodName: string, ...params: any[]): Promise<void>;

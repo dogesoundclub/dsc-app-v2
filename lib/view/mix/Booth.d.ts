@@ -3,6 +3,9 @@ export default class Booth implements View {
     private container;
     private aprDisplay;
     private priceDisplay;
+    private totalBalanceDisplay;
+    private burn24Display;
+    private reward24Display;
     private stakeInput;
     private balanceDisplay;
     private unstakeInput;

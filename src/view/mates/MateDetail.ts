@@ -79,7 +79,7 @@ export default class MateDetail implements View {
                 }),
 
                 // 메이트 이름짓기
-                el("section",
+                /*el("section",
                     el("h2", msg("MATE_DETAIL_NAME_FORM_TITLE")),
                     el("p", msg("MATE_DETAIL_NAME_FORM_DESCRIPTION")),
                     nameInput = el("input", { placeholder: msg("MATE_DETAIL_NAME_FORM_INPUT") }),
@@ -100,7 +100,7 @@ export default class MateDetail implements View {
                             }
                         },
                     }),
-                ),
+                ),*/
 
                 // 팔로우 미
                 el("section",
