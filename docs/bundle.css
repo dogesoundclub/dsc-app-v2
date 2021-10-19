@@ -2106,6 +2106,14 @@ a {
   font-family: DungGeunMo;
   font-weight: bold;
 }
+.matedetail-view > section > .remove-button-container {
+  text-align: center;
+  margin-top: 25px;
+}
+.matedetail-view > section > .remove-button-container > .remove-name-button {
+  font-family: DungGeunMo;
+  text-decoration: underline;
+}
 .matedetail-view > section.on-chain > img {
   display: block;
   margin: auto;

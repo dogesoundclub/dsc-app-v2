@@ -4,6 +4,7 @@ declare const _default: {
         Mate: string;
         DogeSoundContest: string;
         Name: string;
+        NameV2: string;
         Message: string;
         Image: string;
         Attributes: string;
