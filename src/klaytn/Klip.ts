@@ -1,8 +1,9 @@
 import { BigNumberish } from "@ethersproject/bignumber";
 import { utils } from "ethers";
-import msg from "msg.js";
-import Alert from "../ui/dialogue/Alert";
 import EventContainer from "eventcontainer";
+import msg from "msg.js";
+import QRCode from "qrcode";
+import KlipQRPopup from "../ui/KlipQRPopup";
 
 const klipSDK = require("klip-sdk");
 
@@ -11,11 +12,18 @@ class Klip extends EventContainer {
     public address: undefined | string;
 
     private async request(res: any): Promise<any> {
-        klipSDK.request(res.request_key, () => new Alert(msg("CONNECT_KLIP_NEEDS_MOBILE"), msg("CONFIRM_BUTTON")));
+
+        let qrPopup: KlipQRPopup | undefined;
+        klipSDK.request(res.request_key, async () => {
+            const qr = await QRCode.toDataURL(`https://klipwallet.com/?target=/a2a?request_key=${res.request_key}`);
+            qrPopup = new KlipQRPopup(qr);
+        });
+
         return new Promise((resolve) => {
             const interval = setInterval(async () => {
                 const result = await klipSDK.getResult(res.request_key);
                 if (result.result !== undefined) {
+                    qrPopup?.delete();
                     clearInterval(interval);
                     resolve(result.result);
                 }

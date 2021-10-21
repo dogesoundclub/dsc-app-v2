@@ -19,6 +19,10 @@ CONNECT_KAIKAS_BUTTON,카이카스 설치,Install KaiKas
 CONNECT_KLIP_BUTTON,카카오톡 클립으로 연결,Connect to KakaoTalk Klip (Wallet Name)
 CONNECT_KLIP_NEEDS_MOBILE,클립은 모바일 환경에서 실행이 가능합니다. PC에서는 카이카스를 설치해주시기 바랍니다.,Klips can be run in a mobile environment. Please install Kaikas on your PC.
 CANCEL_CONNECT_BUTTON,연결하지 않고 둘러보기,Browse without connecting
+CONNECT_KLIP_QR_TITLE,카카오톡 클립 QR 연결
+CONNECT_KLIP_QR_DESCRIPTION_1,QR 코드 리더기 또는 카카오톡 앱을 통해 QR 코드를 스캔해주세요.
+CONNECT_KLIP_QR_DESCRIPTION_2,카카오톡 실행 -> 상단 검색창 클릭 -> 코드 스캔 후 로그인
+CONNECT_KLIP_QR_DESCRIPTION_3,* Klip > 코드스캔 (사이드메뉴)에서도 스캔이 가능합니다.
 MENU_HOME,Home,Home
 MENU_ACTIVITIES,Activities,Activities
 MENU_DOGESOUNDS,Doge Sounds,Doge Sounds
