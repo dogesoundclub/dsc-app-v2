@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
+import superagent from "superagent";
 import CommonUtil from "../../CommonUtil";
 import MateList from "../../component/mate/MateList";
 import rarity from "../../rarity.json";
@@ -14,7 +15,7 @@ export default class Rarity implements View {
     private mateList: MateList;
 
     private filter: { [key: string]: string } = {};
-    private byId: undefined | number;
+    private query: undefined | string;
 
     constructor() {
         Layout.current.title = msg("RARITY_TITLE");
@@ -22,10 +23,12 @@ export default class Rarity implements View {
             el(".filter",
                 el("h2", msg("RARITY_TITLE")),
                 el("input", {
-                    placeholder: msg("GALLERY_ID_INPUT"),
+                    placeholder: msg("GALLERY_SEARCH_INPUT"),
                     change: (event, input) => {
-                        const id = parseInt((input.domElement as HTMLInputElement).value, 10);
-                        this.byId = isNaN(id) === true ? undefined : id;
+                        this.query = (input.domElement as HTMLInputElement).value.trim();
+                        if (this.query === "") {
+                            this.query = undefined;
+                        }
                         this.loadMates();
                     },
                 }),
@@ -54,7 +57,7 @@ export default class Rarity implements View {
                 el("a.reset-button", msg("GALLERY_RESET_FILTER_BUTTON"), {
                     click: () => {
                         this.filter = {};
-                        this.byId = undefined;
+                        this.query = undefined;
                         this.loadMates();
                     },
                 }),
@@ -66,13 +69,20 @@ export default class Rarity implements View {
         window.addEventListener("resize", this.windowResizeHandler);
     }
 
-    private loadMates() {
+    private async loadMates() {
 
         const mates: number[] = [];
 
+        const result = await superagent.get("https://api.dogesound.club/mate/names");
+        const mateNames = result.body;
+
         for (const [id, token] of Mates.collection.entries()) {
-            if (this.byId !== undefined) {
-                if (id === this.byId) {
+            if (this.query !== undefined) {
+                
+                let queryId: number | undefined = parseInt(this.query, 10);
+                queryId = isNaN(queryId) === true ? undefined : queryId;
+
+                if (id === queryId || mateNames[id].replace(/ /g, "").toLowerCase().indexOf(this.query.replace(/ /g, "").toLowerCase()) !== -1) {
                     mates.push(id);
                 }
             } else {

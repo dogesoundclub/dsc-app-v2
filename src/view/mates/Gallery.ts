@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
+import superagent from "superagent";
 import MateList from "../../component/mate/MateList";
 import Layout from "../Layout";
 import MateParts from "./MateParts.json";
@@ -13,7 +14,7 @@ export default class Gallery implements View {
     private selects: DomNode<HTMLSelectElement>[] = [];
 
     private filter: { [key: string]: string } = {};
-    private byId: undefined | number;
+    private query: undefined | string;
 
     constructor() {
         Layout.current.title = msg("GALLERY_TITLE");
@@ -21,10 +22,12 @@ export default class Gallery implements View {
             el(".filter",
                 el("h2", msg("GALLERY_TITLE")),
                 el("input", {
-                    placeholder: msg("GALLERY_ID_INPUT"),
+                    placeholder: msg("GALLERY_SEARCH_INPUT"),
                     change: (event, input) => {
-                        const id = parseInt((input.domElement as HTMLInputElement).value, 10);
-                        this.byId = isNaN(id) === true ? undefined : id;
+                        this.query = (input.domElement as HTMLInputElement).value.trim();
+                        if (this.query === "") {
+                            this.query = undefined;
+                        }
                         this.loadMates();
                     },
                 }),
@@ -54,7 +57,7 @@ export default class Gallery implements View {
                         for (const select of this.selects) {
                             select.domElement.value = "";
                         }
-                        this.byId = undefined;
+                        this.query = undefined;
                         this.loadMates();
                     },
                 }),
@@ -66,13 +69,20 @@ export default class Gallery implements View {
         window.addEventListener("resize", this.windowResizeHandler);
     }
 
-    private loadMates() {
+    private async loadMates() {
 
         const mates: number[] = [];
 
+        const result = await superagent.get("https://api.dogesound.club/mate/names");
+        const mateNames = result.body;
+
         for (const [id, token] of Mates.collection.entries()) {
-            if (this.byId !== undefined) {
-                if (id === this.byId) {
+            if (this.query !== undefined) {
+                
+                let queryId: number | undefined = parseInt(this.query, 10);
+                queryId = isNaN(queryId) === true ? undefined : queryId;
+
+                if (id === queryId || mateNames[id].replace(/ /g, "").toLowerCase().indexOf(this.query.replace(/ /g, "").toLowerCase()) !== -1) {
                     mates.push(id);
                 }
             } else {

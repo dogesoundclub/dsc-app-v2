@@ -3,15 +3,16 @@ import { utils } from "ethers";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import superagent from "superagent";
+import CommonUtil from "../../CommonUtil";
 import Loading from "../../component/loading/Loading";
 import MateMessageList from "../../component/matemessage/MateMessageList";
+import MatesPoolContract from "../../contracts/mix/MatesPoolContract";
 import MixContract from "../../contracts/mix/MixContract";
 import AttributesContract from "../../contracts/nft/AttributesContract";
 import FollowMeContract from "../../contracts/nft/FollowMeContract";
 import ImageContract from "../../contracts/nft/ImageContract";
 import MateContract from "../../contracts/nft/MateContract";
 import MessageContract from "../../contracts/nft/MessageContract";
-import NameContract from "../../contracts/nft/NameContract";
 import NameV2Contract from "../../contracts/nft/NameV2Contract";
 import Wallet from "../../klaytn/Wallet";
 import Alert from "../../ui/dialogue/Alert";
@@ -26,6 +27,7 @@ export default class MateDetail implements View {
 
     private container: DomNode;
     private nameDisplay: DomNode;
+    private mixDisplay: DomNode;
     private snsDisplay: DomNode;
     private messagesTitle: DomNode;
 
@@ -36,6 +38,10 @@ export default class MateDetail implements View {
 
             this.nameDisplay = el("h1"),
             el("img.mate-image", { src: `https://storage.googleapis.com/dsc-mate/336/dscMate-${this.id}.png` }),
+            el(".mix",
+                `${msg("MATE_DETAIL_MIX")}: `,
+                this.mixDisplay = el("span", new Loading()),
+            ),
             el("a.opensea-button", msg("MATE_DETAIL_OPENSEA_BUTTON"), { href: `https://opensea.io/assets/klaytn/0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae/${this.id}`, target: "_blank" }),
             this.snsDisplay = el("section"),
             el("section",
@@ -49,6 +55,9 @@ export default class MateDetail implements View {
     }
 
     private async load() {
+
+        const claimable = await MatesPoolContract.claimableOf(this.id);
+        this.mixDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(claimable)));
 
         this.nameDisplay.append(new Loading());
 

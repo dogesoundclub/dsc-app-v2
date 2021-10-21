@@ -1953,6 +1953,12 @@ a {
   margin: auto;
   width: 252px;
 }
+.matedetail-view > .mix {
+  margin-top: 30px;
+  font-family: DungGeunMo;
+  text-align: center;
+  font-size: 18px;
+}
 .matedetail-view > .opensea-button,
 .matedetail-view > .transfer-button {
   display: block;
@@ -2269,6 +2275,25 @@ a {
 .dogesounds-view > .register-candidate-form,
 .dogesounds-view > .vote-form {
   margin-top: 45px;
+}
+.dogesounds-view > .mint-form {
+  margin-top: 45px;
+  text-align: center;
+  font-size: 18px;
+}
+.dogesounds-view > .mint-form > .nft-mint-button {
+  display: block;
+  margin: auto;
+  margin-top: 45px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 320px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
 }
 .governance-view {
   max-width: 780px;

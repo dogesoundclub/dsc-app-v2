@@ -3,6 +3,7 @@ export default class MateDetail implements View {
     private id;
     private container;
     private nameDisplay;
+    private mixDisplay;
     private snsDisplay;
     private messagesTitle;
     constructor(params: ViewParams);

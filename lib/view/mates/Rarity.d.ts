@@ -3,7 +3,7 @@ export default class Rarity implements View {
     private container;
     private mateList;
     private filter;
-    private byId;
+    private query;
     constructor();
     private loadMates;
     private windowResizeHandler;

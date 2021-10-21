@@ -4,7 +4,7 @@ export default class Gallery implements View {
     private mateList;
     private selects;
     private filter;
-    private byId;
+    private query;
     constructor();
     private loadMates;
     private windowResizeHandler;

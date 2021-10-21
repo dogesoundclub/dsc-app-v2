@@ -63,7 +63,7 @@ export default class DogeSounds implements View {
                 el("p", msg("DOGESOUNDS_HOLIDAY_DESCRIPTION").replace(/{round}/, String(currentRound))),
                 el("p", msg("DOGESOUNDS_HOLIDAY_DESCRIPTION_2")),
             );
-            this.form = new MintForm(currentRound - 1).appendTo(this.container);
+            this.form = new MintForm(currentRound).appendTo(this.container);
         }
 
         else if (period === DogeSoundContestV2Contract.REGISTER_CANDIDATE_PERIOD) {
