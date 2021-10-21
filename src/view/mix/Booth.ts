@@ -146,7 +146,7 @@ export default class Booth implements View {
             for (const event of stakeEvents) {
                 total24 = total24.sub(event.returnValues[1]);
             }
-            const apr = total24.mul(36500).div(totalMix);
+            const apr = total24.mul(3650000).div(totalMix).toNumber() / 100;
 
             this.aprDisplay.empty().appendText(CommonUtil.numberWithCommas(apr.toString()));
             this.totalBalanceDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(totalMix)));
