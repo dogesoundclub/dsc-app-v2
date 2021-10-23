@@ -22,7 +22,7 @@ export default class MintForm extends DomNode {
 
             if (walletAddress === winner) {
                 this.append(
-                    el("p", msg("DOGESOUNDS_WINNER_MENT").replace(/{round}/, String(this.round))),
+                    el("p", msg("DOGESOUNDS_WINNER_MENT").replace(/{round}/, String(this.round + 1))),
                     el("a.nft-mint-button", msg("DOGESOUNDS_WINNER_NFT_MINT_BUTTON"), {
                         click: async () => await DogeSoundContestV2Contract.mintWinnerNFT(this.round),
                     }),
