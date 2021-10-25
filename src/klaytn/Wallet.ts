@@ -1,6 +1,6 @@
 import EventContainer from "eventcontainer";
 import ConnectWalletPopup from "../ui/ConnectWalletPopup";
-import ExtWallet from "./ExtWallet";
+import ExtWallet from "./Kaikas";
 import Klip from "./Klip";
 
 class Wallet extends EventContainer {

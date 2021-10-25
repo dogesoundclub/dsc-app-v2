@@ -1,0 +1,1 @@
+//# sourceMappingURL=MetaMask.d.ts.map

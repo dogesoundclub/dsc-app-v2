@@ -1,7 +1,7 @@
 import { BigNumber } from "@ethersproject/bignumber";
 import EventContainer from "eventcontainer";
 import Config from "../Config";
-import ExtWallet from "../klaytn/ExtWallet";
+import ExtWallet from "../klaytn/Kaikas";
 import Klaytn from "../klaytn/Klaytn";
 import Klip from "../klaytn/Klip";
 import Wallet from "../klaytn/Wallet";

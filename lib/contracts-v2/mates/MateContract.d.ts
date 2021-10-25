@@ -1,0 +1,1 @@
+//# sourceMappingURL=MateContract.d.ts.map
