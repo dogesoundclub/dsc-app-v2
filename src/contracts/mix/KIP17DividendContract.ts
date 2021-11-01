@@ -3,8 +3,8 @@ import Contract from "../Contract";
 
 export default abstract class KIP17DividendContract extends Contract {
 
-    constructor(address: string, abi: ContractInterface) {
-        super(address, abi);
+    constructor(address: string, abi?: ContractInterface) {
+        super(address, abi === undefined ? require("./KIP17DividendContractABI.json") : abi);
     }
 
     public async claimableOf(id: BigNumberish): Promise<BigNumber> {

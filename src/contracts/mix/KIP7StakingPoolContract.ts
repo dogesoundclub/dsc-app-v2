@@ -1,10 +1,10 @@
-import { BigNumber, BigNumberish, ContractInterface } from "ethers";
+import { BigNumber, BigNumberish } from "ethers";
 import Contract from "../Contract";
 
 export default abstract class KIP7StakingPoolContract extends Contract {
 
-    constructor(address: string, abi: ContractInterface) {
-        super(address, abi);
+    constructor(address: string) {
+        super(address, require("./KIP7StakingPoolContractABI.json"));
     }
 
     public async shares(owner: string): Promise<BigNumber> {

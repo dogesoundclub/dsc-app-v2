@@ -23,7 +23,7 @@ import BuyMix from "./view/mix/BuyMix";
 import DevFund from "./view/mix/DevFund";
 import NFTMining from "./view/mix/NFTMining";
 import Turntables from "./view/mix/Turntables";
-//import Rarity from "./view/mates/Rarity";
+import Rarity from "./view/mates/Rarity";
 import Terms from "./view/Terms";
 
 (async () => {
@@ -35,7 +35,7 @@ import Terms from "./view/Terms";
     SkyRouter.route("", Home);
     SkyRouter.route("mates", Mates);
     SkyRouter.route("mates/gallery", Gallery);
-    //SkyRouter.route("mates/rarity", Rarity);
+    SkyRouter.route("mates/rarity", Rarity);
     SkyRouter.route("mates/followme", FollowMe);
     SkyRouter.route("mates/buy", BuyMates);
     SkyRouter.route("mates/mymates", MyMates);

@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
+import CasesByKateTab from "../../component/mix/nftmining/cbk/CasesByKateTab";
 import MatesTab from "../../component/mix/nftmining/mates/MatesTab";
 import OGsTab from "../../component/mix/nftmining/ogs/OGsTab";
 import Layout from "../Layout";
@@ -25,6 +26,11 @@ export default class NFTMining implements View {
                 el("a", "OGs", {
                     click: () => {
                         this.tabContainer.empty().append(new OGsTab());
+                    },
+                }),
+                el("a", "Cases by Kate", {
+                    click: () => {
+                        this.tabContainer.empty().append(new CasesByKateTab());
                     },
                 }),
             ),

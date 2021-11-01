@@ -2971,6 +2971,123 @@ a {
   font-family: DungGeunMo;
   font-weight: bold;
 }
+.cases-by-kate-tab > header {
+  padding-right: 22.5px;
+  padding-bottom: 15px;
+  font-family: DungGeunMo;
+}
+.cases-by-kate-tab > header:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.cases-by-kate-tab > header > .total-mix {
+  float: left;
+  font-size: 20px;
+}
+.cases-by-kate-tab > header > .total-mix > h4 {
+  margin-bottom: 5px;
+}
+.cases-by-kate-tab > header > .total-mix > span {
+  font-size: 30px;
+}
+@media only screen and (max-width: 799px) {
+  .cases-by-kate-tab > header > .total-mix > span {
+    font-size: 25px;
+  }
+}
+.cases-by-kate-tab > header > .take-all-button {
+  float: right;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  padding: 12px 16px;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.cases-by-kate-tab > .case-list:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.cases-by-kate-tab > .case-list > .case-item {
+  float: left;
+  width: 50%;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+@media only screen and (max-width: 799px) {
+  .cases-by-kate-tab > .case-list > .case-item {
+    float: none;
+    width: 100%;
+  }
+}
+.cases-by-kate-tab > .case-list > .case-item > .content {
+  display: flex;
+  border: 1px solid #06BC00;
+  padding: 10px;
+  align-items: center;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .case {
+  display: block;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  line-height: 1em;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .case > .id {
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+  font-family: DungGeunMo;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .case > .name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+}
+@media only screen and (max-width: 799px) {
+  .cases-by-kate-tab > .case-list > .case-item > .content > .case {
+    width: 64px;
+    height: 64px;
+    font-size: 14px;
+  }
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .info {
+  margin-left: 10px;
+  flex-grow: 1;
+  font-family: DungGeunMo;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .info > .amount {
+  font-size: 24px;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .controller {
+  padding-right: 6px;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .controller > .claim-button {
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  padding: 12px 16px;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
 .turntables-view {
   max-width: 780px;
   padding: 135px 20px;

@@ -7,7 +7,7 @@ import KIP7StakingPoolContract from "./KIP7StakingPoolContract";
 class DevFundPoolContract extends KIP7StakingPoolContract {
 
     constructor() {
-        super(Config.contracts.DevFundPool, require("./KIP7StakingPoolContractABI.json"));
+        super(Config.contracts.DevFundPool);
     }
 
     public async stake(amount: BigNumberish) {

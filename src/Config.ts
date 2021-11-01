@@ -25,6 +25,10 @@ export default {
         MatesPool: "0x6f49D139359D0c7Bf44Df4520494A6ABB39434dD",
         Booth: "0xb45fC0Ff500cFb4deF3b5148B597884B797fF4Fd",
         BurnPool: "0xC7995B29d95006f737861DC5288920FAF16e5Ff7",
+
+        // partners
+        CasesByKate: "",
+        CasesByKatePool: "",
     } : {
         // Mainnet
         Mate: "0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae",
@@ -45,5 +49,9 @@ export default {
         MatesPool: "0xbc9C42267037786f42831d4f36D629A3888c9b4a",
         Booth: "0x8a654D485AaEed652500B5F18A7e4bb58Ac8ef9F",
         BurnPool: "0x4b1e4c30B12B8564686FF30F608a18Abfbd7adBc",
+
+        // partners
+        CasesByKate: "0x0af3f3fe9e822b7a740ca45ce170340b2da6f4cc",
+        CasesByKatePool: "0xAF7ca190179d54860484f0A3263e0B7E8B13b9C7",
     },
 };

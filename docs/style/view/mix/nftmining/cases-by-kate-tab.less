@@ -1,0 +1,118 @@
+.cases-by-kate-tab {
+    >header {
+        padding-right : 22.5px;
+        padding-bottom: 15px;
+        font-family   : DungGeunMo;
+        .float-wrapper();
+
+        >.total-mix {
+            float    : left;
+            font-size: 20px;
+
+            >h4 {
+                margin-bottom: 5px;
+            }
+
+            >span {
+                font-size: 30px;
+
+                @media only screen and (max-width: 799px) {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        >.take-all-button {
+            float           : right;
+            font-size       : 20px;
+            color           : #000000;
+            background-color: #FBFF72;
+            box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+            padding         : 12px 16px;
+            font-family     : DungGeunMo;
+            font-weight     : bold;
+        }
+    }
+
+    >.case-list {
+        .float-wrapper();
+
+        >.case-item {
+            float         : left;
+            width         : 50%;
+            padding-right : 15px;
+            padding-bottom: 15px;
+
+            @media only screen and (max-width: 799px) {
+                float: none;
+                width: 100%;
+            }
+
+            >.content {
+                display    : flex;
+                border     : 1px solid #06BC00;
+                padding    : 10px;
+                align-items: center;
+
+                >.case {
+                    display          : block;
+                    position         : relative;
+                    width            : 90px;
+                    height           : 90px;
+                    background-size  : contain;
+                    background-repeat: no-repeat;
+                    font-size        : 20px;
+                    line-height      : 1em;
+
+                    >.id {
+                        position   : absolute;
+                        left       : 3px;
+                        bottom     : 0;
+                        font-family: DungGeunMo;
+                    }
+
+                    >.name {
+                        position   : absolute;
+                        top        : 0;
+                        left       : 0;
+                        width      : 100%;
+                        text-align : center;
+                        font-family: DungGeunMo;
+                        color      : #FF00F6;
+                        text-shadow: 3px 3px 3px #656565;
+                    }
+
+                    @media only screen and (max-width: 799px) {
+                        width    : 64px;
+                        height   : 64px;
+                        font-size: 14px;
+                    }
+                }
+
+                >.info {
+                    margin-left: 10px;
+                    flex-grow  : 1;
+                    font-family: DungGeunMo;
+
+                    >.amount {
+                        font-size: 24px;
+                    }
+                }
+
+                >.controller {
+                    padding-right: 6px;
+
+                    >.claim-button {
+                        font-size       : 20px;
+                        color           : #000000;
+                        background-color: #FBFF72;
+                        box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+                        padding         : 12px 16px;
+                        font-family     : DungGeunMo;
+                        font-weight     : bold;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -18,6 +18,8 @@ declare const _default: {
         MatesPool: string;
         Booth: string;
         BurnPool: string;
+        CasesByKate: string;
+        CasesByKatePool: string;
     };
 };
 export default _default;
