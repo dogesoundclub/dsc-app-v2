@@ -23,11 +23,6 @@ export default class NFTMining implements View {
                         this.tabContainer.empty().append(new MatesTab());
                     },
                 }),
-                el("a", "OGs", {
-                    click: () => {
-                        this.tabContainer.empty().append(new OGsTab());
-                    },
-                }),
                 el("a", "Cases by Kate", {
                     click: () => {
                         this.tabContainer.empty().append(new CasesByKateTab());

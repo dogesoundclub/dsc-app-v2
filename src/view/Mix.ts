@@ -40,11 +40,8 @@ export default class Mix implements View {
                 el("h3", "메이트 풀"),
                 el("p", "메이트 홀더들은 DSC 커뮤니티의 가장 적극적인 사용자들로, 메이트를 보유하고 있으면 MIX를 분배받게 됩니다. 메이트 홀더들은 쌓여진 MIX를 인출하기 위해 쌓여진 MIX 수량의 10%를 선납해야합니다. 이를 통해 MIX의 유통량이 늘어납니다."),
 
-                el("h3", "OGs 풀"),
-                el("p", "OG 홀더들은 DSC 커뮤니티의 가장 적극적인 사용자들로, OG를 보유하고 있으면 MIX를 분배받게 됩니다. OG 홀더들은 쌓여진 MIX를 인출하기 위해 쌓여진 MIX 수량의 10%를 선납해야합니다. 이를 통해 MIX의 유통량이 늘어납니다."),
-
-                //el("h3", "Cases by Kate 풀"),
-                //el("p", "Cases by Kate는 국내 최초 텍스트 기반 스토리텔링 NFT로써, DSC의 가장 가까운 파트너입니다. MIX를 활용하는 기능들을 지속적으로 추가할 예정입니다. 인출 방식은 메이트/OGs와 동일합니다."),
+                el("h3", "Cases by Kate 풀"),
+                el("p", "Cases by Kate는 국내 최초 텍스트 기반 스토리텔링 NFT로써, DSC의 가장 가까운 파트너입니다. MIX를 활용하는 기능들을 지속적으로 추가할 예정입니다. 인출 방식은 메이트/OGs와 동일합니다."),
 
                 el("h3", "Klayswap 유동성 풀"),
                 el("p", "Klayswap의 유동성 풀에 발행량 중 일부를 할당합니다. 이를 통해 Klayswap 내 MIX 풀의 APR을 상승시켜, MIX 토큰이 더 큰 유동성을 갖도록 만듭니다. 풀은 Klay-MIX LP 및 KSP-MIX LP, 두 가지가 있습니다."),
