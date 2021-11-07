@@ -90,6 +90,6 @@ export default class CasesByKateTab extends DomNode {
 
     public changeMix(mix: BigNumber) {
         this.totalMix = this.totalMix.add(mix);
-        this.totalMixDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(this.totalMix)));
+        this.totalMixDisplay.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(this.totalMix), 5));
     }
 }

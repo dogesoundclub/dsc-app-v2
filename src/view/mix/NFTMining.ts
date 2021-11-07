@@ -1,9 +1,9 @@
 import { DomNode, el } from "@hanul/skynode";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
+import AnimalsPunksV2Tab from "../../component/mix/nftmining/ap2/AnimalsPunksV2Tab";
 import CasesByKateTab from "../../component/mix/nftmining/cbk/CasesByKateTab";
 import MatesTab from "../../component/mix/nftmining/mates/MatesTab";
-import OGsTab from "../../component/mix/nftmining/ogs/OGsTab";
 import Layout from "../Layout";
 
 export default class NFTMining implements View {
@@ -26,6 +26,11 @@ export default class NFTMining implements View {
                 el("a", "Cases by Kate", {
                     click: () => {
                         this.tabContainer.empty().append(new CasesByKateTab());
+                    },
+                }),
+                el("a", "Animals Punks V2", {
+                    click: () => {
+                        this.tabContainer.empty().append(new AnimalsPunksV2Tab());
                     },
                 }),
             ),

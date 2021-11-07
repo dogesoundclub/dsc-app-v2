@@ -62,7 +62,7 @@ export default class CaseItem extends DomNode {
     private async load() {
         const claimable = await CasesByKatePoolContract.claimableOf(this.id);
         if (this.deleted !== true) {
-            this.mixAmount.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(claimable)));
+            this.mixAmount.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(claimable), 5));
             this.tab.changeMix(claimable.sub(this.claimable));
             this.claimable = claimable;
         }

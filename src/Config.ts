@@ -29,6 +29,8 @@ export default {
         // partners
         CasesByKate: "",
         CasesByKatePool: "",
+        AnimalsPunksV2: "",
+        AnimalsPunksV2Pool: "",
     } : {
         // Mainnet
         Mate: "0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae",
@@ -53,5 +55,7 @@ export default {
         // partners
         CasesByKate: "0x0af3f3fe9e822b7a740ca45ce170340b2da6f4cc",
         CasesByKatePool: "0xAF7ca190179d54860484f0A3263e0B7E8B13b9C7",
+        AnimalsPunksV2: "0x590744cb8cf1a698d7db509b52bf209e3cccb8e0",
+        AnimalsPunksV2Pool: "0xF1A72599E9c57BfE4B62A09052e14b67B54e3037",
     },
 };

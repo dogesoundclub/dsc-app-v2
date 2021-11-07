@@ -20,6 +20,8 @@ declare const _default: {
         BurnPool: string;
         CasesByKate: string;
         CasesByKatePool: string;
+        AnimalsPunksV2: string;
+        AnimalsPunksV2Pool: string;
     };
 };
 export default _default;

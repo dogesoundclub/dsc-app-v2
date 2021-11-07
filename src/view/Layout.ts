@@ -1,5 +1,5 @@
 import { BodyNode, DomNode, el } from "@hanul/skynode";
-import { SkyRouter, View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skyrouter";
 import MobileMenu from "../ui/menu/MobileMenu";
 import PCMenu from "../ui/menu/PCMenu";
 import ViewUtil from "./ViewUtil";
