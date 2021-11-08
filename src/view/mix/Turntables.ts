@@ -44,7 +44,7 @@ export default class Turntables implements View {
                     el("h4", "Supremacy Grade", { style: { color: "#e6500e" } }),
                     el("img", { src: "/images/components/turntables/supremacy.png" }),
                     el(".volume", "Volume: 12,000"),
-                    el(".price", "Price: 1,000 MIX"),
+                    el(".price", "Price: 10,000 MIX"),
                 ),
             ),
         ));
