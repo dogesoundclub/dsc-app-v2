@@ -1117,6 +1117,30 @@ a {
 .proposal-list > .proposal > .result.executed {
   color: #26A55C;
 }
+.turntable-list:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.turntable-list > .turntable {
+  margin-top: 60px;
+  float: left;
+  text-align: center;
+}
+.turntable-list > .turntable > h4 {
+  font-size: 20px;
+}
+.turntable-list > .turntable > img {
+  width: 246.666667px;
+}
+@media only screen and (max-width: 719px) {
+  .turntable-list > .turntable {
+    width: 100%;
+  }
+}
 .connect-wallet-popup {
   position: relative;
   width: 320px;
@@ -3231,6 +3255,9 @@ a {
 }
 .turntables-view > p {
   text-align: center;
+}
+.turntables-view > p > a {
+  text-decoration: underline;
 }
 .booth-view {
   max-width: 780px;

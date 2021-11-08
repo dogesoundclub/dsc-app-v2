@@ -31,16 +31,24 @@
         "name": "Animals Punks V2 Pool",
         "color": "#45EF8B"
     },
+    "0xFe605356e99e8662Da61dF32e237D03BEd6A8D54": {
+        "name": "Turntables Pool",
+        "color": "#33ccff"
+    },
     "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15": {
-        "name": "Dev Fund Pool",
+        "name": "Testnet: Dev Fund Pool",
         "color": "#333333"
     },
     "0xC7995B29d95006f737861DC5288920FAF16e5Ff7": {
-        "name": "Burn Pool",
+        "name": "Testnet: Burn Pool",
         "color": "#333333"
     },
     "0x6f49D139359D0c7Bf44Df4520494A6ABB39434dD": {
-        "name": "Mates Pool",
+        "name": "Testnet: Mates Pool",
         "color": "#F6D613"
+    },
+    "0xB1EFA1E4b2E666cAB233E2241B9DA11d9EA97504": {
+        "name": "Testnet: Turntables Pool",
+        "color": "#33ccff"
     }
 }

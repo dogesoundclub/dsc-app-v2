@@ -25,6 +25,7 @@ export default {
         MatesPool: "0x6f49D139359D0c7Bf44Df4520494A6ABB39434dD",
         Booth: "0xb45fC0Ff500cFb4deF3b5148B597884B797fF4Fd",
         BurnPool: "0xC7995B29d95006f737861DC5288920FAF16e5Ff7",
+        Turntables: "0xB1EFA1E4b2E666cAB233E2241B9DA11d9EA97504",
 
         // partners
         CasesByKate: "",
@@ -51,6 +52,7 @@ export default {
         MatesPool: "0xbc9C42267037786f42831d4f36D629A3888c9b4a",
         Booth: "0x8a654D485AaEed652500B5F18A7e4bb58Ac8ef9F",
         BurnPool: "0x4b1e4c30B12B8564686FF30F608a18Abfbd7adBc",
+        Turntables: "0xFe605356e99e8662Da61dF32e237D03BEd6A8D54",
 
         // partners
         CasesByKate: "0x0af3f3fe9e822b7a740ca45ce170340b2da6f4cc",
