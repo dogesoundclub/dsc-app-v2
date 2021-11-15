@@ -1,6 +1,6 @@
 import { BigNumber } from "@ethersproject/bignumber";
 import { DomNode, el } from "@hanul/skynode";
-import { utils } from "ethers";
+import { constants, utils } from "ethers";
 import superagent from "superagent";
 import CommonUtil from "../../../../CommonUtil";
 import MatesPoolContract from "../../../../contracts/mix/MatesPoolContract";
@@ -42,7 +42,7 @@ export default class MatesTab extends DomNode {
                                 });
                             } else {
                                 if ((await MixContract.allowance(owner, MatesPoolContract.address)).lt(fee)) {
-                                    await MixContract.approve(MatesPoolContract.address, fee);
+                                    await MixContract.approve(MatesPoolContract.address, constants.MaxUint256);
                                     setTimeout(async () => {
                                         await MatesPoolContract.claim(this.mates);
                                     }, 2000);

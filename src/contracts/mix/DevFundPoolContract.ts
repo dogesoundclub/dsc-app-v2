@@ -1,4 +1,5 @@
 import { BigNumberish } from "@ethersproject/bignumber";
+import { constants } from "ethers";
 import Config from "../../Config";
 import Wallet from "../../klaytn/Wallet";
 import DevFundTokenContract from "./DevFundTokenContract";
@@ -14,7 +15,7 @@ class DevFundPoolContract extends KIP7StakingPoolContract {
         const owner = await Wallet.loadAddress();
         if (owner !== undefined) {
             if ((await DevFundTokenContract.allowance(owner, this.address)).lt(amount)) {
-                await DevFundTokenContract.approve(this.address, amount);
+                await DevFundTokenContract.approve(this.address, constants.MaxUint256);
                 await new Promise<void>((resolve) => {
                     setTimeout(async () => {
                         await this.runWalletMethod("stake", amount);

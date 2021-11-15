@@ -1,5 +1,5 @@
 import { DomNode, el } from "@hanul/skynode";
-import { utils } from "ethers";
+import { constants, utils } from "ethers";
 import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import superagent from "superagent";
@@ -122,7 +122,7 @@ export default class MateDetail implements View {
                                 }
 
                                 else if ((await MixContract.allowance(owner, NameV2Contract.address)).lt(mixNeeded)) {
-                                    await MixContract.approve(NameV2Contract.address, mixNeeded);
+                                    await MixContract.approve(NameV2Contract.address, constants.MaxUint256);
                                     setTimeout(async () => {
                                         const name = nameInput.domElement.value;
                                         if (await NameV2Contract.exists(name) === true) {
@@ -160,7 +160,7 @@ export default class MateDetail implements View {
                                     }
 
                                     else if ((await MixContract.allowance(owner, NameV2Contract.address)).lt(mixNeeded)) {
-                                        await MixContract.approve(NameV2Contract.address, mixNeeded);
+                                        await MixContract.approve(NameV2Contract.address, constants.MaxUint256);
                                         setTimeout(async () => {
                                             await NameV2Contract.remove(MateContract.address, this.id);
                                             ViewUtil.waitTransactionAndRefresh();

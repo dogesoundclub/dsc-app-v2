@@ -1,6 +1,6 @@
 import { BigNumber } from "@ethersproject/bignumber";
 import { DomNode, el } from "@hanul/skynode";
-import { utils } from "ethers";
+import { constants, utils } from "ethers";
 import CommonUtil from "../../../../CommonUtil";
 import AnimalsPunksV2PoolContract from "../../../../contracts/mix/AnimalsPunksV2PoolContract";
 import MixContract from "../../../../contracts/mix/MixContract";
@@ -41,7 +41,7 @@ export default class AnimalsPunksV2Tab extends DomNode {
                                 });
                             } else {
                                 if ((await MixContract.allowance(owner, AnimalsPunksV2PoolContract.address)).lt(fee)) {
-                                    await MixContract.approve(AnimalsPunksV2PoolContract.address, fee);
+                                    await MixContract.approve(AnimalsPunksV2PoolContract.address, constants.MaxUint256);
                                     setTimeout(async () => {
                                         await AnimalsPunksV2PoolContract.claim(this.punks);
                                     }, 2000);

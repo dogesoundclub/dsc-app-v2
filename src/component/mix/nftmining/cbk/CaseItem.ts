@@ -1,5 +1,5 @@
 import { DomNode, el } from "@hanul/skynode";
-import { BigNumber, utils } from "ethers";
+import { BigNumber, constants, utils } from "ethers";
 import CommonUtil from "../../../../CommonUtil";
 import CasesByKatePoolContract from "../../../../contracts/mix/CasesByKatePoolContract";
 import MixContract from "../../../../contracts/mix/MixContract";
@@ -41,7 +41,7 @@ export default class CaseItem extends DomNode {
                                     });
                                 } else {
                                     if ((await MixContract.allowance(owner, CasesByKatePoolContract.address)).lt(fee)) {
-                                        await MixContract.approve(CasesByKatePoolContract.address, fee);
+                                        await MixContract.approve(CasesByKatePoolContract.address, constants.MaxUint256);
                                         setTimeout(async () => {
                                             await CasesByKatePoolContract.claim([this.id]);
                                         }, 2000);

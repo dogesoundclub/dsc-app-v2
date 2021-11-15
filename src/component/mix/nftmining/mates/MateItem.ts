@@ -1,5 +1,5 @@
 import { DomNode, el } from "@hanul/skynode";
-import { BigNumber, utils } from "ethers";
+import { BigNumber, constants, utils } from "ethers";
 import CommonUtil from "../../../../CommonUtil";
 import MatesPoolContract from "../../../../contracts/mix/MatesPoolContract";
 import MixContract from "../../../../contracts/mix/MixContract";
@@ -42,7 +42,7 @@ export default class MateItem extends DomNode {
                                     });
                                 } else {
                                     if ((await MixContract.allowance(owner, MatesPoolContract.address)).lt(fee)) {
-                                        await MixContract.approve(MatesPoolContract.address, fee);
+                                        await MixContract.approve(MatesPoolContract.address, constants.MaxUint256);
                                         setTimeout(async () => {
                                             await MatesPoolContract.claim([this.id]);
                                         }, 2000);
