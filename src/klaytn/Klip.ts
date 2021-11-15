@@ -1,4 +1,4 @@
-import { BigNumberish } from "@ethersproject/bignumber";
+import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
 import { utils } from "ethers";
 import EventContainer from "eventcontainer";
 import msg from "msg.js";
@@ -41,7 +41,17 @@ class Klip extends EventContainer {
         this.fireEvent("connect");
     }
 
-    public async runContractMethod(address: string, abi: any, params: any, value?: BigNumberish) {
+    public async runContractMethod(address: string, abi: any, _params: any[], value?: BigNumberish) {
+
+        const params: any[] = [];
+        for (const param of _params) {
+            if (param instanceof BigNumber) {
+                params.push(param.toString());
+            } else {
+                params.push(param);
+            }
+        }
+
         const res = await klipSDK.prepare.executeContract({
             bappName: msg("BAPP_TITLE"),
             to: address,

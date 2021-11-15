@@ -18,6 +18,7 @@ declare const _default: {
         MatesPool: string;
         Booth: string;
         BurnPool: string;
+        Turntables: string;
         CasesByKate: string;
         CasesByKatePool: string;
         AnimalsPunksV2: string;
