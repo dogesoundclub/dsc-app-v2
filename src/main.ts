@@ -2,7 +2,6 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
-import Klaytn from "./klaytn/Klaytn";
 import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
