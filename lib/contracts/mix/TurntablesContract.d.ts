@@ -6,7 +6,7 @@ interface TurntableType {
     volume: number;
     lifetime: number;
 }
-interface TurntableInfo {
+export interface TurntableInfo {
     owner: string;
     typeId: number;
     endBlock: number;
@@ -17,6 +17,7 @@ declare class TurntablesContract extends Contract {
     types(typeId: BigNumberish): Promise<TurntableType>;
     buy(typeId: BigNumberish): Promise<void>;
     turntables(turntableId: BigNumberish): Promise<TurntableInfo>;
+    turntableLength(): Promise<BigNumber>;
 }
 declare const _default: TurntablesContract;
 export default _default;

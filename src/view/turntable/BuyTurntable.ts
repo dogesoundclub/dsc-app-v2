@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import { View, ViewParams } from "skyrouter";
-import TurntablesContract from "../../contracts/mix/TurntablesContract";
+import TurntablesContract from "../../contracts/turntable/TurntablesContract";
+import turntables from "../../turntables.json";
 import Layout from "../Layout";
 import ViewUtil from "../ViewUtil";
 
@@ -16,10 +17,11 @@ export default class BuyTurntable implements View {
                 click: () => ViewUtil.go("/turntable"),
             }),
             el("p", "턴테이블을 구매합니다. 턴테이블의 볼륨에 따라 MIX를 분배받는 비율이 결정됩니다. 턴테이블의 등급에 따라 가격과 볼륨이 다르며, 턴테이블에는 배터리가 존재합니다. 배터리가 모두 소모된 턴테이블은 다시 MIX를 통해 배터리를 충전해야 지속적으로 MIX를 얻을 수 있습니다. 턴테이블은 분해가 가능하며, 분해하면 조립시 사용된 MIX의 80%를 돌려받습니다."),
+            el("p.warning", "* 배터리 수명이 다 된 턴테이블은 배터리를 충전해야합니다. 배터리 충전 가격은 턴테이블의 가격의 절반과 비례하며, 턴테이블의 가격과 같은 액수의 MIX로 배터리를 충전하면 턴테이블 수명의 2배의 수명이 더해집니다."),
             el(".turntable-list",
                 el("a.turntable",
-                    el("h4", "Normal Grade", { style: { color: "#d6d6d6" } }),
-                    el("img", { src: "/images/components/turntables/normal.png" }),
+                    el("h4", turntables[0].name, { style: { color: turntables[0].color } }),
+                    el("img", { src: turntables[0].img }),
                     el(".volume", "Volume: 1,000"),
                     el(".price", "Price: 1,000 MIX"),
                     el(".lifetime", "Lifetime: 2,592,000 Blocks"),
@@ -31,8 +33,8 @@ export default class BuyTurntable implements View {
                     }),
                 ),
                 el(".turntable",
-                    el("h4", "Fine Grade", { style: { color: "#6cb2e3" } }),
-                    el("img", { src: "/images/components/turntables/fine.png" }),
+                    el("h4", turntables[1].name, { style: { color: turntables[1].color } }),
+                    el("img", { src: turntables[1].img }),
                     el(".volume", "Volume: 3,300"),
                     el(".price", "Price: 3,000 MIX"),
                     el(".lifetime", "Lifetime: 2,592,000 Blocks"),
@@ -44,8 +46,8 @@ export default class BuyTurntable implements View {
                     }),
                 ),
                 el(".turntable",
-                    el("h4", "Rare Grade", { style: { color: "#dbcf74" } }),
-                    el("img", { src: "/images/components/turntables/rare.png" }),
+                    el("h4", turntables[2].name, { style: { color: turntables[2].color } }),
+                    el("img", { src: turntables[2].img }),
                     el(".volume", "Volume: 5,500"),
                     el(".price", "Price: 5,000 MIX"),
                     el(".lifetime", "Lifetime: 2,592,000 Blocks"),
@@ -57,8 +59,8 @@ export default class BuyTurntable implements View {
                     }),
                 ),
                 el(".turntable",
-                    el("h4", "Epic Grade", { style: { color: "#f5a360" } }),
-                    el("img", { src: "/images/components/turntables/epic.png" }),
+                    el("h4", turntables[3].name, { style: { color: turntables[3].color } }),
+                    el("img", { src: turntables[3].img }),
                     el(".volume", "Volume: 8,000"),
                     el(".price", "Price: 7,000 MIX"),
                     el(".lifetime", "Lifetime: 2,592,000 Blocks"),
@@ -70,8 +72,8 @@ export default class BuyTurntable implements View {
                     }),
                 ),
                 el(".turntable",
-                    el("h4", "Supremacy Grade", { style: { color: "#e6500e" } }),
-                    el("img", { src: "/images/components/turntables/supremacy.png" }),
+                    el("h4", turntables[4].name, { style: { color: turntables[4].color } }),
+                    el("img", { src: turntables[4].img }),
                     el(".volume", "Volume: 12,000"),
                     el(".price", "Price: 10,000 MIX"),
                     el(".lifetime", "Lifetime: 2,592,000 Blocks"),

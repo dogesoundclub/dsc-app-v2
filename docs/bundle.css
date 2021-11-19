@@ -1117,6 +1117,19 @@ a {
 .proposal-list > .proposal > .result.executed {
   color: #26A55C;
 }
+.turntable-item {
+  text-align: center;
+  cursor: pointer;
+}
+.turntable-item > h4 {
+  font-size: 20px;
+}
+.turntable-item > img {
+  width: 246.666667px;
+}
+.turntable-item > .lifetime {
+  font-size: 14px;
+}
 .connect-wallet-popup {
   position: relative;
   width: 320px;
@@ -3517,9 +3530,21 @@ a {
     font-size: 20px;
   }
 }
+.turntable-view > section > .turntable-list:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.turntable-view > section > .turntable-list > .turntable-item {
+  float: left;
+}
 .turntable-view > a {
   display: block;
   margin: auto;
+  margin-top: 30px;
   font-size: 20px;
   color: #000000;
   background-color: #FBFF72;
@@ -3559,6 +3584,17 @@ a {
 }
 .buy-turntable-view > p > a {
   text-decoration: underline;
+}
+.buy-turntable-view > .warning {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  border: 1px solid #BFC500;
+  color: #BFC500;
+  padding: 15px;
+  word-break: break-all;
+  text-align: left;
+  font-size: 14px;
 }
 .buy-turntable-view > .turntable-list:after {
   content: " ";
