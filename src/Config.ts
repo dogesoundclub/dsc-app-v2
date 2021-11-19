@@ -1,5 +1,5 @@
 
-const TESTNET = false;
+const TESTNET = true;
 
 export default {
 
@@ -26,6 +26,10 @@ export default {
         Booth: "0xb45fC0Ff500cFb4deF3b5148B597884B797fF4Fd",
         BurnPool: "0xC7995B29d95006f737861DC5288920FAF16e5Ff7",
         Turntables: "0xB1EFA1E4b2E666cAB233E2241B9DA11d9EA97504",
+        TurntableExtras: "0xE33B45955Ff4C2af63cAF5a2f0f5e0ff3b86038B",
+        MatesListeners: "0x03E0545C837BFa5Ab9A1F950c54784ee5F0EB53D",
+        KlayMIXListeners: "0x781A91157612DF86959e400bCb27FdfeECCe081D",
+        KSPMIXListeners: "0x333Ba1e532c95C6731aa305505B24CAD9c13F013",
 
         // partners
         CasesByKate: "",
@@ -53,6 +57,10 @@ export default {
         Booth: "0x8a654D485AaEed652500B5F18A7e4bb58Ac8ef9F",
         BurnPool: "0x4b1e4c30B12B8564686FF30F608a18Abfbd7adBc",
         Turntables: "0xFe605356e99e8662Da61dF32e237D03BEd6A8D54",
+        TurntableExtras: "0xA726F183d84C0f2645FF138CDC572b0d0D0D8b93",
+        MatesListeners: "",
+        KlayMIXListeners: "",
+        KSPMIXListeners: "",
 
         // partners
         CasesByKate: "0x0af3f3fe9e822b7a740ca45ce170340b2da6f4cc",

@@ -19,6 +19,10 @@ declare const _default: {
         Booth: string;
         BurnPool: string;
         Turntables: string;
+        TurntableExtras: string;
+        MatesListeners: string;
+        KlayMIXListeners: string;
+        KSPMIXListeners: string;
         CasesByKate: string;
         CasesByKatePool: string;
         AnimalsPunksV2: string;

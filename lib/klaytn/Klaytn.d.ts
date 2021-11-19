@@ -1,5 +1,4 @@
 declare class Klaytn {
-    private caver;
     createContract(address: string, abi: any): any;
     loadBlockNumber(): Promise<any>;
 }

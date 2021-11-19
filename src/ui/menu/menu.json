@@ -34,7 +34,7 @@
                 "uri": "mix/mining",
                 "name": "MENU_NFT_MINING"
             }, {
-                "uri": "mix/turntables",
+                "uri": "turntable",
                 "name": "MENU_TURNTABLES"
             }, {
                 "uri": "mix/booth",

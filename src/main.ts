@@ -6,7 +6,7 @@ import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
 import Governance from "./view/Governance";
-import Detail from "./view/governance/Detail";
+import GovernanceDetail from "./view/governance/Detail";
 import Propose from "./view/governance/Propose";
 import Home from "./view/Home";
 import Layout from "./view/Layout";
@@ -23,8 +23,11 @@ import BurnPool from "./view/mix/BurnPool";
 import BuyMix from "./view/mix/BuyMix";
 import DevFund from "./view/mix/DevFund";
 import NFTMining from "./view/mix/NFTMining";
-import Turntables from "./view/mix/Turntables";
 import Terms from "./view/Terms";
+import { default as Turntable } from "./view/Turntable";
+import BuyTurntable from "./view/turntable/BuyTurntable";
+import TurntableDetail from "./view/turntable/Detail";
+import Update from "./view/turntable/Update";
 
 (async () => {
 
@@ -50,16 +53,20 @@ import Terms from "./view/Terms";
     SkyRouter.route("dogesounds", DogeSounds);
     SkyRouter.route("governance", Governance);
     SkyRouter.route("governance/propose", Propose);
-    SkyRouter.route("governance/{id}", Detail, ["governance/propose"]);
+    SkyRouter.route("governance/{id}", GovernanceDetail, ["governance/propose"]);
     SkyRouter.route("terms", Terms);
 
     SkyRouter.route("mix", Mix);
     SkyRouter.route("mix/buy", BuyMix);
     SkyRouter.route("mix/mining", NFTMining);
-    SkyRouter.route("mix/turntables", Turntables);
     SkyRouter.route("mix/booth", Booth);
     SkyRouter.route("mix/devfund", DevFund);
     SkyRouter.route("mix/burnpool", BurnPool);
+
+    SkyRouter.route("turntable", Turntable);
+    SkyRouter.route("turntable/{id}", TurntableDetail, ["turntable/buy"]);
+    SkyRouter.route("turntable/{id}/update", Update);
+    SkyRouter.route("turntable/buy", BuyTurntable);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);

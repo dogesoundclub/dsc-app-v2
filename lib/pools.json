@@ -50,5 +50,17 @@
     "0xB1EFA1E4b2E666cAB233E2241B9DA11d9EA97504": {
         "name": "Testnet: Turntables Pool",
         "color": "#33ccff"
+    },
+    "0x03E0545C837BFa5Ab9A1F950c54784ee5F0EB53D": {
+        "name": "Testnet: Mates Listeners Pool",
+        "color": "#33ccff"
+    },
+    "0x781A91157612DF86959e400bCb27FdfeECCe081D": {
+        "name": "Testnet: Klay-MIX Listeners Pool",
+        "color": "#33ccff"
+    },
+    "0x333Ba1e532c95C6731aa305505B24CAD9c13F013": {
+        "name": "Testnet: KSP-MIX Listeners Pool",
+        "color": "#33ccff"
     }
 }
