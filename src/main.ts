@@ -2,6 +2,7 @@ import msg from "msg.js";
 import { SkyRouter } from "skyrouter";
 import superagent from "superagent";
 import BrowserInfo from "./BrowserInfo";
+import Klaytn from "./klaytn/Klaytn";
 import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
@@ -16,6 +17,7 @@ import FollowMe from "./view/mates/FollowMe";
 import Gallery from "./view/mates/Gallery";
 import MateDetail from "./view/mates/MateDetail";
 import MyMates from "./view/mates/MyMates";
+import Rarity from "./view/mates/Rarity";
 import Mix from "./view/Mix";
 import Booth from "./view/mix/Booth";
 import BurnPool from "./view/mix/BurnPool";
@@ -23,7 +25,6 @@ import BuyMix from "./view/mix/BuyMix";
 import DevFund from "./view/mix/DevFund";
 import NFTMining from "./view/mix/NFTMining";
 import Turntables from "./view/mix/Turntables";
-import Rarity from "./view/mates/Rarity";
 import Terms from "./view/Terms";
 
 (async () => {
