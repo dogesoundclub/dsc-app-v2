@@ -1,0 +1,70 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ITurntableExtras",
+  "sourceName": "contracts/interfaces/ITurntableExtras.sol",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "turntableId",
+          "type": "uint256"
+        }
+      ],
+      "name": "extras",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "turntableId",
+          "type": "uint256"
+        },
+        {
+          "name": "extra",
+          "type": "string"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "turntableId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "extra",
+          "type": "string"
+        }
+      ],
+      "name": "Set",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
