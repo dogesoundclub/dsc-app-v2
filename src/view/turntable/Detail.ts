@@ -52,7 +52,7 @@ export default class Detail implements View {
             ),
             el("section",
                 el("h2", "리스닝 LP 토큰"),
-                el("p.warning", "LP 토큰을 리스너로 등록할 수 있습니다. 리스너로 등록된 동안에는 에어드롭 풀로부터 MIX를 분배받을 수 없습니다. 따라서 반드시 에어드롭 풀과 수익률을 비교하시기 바랍니다."),
+                el("p.warning", "LP 토큰을 리스너로 등록할 수 있습니다. 리스너로 등록된 동안에는 Klayswap 에어드롭 풀로부터 MIX를 분배받을 수 없습니다. 따라서 반드시 Klayswap 에어드롭 풀과 수익률을 비교하시기 바랍니다."),
                 el(".listeners",
                     new LPTokenListeners(
                         "Klay-MIX Listeners",
@@ -100,11 +100,17 @@ export default class Detail implements View {
             );
 
             if (data.bgm !== undefined) {
-                const v = data.bgm.indexOf("?v=");
+                let bgm = data.bgm;
+                const v = bgm.indexOf("?v=");
+                if (v !== -1) {
+                    bgm = `https://www.youtube.com/embed/${bgm.substring(v + 3)}`;
+                } else if (bgm.indexOf("https://youtu.be/") === 0) {
+                    bgm = `https://www.youtube.com/embed/${bgm.substring(17)}`;
+                }
                 this.infoDisplay.append(
                     el("iframe.video", {
                         height: "200",
-                        src: v === -1 ? data.bgm : `https://www.youtube.com/embed/${data.bgm.substring(v + 3)}`,
+                        src: bgm,
                         title: "YouTube video player",
                         allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
                     }),
@@ -122,7 +128,10 @@ export default class Detail implements View {
             }
             if (data.twitter !== undefined) {
                 this.infoDisplay.append(
-                    el(".social", "- 트위터 : ", el("a", data.twitter, { href: data.twitter, target: "_blank" })),
+                    el(".social", "- 트위터 : ", el("a", data.twitter, {
+                        href: data.twitter[0] === "@" ? `https://twitter.com/${data.twitter.substring(1)}` : data.twitter,
+                        target: "_blank",
+                    })),
                 );
             }
 
