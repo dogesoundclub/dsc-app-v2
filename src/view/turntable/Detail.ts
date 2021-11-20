@@ -29,9 +29,9 @@ export default class Detail implements View {
 
     constructor(params: ViewParams) {
         const turntableId = parseInt(params.id, 10);
-        Layout.current.title = "턴테이블";
+        Layout.current.title = `턴테이블 #${turntableId}`;
         Layout.current.content.append(this.container = el(".turntable-detail-view",
-            this.title = el("h1", "턴테이블"),
+            this.title = el("h1", `턴테이블 #${turntableId}`),
             el("a.back-button", "< 뒤로가기", {
                 click: () => ViewUtil.go("/turntable"),
             }),

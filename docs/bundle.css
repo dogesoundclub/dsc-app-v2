@@ -3568,6 +3568,7 @@ a {
 }
 .turntable-view > section > .turntable-list > .turntable-item {
   float: left;
+  margin-bottom: 30px;
 }
 .turntable-view > a {
   display: block;
