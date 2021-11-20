@@ -22,12 +22,42 @@
         color    : #BFC500;
     }
 
-    >p {
+    >.controller {
         margin-top: 30px;
-        text-align: center;
+        .float-wrapper();
+
+        >.charge-button {
+            float: left;
+        }
+
+        >.update-button {
+            float: right;
+        }
 
         >a {
-            text-decoration: underline;
+            font-size       : 20px;
+            color           : #000000;
+            background-color: #FBFF72;
+            box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+            text-align      : center;
+            padding         : 12px 24px;
+            font-family     : DungGeunMo;
+            font-weight     : bold;
+        }
+    }
+
+    >section {
+        margin-top: 60px;
+
+        >h2 {
+            font-size    : 26px;
+            color        : #BFC500;
+            margin-bottom: 16px;
+            line-height  : 1.5em;
+
+            @media @phone {
+                font-size: 20px;
+            }
         }
     }
 }

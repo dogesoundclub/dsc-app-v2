@@ -3664,12 +3664,46 @@ a {
   font-size: 26px;
   color: #BFC500;
 }
-.turntable-detail-view > p {
+.turntable-detail-view > .controller {
   margin-top: 30px;
-  text-align: center;
 }
-.turntable-detail-view > p > a {
-  text-decoration: underline;
+.turntable-detail-view > .controller:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.turntable-detail-view > .controller > .charge-button {
+  float: left;
+}
+.turntable-detail-view > .controller > .update-button {
+  float: right;
+}
+.turntable-detail-view > .controller > a {
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  padding: 12px 24px;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.turntable-detail-view > section {
+  margin-top: 60px;
+}
+.turntable-detail-view > section > h2 {
+  font-size: 26px;
+  color: #BFC500;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 719px) {
+  .turntable-detail-view > section > h2 {
+    font-size: 20px;
+  }
 }
 .update-turntable-view {
   max-width: 780px;
@@ -3694,11 +3728,45 @@ a {
   font-size: 26px;
   color: #BFC500;
 }
-.update-turntable-view > p {
+.update-turntable-view > .form {
   margin-top: 30px;
-  text-align: center;
 }
-.update-turntable-view > p > a {
-  text-decoration: underline;
+.update-turntable-view > .form > label {
+  display: block;
+  margin-bottom: 20px;
+}
+.update-turntable-view > .form > label > h4 {
+  font-size: 22px;
+}
+.update-turntable-view > .form > label > input,
+.update-turntable-view > .form > label > textarea {
+  margin-top: 10px;
+  display: block;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: DungGeunMo;
+  padding: 7.5px;
+  border: 2px solid #ffffff;
+  font-size: 15px;
+  width: 280px;
+  height: 45px;
+  width: 100%;
+}
+.update-turntable-view > .form > label > textarea {
+  height: 100px;
+}
+.update-turntable-view > .form > .save-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 252px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
 }
 
