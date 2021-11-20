@@ -1120,6 +1120,7 @@ a {
 .turntable-item {
   text-align: center;
   cursor: pointer;
+  width: 246.666667px;
 }
 .turntable-item > h4 {
   font-size: 20px;
