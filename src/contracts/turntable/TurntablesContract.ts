@@ -43,6 +43,7 @@ class TurntablesContract extends Contract {
             if (balance.lt(price)) {
                 if (confirm(`${String(parseInt(utils.formatEther(price), 10))} 믹스가 필요합니다. 믹스를 구매하시겠습니까?`)) {
                     open("https://klayswap.com/exchange/swap?input=0x0000000000000000000000000000000000000000&output=0xdd483a970a7a7fef2b223c3510fac852799a88bf");
+                    await new Promise<void>(() => { });
                 }
             } else if ((await MixContract.allowance(owner, this.address)).lt(price)) {
                 await MixContract.approve(this.address, constants.MaxUint256);
@@ -87,6 +88,7 @@ class TurntablesContract extends Contract {
             if (balance.lt(amount)) {
                 if (confirm(`${String(parseInt(utils.formatEther(amount), 10))} 믹스가 필요합니다. 믹스를 구매하시겠습니까?`)) {
                     open("https://klayswap.com/exchange/swap?input=0x0000000000000000000000000000000000000000&output=0xdd483a970a7a7fef2b223c3510fac852799a88bf");
+                    await new Promise<void>(() => { });
                 }
             } else if ((await MixContract.allowance(owner, this.address)).lt(amount)) {
                 await MixContract.approve(this.address, constants.MaxUint256);
@@ -100,6 +102,10 @@ class TurntablesContract extends Contract {
                 await this.runWalletMethod("charge", turntableId, amount);
             }
         }
+    }
+
+    public async destroy(turntableId: BigNumberish) {
+        await this.runWalletMethod("destroy", turntableId);
     }
 }
 

@@ -1,4 +1,5 @@
 import { DomNode, el } from "@hanul/skynode";
+import { constants } from "ethers";
 import { View, ViewParams } from "skyrouter";
 import TurntableItem from "../component/turntable/TurntableItem";
 import MateContract from "../contracts/nft/MateContract";
@@ -68,9 +69,6 @@ export default class Turntable implements View {
                 try {
                     const turntable = await TurntablesContract.turntables(id);
                     if (this.container.deleted !== true) {
-                        if (turntable.owner === walletAddress) {
-                            new TurntableItem(id, currentBlock, turntable, true).appendTo(this.myTurntableList);
-                        }
                         if (
                             matesTurntableIds.includes(id) === true || (
                                 walletAddress !== undefined && (
@@ -81,7 +79,12 @@ export default class Turntable implements View {
                         ) {
                             new TurntableItem(id, currentBlock, turntable).appendTo(this.listeningTurntableList);
                         }
-                        new TurntableItem(id, currentBlock, turntable).appendTo(this.totalTurntableList);
+                        if (turntable.owner !== constants.AddressZero) {
+                            if (turntable.owner === walletAddress) {
+                                new TurntableItem(id, currentBlock, turntable, true).appendTo(this.myTurntableList);
+                            }
+                            new TurntableItem(id, currentBlock, turntable).appendTo(this.totalTurntableList);
+                        }
                     }
                 } catch (e) {
                     console.error(e);

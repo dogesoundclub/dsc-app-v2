@@ -1,5 +1,6 @@
 import Config from "../../Config";
 import KSPMIXLPTokenContract from "../mix/KSPMIXLPTokenContract";
+import KIP7Contract from "../standard/KIP7Contract";
 import TurntableKIP7ListenersContract from "./TurntableKIP7ListenersContract";
 
 class KSPMIXListenersContract extends TurntableKIP7ListenersContract {
@@ -8,7 +9,7 @@ class KSPMIXListenersContract extends TurntableKIP7ListenersContract {
         super(Config.contracts.KSPMIXListeners);
     }
 
-    public get lpToken() {
+    public get lpToken(): KIP7Contract {
         return KSPMIXLPTokenContract;
     }
 }

@@ -1,5 +1,5 @@
 // Testnet
-class Klaytn {
+/*class Klaytn {
 
     public createContract(address: string, abi: any) {
         return new (window as any).caver.klay.Contract(abi, address);
@@ -8,10 +8,10 @@ class Klaytn {
     public async loadBlockNumber() {
         return await (window as any).caver.klay.getBlockNumber()
     }
-}
+}*/
 
 // Mainnet
-/*class Klaytn {
+class Klaytn {
 
     private caver = new (window as any).Caver(new (window as any).Caver.providers.WebsocketProvider("wss://klaytn-node.klu.bs:9091", {
         reconnect: {
@@ -29,6 +29,6 @@ class Klaytn {
     public async loadBlockNumber() {
         return await this.caver.klay.getBlockNumber();
     }
-}*/
+}
 
 export default new Klaytn();

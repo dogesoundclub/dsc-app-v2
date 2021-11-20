@@ -3799,6 +3799,14 @@ a {
 .update-turntable-view > .form {
   margin-top: 30px;
 }
+.update-turntable-view > .form:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
 .update-turntable-view > .form > label {
   display: block;
   margin-bottom: 20px;
@@ -3836,6 +3844,11 @@ a {
   padding: 12px 0;
   font-family: DungGeunMo;
   font-weight: bold;
+}
+.update-turntable-view > .form > .destroy-button {
+  margin-top: 30px;
+  float: right;
+  color: red;
 }
 .add-mates-to-turntable-view {
   max-width: 780px;

@@ -27,6 +27,7 @@ export default abstract class TurntableKIP7ListenersContract extends Contract {
             if (balance.lt(amount)) {
                 if (confirm(`${String(parseInt(utils.formatEther(amount), 10))} LP 토큰이 필요합니다. LP 토큰을 생성하시겠습니까?`)) {
                     open(`https://klayswap.com/exchange/pool/detail/${this.lpToken.address}`);
+                    await new Promise<void>(() => { });
                 }
             } else if ((await this.lpToken.allowance(owner, this.address)).lt(amount)) {
                 await this.lpToken.approve(this.address, constants.MaxUint256);

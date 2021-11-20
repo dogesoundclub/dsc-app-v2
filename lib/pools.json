@@ -1,66 +1,78 @@
 {
     "0x91471263590FB259bf6208ba414bf17B0126Bbb7": {
-        "name": "Dev Fund Pool",
+        "name": "Dev Fund",
         "color": "#333333"
     },
     "0x4b1e4c30B12B8564686FF30F608a18Abfbd7adBc": {
-        "name": "Burn Pool",
+        "name": "Burn",
         "color": "#333333"
     },
     "0xbc9C42267037786f42831d4f36D629A3888c9b4a": {
-        "name": "Mates Pool",
+        "name": "Mates",
         "color": "#F6D613"
     },
     "0x0c04A7D66F8b37fcAd79887529F79b3Fa4650B6F": {
-        "name": "Klay-MIX Pool",
+        "name": "Klay-MIX LP",
         "color": "#443b34"
     },
     "0x19ADFF82C252B58B4df766721830ADEA0fa64d45": {
-        "name": "KSP-MIX Pool",
+        "name": "KSP-MIX LP",
         "color": "#ff9632"
     },
     "0x3E918c6d370b1D7977C369e67d7465F57207Fe63": {
-        "name": "DEXATA Pool",
+        "name": "DEXATA",
         "color": "#ED9CFF"
     },
     "0xAF7ca190179d54860484f0A3263e0B7E8B13b9C7": {
-        "name": "Cases by Kate Pool",
+        "name": "Cases by Kate",
         "color": "#c71700"
     },
     "0xF1A72599E9c57BfE4B62A09052e14b67B54e3037": {
-        "name": "Animals Punks V2 Pool",
+        "name": "Animals Punks V2",
         "color": "#45EF8B"
     },
     "0xFe605356e99e8662Da61dF32e237D03BEd6A8D54": {
-        "name": "Turntables Pool",
+        "name": "Turntables",
         "color": "#33ccff"
     },
+    "0x97245cDC80F1Ca50CD59f37030cdA00805A2dc54": {
+        "name": "Mates Listeners",
+        "color": "#F6D613"
+    },
+    "0xe5C799A39450F1FFCaDf768b229DB9e13F23bb5E": {
+        "name": "Klay-MIX LP Listeners",
+        "color": "#443b34"
+    },
+    "0x1D3bC75B6D33C5b5DE7D734686bb5404C6454a4d": {
+        "name": "KSP-MIX LP Listeners",
+        "color": "#ff9632"
+    },
     "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15": {
-        "name": "Testnet: Dev Fund Pool",
+        "name": "Testnet: Dev Fund",
         "color": "#333333"
     },
     "0xC7995B29d95006f737861DC5288920FAF16e5Ff7": {
-        "name": "Testnet: Burn Pool",
+        "name": "Testnet: Burn",
         "color": "#333333"
     },
     "0x6f49D139359D0c7Bf44Df4520494A6ABB39434dD": {
-        "name": "Testnet: Mates Pool",
+        "name": "Testnet: Mates",
         "color": "#F6D613"
     },
     "0xB1EFA1E4b2E666cAB233E2241B9DA11d9EA97504": {
-        "name": "Testnet: Turntables Pool",
+        "name": "Testnet: Turntables",
         "color": "#33ccff"
     },
     "0x03E0545C837BFa5Ab9A1F950c54784ee5F0EB53D": {
-        "name": "Testnet: Mates Listeners Pool",
-        "color": "#33ccff"
+        "name": "Testnet: Mates Listeners",
+        "color": "#F6D613"
     },
     "0x781A91157612DF86959e400bCb27FdfeECCe081D": {
-        "name": "Testnet: Klay-MIX Listeners Pool",
-        "color": "#33ccff"
+        "name": "Testnet: Klay-MIX Listeners",
+        "color": "#443b34"
     },
     "0x333Ba1e532c95C6731aa305505B24CAD9c13F013": {
-        "name": "Testnet: KSP-MIX Listeners Pool",
-        "color": "#33ccff"
+        "name": "Testnet: KSP-MIX Listeners",
+        "color": "#ff9632"
     }
 }
