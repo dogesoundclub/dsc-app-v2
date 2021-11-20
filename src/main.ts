@@ -25,8 +25,10 @@ import DevFund from "./view/mix/DevFund";
 import NFTMining from "./view/mix/NFTMining";
 import Terms from "./view/Terms";
 import { default as Turntable } from "./view/Turntable";
+import AddMates from "./view/turntable/AddMates";
 import BuyTurntable from "./view/turntable/BuyTurntable";
 import TurntableDetail from "./view/turntable/Detail";
+import RemoveMates from "./view/turntable/RemoveMates";
 import Update from "./view/turntable/Update";
 
 (async () => {
@@ -66,6 +68,8 @@ import Update from "./view/turntable/Update";
     SkyRouter.route("turntable", Turntable);
     SkyRouter.route("turntable/{id}", TurntableDetail, ["turntable/buy"]);
     SkyRouter.route("turntable/{id}/update", Update);
+    SkyRouter.route("turntable/{id}/addmates", AddMates);
+    SkyRouter.route("turntable/{id}/removemates", RemoveMates);
     SkyRouter.route("turntable/buy", BuyTurntable);
 
     if (sessionStorage.__spa_path) {

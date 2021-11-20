@@ -20,6 +20,7 @@ declare class TurntablesContract extends Contract {
     totalVolume(): Promise<BigNumber>;
     turntableLength(): Promise<BigNumber>;
     claimableOf(turntableId: BigNumberish): Promise<BigNumber>;
+    charge(turntableId: BigNumberish, amount: BigNumber): Promise<void>;
 }
 declare const _default: TurntablesContract;
 export default _default;

@@ -3664,6 +3664,16 @@ a {
   font-size: 26px;
   color: #BFC500;
 }
+.turntable-detail-view > .info {
+  margin-top: 30px;
+}
+.turntable-detail-view > .info > .video {
+  width: 100%;
+}
+.turntable-detail-view > .info > p {
+  font-family: DungGeunMo;
+  margin: 30px 0;
+}
 .turntable-detail-view > .controller {
   margin-top: 30px;
 }
@@ -3675,10 +3685,12 @@ a {
   clear: both;
   visibility: hidden;
 }
-.turntable-detail-view > .controller > .charge-button {
+.turntable-detail-view > .controller > .charge-button,
+.turntable-detail-view > .controller > .add-mates-button {
   float: left;
 }
-.turntable-detail-view > .controller > .update-button {
+.turntable-detail-view > .controller > .update-button,
+.turntable-detail-view > .controller > .remove-mates-button {
   float: right;
 }
 .turntable-detail-view > .controller > a {
@@ -3704,6 +3716,10 @@ a {
   .turntable-detail-view > section > h2 {
     font-size: 20px;
   }
+}
+.turntable-detail-view > section > .mate-list {
+  margin-top: 30px;
+  height: 300px;
 }
 .update-turntable-view {
   max-width: 780px;
@@ -3756,6 +3772,102 @@ a {
   height: 100px;
 }
 .update-turntable-view > .form > .save-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 252px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.add-mates-to-turntable-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .add-mates-to-turntable-view {
+    padding: 90px 20px;
+  }
+}
+.add-mates-to-turntable-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.add-mates-to-turntable-view > .back-button {
+  font-size: 26px;
+  color: #BFC500;
+}
+.add-mates-to-turntable-view > p {
+  margin-top: 30px;
+  text-align: center;
+}
+.add-mates-to-turntable-view > p > a {
+  text-decoration: underline;
+}
+.add-mates-to-turntable-view > .mate-list {
+  margin-top: 30px;
+  height: 300px;
+}
+.add-mates-to-turntable-view > .submit-button {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  width: 252px;
+  padding: 12px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
+.remove-mates-from-turntable-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .remove-mates-from-turntable-view {
+    padding: 90px 20px;
+  }
+}
+.remove-mates-from-turntable-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.remove-mates-from-turntable-view > .back-button {
+  font-size: 26px;
+  color: #BFC500;
+}
+.remove-mates-from-turntable-view > p {
+  margin-top: 30px;
+  text-align: center;
+}
+.remove-mates-from-turntable-view > p > a {
+  text-decoration: underline;
+}
+.remove-mates-from-turntable-view > .mate-list {
+  margin-top: 30px;
+  height: 300px;
+}
+.remove-mates-from-turntable-view > .submit-button {
   display: block;
   margin: auto;
   margin-top: 30px;

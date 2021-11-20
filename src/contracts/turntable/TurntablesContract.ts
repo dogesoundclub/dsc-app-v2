@@ -79,6 +79,28 @@ class TurntablesContract extends Contract {
     public async claimableOf(turntableId: BigNumberish): Promise<BigNumber> {
         return BigNumber.from(await this.runMethod("claimableOf", turntableId));
     }
+
+    public async charge(turntableId: BigNumberish, amount: BigNumber) {
+        const owner = await Wallet.loadAddress();
+        if (owner !== undefined) {
+            const balance = await MixContract.balanceOf(owner);
+            if (balance.lt(amount)) {
+                if (confirm(`${String(parseInt(utils.formatEther(amount), 10))} 믹스가 필요합니다. 믹스를 구매하시겠습니까?`)) {
+                    open("https://klayswap.com/exchange/swap?input=0x0000000000000000000000000000000000000000&output=0xdd483a970a7a7fef2b223c3510fac852799a88bf");
+                }
+            } else if ((await MixContract.allowance(owner, this.address)).lt(amount)) {
+                await MixContract.approve(this.address, constants.MaxUint256);
+                await new Promise<void>((resolve) => {
+                    setTimeout(async () => {
+                        await this.runWalletMethod("charge", turntableId, amount);
+                        resolve();
+                    }, 2000);
+                });
+            } else {
+                await this.runWalletMethod("charge", turntableId, amount);
+            }
+        }
+    }
 }
 
 export default new TurntablesContract();

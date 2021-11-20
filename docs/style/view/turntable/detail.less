@@ -22,15 +22,30 @@
         color    : #BFC500;
     }
 
+    >.info {
+        margin-top: 30px;
+
+        >.video {
+            width: 100%;
+        }
+
+        >p {
+            font-family: DungGeunMo;
+            margin     : 30px 0;
+        }
+    }
+
     >.controller {
         margin-top: 30px;
         .float-wrapper();
 
-        >.charge-button {
+        >.charge-button,
+        >.add-mates-button {
             float: left;
         }
 
-        >.update-button {
+        >.update-button,
+        >.remove-mates-button {
             float: right;
         }
 
@@ -58,6 +73,11 @@
             @media @phone {
                 font-size: 20px;
             }
+        }
+
+        >.mate-list {
+            margin-top: 30px;
+            height    : 300px;
         }
     }
 }

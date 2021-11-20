@@ -5,11 +5,11 @@ export default class Detail implements View {
     private infoDisplay;
     private controller;
     private listeningMateList;
-    private myMateList;
     private klayMixInfo;
     private kspMixInfo;
     constructor(params: ViewParams);
-    private load;
+    private loadInfo;
+    private loadListeningMates;
     changeParams(params: ViewParams, uri: string): void;
     close(): void;
 }

@@ -15,6 +15,32 @@ class MatesListenersContract extends Contract {
     public async listeningTo(mateId: BigNumberish): Promise<BigNumber> {
         return BigNumber.from(await this.runMethod("listeningTo", mateId));
     }
+
+    public async listeners(turntableId: BigNumberish, index: BigNumberish): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("listeners", turntableId, index));
+    }
+
+    public async listenerCount(turntableId: BigNumberish): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("listenerCount", turntableId));
+    }
+
+    public async listen(
+        turntableId: BigNumberish,
+        mateIds: BigNumberish[],
+    ): Promise<void> {
+        await this.runWalletMethodWithLargeGas("listen",
+            turntableId, mateIds,
+        );
+    }
+
+    public async unlisten(
+        turntableId: BigNumberish,
+        mateIds: BigNumberish[],
+    ): Promise<void> {
+        await this.runWalletMethodWithLargeGas("unlisten",
+            turntableId, mateIds,
+        );
+    }
 }
 
 export default new MatesListenersContract();
