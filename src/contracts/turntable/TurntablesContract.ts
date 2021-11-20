@@ -68,6 +68,10 @@ class TurntablesContract extends Contract {
         };
     }
 
+    public async totalVolume(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("totalVolume"));
+    }
+
     public async turntableLength(): Promise<BigNumber> {
         return BigNumber.from(await this.runMethod("turntableLength"));
     }

@@ -4,8 +4,8 @@ import Contract from "../Contract";
 
 export interface PoolInfo {
     to: string,
-    allocPoint: BigNumber,
-    lastEmitBlock: BigNumber,
+    allocPoint: number,
+    lastEmitBlock: number,
 }
 
 class MixEmitterContract extends Contract {
@@ -26,8 +26,8 @@ class MixEmitterContract extends Contract {
         const result = await this.runMethod("poolInfo", pid);
         return {
             to: result[0],
-            allocPoint: BigNumber.from(result[1]),
-            lastEmitBlock: BigNumber.from(result[2]),
+            allocPoint: parseInt(result[1], 10),
+            lastEmitBlock: parseInt(result[2], 10),
         };
     }
 }

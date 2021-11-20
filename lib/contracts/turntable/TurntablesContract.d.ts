@@ -17,6 +17,7 @@ declare class TurntablesContract extends Contract {
     types(typeId: BigNumberish): Promise<TurntableType>;
     buy(typeId: BigNumberish): Promise<void>;
     turntables(turntableId: BigNumberish): Promise<TurntableInfo>;
+    totalVolume(): Promise<BigNumber>;
     turntableLength(): Promise<BigNumber>;
     claimableOf(turntableId: BigNumberish): Promise<BigNumber>;
 }

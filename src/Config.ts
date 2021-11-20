@@ -3,6 +3,7 @@ const TESTNET = true;
 
 export default {
 
+    isTestnet: TESTNET,
     chainId: TESTNET ? 1001 : 8217,
 
     contracts: TESTNET ? {

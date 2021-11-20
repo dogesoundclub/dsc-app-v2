@@ -1,4 +1,5 @@
 declare const _default: {
+    isTestnet: boolean;
     chainId: number;
     contracts: {
         Mate: string;

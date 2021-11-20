@@ -3604,25 +3604,25 @@ a {
   clear: both;
   visibility: hidden;
 }
-.buy-turntable-view > .turntable-list > .turntable {
+.buy-turntable-view > .turntable-list > .buy-turntable-item {
   margin-top: 60px;
   float: left;
   text-align: center;
 }
-.buy-turntable-view > .turntable-list > .turntable > h4 {
+.buy-turntable-view > .turntable-list > .buy-turntable-item > h4 {
   font-size: 20px;
 }
-.buy-turntable-view > .turntable-list > .turntable > img {
+.buy-turntable-view > .turntable-list > .buy-turntable-item > img {
   width: 246.666667px;
 }
-.buy-turntable-view > .turntable-list > .turntable > .volume,
-.buy-turntable-view > .turntable-list > .turntable > .price {
+.buy-turntable-view > .turntable-list > .buy-turntable-item > .volume,
+.buy-turntable-view > .turntable-list > .buy-turntable-item > .price {
   font-size: 20px;
 }
-.buy-turntable-view > .turntable-list > .turntable > .lifetime {
+.buy-turntable-view > .turntable-list > .buy-turntable-item > .lifetime {
   font-size: 14px;
 }
-.buy-turntable-view > .turntable-list > .turntable > a {
+.buy-turntable-view > .turntable-list > .buy-turntable-item > a {
   display: block;
   margin: auto;
   margin-top: 30px;
@@ -3637,7 +3637,7 @@ a {
   font-weight: bold;
 }
 @media only screen and (max-width: 719px) {
-  .buy-turntable-view > .turntable-list > .turntable {
+  .buy-turntable-view > .turntable-list > .buy-turntable-item {
     width: 100%;
   }
 }

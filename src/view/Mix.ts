@@ -81,11 +81,11 @@ export default class Mix implements View {
             const pool = (pools as any)[poolInfo.to];
             if (pool === undefined) {
                 chartData.labels.push("Unknown");
-                chartData.datasets[0].data.push(poolInfo.allocPoint.toNumber() / 100);
+                chartData.datasets[0].data.push(poolInfo.allocPoint / 100);
                 chartData.datasets[0].backgroundColor.push("#333333");
             } else {
                 chartData.labels.push(pool.name);
-                chartData.datasets[0].data.push(poolInfo.allocPoint.toNumber() / 100);
+                chartData.datasets[0].data.push(poolInfo.allocPoint / 100);
                 chartData.datasets[0].backgroundColor.push(pool.color);
             }
         });
