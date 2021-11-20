@@ -24,6 +24,8 @@ declare const _default: {
         MatesListeners: string;
         KlayMIXListeners: string;
         KSPMIXListeners: string;
+        KlayMIXLPToken: string;
+        KSPMIXLPToken: string;
         CasesByKate: string;
         CasesByKatePool: string;
         AnimalsPunksV2: string;

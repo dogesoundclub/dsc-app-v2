@@ -1130,6 +1130,34 @@ a {
 .turntable-item > .lifetime {
   font-size: 14px;
 }
+.lp-token-listeners {
+  border: 1px solid #06BC00;
+  padding: 15px;
+  width: calc(50% - 8px);
+}
+@media only screen and (max-width: 719px) {
+  .lp-token-listeners {
+    width: 100%;
+  }
+}
+.lp-token-listeners > h4 {
+  text-align: center;
+  color: #06BC00;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.lp-token-listeners > a {
+  margin-top: 16px;
+  display: block;
+  font-size: 16px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  padding: 8px 0;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
 .connect-wallet-popup {
   position: relative;
   width: 320px;
@@ -3664,10 +3692,17 @@ a {
   font-size: 26px;
   color: #BFC500;
 }
-.turntable-detail-view > .info {
-  margin-top: 30px;
+.turntable-detail-view > .info > img {
+  width: 320px;
+  display: block;
+  margin: auto;
+}
+.turntable-detail-view > .info > .volume {
+  font-size: 20px;
+  text-align: center;
 }
 .turntable-detail-view > .info > .video {
+  margin-top: 50px;
   width: 100%;
 }
 .turntable-detail-view > .info > p {
@@ -3720,6 +3755,23 @@ a {
 .turntable-detail-view > section > .mate-list {
   margin-top: 30px;
   height: 300px;
+}
+.turntable-detail-view > section > .listeners:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.turntable-detail-view > section > .listeners > .lp-token-listeners {
+  margin-bottom: 16px;
+}
+.turntable-detail-view > section > .listeners > .lp-token-listeners:first-of-type {
+  float: left;
+}
+.turntable-detail-view > section > .listeners > .lp-token-listeners:last-of-type {
+  float: right;
 }
 .update-turntable-view {
   max-width: 780px;

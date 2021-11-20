@@ -4,9 +4,8 @@ export default class Detail implements View {
     private title;
     private infoDisplay;
     private controller;
+    private mateRewardInfo;
     private listeningMateList;
-    private klayMixInfo;
-    private kspMixInfo;
     constructor(params: ViewParams);
     private loadInfo;
     private loadListeningMates;

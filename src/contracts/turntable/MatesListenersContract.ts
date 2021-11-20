@@ -24,6 +24,10 @@ class MatesListenersContract extends Contract {
         return BigNumber.from(await this.runMethod("listenerCount", turntableId));
     }
 
+    public async totalShares(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("totalShares"));
+    }
+
     public async listen(
         turntableId: BigNumberish,
         mateIds: BigNumberish[],

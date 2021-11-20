@@ -1,6 +1,9 @@
 import { DomNode, el } from "@hanul/skynode";
 import { View, ViewParams } from "skyrouter";
+import CommonUtil from "../../CommonUtil";
 import MateList from "../../component/mate/MateList";
+import Config from "../../Config";
+import MixEmitterContract from "../../contracts/mix/MixEmitterContract";
 import MateContract from "../../contracts/nft/MateContract";
 import MatesListenersContract from "../../contracts/turntable/MatesListenersContract";
 import Wallet from "../../klaytn/Wallet";
@@ -10,6 +13,7 @@ import ViewUtil from "../ViewUtil";
 export default class AddMates implements View {
 
     private container: DomNode;
+    private mateRewardInfo: DomNode;
     private myMateList: MateList;
 
     constructor(params: ViewParams) {
@@ -21,6 +25,7 @@ export default class AddMates implements View {
                 click: () => ViewUtil.go(`/turntable/${turntableId}`),
             }),
             el("p", "해당 턴테이블에 리스너로 등록할 메이트를 선택해주시기 바랍니다."),
+            this.mateRewardInfo = el("p.mate-reward-info"),
             this.myMateList = new MateList(true, false),
             el("a.submit-button", "메이트 등록", {
                 click: async () => {
@@ -35,6 +40,12 @@ export default class AddMates implements View {
     }
 
     private async load(turntableId: number) {
+
+        const poolInfo = await MixEmitterContract.poolInfo(Config.isTestnet === true ? 4 : 9);
+        const tokenPerDay = poolInfo.allocPoint / 10000 * 86400 * 0.7;
+        const totalShares = (await MatesListenersContract.totalShares()).toNumber();
+        this.mateRewardInfo.empty().appendText(`메이트 1개당 하루에 받는 MIX 수량: ${CommonUtil.numberWithCommas(String(tokenPerDay / totalShares))}`);
+
         const walletAddress = await Wallet.loadAddress();
         if (walletAddress !== undefined) {
             const mateBalance = (await MateContract.balanceOf(walletAddress)).toNumber();
@@ -47,10 +58,7 @@ export default class AddMates implements View {
                 const promise = async (index: number) => {
                     const mateId = (await MateContract.tokenOfOwnerByIndex(walletAddress, index)).toNumber();
                     mates.push(mateId);
-                    if (
-                        await MatesListenersContract.listening(mateId) === true &&
-                        (await MatesListenersContract.listeningTo(mateId)).toNumber() === turntableId
-                    ) {
+                    if (await MatesListenersContract.listening(mateId) === true) {
                         votedMates.push(mateId);
                     }
                 };

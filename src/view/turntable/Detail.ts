@@ -3,12 +3,17 @@ import { utils } from "ethers";
 import { View, ViewParams } from "skyrouter";
 import CommonUtil from "../../CommonUtil";
 import MateList from "../../component/mate/MateList";
-import MateContract from "../../contracts/nft/MateContract";
+import LPTokenListeners from "../../component/turntable/LPTokenListeners";
+import Config from "../../Config";
+import MixEmitterContract from "../../contracts/mix/MixEmitterContract";
+import KlayMIXListenersContract from "../../contracts/turntable/KlayMIXListenersContract";
+import KSPMIXListenersContract from "../../contracts/turntable/KSPMIXListenersContract";
 import MatesListenersContract from "../../contracts/turntable/MatesListenersContract";
 import TurntableExtrasContract from "../../contracts/turntable/TurntableExtrasContract";
 import TurntablesContract from "../../contracts/turntable/TurntablesContract";
 import Klaytn from "../../klaytn/Klaytn";
 import Wallet from "../../klaytn/Wallet";
+import turntables from "../../turntables.json";
 import Prompt from "../../ui/dialogue/Prompt";
 import Layout from "../Layout";
 import ViewUtil from "../ViewUtil";
@@ -19,9 +24,8 @@ export default class Detail implements View {
     private title: DomNode;
     private infoDisplay: DomNode;
     private controller: DomNode;
+    private mateRewardInfo: DomNode;
     private listeningMateList: MateList;
-    private klayMixInfo: DomNode;
-    private kspMixInfo: DomNode;
 
     constructor(params: ViewParams) {
         const turntableId = parseInt(params.id, 10);
@@ -35,6 +39,7 @@ export default class Detail implements View {
             this.controller = el(".controller"),
             el("section",
                 el("h2", "리스닝 메이트"),
+                this.mateRewardInfo = el(".mate-reward-info"),
                 this.listeningMateList = new MateList(false, false),
             ),
             el(".controller",
@@ -47,13 +52,19 @@ export default class Detail implements View {
             ),
             el("section",
                 el("h2", "리스닝 LP Token"),
-                el(".listening-lp",
-                    el("h3", "Klay-MIX Listeners"),
-                    this.klayMixInfo = el(".info"),
-                ),
-                el(".listening-lp",
-                    el("h3", "KSP-MIX Listeners"),
-                    this.kspMixInfo = el(".info"),
+                el(".listeners",
+                    new LPTokenListeners(
+                        "Klay-MIX Listeners",
+                        KlayMIXListenersContract,
+                        turntableId,
+                        Config.isTestnet === true ? 5 : 10,
+                    ),
+                    new LPTokenListeners(
+                        "KSP-MIX Listeners",
+                        KSPMIXListenersContract,
+                        turntableId,
+                        Config.isTestnet === true ? 6 : 11,
+                    ),
                 ),
             ),
         ));
@@ -78,7 +89,12 @@ export default class Detail implements View {
             this.title.empty().appendText(data.name);
         }
 
-        this.infoDisplay.empty();
+        const turntableType = turntables[turntable.typeId];
+        this.infoDisplay.empty().append(
+            el("img", { src: turntableType.img }),
+            el(".volume", `Volume: ${CommonUtil.numberWithCommas(turntableType.volume)}`),
+        );
+
         if (data.bgm !== undefined) {
             const v = data.bgm.indexOf("?v=");
             this.infoDisplay.append(
@@ -129,6 +145,12 @@ export default class Detail implements View {
     }
 
     private async loadListeningMates(turntableId: number) {
+
+        const poolInfo = await MixEmitterContract.poolInfo(Config.isTestnet === true ? 4 : 9);
+        const tokenPerDay = poolInfo.allocPoint / 10000 * 86400 * 0.7;
+        const totalShares = (await MatesListenersContract.totalShares()).toNumber();
+        this.mateRewardInfo.empty().appendText(`메이트 1개당 하루에 받는 MIX 수량: ${CommonUtil.numberWithCommas(String(tokenPerDay / totalShares))}`);
+
         const mateBalance = (await MatesListenersContract.listenerCount(turntableId)).toNumber();
 
         const mates: number[] = [];

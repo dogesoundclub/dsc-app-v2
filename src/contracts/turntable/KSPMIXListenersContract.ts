@@ -1,15 +1,15 @@
-import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
 import Config from "../../Config";
-import Contract from "../Contract";
+import KSPMIXLPTokenContract from "../mix/KSPMIXLPTokenContract";
+import TurntableKIP7ListenersContract from "./TurntableKIP7ListenersContract";
 
-class KSPMIXListenersContract extends Contract {
+class KSPMIXListenersContract extends TurntableKIP7ListenersContract {
 
     constructor() {
-        super(Config.contracts.KSPMIXListeners, require("./TurntableKIP7ListenersContractABI.json"));
+        super(Config.contracts.KSPMIXListeners);
     }
 
-    public async shares(turntableId: BigNumberish, owner: string): Promise<BigNumber> {
-        return BigNumber.from(await this.runMethod("shares", turntableId, owner));
+    public get lpToken() {
+        return KSPMIXLPTokenContract;
     }
 }
 

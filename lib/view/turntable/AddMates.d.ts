@@ -1,6 +1,7 @@
 import { View, ViewParams } from "skyrouter";
 export default class AddMates implements View {
     private container;
+    private mateRewardInfo;
     private myMateList;
     constructor(params: ViewParams);
     private load;

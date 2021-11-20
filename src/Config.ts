@@ -32,6 +32,9 @@ export default {
         KlayMIXListeners: "0x781A91157612DF86959e400bCb27FdfeECCe081D",
         KSPMIXListeners: "0x333Ba1e532c95C6731aa305505B24CAD9c13F013",
 
+        KlayMIXLPToken: "0xAe0a2e1DA2469FFdf8308160eE64Fe3656d9D9D0",
+        KSPMIXLPToken: "0xAe0a2e1DA2469FFdf8308160eE64Fe3656d9D9D0",
+
         // partners
         CasesByKate: "",
         CasesByKatePool: "",
@@ -62,6 +65,9 @@ export default {
         MatesListeners: "",
         KlayMIXListeners: "",
         KSPMIXListeners: "",
+
+        KlayMIXLPToken: "0xa50cec0216c1cee6f90c7d5359444d46315279bd",
+        KSPMIXLPToken: "0xade6684a81a205e4bfc544b51cca448c458c0961",
 
         // partners
         CasesByKate: "0x0af3f3fe9e822b7a740ca45ce170340b2da6f4cc",

@@ -6,6 +6,7 @@ declare class MatesListenersContract extends Contract {
     listeningTo(mateId: BigNumberish): Promise<BigNumber>;
     listeners(turntableId: BigNumberish, index: BigNumberish): Promise<BigNumber>;
     listenerCount(turntableId: BigNumberish): Promise<BigNumber>;
+    totalShares(): Promise<BigNumber>;
     listen(turntableId: BigNumberish, mateIds: BigNumberish[]): Promise<void>;
     unlisten(turntableId: BigNumberish, mateIds: BigNumberish[]): Promise<void>;
 }

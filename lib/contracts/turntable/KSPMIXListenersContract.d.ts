@@ -1,8 +1,9 @@
-import { BigNumber, BigNumberish } from "@ethersproject/bignumber";
-import Contract from "../Contract";
-declare class KSPMIXListenersContract extends Contract {
+import { BigNumberish } from "@ethersproject/bignumber";
+import TurntableKIP7ListenersContract from "./TurntableKIP7ListenersContract";
+declare class KSPMIXListenersContract extends TurntableKIP7ListenersContract {
     constructor();
-    shares(turntableId: BigNumberish, owner: string): Promise<BigNumber>;
+    get lpTokenAddress(): string;
+    listen(turntableId: BigNumberish, amount: BigNumberish): Promise<void>;
 }
 declare const _default: KSPMIXListenersContract;
 export default _default;

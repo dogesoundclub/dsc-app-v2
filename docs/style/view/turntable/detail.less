@@ -23,10 +23,20 @@
     }
 
     >.info {
-        margin-top: 30px;
+        >img {
+            width  : 320px;
+            display: block;
+            margin : auto;
+        }
+
+        >.volume {
+            font-size : 20px;
+            text-align: center;
+        }
 
         >.video {
-            width: 100%;
+            margin-top: 50px;
+            width     : 100%;
         }
 
         >p {
@@ -78,6 +88,22 @@
         >.mate-list {
             margin-top: 30px;
             height    : 300px;
+        }
+
+        >.listeners {
+            .float-wrapper();
+
+            >.lp-token-listeners {
+                margin-bottom: 16px;
+            }
+
+            >.lp-token-listeners:first-of-type {
+                float: left;
+            }
+
+            >.lp-token-listeners:last-of-type {
+                float: right;
+            }
         }
     }
 }
