@@ -1,8 +1,6 @@
 import { DomNode, el } from "@hanul/skynode";
 import { View, ViewParams } from "skyrouter";
 import BuyTurntableItem from "../../component/turntable/BuyTurntableItem";
-import TurntablesContract from "../../contracts/turntable/TurntablesContract";
-import turntables from "../../turntables.json";
 import Layout from "../Layout";
 import ViewUtil from "../ViewUtil";
 
@@ -25,7 +23,7 @@ export default class BuyTurntable implements View {
                 new BuyTurntableItem(1),
                 new BuyTurntableItem(2),
                 new BuyTurntableItem(3),
-                new BuyTurntableItem(4),
+                new BuyTurntableItem(5),
             ),
         ));
     }

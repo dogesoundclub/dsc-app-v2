@@ -27,6 +27,13 @@
     "price": 7000,
     "lifetime": 2592000
 }, {
+    "name": "None",
+    "color": "#666666",
+    "img": "/images/components/turntables/normal.png",
+    "volume": 10000,
+    "price": 12000,
+    "lifetime": 2592000
+}, {
     "name": "Supremacy Grade",
     "color": "#e6500e",
     "img": "/images/components/turntables/supremacy.png",
