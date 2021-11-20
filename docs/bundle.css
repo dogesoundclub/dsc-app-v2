@@ -3752,9 +3752,23 @@ a {
     font-size: 20px;
   }
 }
+.turntable-detail-view > section > .warning {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  border: 1px solid #BFC500;
+  color: #BFC500;
+  padding: 15px;
+  word-break: break-all;
+  text-align: left;
+  font-size: 14px;
+}
 .turntable-detail-view > section > .mate-list {
   margin-top: 30px;
   height: 300px;
+}
+.turntable-detail-view > section > .listeners {
+  margin-top: 30px;
 }
 .turntable-detail-view > section > .listeners:after {
   content: " ";
