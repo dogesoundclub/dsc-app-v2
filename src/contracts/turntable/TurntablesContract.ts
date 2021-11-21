@@ -104,6 +104,10 @@ class TurntablesContract extends Contract {
         }
     }
 
+    public async claim(turntableIds: BigNumberish[]) {
+        await this.runWalletMethod("claim", turntableIds);
+    }
+
     public async destroy(turntableId: BigNumberish) {
         await this.runWalletMethod("destroy", turntableId);
     }

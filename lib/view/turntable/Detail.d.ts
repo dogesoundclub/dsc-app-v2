@@ -4,6 +4,7 @@ export default class Detail implements View {
     private title;
     private infoDisplay;
     private controller;
+    private controller2;
     private mateRewardInfo;
     private listeningMateList;
     constructor(params: ViewParams);

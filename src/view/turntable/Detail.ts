@@ -24,6 +24,7 @@ export default class Detail implements View {
     private title: DomNode;
     private infoDisplay: DomNode;
     private controller: DomNode;
+    private controller2: DomNode;
     private mateRewardInfo: DomNode;
     private listeningMateList: MateList;
 
@@ -37,6 +38,7 @@ export default class Detail implements View {
             }),
             this.infoDisplay = el(".info"),
             this.controller = el(".controller"),
+            this.controller2 = el(".controller2"),
             el("section",
                 el("h2", "리스닝 메이트"),
                 this.mateRewardInfo = el(".mate-reward-info"),
@@ -142,6 +144,7 @@ export default class Detail implements View {
             );
 
             if (turntable.owner === walletAddress) {
+
                 this.controller.empty().append(
                     el("a.charge-button", "충전하기", {
                         click: () => {
@@ -153,6 +156,10 @@ export default class Detail implements View {
                         },
                     }),
                     el("a.update-button", "수정하기", { click: () => ViewUtil.go(`/turntable/${turntableId}/update`) }),
+                );
+
+                this.controller2.empty().append(
+                    el("a.claim-button", "MIX 수령", { click: () => TurntablesContract.claim([turntableId]) }),
                 );
             }
         }

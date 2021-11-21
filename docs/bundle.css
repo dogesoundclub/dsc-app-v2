@@ -3776,6 +3776,18 @@ a {
   font-family: DungGeunMo;
   font-weight: bold;
 }
+.turntable-detail-view > .controller2 > .claim-button {
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #000000;
+  background-color: #FBFF72;
+  box-shadow: 7.5px 7.5px 0px 0px #BFC500;
+  text-align: center;
+  padding: 12px 24px;
+  font-family: DungGeunMo;
+  font-weight: bold;
+}
 .turntable-detail-view > section {
   margin-top: 60px;
 }
