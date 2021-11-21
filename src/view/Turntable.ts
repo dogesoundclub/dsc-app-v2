@@ -1,6 +1,7 @@
 import { DomNode, el } from "@hanul/skynode";
 import { constants } from "ethers";
 import { View, ViewParams } from "skyrouter";
+import CommonUtil from "../CommonUtil";
 import TurntableItem from "../component/turntable/TurntableItem";
 import MateContract from "../contracts/nft/MateContract";
 import KlayMIXListenersContract from "../contracts/turntable/KlayMIXListenersContract";
@@ -17,6 +18,7 @@ export default class Turntable implements View {
     private container: DomNode;
     private myTurntableList: DomNode;
     private listeningTurntableList: DomNode;
+    private totalVolumeDisplay: DomNode;
     private totalTurntableList: DomNode;
 
     constructor() {
@@ -34,15 +36,25 @@ export default class Turntable implements View {
                 this.listeningTurntableList = el(".turntable-list"),
             ),
             el("section",
-                el("h2", "전체 턴테이블"),
+                el("header",
+                    el("h2", "전체 턴테이블"),
+                    this.totalVolumeDisplay = el(".total-volume"),
+                ),
                 this.totalTurntableList = el(".turntable-list"),
             ),
         ));
 
+        this.loadTotalVolume();
         this.loadTurntables();
     }
 
+    private async loadTotalVolume() {
+        const totalVolume = await TurntablesContract.totalVolume();
+        this.totalVolumeDisplay.empty().appendText(`총 볼륨: ${CommonUtil.numberWithCommas(totalVolume.toString())}`);
+    }
+
     private async loadTurntables() {
+
         const count = (await TurntablesContract.turntableLength()).toNumber();
         const walletAddress = await Wallet.loadAddress();
         const currentBlock = await Klaytn.loadBlockNumber();

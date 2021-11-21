@@ -9,7 +9,7 @@ import ViewUtil from "../../view/ViewUtil";
 
 export default class BuyTurntableItem extends DomNode {
 
-    //private apr: DomNode;
+    private apr: DomNode;
 
     constructor(private typeId: number) {
         super(".buy-turntable-item");
@@ -17,10 +17,10 @@ export default class BuyTurntableItem extends DomNode {
         this.append(
             el("h4", turntable.name, { style: { color: turntable.color } }),
             el("img", { src: turntable.img }),
-            el(".volume", `Volume: ${CommonUtil.numberWithCommas(turntable.volume)}`),
-            el(".price", `Price: ${CommonUtil.numberWithCommas(turntable.price)} MIX`),
-            el(".lifetime", `Lifetime: ${CommonUtil.numberWithCommas(turntable.lifetime)} Blocks`),
-            //this.apr = el(".apr", `APR: Loading...`),
+            el(".volume", `Volume: ${CommonUtil.numberWithCommas(String(turntable.volume))}`),
+            el(".price", `Price: ${CommonUtil.numberWithCommas(String(turntable.price))} MIX`),
+            el(".lifetime", `Lifetime: ${CommonUtil.numberWithCommas(String(turntable.lifetime))} Blocks`),
+            this.apr = el(".apr", `APR: Loading...`),
             el("a", "구매하기", {
                 click: async () => {
                     await TurntablesContract.buy(typeId);
@@ -36,18 +36,17 @@ export default class BuyTurntableItem extends DomNode {
 
         const turntable = turntables[this.typeId];
         const turntablePrice = utils.parseEther(String(turntable.price));
-        const batteryPrice = utils.parseEther(String(turntable.price)).div(2);
+        const batteryPrice = utils.parseEther(String(turntable.price)).div(5);
 
         const annualCost = turntablePrice.add(batteryPrice.mul(utils.parseEther((blocksPerYear / turntable.lifetime - 1).toFixed(18))).div(constants.WeiPerEther));
 
         const poolInfo = await MixEmitterContract.poolInfo(Config.isTestnet === true ? 3 : 8);
-        console.log(poolInfo);
         const tokenPerBlock = poolInfo.allocPoint / 10000;
 
         const totalVolumne = await TurntablesContract.totalVolume();
         const totalRewardPerYear = utils.parseEther(String(tokenPerBlock * blocksPerYear));
 
         const apr = totalRewardPerYear.mul(10000).mul(turntable.volume).div(totalVolumne).div(annualCost).toNumber() / 100;
-        //this.apr.empty().appendText(`APR: ${apr}%`);
+        this.apr.empty().appendText(`APR: ${apr}%`);
     }
 }

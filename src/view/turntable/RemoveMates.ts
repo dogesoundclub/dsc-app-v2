@@ -1,4 +1,5 @@
 import { DomNode, el } from "@hanul/skynode";
+import msg from "msg.js";
 import { View, ViewParams } from "skyrouter";
 import MateList from "../../component/mate/MateList";
 import MateContract from "../../contracts/nft/MateContract";
@@ -10,7 +11,8 @@ import ViewUtil from "../ViewUtil";
 export default class RemoveMates implements View {
 
     private container: DomNode;
-    private myMateList: MateList;
+    private selectedMates: DomNode;
+    private mateList: MateList;
 
     constructor(params: ViewParams) {
         const turntableId = parseInt(params.id, 10);
@@ -21,17 +23,28 @@ export default class RemoveMates implements View {
                 click: () => ViewUtil.go(`/turntable/${turntableId}`),
             }),
             el("p", "해당 턴테이블에서 더 이상 리스너로 등록되지 않을 메이트를 선택해주시기 바랍니다."),
-            this.myMateList = new MateList(true, false),
+            this.selectedMates = el(".selected-mates", msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(0))),
+            el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_MAX_SELECT_BUTTON")}`, {
+                click: () => this.mateList.maxSelect(),
+            })),
+            el(".button-container", el("a", `▶ ${msg("DOGESOUNDS_DESELECT_BUTTON")}`, {
+                click: () => this.mateList.deselect(),
+            })),
+            this.mateList = new MateList(true, false),
             el("a.submit-button", "메이트 등록 취소", {
                 click: async () => {
                     await MatesListenersContract.unlisten(
-                        turntableId, this.myMateList.selectedMateIds,
+                        turntableId, this.mateList.selectedMateIds,
                     );
                     setTimeout(() => ViewUtil.go(`/turntable/${turntableId}`), 2000);
                 },
             }),
         ));
+
         this.load(turntableId);
+        this.mateList.on("selectMate", () => {
+            this.selectedMates.empty().appendText(msg("DOGESOUNDS_SELECTED_MATES_COUNT").replace(/{count}/, String(this.mateList.selectedMateIds.length)));
+        });
     }
 
     private async load(turntableId: number) {
@@ -58,7 +71,7 @@ export default class RemoveMates implements View {
             }
             await Promise.all(promises);
 
-            this.myMateList.load(mates, votedMates);
+            this.mateList.load(mates, votedMates);
         }
     }
 

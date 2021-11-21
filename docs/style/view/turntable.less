@@ -39,7 +39,36 @@
             }
         }
 
+        >header {
+            display    : flex;
+            align-items: center;
+
+            >h2 {
+                font-size    : 26px;
+                color        : #BFC500;
+                margin-bottom: 16px;
+                line-height  : 1.5em;
+                flex-grow    : 1;
+
+                @media @phone {
+                    font-size: 20px;
+                }
+            }
+
+            >.total-volume {
+                font-size    : 20px;
+                color        : #BFC500;
+                margin-bottom: 16px;
+                line-height  : 1.5em;
+
+                @media @phone {
+                    font-size: 16px;
+                }
+            }
+        }
+
         >.turntable-list {
+            margin-top: 14px;
             .float-wrapper();
 
             >.turntable-item {
