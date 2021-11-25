@@ -7,9 +7,10 @@ import SkyUtil from "skyutil";
 import superagent from "superagent";
 import CommonUtil from "../CommonUtil";
 import Loading from "../component/loading/Loading";
-import KlayswapKlayMixContract from "../contracts/mix/KlayswapKlayMixContract";
+import KlayswapContract from "../contracts/mix/KlayswapContract";
 import MixEmitterContract from "../contracts/mix/MixEmitterContract";
 import pools from "../pools.json";
+import Prompt from "../ui/dialogue/Prompt";
 import Layout from "./Layout";
 
 export default class Mix implements View {
@@ -28,6 +29,12 @@ export default class Mix implements View {
                 this.priceDisplay = el("span", new Loading()),
                 el("span", "원"),
             ),
+            el("a.buy-mix-button", "MIX 구매하기", {
+                click: () => new Prompt("몇 MIX를 구매하시겠습니까?", "믹스 구매", async (amount) => {
+                    const mix = utils.parseEther(amount);
+                    await KlayswapContract.buyMix(mix);
+                }),
+            }),
             el("p", "MIX는 NFT 프로젝트들의 허브를 위한 토큰입니다. DSC 사이트의 전 범위에서 사용되며, Klayswap에서 유동성 공급 및 거래에 사용될 예정입니다. 또한 MIX를 활용한 기능을 추가하기로 약속한 파트너 프로젝트의 서비스에서도 사용될 예정입니다."),
             el("a", "MIX 백서 보기", { href: "https://medium.com/dogesoundclub/dsc-mix-nft-%ED%97%88%EB%B8%8C%EB%A5%BC-%EC%9C%84%ED%95%9C-%ED%86%A0%ED%81%B0-3299dd3a8d1d", target: "_blank" }),
             el("section",

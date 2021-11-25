@@ -26,6 +26,8 @@ declare const _default: {
         KSPMIXListeners: string;
         KlayMIXLPToken: string;
         KSPMIXLPToken: string;
+        Klayswap: string;
+        MixPriceEstimator: string;
         CasesByKate: string;
         CasesByKatePool: string;
         AnimalsPunksV2: string;

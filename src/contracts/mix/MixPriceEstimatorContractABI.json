@@ -1,0 +1,15 @@
+[{
+    "constant": true,
+    "inputs": [{
+        "name": "amountIn",
+        "type": "uint256"
+    }],
+    "name": "estimatePos",
+    "outputs": [{
+        "name": "amountOut",
+        "type": "uint256"
+    }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+}]

@@ -35,6 +35,9 @@ export default {
         KlayMIXLPToken: "0xAe0a2e1DA2469FFdf8308160eE64Fe3656d9D9D0",
         KSPMIXLPToken: "0xAe0a2e1DA2469FFdf8308160eE64Fe3656d9D9D0",
 
+        Klayswap: "",
+        MixPriceEstimator: "",
+
         // partners
         CasesByKate: "",
         CasesByKatePool: "",
@@ -68,6 +71,9 @@ export default {
 
         KlayMIXLPToken: "0xa50cec0216c1cee6f90c7d5359444d46315279bd",
         KSPMIXLPToken: "0xade6684a81a205e4bfc544b51cca448c458c0961",
+
+        Klayswap: "0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654",
+        MixPriceEstimator: "0x637ce9D4B6cb790e81110f1a5D9869E32b8Fbde2",
 
         // partners
         CasesByKate: "0x0af3f3fe9e822b7a740ca45ce170340b2da6f4cc",
