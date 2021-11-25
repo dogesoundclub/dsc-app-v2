@@ -37,14 +37,15 @@ export default class BuyTurntableItem extends DomNode {
         const turntable = turntables[this.typeId];
         const turntablePrice = utils.parseEther(String(turntable.price));
         const batteryPrice = utils.parseEther(String(turntable.price)).div(5);
+        const annualBatteryCost = batteryPrice.mul(utils.parseEther((blocksPerYear / turntable.lifetime - 1).toFixed(18))).div(constants.WeiPerEther);
 
-        const annualCost = turntablePrice.add(batteryPrice.mul(utils.parseEther((blocksPerYear / turntable.lifetime - 1).toFixed(18))).div(constants.WeiPerEther));
+        const annualCost = turntablePrice.add(annualBatteryCost);
 
         const poolInfo = await MixEmitterContract.poolInfo(Config.isTestnet === true ? 3 : 8);
         const tokenPerBlock = poolInfo.allocPoint / 10000;
 
         const totalVolumne = await TurntablesContract.totalVolume();
-        const totalRewardPerYear = utils.parseEther(String(tokenPerBlock * blocksPerYear));
+        const totalRewardPerYear = utils.parseEther(String(tokenPerBlock * blocksPerYear)).sub((turntablePrice.mul(2).div(10)).add(annualBatteryCost));
 
         const apr = totalRewardPerYear.mul(10000).mul(turntable.volume).div(totalVolumne).div(annualCost).toNumber() / 100;
         this.apr.empty().appendText(`APR: ${apr}%`);
