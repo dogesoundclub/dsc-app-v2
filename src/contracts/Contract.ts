@@ -1,4 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
+import { utils } from "ethers";
 import EventContainer from "eventcontainer";
 import Config from "../Config";
 import ExtWallet from "../klaytn/Kaikas";
@@ -66,7 +67,7 @@ export default abstract class Contract extends EventContainer {
             const contract = await this.loadExtWalletContract();
             await contract?.methods[methodName](...params).send({ from, gas: 1500000, value });
         } else if (Klip.connected === true) {
-            await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params, value.toString());
+            await Klip.runContractMethod(this.address, this.findMethodABI(methodName), params, utils.formatEther(value));
         } else {
             return new Promise<void>((resolve) => new ConnectWalletPopup(resolve));
         }
