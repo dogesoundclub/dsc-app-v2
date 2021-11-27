@@ -57,13 +57,15 @@ export default class MiningMates implements View {
             const result = await superagent.get("https://api.dogesound.club/mate/names");
             const mateNames = result.body;
 
-            const balance = (await MateContract.balanceOf(walletAddress)).toNumber();
+            const mateBalance = (await MatesListenersContract.listenerCount(turntableId)).toNumber();
 
             const promises: Promise<void>[] = [];
-            for (let i = 0; i < balance; i += 1) {
+            for (let i = 0; i < mateBalance; i += 1) {
                 const promise = async (index: number) => {
-                    const mateId = await MateContract.tokenOfOwnerByIndex(walletAddress, index);
-                    this.mates.push(mateId.toNumber());
+                    const mateId = (await MatesListenersContract.listeners(turntableId, index)).toNumber();
+                    if (await MateContract.ownerOf(mateId) === walletAddress) {
+                        this.mates.push(mateId);
+                    }
                 };
                 promises.push(promise(i));
             }
