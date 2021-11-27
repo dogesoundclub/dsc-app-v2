@@ -36,7 +36,7 @@ export default class LPTokenListeners extends DomNode {
         const totalShares = await this.contract.totalShares();
         const totalMixInLP = await MixContract.balanceOf(this.contract.lpToken.address);
         const lpTotalSupply = await this.contract.lpToken.getTotalSupply();
-        const stakingTokenPrice = totalMixInLP.mul(mixPrice).div(lpTotalSupply);
+        const stakingTokenPrice = totalMixInLP.mul(mixPrice).mul(2).div(lpTotalSupply);
 
         const totalRewardPricePerYear = mixPrice.mul(Math.round(tokenPerBlock * blocksPerYear));
         const totalStakingTokenInPool = totalShares.mul(stakingTokenPrice).div(utils.parseEther("1"));
