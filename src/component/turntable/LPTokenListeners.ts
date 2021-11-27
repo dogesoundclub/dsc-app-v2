@@ -39,13 +39,13 @@ export default class LPTokenListeners extends DomNode {
         const stakingTokenPrice = totalMixInLP.mul(mixPrice).div(lpTotalSupply);
 
         const totalRewardPricePerYear = mixPrice.mul(Math.round(tokenPerBlock * blocksPerYear));
-        const totalStakingTokenInPool = totalShares.mul(stakingTokenPrice);
+        const totalStakingTokenInPool = totalShares.mul(stakingTokenPrice).div(utils.parseEther("1"));
 
         const apr = totalStakingTokenInPool.eq(0) === true ? 0 : totalRewardPricePerYear.mul(10000).div(totalStakingTokenInPool).toNumber() / 100;
 
         this.append(
-            el(".apr"),
             el(".total-lp", `총 LP: ${CommonUtil.numberWithCommas(utils.formatEther(totalShares))}`),
+            el(".apr", `APR: ${apr}%`),
         );
 
         const walletAddress = await Wallet.loadAddress();
