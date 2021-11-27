@@ -27,7 +27,7 @@ export default class LPTokenListeners extends DomNode {
     private async load() {
 
         const poolInfo = await MixEmitterContract.poolInfo(this.poolId);
-        const tokenPerBlock = poolInfo.allocPoint / 10000;
+        const tokenPerBlock = poolInfo.allocPoint / 10000 * 0.7;
         const blocksPerYear = 365 * 24 * 60 * 60;
 
         const result = await superagent.get("https://api.dogesound.club/mix/price");
