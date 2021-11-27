@@ -100,6 +100,34 @@
             }
         }
 
+        >.mate-reward-info {
+            display: flex;
+
+            @media @phone {
+                display: block;
+            }
+
+            >span {
+                flex-grow: 1;
+            }
+
+            >a {
+                font-size       : 20px;
+                color           : #000000;
+                background-color: #FBFF72;
+                box-shadow      : 7.5px 7.5px 0px 0px #BFC500;
+                text-align      : center;
+                padding         : 12px 24px;
+                font-family     : DungGeunMo;
+                font-weight     : bold;
+
+                @media @phone {
+                    margin-top: 16px;
+                    display   : block;
+                }
+            }
+        }
+
         >.warning {
             width     : 80%;
             margin    : auto;

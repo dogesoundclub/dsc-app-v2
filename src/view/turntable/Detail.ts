@@ -170,8 +170,10 @@ export default class Detail implements View {
         const poolInfo = await MixEmitterContract.poolInfo(Config.isTestnet === true ? 4 : 9);
         const tokenPerDay = poolInfo.allocPoint / 10000 * 86400 * 0.7;
         const totalShares = (await MatesListenersContract.totalShares()).toNumber();
-        console.log(totalShares);
-        this.mateRewardInfo.empty().appendText(`메이트 1개당 하루에 받는 MIX 수량: ${CommonUtil.numberWithCommas(String(tokenPerDay / totalShares))}`);
+        this.mateRewardInfo.empty().append(
+            el("span", `메이트 1개당 하루에 받는 MIX 수량: ${CommonUtil.numberWithCommas(String(tokenPerDay / totalShares))}`),
+            el("a", "MIX 수령받기", { click: () => ViewUtil.go(`/turntable/${turntableId}/miningmates`) }),
+        );
 
         const mateBalance = (await MatesListenersContract.listenerCount(turntableId)).toNumber();
 

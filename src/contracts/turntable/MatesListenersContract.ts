@@ -28,6 +28,10 @@ class MatesListenersContract extends Contract {
         return BigNumber.from(await this.runMethod("totalShares"));
     }
 
+    public async claimableOf(turntableId: BigNumberish, mateId: BigNumberish): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("claimableOf", turntableId, mateId));
+    }
+
     public async listen(
         turntableId: BigNumberish,
         mateIds: BigNumberish[],
@@ -44,6 +48,23 @@ class MatesListenersContract extends Contract {
         await this.runWalletMethodWithLargeGas("unlisten",
             turntableId, mateIds,
         );
+    }
+
+    public async claim(
+        turntableId: BigNumberish,
+        mateIds: BigNumberish[],
+    ): Promise<void> {
+        if (mateIds.length <= 25) {
+            await this.runWalletMethod("claim", turntableId, mateIds);
+        } else {
+            for (let i = 0; i < mateIds.length; i += 100) {
+                let limit = i + 100;
+                if (limit > mateIds.length) {
+                    limit = mateIds.length;
+                }
+                await this.runWalletMethodWithLargeGas("claim", turntableId, mateIds.slice(i, limit));
+            }
+        }
     }
 }
 

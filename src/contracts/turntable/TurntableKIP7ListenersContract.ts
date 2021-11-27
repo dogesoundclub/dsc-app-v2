@@ -20,6 +20,10 @@ export default abstract class TurntableKIP7ListenersContract extends Contract {
         return BigNumber.from(await this.runMethod("shares", turntableId, owner));
     }
 
+    public async claimableOf(turntableId: BigNumberish, owner: string): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("claimableOf", turntableId, owner));
+    }
+
     public async listen(turntableId: BigNumberish, amount: BigNumberish): Promise<void> {
         const owner = await Wallet.loadAddress();
         if (owner !== undefined) {
@@ -45,5 +49,9 @@ export default abstract class TurntableKIP7ListenersContract extends Contract {
 
     public async unlisten(turntableId: BigNumberish, amount: BigNumberish): Promise<void> {
         await this.runWalletMethod("unlisten", turntableId, amount);
+    }
+
+    public async claim(turntableId: BigNumberish): Promise<void> {
+        await this.runWalletMethod("claim", [turntableId]);
     }
 }

@@ -52,9 +52,11 @@ export default class LPTokenListeners extends DomNode {
         if (walletAddress !== undefined) {
             const share = await this.contract.shares(this.turntableId, walletAddress);
             const lpBalance = await this.contract.lpToken.balanceOf(walletAddress);
+            const reward = await this.contract.claimableOf(this.turntableId, walletAddress);
             this.append(
                 el(".staking-lp", `내가 넣은 LP: ${CommonUtil.numberWithCommas(utils.formatEther(share))}`),
                 el(".my-lp", `내가 가진 LP: ${CommonUtil.numberWithCommas(utils.formatEther(lpBalance))}`),
+                el(".amount", `쌓인 MIX: ${CommonUtil.numberWithCommas(utils.formatEther(reward))}`),
                 el("a", "LP 토큰 리스너 등록", {
                     click: () => {
                         new Prompt("얼마만큼의 LP 토큰을 등록하시겠습니까?", "등록하기", async (amount) => {
@@ -71,6 +73,12 @@ export default class LPTokenListeners extends DomNode {
                             await this.contract.unlisten(this.turntableId, lp);
                             ViewUtil.waitTransactionAndRefresh();
                         });
+                    },
+                }),
+                el("a", "MIX 받기", {
+                    click: async () => {
+                        await this.contract.claim(this.turntableId);
+                        ViewUtil.waitTransactionAndRefresh();
                     },
                 }),
             );

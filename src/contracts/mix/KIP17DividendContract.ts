@@ -14,11 +14,14 @@ export default abstract class KIP17DividendContract extends Contract {
     public async claim(ids: BigNumberish[]) {
         if (ids.length <= 50) {
             await this.runWalletMethod("claim", ids);
-        } else if (ids.length <= 500) {
-            await this.runWalletMethodWithLargeGas("claim", ids);
         } else {
-            await this.runWalletMethodWithLargeGas("claim", ids.slice(0, 500));
-            await this.runWalletMethodWithLargeGas("claim", ids.slice(500));
+            for (let i = 0; i < ids.length; i += 500) {
+                let limit = i + 500;
+                if (limit > ids.length) {
+                    limit = ids.length;
+                }
+                await this.runWalletMethodWithLargeGas("claim", ids.slice(i, limit));
+            }
         }
     }
 }
