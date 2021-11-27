@@ -4,6 +4,7 @@ import { View, ViewParams } from "skyrouter";
 import AnimalsPunksV2Tab from "../../component/mix/nftmining/ap2/AnimalsPunksV2Tab";
 import CasesByKateTab from "../../component/mix/nftmining/cbk/CasesByKateTab";
 import MatesTab from "../../component/mix/nftmining/mates/MatesTab";
+import PixelCatTab from "../../component/mix/nftmining/pixelcat/PixelCatTab";
 import Layout from "../Layout";
 
 export default class NFTMining implements View {
@@ -31,6 +32,11 @@ export default class NFTMining implements View {
                 el("a", "Animals Punks V2", {
                     click: () => {
                         this.tabContainer.empty().append(new AnimalsPunksV2Tab());
+                    },
+                }),
+                el("a", "Pixel Cat", {
+                    click: () => {
+                        this.tabContainer.empty().append(new PixelCatTab());
                     },
                 }),
             ),

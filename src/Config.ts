@@ -43,6 +43,8 @@ export default {
         CasesByKatePool: "",
         AnimalsPunksV2: "",
         AnimalsPunksV2Pool: "",
+        PixelCat: "",
+        PixelCatPool: "",
     } : {
         // Mainnet
         Mate: "0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae",
@@ -80,5 +82,7 @@ export default {
         CasesByKatePool: "0xAF7ca190179d54860484f0A3263e0B7E8B13b9C7",
         AnimalsPunksV2: "0x590744cb8cf1a698d7db509b52bf209e3cccb8e0",
         AnimalsPunksV2Pool: "0xF1A72599E9c57BfE4B62A09052e14b67B54e3037",
+        PixelCat: "0xCE8905B85119928E6c828E5CB4E2a9fd2e128bf9",
+        PixelCatPool: "0x4eb6baE0dcf63f52c951ABBCa292F5293C757F93",
     },
 };

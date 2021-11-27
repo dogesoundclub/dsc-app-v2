@@ -32,6 +32,8 @@ declare const _default: {
         CasesByKatePool: string;
         AnimalsPunksV2: string;
         AnimalsPunksV2Pool: string;
+        PixelCat: string;
+        PixelCatPool: string;
     };
 };
 export default _default;

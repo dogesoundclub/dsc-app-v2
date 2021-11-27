@@ -3,13 +3,15 @@ import { BigNumber, constants, utils } from "ethers";
 import CommonUtil from "../../../../CommonUtil";
 import AnimalsPunksV2PoolContract from "../../../../contracts/mix/AnimalsPunksV2PoolContract";
 import MixContract from "../../../../contracts/mix/MixContract";
+import AnimalsPunksV2Contract from "../../../../contracts/nft/AnimalsPunksV2Contract";
 import Wallet from "../../../../klaytn/Wallet";
+import KlubsLoader from "../../../../KlubsLoader";
 import Confirm from "../../../../ui/dialogue/Confirm";
 import AnimalsPunksV2Tab from "./AnimalsPunksV2Tab";
-import imageUrl from "./imageUrl.json";
 
 export default class PunkItem extends DomNode {
 
+    private punk: DomNode;
     private mixAmount: DomNode;
     private claimable: BigNumber = BigNumber.from(0);
     private refreshInterval: any;
@@ -17,14 +19,9 @@ export default class PunkItem extends DomNode {
     constructor(private tab: AnimalsPunksV2Tab, private id: number) {
         super(".punk-item");
 
-        const info = imageUrl.data.V2_nfts.find((info) => {
-            return info.image_url.indexOf(`/${id}.png`) !== -1;
-        });
-
         this.append(
             el(".content",
-                el(".punk",
-                    { style: { backgroundImage: `url(${info?.image_url})` } },
+                this.punk = el(".punk",
                     el("span.id", `#${id}`),
                 ),
                 el(".info",
@@ -61,8 +58,14 @@ export default class PunkItem extends DomNode {
                 ),
             ),
         );
+        this.loadImage();
         this.load();
         this.refreshInterval = setInterval(() => this.load(), 1000);
+    }
+
+    private async loadImage() {
+        const metadata = await KlubsLoader.loadMetadata(AnimalsPunksV2Contract.address, this.id);
+        this.punk.style({ backgroundImage: `url(${metadata.image})` });
     }
 
     private async load() {
