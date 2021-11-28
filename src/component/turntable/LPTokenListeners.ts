@@ -16,6 +16,7 @@ export default class LPTokenListeners extends DomNode {
         private contract: TurntableKIP7ListenersContract,
         private turntableId: number,
         private poolId: number,
+        private lpPoolId: number,
     ) {
         super(".lp-token-listeners");
         this.append(
@@ -28,17 +29,21 @@ export default class LPTokenListeners extends DomNode {
 
         const poolInfo = await MixEmitterContract.poolInfo(this.poolId);
         const tokenPerBlock = poolInfo.allocPoint / 10000 * 0.7;
+
+        const lpPoolInfo = await MixEmitterContract.poolInfo(this.lpPoolId);
+        const lpTotalSupply = await this.contract.lpToken.getTotalSupply();
+        const totalShares = await this.contract.totalShares();
+        const tokenPerBlockToLP = lpPoolInfo.allocPoint / 10000 * 0.7 * totalShares.mul(1000000).div(lpTotalSupply).toNumber() / 1000000;
+
         const blocksPerYear = 365 * 24 * 60 * 60;
 
         const result = await superagent.get("https://api.dogesound.club/mix/price");
         const mixPrice = utils.parseEther(result.text);
 
-        const totalShares = await this.contract.totalShares();
         const totalMixInLP = await MixContract.balanceOf(this.contract.lpToken.address);
-        const lpTotalSupply = await this.contract.lpToken.getTotalSupply();
         const stakingTokenPrice = totalMixInLP.mul(mixPrice).mul(2).div(lpTotalSupply);
 
-        const totalRewardPricePerYear = mixPrice.mul(Math.round(tokenPerBlock * blocksPerYear));
+        const totalRewardPricePerYear = mixPrice.mul(Math.round((tokenPerBlock + tokenPerBlockToLP) * blocksPerYear));
         const totalStakingTokenInPool = totalShares.mul(stakingTokenPrice).div(utils.parseEther("1"));
 
         const apr = totalStakingTokenInPool.eq(0) === true ? 0 : totalRewardPricePerYear.mul(10000).div(totalStakingTokenInPool).toNumber() / 100;

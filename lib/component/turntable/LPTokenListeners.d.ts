@@ -4,7 +4,8 @@ export default class LPTokenListeners extends DomNode {
     private contract;
     private turntableId;
     private poolId;
-    constructor(name: string, contract: TurntableKIP7ListenersContract, turntableId: number, poolId: number);
+    private lpPoolId;
+    constructor(name: string, contract: TurntableKIP7ListenersContract, turntableId: number, poolId: number, lpPoolId: number);
     private load;
 }
 //# sourceMappingURL=LPTokenListeners.d.ts.map
