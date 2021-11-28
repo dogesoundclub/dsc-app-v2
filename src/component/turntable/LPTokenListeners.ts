@@ -82,10 +82,12 @@ export default class LPTokenListeners extends DomNode {
                 }),
                 el("a", "MIX 받기", {
                     click: async () => {
+                        await this.contract.unlisten(this.turntableId, 0);
                         await this.contract.claim(this.turntableId);
                         ViewUtil.waitTransactionAndRefresh();
                     },
                 }),
+                el("p.warning", "* MIX 받기에는 두번의 트랜잭션이 발생됩니다."),
             );
         }
     }
