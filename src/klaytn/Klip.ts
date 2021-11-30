@@ -25,7 +25,7 @@ class Klip extends EventContainer {
                 if (result.result !== undefined) {
                     qrPopup?.delete();
                     clearInterval(interval);
-                    resolve(result.result);
+                    setTimeout(() => resolve(result.result), 2000);
                 }
             }, 1000);
         });
