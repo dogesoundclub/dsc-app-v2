@@ -3,13 +3,24 @@ import { utils } from "ethers";
 import EventContainer from "eventcontainer";
 import msg from "msg.js";
 import QRCode from "qrcode";
+import Store from "../Store";
 import KlipQRPopup from "../ui/KlipQRPopup";
 
 const klipSDK = require("klip-sdk");
 
 class Klip extends EventContainer {
 
-    public address: undefined | string;
+    private static readonly BAPP_NAME = "DogeSoundClub";
+
+    public store = new Store("klip-store");
+
+    public get address() {
+        return this.store.get("address");
+    }
+
+    public set address(address: string | undefined) {
+        this.store.set("address", address, true);
+    }
 
     private async request(res: any): Promise<any> {
 
@@ -36,7 +47,7 @@ class Klip extends EventContainer {
     }
 
     public async connect() {
-        const res = await klipSDK.prepare.auth({ bappName: msg("BAPP_TITLE") });
+        const res = await klipSDK.prepare.auth({ bappName: Klip.BAPP_NAME });
         this.address = (await this.request(res)).klaytn_address;
         this.fireEvent("connect");
     }
@@ -45,7 +56,17 @@ class Klip extends EventContainer {
 
         const params: any[] = [];
         for (const param of _params) {
-            if (param instanceof BigNumber) {
+            if (Array.isArray(param) === true) {
+                const ps: any[] = [];
+                for (const p of param) {
+                    if (p instanceof BigNumber) {
+                        ps.push(p.toString());
+                    } else {
+                        ps.push(p);
+                    }
+                }
+                params.push(ps);
+            } else if (param instanceof BigNumber) {
                 params.push(param.toString());
             } else {
                 params.push(param);
@@ -53,13 +74,18 @@ class Klip extends EventContainer {
         }
 
         const res = await klipSDK.prepare.executeContract({
-            bappName: msg("BAPP_TITLE"),
+            bappName: Klip.BAPP_NAME,
             to: address,
             abi: JSON.stringify(abi),
             params: JSON.stringify(params),
             value: utils.parseEther((value === undefined ? 0 : value).toString()).toString(),
         });
         await this.request(res);
+    }
+
+    public async disconnect() {
+        this.address = undefined;
+        location.reload();
     }
 }
 
