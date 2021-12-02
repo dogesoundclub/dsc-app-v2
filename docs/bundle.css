@@ -3889,6 +3889,7 @@ a {
 }
 .turntable-detail-view > .controller {
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 .turntable-detail-view > .controller:after {
   content: " ";
@@ -3927,6 +3928,10 @@ a {
   padding: 12px 24px;
   font-family: DungGeunMo;
   font-weight: bold;
+}
+.turntable-detail-view > .mate-holders-button {
+  color: #BFC500;
+  text-decoration: underline;
 }
 .turntable-detail-view > section {
   margin-top: 60px;
@@ -4340,5 +4345,41 @@ a {
   padding: 12px 16px;
   font-family: DungGeunMo;
   font-weight: bold;
+}
+.turntable-mate-holders-view {
+  max-width: 780px;
+  padding: 135px 20px;
+  margin: auto;
+}
+@media only screen and (max-width: 719px) {
+  .turntable-mate-holders-view {
+    padding: 90px 20px;
+  }
+}
+.turntable-mate-holders-view > h1 {
+  font-size: 30px;
+  font-family: DungGeunMo;
+  color: #FF00F6;
+  text-shadow: 3px 3px 3px #656565;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.turntable-mate-holders-view > .back-button {
+  font-size: 26px;
+  color: #BFC500;
+}
+.turntable-mate-holders-view > table {
+  width: 100%;
+  min-width: 510px;
+  font-family: DungGeunMo;
+}
+.turntable-mate-holders-view > table th,
+.turntable-mate-holders-view > table td {
+  padding: 15px;
+  border-bottom: 1px solid #333;
+}
+.turntable-mate-holders-view > table td {
+  text-align: center;
 }
 

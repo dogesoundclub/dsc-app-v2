@@ -52,6 +52,9 @@ export default class Detail implements View {
                     click: () => ViewUtil.go(`/turntable/${turntableId}/removemates`),
                 }),
             ),
+            el("a.mate-holders-button", "메이트 홀더 지갑 보기", {
+                click: () => ViewUtil.go(`/turntable/${turntableId}/mateholders`),
+            }),
             el("section",
                 el("h2", "리스닝 LP 토큰"),
                 el("p.warning", "LP 토큰을 리스너로 등록할 수 있습니다. 리스너로 등록된 동안에는 Klayswap 에어드롭 풀로부터 MIX를 분배받을 수 없습니다. 따라서 반드시 Klayswap 에어드롭 풀과 수익률을 비교하시기 바랍니다."),
