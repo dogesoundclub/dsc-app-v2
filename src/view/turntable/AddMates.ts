@@ -55,7 +55,7 @@ export default class AddMates implements View {
     private async load() {
 
         const poolInfo = await MixEmitterContract.poolInfo(Config.isTestnet === true ? 4 : 9);
-        const tokenPerDay = poolInfo.allocPoint / 10000 * 86400 * 0.7;
+        const tokenPerDay = poolInfo.allocPoint / 10000 / 2 * 86400 * 0.7;
         const totalShares = (await MatesListenersContract.totalShares()).toNumber();
         this.mateRewardInfo.empty().appendText(`메이트 1개당 하루에 받는 MIX 수량: ${CommonUtil.numberWithCommas(String(tokenPerDay / totalShares))}`);
 

@@ -28,12 +28,12 @@ export default class LPTokenListeners extends DomNode {
     private async load() {
 
         const poolInfo = await MixEmitterContract.poolInfo(this.poolId);
-        const tokenPerBlock = poolInfo.allocPoint / 10000 * 0.7;
+        const tokenPerBlock = poolInfo.allocPoint / 10000 / 2 * 0.7;
 
         const lpPoolInfo = await MixEmitterContract.poolInfo(this.lpPoolId);
         const lpTotalSupply = await this.contract.lpToken.getTotalSupply();
         const totalShares = await this.contract.totalShares();
-        const tokenPerBlockToLP = lpPoolInfo.allocPoint / 10000 * 0.7 * totalShares.mul(1000000).div(lpTotalSupply).toNumber() / 1000000;
+        const tokenPerBlockToLP = lpPoolInfo.allocPoint / 10000 / 2 * 0.7 * totalShares.mul(1000000).div(lpTotalSupply).toNumber() / 1000000;
 
         const blocksPerYear = 365 * 24 * 60 * 60;
 

@@ -42,7 +42,7 @@ export default class BuyTurntableItem extends DomNode {
         const annualCost = turntablePrice.add(annualBatteryCost);
 
         const poolInfo = await MixEmitterContract.poolInfo(Config.isTestnet === true ? 3 : 8);
-        const tokenPerBlock = poolInfo.allocPoint / 10000;
+        const tokenPerBlock = poolInfo.allocPoint / 10000 / 2;
 
         const totalVolumne = await TurntablesContract.totalVolume();
         const totalRewardPerYear = utils.parseEther(String(tokenPerBlock * blocksPerYear)).sub((turntablePrice.mul(2).div(10)).add(annualBatteryCost));
