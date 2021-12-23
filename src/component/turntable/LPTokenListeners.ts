@@ -88,14 +88,18 @@ export default class LPTokenListeners extends DomNode {
                         });
                     },
                 }),
-                el("a", "MIX 받기", {
+                el("a", "MIX 받기 허락", {
                     click: async () => {
                         await this.contract.unlisten(this.turntableId, 0);
+                    },
+                }),
+                el("a", "MIX 받기", {
+                    click: async () => {
                         await this.contract.claim(this.turntableId);
                         ViewUtil.waitTransactionAndRefresh();
                     },
                 }),
-                el("p.warning", "* MIX 받기에는 두번의 트랜잭션이 발생됩니다."),
+                el("p.warning", "* MIX 받기 허락을 먼저 수행하신 후, MIX 받기를 실행해주세요."),
             );
         }
     }
