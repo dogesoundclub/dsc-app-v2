@@ -34,6 +34,8 @@ declare const _default: {
         AnimalsPunksV2Pool: string;
         PixelCat: string;
         PixelCatPool: string;
+        KLITS: string;
+        KLITSPool: string;
     };
 };
 export default _default;
