@@ -4,10 +4,13 @@ import { View, ViewParams } from "skyrouter";
 import CommonUtil from "../../CommonUtil";
 import MateList from "../../component/mate/MateList";
 import LPTokenListeners from "../../component/turntable/LPTokenListeners";
+import LPTokenListenersV2 from "../../component/turntable/LPTokenListenersV2";
 import Config from "../../Config";
 import MixEmitterContract from "../../contracts/mix/MixEmitterContract";
 import KlayMIXListenersContract from "../../contracts/turntable/KlayMIXListenersContract";
+import KlayMIXListenersContractV2 from "../../contracts/turntable/KlayMIXListenersContractV2";
 import KSPMIXListenersContract from "../../contracts/turntable/KSPMIXListenersContract";
+import KSPMIXListenersContractV2 from "../../contracts/turntable/KSPMIXListenersContractV2";
 import MatesListenersContract from "../../contracts/turntable/MatesListenersContract";
 import TurntableExtrasContract from "../../contracts/turntable/TurntableExtrasContract";
 import TurntablesContract from "../../contracts/turntable/TurntablesContract";
@@ -57,7 +60,7 @@ export default class Detail implements View {
             }),
             el("section",
                 el("h2", "리스닝 LP 토큰"),
-                el("p.warning", "LP 토큰을 리스너로 등록할 수 있습니다. 리스너로 등록된 동안에는 Klayswap 에어드롭 풀로부터 MIX를 분배받을 수 없습니다. 따라서 반드시 Klayswap 에어드롭 풀과 수익률을 비교하시기 바랍니다."),
+                el("p.warning", "리스너가 V2로 교체되었습니다. 반드시 기존 리스너의 등록을 취소하고 아래 V2의 리스너에 새로 등록해주시기 바랍니다."),
                 el(".listeners",
                     new LPTokenListeners(
                         "Klay-MIX Listeners",
@@ -72,6 +75,21 @@ export default class Detail implements View {
                         turntableId,
                         Config.isTestnet === true ? 6 : 11,
                         Config.isTestnet === true ? 0 : 4,
+                    ),
+                ),
+                el("p.warning", "LP 토큰을 리스너로 등록할 수 있습니다. 아래 APR은 LP 토큰의 APR에 추가로 받는 APR입니다. 따라서 리스너로 등록하는 것이 반드시 더 좋습니다."),
+                el(".listeners",
+                    new LPTokenListenersV2(
+                        "Klay-MIX Listeners V2",
+                        KlayMIXListenersContractV2,
+                        turntableId,
+                        14,
+                    ),
+                    new LPTokenListenersV2(
+                        "KSP-MIX Listeners V2",
+                        KSPMIXListenersContractV2,
+                        turntableId,
+                        15,
                     ),
                 ),
             ),

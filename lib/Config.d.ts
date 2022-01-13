@@ -13,6 +13,8 @@ declare const _default: {
         FollowMe: string;
         Vote: string;
         Mix: string;
+        KSP: string;
+        NewKlayPunk: string;
         MixEmitter: string;
         DevFundToken: string;
         DevFundPool: string;
@@ -24,6 +26,8 @@ declare const _default: {
         MatesListeners: string;
         KlayMIXListeners: string;
         KSPMIXListeners: string;
+        KlayMIXListenersV2: string;
+        KSPMIXListenersV2: string;
         KlayMIXLPToken: string;
         KSPMIXLPToken: string;
         Klayswap: string;

@@ -38,20 +38,9 @@ export default class LPTokenListeners extends DomNode {
         const blocksPerYear = 365 * 24 * 60 * 60;
 
         try {
-            const result = await superagent.get("https://api.dogesound.club/mix/price");
-            const mixPrice = utils.parseEther(result.text);
-
-            const totalMixInLP = await MixContract.balanceOf(this.contract.lpToken.address);
-            const stakingTokenPrice = totalMixInLP.mul(mixPrice).mul(2).div(lpTotalSupply);
-
-            const totalRewardPricePerYear = mixPrice.mul(Math.round((tokenPerBlock + tokenPerBlockToLP) * blocksPerYear));
-            const totalStakingTokenInPool = totalShares.mul(stakingTokenPrice).div(utils.parseEther("1"));
-
-            const apr = totalStakingTokenInPool.eq(0) === true ? 0 : totalRewardPricePerYear.mul(10000).div(totalStakingTokenInPool).toNumber() / 100;
-
             this.append(
                 el(".total-lp", `총 LP: ${CommonUtil.numberWithCommas(utils.formatEther(totalShares))}`),
-                el(".apr", `APR: ${apr}%`),
+                el(".apr", `APR: 0%`),
             );
         } catch (e) {
             console.error(e);

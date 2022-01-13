@@ -20,6 +20,9 @@ export default {
         Vote: "0x2EA83A978747d2F732b5E4D3BeeB12a7c4eDD743",
 
         Mix: "0xAe0a2e1DA2469FFdf8308160eE64Fe3656d9D9D0",
+        KSP: "",
+        NewKlayPunk: "",
+
         MixEmitter: "0x26339a890A5B2AD1B9ca31c073a37112BB9f21a3",
         DevFundToken: "0xf3635EF377D690D034530ca78EdC9c1028188896",
         DevFundPool: "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15",
@@ -31,6 +34,8 @@ export default {
         MatesListeners: "0x03E0545C837BFa5Ab9A1F950c54784ee5F0EB53D",
         KlayMIXListeners: "0x781A91157612DF86959e400bCb27FdfeECCe081D",
         KSPMIXListeners: "0x333Ba1e532c95C6731aa305505B24CAD9c13F013",
+        KlayMIXListenersV2: "",
+        KSPMIXListenersV2: "",
 
         KlayMIXLPToken: "0xAe0a2e1DA2469FFdf8308160eE64Fe3656d9D9D0",
         KSPMIXLPToken: "0xAe0a2e1DA2469FFdf8308160eE64Fe3656d9D9D0",
@@ -61,6 +66,9 @@ export default {
         Vote: "0x7f87e061068B04b62a2e119Cef3b44c2d1a177CD",
 
         Mix: "0xDd483a970a7A7FeF2B223C3510fAc852799a88BF",
+        KSP: "0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654",
+        NewKlayPunk: "0x37C38B19a6bA325486Da87f946e72dC93E0AB39a",
+
         MixEmitter: "0x0281dDafc6718b2B60bda163550f2F5F59D92C09",
         DevFundToken: "0x6a7b98B2c69AE29a14857E033D16A714A3206B89",
         DevFundPool: "0x91471263590FB259bf6208ba414bf17B0126Bbb7",
@@ -72,6 +80,8 @@ export default {
         MatesListeners: "0x97245cDC80F1Ca50CD59f37030cdA00805A2dc54",
         KlayMIXListeners: "0xe5C799A39450F1FFCaDf768b229DB9e13F23bb5E",
         KSPMIXListeners: "0x1D3bC75B6D33C5b5DE7D734686bb5404C6454a4d",
+        KlayMIXListenersV2: "0xBeE6480d1A82C29938923B4e4e59C89f4aFFE1Ac",
+        KSPMIXListenersV2: "0xF28C1be4129f795593071EC9A39Dfc3De602CDd5",
 
         KlayMIXLPToken: "0xa50cec0216c1cee6f90c7d5359444d46315279bd",
         KSPMIXLPToken: "0xade6684a81a205e4bfc544b51cca448c458c0961",
