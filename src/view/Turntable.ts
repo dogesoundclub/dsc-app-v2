@@ -4,8 +4,8 @@ import { View, ViewParams } from "skyrouter";
 import CommonUtil from "../CommonUtil";
 import TurntableItem from "../component/turntable/TurntableItem";
 import MateContract from "../contracts/nft/MateContract";
-import KlayMIXListenersContract from "../contracts/turntable/KlayMIXListenersContract";
-import KSPMIXListenersContract from "../contracts/turntable/KSPMIXListenersContract";
+import KlayMIXListenersContractV2 from "../contracts/turntable/KlayMIXListenersContractV2";
+import KSPMIXListenersContractV2 from "../contracts/turntable/KSPMIXListenersContractV2";
 import MatesListenersContract from "../contracts/turntable/MatesListenersContract";
 import TurntablesContract from "../contracts/turntable/TurntablesContract";
 import Klaytn from "../klaytn/Klaytn";
@@ -84,8 +84,8 @@ export default class Turntable implements View {
                         if (
                             matesTurntableIds.includes(id) === true || (
                                 walletAddress !== undefined && (
-                                    (await KlayMIXListenersContract.shares(id, walletAddress)).gt(0) ||
-                                    (await KSPMIXListenersContract.shares(id, walletAddress)).gt(0)
+                                    (await KlayMIXListenersContractV2.shares(id, walletAddress)).gt(0) ||
+                                    (await KSPMIXListenersContractV2.shares(id, walletAddress)).gt(0)
                                 )
                             )
                         ) {
