@@ -49,13 +49,13 @@ export default class LPTokenListenersV2 extends DomNode {
 
             this.append(
                 el(".total-lp", `총 LP: ${CommonUtil.numberWithCommas(utils.formatEther(totalShares))}`),
-                el(".apr", `APR: +${apr}%`),
+                el(".apr", `추가 APR: +${apr}%`),
             );
         } catch (e) {
             console.error(e);
             this.append(
                 el(".total-lp", `총 LP: ${CommonUtil.numberWithCommas(utils.formatEther(totalShares))}`),
-                el(".apr", "APR: 가격 정보를 불러오는데 실패했습니다."),
+                el(".apr", "추가 APR: 가격 정보를 불러오는데 실패했습니다."),
             );
         }
 

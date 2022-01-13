@@ -78,6 +78,12 @@ export default class Detail implements View {
                     ),
                 ),
                 el("p.warning", "LP 토큰을 리스너로 등록할 수 있습니다. 아래 APR은 LP 토큰의 APR에 추가로 받는 APR입니다. 따라서 리스너로 등록하는 것이 반드시 더 좋습니다."),
+                el(".lp-apr",
+                    el("a", "Klayswap에서 LP 토큰 이율 확인하기", {
+                        href: "https://klayswap.com/exchange/pool",
+                        target: "_blank",
+                    }),
+                ),
                 el(".listeners",
                     new LPTokenListenersV2(
                         "Klay-MIX Listeners V2",
