@@ -102,14 +102,14 @@ export default class LPTokenListenersV2 extends DomNode {
                     },
                 }),
 
-                el("a", "KSP 받기", {
+                el("a", "MIX 받기", {
                     click: async () => {
                         await this.contract.claim(this.turntableId, Config.contracts.Mix);
                         ViewUtil.waitTransactionAndRefresh();
                     },
                 }),
 
-                el("a", "MIX 받기", {
+                el("a", "KSP 받기", {
                     click: async () => {
                         await this.contract.claim(this.turntableId, Config.contracts.KSP);
                         ViewUtil.waitTransactionAndRefresh();
