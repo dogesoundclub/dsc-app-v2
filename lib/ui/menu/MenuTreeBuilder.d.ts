@@ -1,9 +1,11 @@
 import { DomNode } from "@hanul/skynode";
 interface Menu {
-    uri: string;
+    href?: string;
+    uri?: string;
     name: string;
     children?: {
-        uri: string;
+        href?: string;
+        uri?: string;
         name: string;
     }[];
 }

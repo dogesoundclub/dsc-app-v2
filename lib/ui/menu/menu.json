@@ -31,7 +31,7 @@
                     "uri": "mix/buy",
                     "name": "MENU_BUY_MIX"
                 }, {
-                    "uri": "mix/mining",
+                    "href": "https://mix.info/mining",
                     "name": "MENU_NFT_MINING"
                 }, {
                     "uri": "turntable",

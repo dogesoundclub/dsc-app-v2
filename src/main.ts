@@ -62,7 +62,7 @@ import Update from "./view/turntable/Update";
 
     SkyRouter.route("mix", Mix);
     SkyRouter.route("mix/buy", BuyMix);
-    SkyRouter.route("mix/mining", NFTMining);
+    //SkyRouter.route("mix/mining", NFTMining);
     SkyRouter.route("mix/booth", Booth);
     SkyRouter.route("mix/devfund", DevFund);
     SkyRouter.route("mix/burnpool", BurnPool);
