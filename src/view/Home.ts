@@ -161,6 +161,8 @@ export default class Home implements View {
     public changeParams(params: ViewParams, uri: string): void { }
 
     public close(): void {
-        this.container.delete();
+        if (this.container.deleted !== true) {
+            this.container.delete();
+        }
     }
 }

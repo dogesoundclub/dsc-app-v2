@@ -14,6 +14,7 @@ declare class ExtWallet extends EventContainer {
     connect(): Promise<void>;
     createContract(address: string, abi: any): any;
     addToken(address: string, symbol: string, decimals: number, image: string): void;
+    signMessage(message: string): Promise<any>;
 }
 declare const _default: ExtWallet;
 export default _default;

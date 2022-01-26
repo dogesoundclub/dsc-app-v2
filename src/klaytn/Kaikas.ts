@@ -65,6 +65,11 @@ class ExtWallet extends EventContainer {
             id: Math.round(Math.random() * 100000),
         });
     }
+
+    public async signMessage(message: string) {
+        const address = await this.loadAddress();
+        return address === undefined ? undefined : this.caver?.klay.sign(message, address);
+    }
 }
 
 export default new ExtWallet();

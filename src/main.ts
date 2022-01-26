@@ -5,6 +5,7 @@ import BrowserInfo from "./BrowserInfo";
 import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
+import CheckHolder from "./view/CheckHolder";
 import Governance from "./view/Governance";
 import GovernanceDetail from "./view/governance/Detail";
 import Propose from "./view/governance/Propose";
@@ -22,7 +23,6 @@ import Booth from "./view/mix/Booth";
 import BurnPool from "./view/mix/BurnPool";
 import BuyMix from "./view/mix/BuyMix";
 import DevFund from "./view/mix/DevFund";
-import NFTMining from "./view/mix/NFTMining";
 import Terms from "./view/Terms";
 import { default as Turntable } from "./view/Turntable";
 import AddMates from "./view/turntable/AddMates";
@@ -38,7 +38,7 @@ import Update from "./view/turntable/Update";
     msg.language = BrowserInfo.language;
     msg.parseCSV((await superagent.get("/msg.csv")).text);
 
-    SkyRouter.route("**", Layout);
+    SkyRouter.route("**", Layout, ["checkholder"]);
     SkyRouter.route("", Home);
     SkyRouter.route("mates", Mates);
     SkyRouter.route("mates/gallery", Gallery);
@@ -75,6 +75,8 @@ import Update from "./view/turntable/Update";
     SkyRouter.route("turntable/{id}/miningmates", MiningMates);
     SkyRouter.route("turntable/{id}/mateholders", MateHolders);
     SkyRouter.route("turntable/buy", BuyTurntable);
+
+    SkyRouter.route("checkholder", CheckHolder);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);

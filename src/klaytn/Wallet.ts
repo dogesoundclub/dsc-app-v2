@@ -38,6 +38,12 @@ class Wallet extends EventContainer {
             return new Promise<void>((resolve) => new ConnectWalletPopup(resolve));
         }
     }
+
+    public async signMessage(message: string) {
+        if (ExtWallet.installed === true) {
+            return await ExtWallet.signMessage(message);
+        }
+    }
 }
 
 export default new Wallet();

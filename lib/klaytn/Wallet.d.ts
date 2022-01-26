@@ -5,6 +5,7 @@ declare class Wallet extends EventContainer {
     loadAddress(): Promise<string | undefined>;
     connected(): Promise<boolean>;
     connect(): Promise<void>;
+    signMessage(message: string): Promise<any>;
 }
 declare const _default: Wallet;
 export default _default;
