@@ -5,7 +5,8 @@ import BrowserInfo from "./BrowserInfo";
 import Wallet from "./klaytn/Wallet";
 import Activities from "./view/Activities";
 import DogeSounds from "./view/activities/DogeSounds";
-import CheckHolder from "./view/CheckHolder";
+import CheckEMateHolder from "./view/CheckEMateHolder";
+import CheckMateHolder from "./view/CheckMateHolder";
 import Governance from "./view/Governance";
 import GovernanceDetail from "./view/governance/Detail";
 import Propose from "./view/governance/Propose";
@@ -38,7 +39,7 @@ import Update from "./view/turntable/Update";
     msg.language = BrowserInfo.language;
     msg.parseCSV((await superagent.get("/msg.csv")).text);
 
-    SkyRouter.route("**", Layout, ["checkholder"]);
+    SkyRouter.route("**", Layout, ["checkmateholder", "checkemateholder"]);
     SkyRouter.route("", Home);
     SkyRouter.route("mates", Mates);
     SkyRouter.route("mates/gallery", Gallery);
@@ -76,7 +77,8 @@ import Update from "./view/turntable/Update";
     SkyRouter.route("turntable/{id}/mateholders", MateHolders);
     SkyRouter.route("turntable/buy", BuyTurntable);
 
-    SkyRouter.route("checkholder", CheckHolder);
+    SkyRouter.route("checkmateholder", CheckMateHolder);
+    SkyRouter.route("checkemateholder", CheckEMateHolder);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);
