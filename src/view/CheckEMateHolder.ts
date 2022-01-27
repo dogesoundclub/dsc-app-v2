@@ -16,7 +16,7 @@ export default class CheckEMateHolder implements View {
         BodyNode.append(this.container = el(".check-holder",
             el("h1", "이메이트 홀더 인증 페이지"),
             el("a.discord-login-button", "Login with Discord", {
-                href: "https://discord.com/api/oauth2/authorize?client_id=899254874510868540&redirect_uri=http%3A%2F%2Fdogesound.club%2Fcheckemateholder&response_type=code&scope=identify",
+                href: "https://discord.com/api/oauth2/authorize?client_id=899254874510868540&redirect_uri=https%3A%2F%2Fdogesound.club%2Fcheckemateholder&response_type=code&scope=identify",
             }),
         ));
         this.checkDiscordLogin();
