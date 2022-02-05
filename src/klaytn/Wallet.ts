@@ -39,9 +39,18 @@ class Wallet extends EventContainer {
         }
     }
 
-    public async signMessage(message: string) {
+    public async signMessage(message: string): Promise<{
+        signedMessage?: string,
+        klipSignKey?: string,
+    }> {
         if (ExtWallet.installed === true) {
-            return await ExtWallet.signMessage(message);
+            return {
+                signedMessage: await ExtWallet.signMessage(message),
+            };
+        } else {
+            return {
+                klipSignKey: await Klip.sign(),
+            };
         }
     }
 }

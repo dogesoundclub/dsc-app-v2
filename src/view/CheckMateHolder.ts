@@ -65,14 +65,15 @@ export default class CheckMateHolder implements View {
         if (address !== undefined) {
 
             const message = "Check Holder";
-            const signedMessage = await Wallet.signMessage(message);
+            const signResult = await Wallet.signMessage(message);
 
             try {
                 const result = await fetch("https://api.dogesound.club/checkholder/mates", {
                     method: "POST",
                     body: JSON.stringify({
                         code,
-                        signedMessage,
+                        signedMessage: signResult.signedMessage,
+                        klipSignKey: signResult.klipSignKey,
                         address,
                     }),
                 });

@@ -1,0 +1,1 @@
+{"version":3,"file":"KlipSignerContract.d.ts","sourceRoot":"","sources":["../../src/contracts/KlipSignerContract.ts"],"names":[],"mappings":"AACA,OAAO,QAAQ,MAAM,YAAY,CAAC;AAElC,cAAM,kBAAmB,SAAQ,QAAQ;;IAMxB,UAAU,CAAC,GAAG,EAAE,MAAM,GAAG,OAAO,CAAC,MAAM,CAAC;IAIxC,IAAI,CAAC,GAAG,EAAE,MAAM,GAAG,OAAO,CAAC,IAAI,CAAC;CAGhD;;AAED,wBAAwC"}

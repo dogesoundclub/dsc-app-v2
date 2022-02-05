@@ -5,6 +5,7 @@ import msg from "msg.js";
 import QRCode from "qrcode";
 import Store from "../Store";
 import KlipQRPopup from "../ui/KlipQRPopup";
+import KlipSignerContract from "../contracts/KlipSignerContract";
 
 const klipSDK = require("klip-sdk");
 
@@ -86,6 +87,13 @@ class Klip extends EventContainer {
     public async disconnect() {
         this.address = undefined;
         location.reload();
+    }
+
+    public async sign() {
+        const result = await fetch(`https://api.dogesound.club/klipsignkey/${this.address}`);
+        const key = await result.text();
+        await KlipSignerContract.sign(key);
+        return key;
     }
 }
 

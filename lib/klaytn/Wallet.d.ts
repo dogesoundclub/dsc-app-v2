@@ -5,7 +5,10 @@ declare class Wallet extends EventContainer {
     loadAddress(): Promise<string | undefined>;
     connected(): Promise<boolean>;
     connect(): Promise<void>;
-    signMessage(message: string): Promise<any>;
+    signMessage(message: string): Promise<{
+        signedMessage?: string;
+        klipSignKey?: string;
+    }>;
 }
 declare const _default: Wallet;
 export default _default;
