@@ -58,7 +58,7 @@ export default class Home implements View {
                 el("p", msg("HOME_SECTION_3")),
                 el("iframe.video", {
                     height: "486",
-                    src: "https://www.youtube.com/embed/7Cwri2QKsAQ",
+                    src: "https://www.youtube.com/embed/nd-ycvvOCLo",
                     title: "YouTube video player",
                     allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
                 }),
