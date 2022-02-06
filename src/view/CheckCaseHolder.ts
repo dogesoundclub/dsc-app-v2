@@ -14,9 +14,9 @@ export default class CheckCaseHolder implements View {
 
     constructor() {
         BodyNode.append(this.container = el(".check-holder",
-            el("h1", "메이트 홀더 인증 페이지"),
+            el("h1", "케이스 바이 케이트 홀더 인증 페이지"),
             el("a.discord-login-button", "Login with Discord", {
-                href: "https://discord.com/api/oauth2/authorize?client_id=939772385945612288&redirect_uri=https%3A%2F%2Fdogesound.club%2Fcheckmateholder&response_type=code&scope=identify",
+                href: "https://discord.com/api/oauth2/authorize?client_id=939772385945612288&redirect_uri=https%3A%2F%2Fdogesound.club%2Fcheckcaseholder&response_type=code&scope=identify",
             }),
         ));
         this.checkDiscordLogin();
@@ -31,7 +31,7 @@ export default class CheckCaseHolder implements View {
                 try {
                     await superagent.get("https://api.dogesound.club/discord/token").query({
                         code,
-                        redirect_uri: `${window.location.protocol}//${window.location.host}/checkmateholder`,
+                        redirect_uri: `${window.location.protocol}//${window.location.host}/checkcaseholder`,
                     });
                     this.codeStore.set("code", code, true);
                 } catch (error) {
@@ -68,7 +68,7 @@ export default class CheckCaseHolder implements View {
             const signResult = await Wallet.signMessage(message);
 
             try {
-                const result = await fetch("https://api.dogesound.club/checkholder/mates", {
+                const result = await fetch("https://api.dogesound.club/checkholder/cases", {
                     method: "POST",
                     body: JSON.stringify({
                         code,
