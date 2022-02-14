@@ -79,7 +79,7 @@ class Klip extends EventContainer {
             to: address,
             abi: JSON.stringify(abi),
             params: JSON.stringify(params),
-            value: utils.parseEther((value === undefined ? 0 : value).toString()).toString(),
+            value: (value === undefined ? 0 : value).toString(),
         });
         await this.request(res);
     }
