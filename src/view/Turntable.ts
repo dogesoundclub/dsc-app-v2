@@ -30,7 +30,7 @@ export default class Turntable implements View {
                 el("h2", "나의 턴테이블"),
                 this.myTurntableList = el(".turntable-list"),
             ),
-            el("a", "턴테이블 구매하기", { click: () => ViewUtil.go("/turntable/buy") }),
+            // el("a", "턴테이블 구매하기", { click: () => ViewUtil.go("/turntable/buy") }),
             el("section",
                 el("h2", "리스닝중인 턴테이블"),
                 this.listeningTurntableList = el(".turntable-list"),

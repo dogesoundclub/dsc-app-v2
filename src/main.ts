@@ -76,7 +76,7 @@ import Update from "./view/turntable/Update";
     SkyRouter.route("turntable/{id}/removemates", RemoveMates);
     SkyRouter.route("turntable/{id}/miningmates", MiningMates);
     SkyRouter.route("turntable/{id}/mateholders", MateHolders);
-    SkyRouter.route("turntable/buy", BuyTurntable);
+    // SkyRouter.route("turntable/buy", BuyTurntable);
 
     SkyRouter.route("checkmateholder", CheckMateHolder);
     SkyRouter.route("checkemateholder", CheckEMateHolder);
