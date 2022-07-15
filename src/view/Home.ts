@@ -36,6 +36,12 @@ export default class Home implements View {
             el("img.talker", {
               src: "https://api.oldpopcatbasterds.wtf/xpass/metadata/1",
             }),
+            el("img.talker", {
+              src: "https://unpretty.club/image",
+            }),
+            el("img.talker", {
+              src: "https://unpretty.club/json/2000.json",
+            }),
             (this.dogesound = el(".text")),
             el(".warning", msg("HOME_WINNER_WARNING"))
           )
