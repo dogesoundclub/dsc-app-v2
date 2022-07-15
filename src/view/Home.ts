@@ -30,10 +30,17 @@ export default class Home implements View {
             el("img.talker", {
               src: "https://storage.googleapis.com/dsc-mate/336/dscMate-3.png",
             }),
+            el("img.talker", {
+              src: "https://api.oldpopcatbasterds.wtf/xpass/image",
+            }),
+            el("img.talker", {
+              src: "https://api.oldpopcatbasterds.wtf/xpass/metadata/1",
+            }),
             (this.dogesound = el(".text")),
             el(".warning", msg("HOME_WINNER_WARNING"))
           )
         ),
+
         el(
           "section",
           el("h2", msg("HOME_SECTION_1_TITLE")),
