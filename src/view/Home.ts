@@ -28,22 +28,6 @@ export default class Home implements View {
           el(
             ".dogesound",
             el("img.talker", {
-              src: "https://unpretty.club/image",
-            }),
-            (this.dogesound = el(".text")),
-            el(".warning", msg("HOME_WINNER_WARNING"))
-          ),
-          el(
-            ".dogesound",
-            el("img.talker", {
-              src: "https://unpretty.club/video",
-            }),
-            (this.dogesound = el(".text")),
-            el(".warning", msg("HOME_WINNER_WARNING"))
-          ),
-          el(
-            ".dogesound",
-            el("img.talker", {
               src: "https://storage.googleapis.com/dsc-mate/336/dscMate-3.png",
             }),
             (this.dogesound = el(".text")),
