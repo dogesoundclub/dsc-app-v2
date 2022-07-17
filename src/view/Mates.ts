@@ -42,7 +42,10 @@ export default class Mates implements View {
               target: "_blank",
             },
             el("img", {
-              src: "https://api.oldpopcatbasterds.wtf/xpass/metadata/1",
+              src: "https://urbancomplex.kr/xpass/metadata/2000.json",
+            }),
+            el("img", {
+              src: "https://urbancomplex.kr/xpass/image",
             })
           ),
           el(
