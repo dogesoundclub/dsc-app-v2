@@ -39,11 +39,11 @@
         "name": "Mates Listeners",
         "color": "#F6D613"
     },
-    "0xe5C799A39450F1FFCaDf768b229DB9e13F23bb5E": {
+    "0xBeE6480d1A82C29938923B4e4e59C89f4aFFE1Ac": {
         "name": "Klay-MIX LP Listeners",
         "color": "#443b34"
     },
-    "0x1D3bC75B6D33C5b5DE7D734686bb5404C6454a4d": {
+    "0xF28C1be4129f795593071EC9A39Dfc3De602CDd5": {
         "name": "KSP-MIX LP Listeners",
         "color": "#ff9632"
     },
@@ -54,6 +54,10 @@
     "0xAB8f0C87d97b2B2E2C99528Ebb265689F6663D31": {
         "name": "KLITS",
         "color": "#f55442"
+    },
+    "0x47910a706348bf2ae14086e78AC080d31762B171": {
+        "name": "Cryptorus",
+        "color": "#05BAAD"
     },
     "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15": {
         "name": "Testnet: Dev Fund",
